@@ -2,69 +2,71 @@ import { PageWrapper } from "@/components/page-wrapper"
 
 export default function WhatPage() {
     return (
-        <PageWrapper title="What">
-            <p className="text-lg text-foreground">
-                We turn your chaos into code.
-            </p>
-            <p>
-                You have a service. It relies on you being in the room. That is a trap.
-                We isolate the genius in your business, strip away the manual labor, and build it into a scalable asset.
-                We do it in 90 days. And we pay for part of it.
-            </p>
+        <PageWrapper title="How it works">
+            <div>
+                <h2 className="text-xl font-medium text-foreground mb-3">Vehicle for Expertise</h2>
+                <p className="mb-4">
+                    You have a methodology that works. You change businesses. Solve problems. Create impact.
+                    But impact is limited by physics. You can only be in one room at a time.
+                </p>
+                <p className="mb-4">
+                    We don&apos;t change what you do. We change how it travels. We take expert knowledge.
+                    Build digital infrastructure around it. Service turns into product.
+                    It travels to a thousand places at once. You stay in one.
+                </p>
+                <p className="font-medium text-foreground/80">
+                    Not replacing the human. Letting human do human work. System handles the rest.
+                </p>
+            </div>
 
-            <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">How We Work</h2>
-
-            <div className="space-y-8">
+            <div className="mt-12 space-y-8">
                 <div>
-                    <h3 className="text-lg font-semibold text-accent mb-2">01. Skin in the Game</h3>
+                    <h3 className="text-lg font-semibold text-accent mb-2">01. System</h3>
                     <p>
-                        We do not do "hit-and-run" consulting. If the math makes sense, we co-invest.
-                        We take the risk because we trust the build. If you lose, we lose. That keeps us honest.
+                        Authenticity needs infrastructure. We build machine backbone. AI and automation handle administration.
+                        Data. Routine logic. Service delivery becomes precise. Every time. It carries your fingerprint.
+                        Even when you aren&apos;t touching the keyboard.
                     </p>
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-semibold text-accent mb-2">02. The Exoskeleton</h3>
+                    <h3 className="text-lg font-semibold text-accent mb-2">02. Shared Risk</h3>
                     <p>
-                        We don&apos;t sell templates. We build infrastructure. We use AI to handle the grunt work
-                        and automation to handle the logic. This isn&apos;t "AI Slop". It is adult supervision for your operations.
-                        The result is a product that carries your fingerprint, without needing your hands.
+                        We believe in what we build. No interest in "hit-and-run" consulting or hourly billing.
+                        If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors. You win. We win.
                     </p>
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-semibold text-accent mb-2">03. 90 Days. Hard Stop.</h3>
+                    <h3 className="text-lg font-semibold text-accent mb-2">03. Momentum</h3>
                     <p>
-                        We are allergic to 18-month roadmaps. We define the MVP. We build it. We ship it to real users.
-                        Speed is the only way to find the truth.
+                        No 18-month roadmaps. Work happens in 30-90 day sprints. Define core value. Build it.
+                        Put it in hands of real users. Learn by shipping. Not by planning.
                     </p>
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">The Process</h2>
-
-            <div className="space-y-6">
+            <div className="mt-12 space-y-6">
                 <div className="border-l-2 border-foreground/20 pl-4">
-                    <p className="font-semibold text-foreground">Audit</p>
+                    <p className="font-semibold text-foreground">Distill</p>
                     <p className="text-foreground/70">
-                        We strip the business down to the studs. What is the core value? What is just noise?
-                        We find the piece of your business that can scale without you.
+                        We look at your craft. Identify the magic. Frameworks. Decisions. Intuition.
+                        Separate strategic value from operational noise.
                     </p>
                 </div>
 
                 <div className="border-l-2 border-foreground/20 pl-4">
                     <p className="font-semibold text-foreground">Build</p>
                     <p className="text-foreground/70">
-                        From concept to code. We deploy the tech stack—databases, automation, interface—that
-                        turns a manual service into a digital product.
+                        Concepts turn into code. Deployment of custom software. GrowthOS. Automation workflows.
+                        Manual service becomes scalable asset.
                     </p>
                 </div>
 
                 <div className="border-l-2 border-foreground/20 pl-4">
-                    <p className="font-semibold text-foreground">Deal</p>
+                    <p className="font-semibold text-foreground">Scale</p>
                     <p className="text-foreground/70">
-                        Partnership, not vendor management. We align incentives via profit share or equity.
-                        We don&apos;t want your hourly rate. We want the upside.
+                        Launch. Watch data. Refine. Partnership begins here. We manage tech. You manage vision.
                     </p>
                 </div>
             </div>

@@ -1,22 +1,28 @@
-# SANE/REBELS — About
+# SANE/REBELS — Brand & Content Source
 
 ## The Core Truth
 
-**Machines got powerful. Time to be more human.**
+**Done trading time? Let's build something.**
 
-We're not anti-tech. We're pro-human *using* tech. AI handles the mundane so humans can handle the meaningful. The rebellion isn't against work—it's against becoming machine-like when machines can do the machine stuff.
+We turn your expert knowledge into a scalable, digital architecture. You have a service. It relies on you being in the room. That is a trap. We don't change what you do. We change how it travels.
 
 ---
 
 ## Value Proposition
 
 ### The Offer
-**We productize your service. You stay human.**
+**Vehicle for Expertise.**
+Service turns into product. It travels to a thousand places at once. You stay in one.
 
-### The How
-1. **Co-invest** — Skin in the game. Our money's in it too. Your win is my win. Your risk is my risk.
-2. **AI-powered, human-fingerprinted** — AI handles the mundane so the product carries YOUR voice, soul, fingerprint. Not slop. Not templates. You.
-3. **30-90 days** — Not 18 months. Find the MVP that matters, build it fast, ship it to real users.
+### How It Works
+1. **System** — Authenticity needs infrastructure. We build machine backbone. AI and automation handle administration so the product carries your fingerprint.
+2. **Shared Risk** — No "hit-and-run" consulting. If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors.
+3. **Momentum** — No 18-month roadmaps. 30-90 day sprints. Learn by shipping. Not by planning.
+
+### The Process
+- **Distill** — Identify the magic. Separate strategic value from operational noise.
+- **Build** — Concepts turn into code. GrowthOS. Automation workflows.
+- **Scale** — Launch. Watch data. Refine.
 
 ---
 
@@ -26,72 +32,42 @@ We're not anti-tech. We're pro-human *using* tech. AI handles the mundane so hum
 - Subject matter experts who want to scale beyond themselves
 - Service business founders ready to add a product arm
 
-**Secondary:**
-- Consultants/agencies tired of selling hours
-
-**The Pain They Feel:**
+**The Pain:**
 - Stuck in the time-for-money trap
 - Successful but burned out
-- Know they have something productizable but don't know how to extract it
-- Want freedom, not just more revenue
+- Identifying scalability but lacking technical execution
 
 ---
 
-## The Process
+## About The Founder: Simon Roser
 
-### 01 — Find the Gold
-*Naked Strategy Session*
-- What do you do better than anyone?
-- Where's the scalable piece hiding?
-- What's worth building vs. what's just vanity?
+**Founder & Systems Architect**
 
-### 02 — Build It
-*30-90 Days, Not 18 Months*
-- From concept to clickable in weeks
-- AI does the grunt work, you keep the soul
-- Real product, real users, real feedback
+Four years at Google. 500+ companies. Saw the patterns. Left to build. Ran my own company for 5 years. Learned shipping matters more than slides.
 
-### 03 — Win Together
-*Partnership, Not Handoff*
-- Our money in the game too
-- Ongoing sparring, not a one-time gig
-- Your win is my win
+Then Fractional CMO. Loved the work. Solving problems is addictive. But hit a hard limit: Physics. Could only be in one room at a time. Selling hours.
 
----
+We didn't want to stop helping. We wanted to multiply the impact. So we built the System. Systems to clone the strategy. Automation to handle the execution.
 
-## The Founder: Simon Roser
+We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it. To turn complex ideas into reality. Now we build those systems for others. Making authenticity scalable.
 
-### The Journey
-1. **Google** (4 years) → 500+ companies, saw the patterns, learned go-to-market
-2. **Built own company** → Left to actually DO it, ran it for 5 years
-3. **Fractional CMO** → Went deeper, traded time for money, *experienced* the ceiling
-4. **Automation obsession** → Went deep on n8n, AI, systems
-5. **Now: SANE/REBELS** → Helping others escape the same trap
+**"We don't just advise. We are at our best when we co-create. Build. Work on challenges worth solving."**
 
-### Credentials
-- Ex-Google: 4 years, 500+ high-growth companies accelerated
-- Founder & Operator: Built and ran own company for 5 years
-- Fractional CMO: 2 years, pre-Series B growth startups
-- Automation Obsessed: n8n, AI, systems that scale
-- MSc Management: ESCP Europe, Entrepreneurship focus
+### Experience
+- **Google** | 4 years, 500+ high-growth companies accelerated
+- **Founder** | 5 years, Bootstrapped. Learned reality of shipping.
+- **Fractional CMO** | 2 years, Solved growth problems. Hit ceiling of time-for-money.
+- **Now: SANE/REBELS** | Multiplying impact through systems.
 
 ---
 
-## Manifest
+## Manifest (Why)
 
-We built incredible technology to save time. Then we spent that time acting like the technology. We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor. They hire more people to solve process problems. That is not scaling. That is bloating.
+You have a methodology that works. You change businesses. Solve problems. Create impact. But impact is limited by physics. You can only be in one room at a time.
 
-Authenticity without infrastructure is just noise.
+We don't change what you do. We change how it travels. We take expert knowledge. Build digital infrastructure around it. Service turns into product. It travels to a thousand places at once. You stay in one.
 
-To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture. We build the Exoskeleton that carries the weight of the business. We replace the chaos of operations with the precision of code.
-
-The enemy is not AI. The enemy is inefficiency. The enemy is a founder buried in spreadsheets instead of strategy.
-
-Machines do machine work. We automate the admin. We engineer the routine. Your authentic voice is the only competitive advantage left. It is the only thing that cannot be copied. But it cannot be heard if you are drowning.
-
-A business that runs. A founder that sleeps. Scale the revenue. Keep the soul.
-
-*Sane enough to build it. Rebel enough to ship it.*
+Not replacing the human. Letting human do human work. System handles the rest.
 
 ---
 

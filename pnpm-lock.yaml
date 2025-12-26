@@ -41,6 +41,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.2.3(react@19.2.3)
+      shaders:
+        specifier: ^2.2.29
+        version: 2.2.29
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -934,6 +937,9 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  shaders@2.2.29:
+    resolution: {integrity: sha512-UXZQB9ElqwwZnsMYJ61j7XcDJEkifSIbjB+8EiNKl8l8wCj146X+tyiZFgWhtMTIkMuVKfPcV9jZalEQZ6jwVQ==}
+
   sharp@0.34.5:
     resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
@@ -964,6 +970,9 @@ packages:
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
+
+  three@0.181.2:
+    resolution: {integrity: sha512-k/CjiZ80bYss6Qs7/ex1TBlPD11whT9oKfT8oTGiHa34W4JRd1NiH/Tr1DbHWQ2/vMUypxksLnF2CfmlmM5XFQ==}
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
@@ -1698,6 +1707,10 @@ snapshots:
   semver@7.7.3:
     optional: true
 
+  shaders@2.2.29:
+    dependencies:
+      three: 0.181.2
+
   sharp@0.34.5:
     dependencies:
       '@img/colour': 1.0.0
@@ -1742,6 +1755,8 @@ snapshots:
   tailwindcss@4.1.18: {}
 
   tapable@2.3.0: {}
+
+  three@0.181.2: {}
 
   tslib@2.8.1: {}
 

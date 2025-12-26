@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 
 const navLinks = [
     { href: "/why", label: "Why" },
-    { href: "/what", label: "What" },
-    { href: "/who", label: "Who" },
+    { href: "/what", label: "How" },
+    { href: "/who", label: "About" },
     { href: "/lets", label: "Let's" },
 ]
 
@@ -41,7 +41,9 @@ export function GlassCard() {
 
             {/* Tagline */}
             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-foreground mb-8 md:mb-10 leading-tight px-2">
-                Done trading time? Let&apos;s build something.
+                Done trading time?
+                <br />
+                <span className="text-accent">Let&apos;s build something.</span>
             </h1>
 
             {/* Navigation */}
