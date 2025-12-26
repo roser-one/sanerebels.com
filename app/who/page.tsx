@@ -22,22 +22,30 @@ export default function WhoPage() {
                     <p className="text-foreground/60 font-mono text-sm mb-6">Founder & Systems Architect</p>
 
                     <p>
-                        4 years at Google. 500+ companies. I saw the patterns. But I wanted to make things,
-                        not just recommend them.
+                        Four years at Google. 500+ companies. Saw the patterns. Left to build.
+                        Ran my own company for 5 years. Learned shipping matters more than slides.
                     </p>
                     <p>
-                        So I left. Built a company. Ran it for 5 years. Learned what actually ships vs.
-                        what sounds smart in a deck.
+                        Then: Fractional CMO. Loved the work. Solving problems is addictive.
+                        But I hit a hard limit: Physics. I could only be in one room at a time.
+                        I was selling hours, but the problems required scale.
                     </p>
-                    <p className="text-foreground/70">
-                        Then: fractional CMO gigs. Trading time for money. I experienced the ceiling.
-                        So I went deep on automation, AI, systems. Not to become a machine.
-                        To stop acting like one.
+                    <p>
+                        I didn&apos;t want to stop helping. I wanted to multiply the impact.
+                        So I built the Exoskeleton. Systems to clone the strategy. Automation to handle the execution.
+                    </p>
+                    <p>
+                        This isn&apos;t theory. It&apos;s survival. My brain runs on a Ferrari engine. High speed. Abstract concepts.
+                        I built these systems to handle my own chaos. Now I build them for founders who want to scale their mind,
+                        not just their headcount.
+                    </p>
+                    <p className="text-lg text-foreground mt-4">
+                        I don&apos;t just advise. I build.
                     </p>
                 </div>
             </div>
 
-            <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">The Journey</h2>
+            <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">My Experiences</h2>
             <div className="space-y-4">
                 <div className="flex items-start gap-4">
                     <span className="font-mono text-xs text-accent mt-1">01</span>
@@ -49,20 +57,13 @@ export default function WhoPage() {
                 </div>
                 <div className="flex items-start gap-4">
                     <span className="font-mono text-xs text-accent mt-1">03</span>
-                    <p><strong className="text-foreground">Fractional CMO</strong> | 2 years, pre-Series B startups</p>
+                    <p><strong className="text-foreground">Fractional CMO</strong> | 2 years, start-ups and scale-ups (more at <a href="https://roser-growth.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">roser-growth.com</a>)</p>
                 </div>
                 <div className="flex items-start gap-4">
                     <span className="font-mono text-xs text-accent mt-1">04</span>
                     <p><strong className="text-foreground">Now: SANE/REBELS</strong> | Helping others escape the same trap</p>
                 </div>
             </div>
-
-            <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Credentials</h2>
-            <ul className="space-y-2 text-foreground/80">
-                <li>• MSc Management, ESCP Europe (Entrepreneurship)</li>
-                <li>• Automation: n8n, AI, systems that scale</li>
-                <li>• Offline: Flow, storytelling, real presence</li>
-            </ul>
         </PageWrapper>
     )
 }

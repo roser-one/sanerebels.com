@@ -79,8 +79,6 @@ We're not anti-tech. We're pro-human *using* tech. AI handles the mundane so hum
 
 ## Manifest
 
-You have a Ferrari engine. You are driving it with bicycle brakes.
-
 We built incredible technology to save time. Then we spent that time acting like the technology. We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor. They hire more people to solve process problems. That is not scaling. That is bloating.
 
 Authenticity without infrastructure is just noise.
