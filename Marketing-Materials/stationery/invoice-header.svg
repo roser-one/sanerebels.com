@@ -1,0 +1,41 @@
+<svg width="595" height="150" viewBox="0 0 595 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Invoice Header - For use in PDF invoices/proposals -->
+  
+  <!-- Background -->
+  <rect width="595" height="150" fill="#0a0a0a"/>
+  
+  <!-- Logo -->
+  <text x="50" y="70" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="900" letter-spacing="-1">
+    <tspan fill="#fafafa">SANE</tspan>
+    <tspan fill="#c084fc">/</tspan>
+    <tspan fill="#fafafa">REBELS</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="50" y="95" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" fill="#a3a3a3" letter-spacing="1">
+    WE PRODUCTIZE YOUR SERVICE. YOU STAY HUMAN.
+  </text>
+  
+  <!-- Company info on right -->
+  <text x="545" y="50" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="10" text-anchor="end" fill="#fafafa" font-weight="600">
+    KNUS GmbH
+  </text>
+  <text x="545" y="70" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="9" text-anchor="end" fill="#a3a3a3">
+    simon@sanerebels.com
+  </text>
+  <text x="545" y="85" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="9" text-anchor="end" fill="#a3a3a3">
+    sanerebels.com
+  </text>
+  <text x="545" y="100" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="9" text-anchor="end" fill="#a3a3a3">
+    Munich, Germany
+  </text>
+  
+  <!-- Accent line at bottom -->
+  <rect x="0" y="148" width="595" height="2" fill="#c084fc"/>
+</svg>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Open Graph Image - 1200x630px for social sharing -->
+  <defs>
+    <linearGradient id="ogBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#0f0a14"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogBgGradient)"/>
+  
+  <!-- Subtle pattern -->
+  <pattern id="ogdots" patternUnits="userSpaceOnUse" width="40" height="40">
+    <circle cx="2" cy="2" r="1" fill="#c084fc" opacity="0.06"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#ogdots)"/>
+  
+  <!-- Logo -->
+  <text x="600" y="250" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="90" font-weight="900" text-anchor="middle" letter-spacing="-4">
+    <tspan fill="#fafafa">SANE</tspan>
+    <tspan fill="#c084fc">/</tspan>
+    <tspan fill="#fafafa">REBELS</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="600" y="340" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#e5e5e5">
+    We productize your service. You stay human.
+  </text>
+  
+  <!-- Accent line -->
+  <rect x="450" y="380" width="300" height="2" fill="#c084fc" opacity="0.6"/>
+  
+  <!-- Sub-tagline -->
+  <text x="600" y="440" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="400" text-anchor="middle" fill="#a3a3a3">
+    AI handles the mundane. Your fingerprint stays on every output.
+  </text>
+  
+  <!-- Website -->
+  <text x="600" y="550" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="500" text-anchor="middle" fill="#737373">
+    sanerebels.com
+  </text>
+</svg>
+
+
+
+
+
+

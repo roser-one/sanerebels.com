@@ -1,0 +1,45 @@
+<svg width="1500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Twitter/X Header - 1500x500px -->
+  <defs>
+    <linearGradient id="xBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#0f0a14"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1500" height="500" fill="url(#xBgGradient)"/>
+  
+  <!-- Subtle pattern -->
+  <pattern id="xdots" patternUnits="userSpaceOnUse" width="50" height="50">
+    <circle cx="2" cy="2" r="1" fill="#c084fc" opacity="0.08"/>
+  </pattern>
+  <rect width="1500" height="500" fill="url(#xdots)"/>
+  
+  <!-- Logo -->
+  <text x="750" y="200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="80" font-weight="900" text-anchor="middle" letter-spacing="-3">
+    <tspan fill="#fafafa">SANE</tspan>
+    <tspan fill="#c084fc">/</tspan>
+    <tspan fill="#fafafa">REBELS</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="750" y="280" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#a3a3a3" letter-spacing="1">
+    Machines got powerful. Time to be more human.
+  </text>
+  
+  <!-- Accent line -->
+  <rect x="625" y="320" width="250" height="2" fill="#c084fc" opacity="0.5"/>
+  
+  <!-- Philosophy pills -->
+  <text x="750" y="400" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" font-weight="500" text-anchor="middle" fill="#737373">
+    Co-invest � AI-Powered � Human-Fingerprinted � 30-90 Days
+  </text>
+</svg>
+
+
+
+
+
+
