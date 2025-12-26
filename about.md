@@ -79,12 +79,19 @@ We're not anti-tech. We're pro-human *using* tech. AI handles the mundane so hum
 
 ## Manifest
 
-The rebellion? Going home on time.
-The sanity? Being present when you get there.
+You have a Ferrari engine. You are driving it with bicycle brakes.
 
-We built tools to save time. Then we spent that time acting like the tools. Always connected. Rarely present. Optimizing for efficiency, we optimized away the humanity.
+We built incredible technology to save time. Then we spent that time acting like the technology. We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor. They hire more people to solve process problems. That is not scaling. That is bloating.
 
-AI can handle the mundane. So you can handle the meaningful.
+Authenticity without infrastructure is just noise.
+
+To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture. We build the Exoskeleton that carries the weight of the business. We replace the chaos of operations with the precision of code.
+
+The enemy is not AI. The enemy is inefficiency. The enemy is a founder buried in spreadsheets instead of strategy.
+
+Machines do machine work. We automate the admin. We engineer the routine. Your authentic voice is the only competitive advantage left. It is the only thing that cannot be copied. But it cannot be heard if you are drowning.
+
+A business that runs. A founder that sleeps. Scale the revenue. Keep the soul.
 
 *Sane enough to build it. Rebel enough to ship it.*
 
