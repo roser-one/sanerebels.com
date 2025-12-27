@@ -84,4 +84,4 @@ Not replacing the human. Letting human do human work. System handles the rest.
 - **Email:** hi@sanerebels.com
 - **LinkedIn:** linkedin.com/in/simonroser
 - **Company:** KNUS GmbH
-- **Location:** Konstanz, Germany (Registered), Munich (Operating)
+- **Location:** Konstanz, Germany (Registered), Berlin (Operating)
