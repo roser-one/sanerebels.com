@@ -38,21 +38,32 @@ export function GlassCard() {
             </h1>
 
             {/* Navigation */}
-            <nav className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6">
+            <nav className="flex flex-wrap items-center justify-center">
                 {navLinks.map((link, index) => (
-                    <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                    >
-                        <Link
-                            href={link.href}
-                            className="nav-link"
+                    <div key={link.href} className="flex items-center">
+                        {index > 0 && (
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                                className="text-accent/30 font-mono text-[0.6rem] mx-2 sm:mx-3 select-none"
+                            >
+                                /
+                            </motion.span>
+                        )}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
                         >
-                            {link.label}
-                        </Link>
-                    </motion.div>
+                            <Link
+                                href={link.href}
+                                className="nav-link"
+                            >
+                                {link.label}
+                            </Link>
+                        </motion.div>
+                    </div>
                 ))}
 
                 {/* Legal links moved to footer */}
