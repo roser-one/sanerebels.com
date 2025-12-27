@@ -10,7 +10,8 @@ export default function WhyPage() {
 
             <p>
                 We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor.
-                They hire more people to solve process problems. That is not scaling. That is bloating.
+                But impact is limited by physics. You can only be in one room at a time.
+                Hiring more people to solve process problems is not scaling. That is bloating.
             </p>
 
             <p className="text-lg text-foreground mt-8">

@@ -7,13 +7,11 @@ export default function WhatPage() {
             <div>
 
                 <p className="mb-4">
-                    You have a methodology that works. You help businesses and individuals through meaningful offers. Solve problems. Create impact.
-                    But impact is limited by physics. You can only be in one room at a time.
+                    We don&apos;t change what you do. We change how it travels.
                 </p>
                 <p className="mb-4">
-                    We don&apos;t change what you do. We change how it travels. We take expert knowledge.
-                    Build digital infrastructure around it. Service turns into product.
-                    It travels to a thousand places at once. You stay in one.
+                    You have a methodology that works. We take that expert knowledge and build digital infrastructure around it.
+                    Service turns into product. It travels to a thousand places at once. You stay in one.
                 </p>
                 <p className="font-medium text-foreground/80">
                     Not replacing the human. Letting human do human work. System handles the rest.
