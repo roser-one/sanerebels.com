@@ -48,7 +48,7 @@ export default function AboutPage() {
                     <p>
                         Then Fractional CMO. Loved the work. Solving problems is addictive. But I ran into physics.
                         I could only be in one room at a time. I was selling hours.
-                        But we wanted to share know-how with more than just one board room.
+                        But we wanted to share know-how with more than just one room.
                     </p>
                     <p>
                         We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it.

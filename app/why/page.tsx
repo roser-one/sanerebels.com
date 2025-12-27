@@ -11,7 +11,7 @@ export default function WhyPage() {
             <p>
                 We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor.
                 But impact is limited by physics. You can only be in one room at a time.
-                Hiring more people to solve process problems is not scaling. That is bloating.
+                That is the limit. <strong className="text-foreground">You can&apos;t scale a human.</strong>
             </p>
 
             <p className="text-lg text-foreground mt-8">
@@ -20,7 +20,7 @@ export default function WhyPage() {
 
             <p>
                 To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture.
-                We build the Exoskeleton that carries the weight of the business. We replace the chaos of operations with the precision of code.
+                We build the Machine that carries the weight of the business. We replace the chaos of operations with the precision of code.
             </p>
 
             <p className="mt-8">
