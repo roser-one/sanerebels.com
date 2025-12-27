@@ -176,7 +176,8 @@ No 18-month roadmaps. Work happens in 30-90 day sprints. Define core value. Buil
 **Founder & Systems Architect: Simon Roser**
 Four years at Google. 500+ companies. Saw the patterns. Left to build. Ran my own company for 5 years. Learned shipping matters more than slides (and so much more).
 
-Then Fractional CMO. Loved the work. Solving problems is addictive. But I ran into physics. I could only be in one room at a time. I was selling hours. But we wanted to share know-how with more than just one board room.
+Then Fractional CMO. Loved the work. Solving problems is addictive. But hit a hard limit: Physics. Could only be in one room at a time. Selling hours.
+But we wanted to share know-how with more than just one room.
 
 We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it. To turn complex ideas into reality. To handle speed without losing direction. Now we build those systems for others. Making authenticity scalable.
 
