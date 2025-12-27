@@ -58,7 +58,10 @@ export function GlassCard() {
                         >
                             <Link
                                 href={link.href}
-                                className="nav-link"
+                                className={cn(
+                                    "nav-link",
+                                    index === 0 ? "font-bold text-foreground/90" : "text-foreground/50 font-normal"
+                                )}
                             >
                                 {link.label}
                             </Link>
