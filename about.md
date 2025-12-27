@@ -31,6 +31,7 @@ Veterans of their craft. JordKuiper.com is the archetype. High-level coaches, sa
 
 **The Desire (The "Why"):**
 - **Democratization:** They hate that their help is limited to the top 1% who can afford their rates. They *want* to help the people just starting out, but the economics don't work with their current model.
+- **Soul of a Service:** They want the impact of software with the *soul of a service*.
 - **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
 - **Impact > Income:** They want to make the world better, not just their bank account fatter.
 
