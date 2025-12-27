@@ -14,22 +14,20 @@ export default function WhyPage() {
                 That is the limit. <strong className="text-foreground">You can&apos;t scale a human.</strong>
             </p>
 
-            <p className="text-lg text-foreground mt-8">
-                Authenticity without infrastructure is just noise.
-            </p>
-
             <p>
-                To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture.
+                To scale a human story, you need a machine backbone. We do not sell hustle. We sell <strong className="text-foreground">architecture</strong>.
+                <br />
+                Workflows. Agents. Data pipes. A single operating system that turns your scattered tools into a business that flows.
                 We build the Machine that carries the weight of the business. We replace the chaos of operations with the precision of code.
             </p>
 
             <p className="mt-8">
-                The enemy is not AI. The enemy is inefficiency. The enemy is a founder buried in spreadsheets instead of strategy.
+                The enemy is not AI. The enemy is an expert rewriting the same email for the 47th time.
             </p>
 
             <p>
-                Machines do machine work. We automate the admin. We engineer the routine.
-                Your authentic voice is the only competitive advantage left. It is the only thing that cannot be copied.
+                <strong className="text-foreground">Machines do machine work.</strong> We automate the admin and engineer the routine so your story actually gets heard.
+                Your authentic voice is the only part of your advantage no one else can directly copy.
                 But it cannot be heard if you are drowning.
             </p>
 

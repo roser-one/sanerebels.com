@@ -43,7 +43,7 @@ We are the anomaly in the matrix. We are not polite consultants. We are engineer
 ## 4. Key Messages
 
 - "You can only be in one room at a time. That is a trap."
-- "Authenticity without infrastructure is just noise."
+
 - "We don't sell hours. We sell architecture."
 - "Machines do machine work. Humans do human work."
 - "Scale the revenue. Keep the soul."
