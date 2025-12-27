@@ -4,7 +4,7 @@ export default function WhatPage() {
     return (
         <PageWrapper title="How it works">
             <div>
-                <h2 className="text-xl font-medium text-foreground mb-3">Vehicle for Expertise</h2>
+
                 <p className="mb-4">
                     You have a methodology that works. You change businesses. Solve problems. Create impact.
                     But impact is limited by physics. You can only be in one room at a time.
