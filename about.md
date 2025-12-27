@@ -5,7 +5,7 @@
 **Done trading time? Let's build something.**
 
 You have expert knowledge. You have a service. But it relies on you being in the room.
-That is a trap. **You can't scale a human.**
+**You can't scale a human.**
 
 We don't change what you do. We change how it travels. We turn service into product. It travels to a thousand places at once. You stay in one.
 
@@ -36,7 +36,7 @@ We serve experts who have won the "Skill" game but are losing the "Time" game.
 
 ### 3. "The System Thinker"
 - **Who:** Growth minds, Lean Ops experts.
-- **Problem:** Trapped in "Excel Hell." Methodology is manual and breaks when they look away.
+- **Problem:** Buried in "Excel Hell." Methodology is manual and breaks when they look away.
 - **Goal:** Asset Creation. Turning a consulting process into a software asset.
 - **Solution:** Code that handles the routine logic automatically.
 
