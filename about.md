@@ -1,109 +1,129 @@
-# SANE/REBELS — Brand & Content Source
+# SANE/REBELS — Brand Bible
 
-## The Core Truth
+## 1. THE CORE TRUTH
 
 **Done trading time? Let's build something.**
 
-We turn your expert knowledge into a scalable, digital architecture. You have a service. It relies on you being in the room. That is a trap. We don't change what you do. We change how it travels.
+You have expert knowledge. You have a service. But it relies on you being in the room.
+That is a trap.
+
+We don't change what you do. We change how it travels. We turn service into product. It travels to a thousand places at once. You stay in one.
+
+### The Logic
+We do not sell "consulting." We build digital architecture.
+
+- **SANE:** The logic. The Python scripts. The Supabase backend. The machine backbone that never sleeps.
+- **REBEL:** The creativity. The human soul. The unfair advantage. The thing you cannot copy.
+- **SYSTEM:** The bridge. The productized service that scales.
 
 ---
 
-## Value Proposition
+## 2. THE TARGETS
 
-### The Offer
-**Vehicle for Expertise.**
-Service turns into product. It travels to a thousand places at once. You stay in one.
+We serve experts who have won the "Skill" game but are losing the "Time" game.
 
-### The Target: "The Capped Expert"
-
-**Who they are:**
-Veterans of their craft. JordKuiper.com is the archetype. High-level coaches, sales trainers in meaningful industries (renewables, social good), or specialized consultants. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
-
-**The Desire (The "Why"):**
-- **Democratization:** They hate that their help is limited to the top 1% who can afford their rates. They *want* to help the people just starting out, but the economics don't work with their current model.
-- **Soul of a Service:** They want the impact of software with the *soul of a service*.
-- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
-- **Impact > Income:** They want to make the world better, not just their bank account fatter.
-
-**The Fear (The "Blocker"):**
-- **Reputation Risk:** They are terrified of launching a sophisticated "product" that breaks or feels cheap. Their status is their currency. A dysfuntional product makes them look amateur.
-- **"Marketing Slang":** They are repelled by "funnels" and "passive income" hype. They want a partner who cares about the *problem*, not just the conversion rate.
-
-**The Current State:**
-- Successful but exhausted.
-- Revenue is linear (Time = Money).
-- Attempted to "productize" before (courses, templates) but it felt hollow or generic.
-
-**Ideal Partners:**
-- **The Healer:** Coaches helping people feel better or overcome trauma.
-- **The Ethical Seller:** Sales trainers for meaningful industries (Renewables, Social Good).
-- **The System Thinker:** Growth minds who want to harden their frameworks into code.
-
----
-
-### The Offer Strategy (The "How")
-
-#### Phase 1: The Trust Anchor
-**"The Naked Strategy Session"** (High Ticket One-Off)
-- **The Promise:** We strip your business to the studs. Map exactly what can be digitized and what *must* remain human.
-- **Why:** Proves we understand your "soul" before touching your tech. Low risk.
-
-#### Phase 2: The "Exoskeleton" (ValueOS)
-**Custom Digital Infrastructure (MVP)**
-- **The Tech:** Clean web app (React/Next.js) + AI "Brain" trained on *your* voice + Automation workflows (n8n).
-- **The Outcome:** A functioning product you can sell immediately. You own the asset.
-
-#### Phase 3: The Partnership (Scale)
-**"Growth Partner"** (Shared Risk)
-- **The Deal:** We run growth/ops. You bring the wisdom.
-- **Model:** Lower Retainer + Profit Share. We only win if your democratized product sells.
-
----
-
-## Detailed Avatars (The "Who")
-
-### 1. "The Capped Healer" (e.g., Jord Cuiper)
-- **Who:** High-end somatic coaches, trauma therapists, executive mentors.
-- **Context:** Booked solid at €300–€1000/hr. Saying "no" to people who genuinely need help.
-- **The Gap:** Has a folder of worksheets but no way to deliver them without a Zoom call.
+### 1. "The Capped Healer"
+- **Who:** High-end somatic coaches, trauma therapists.
+- **Problem:** Booked solid. Turning away people who need help because they can't afford the rate.
+- **Goal:** Democratization. Offering the "Junior Version" of their guidance to thousands without burning out.
+- **Solution:** A digital vessel for their wisdom that doesn't need a Zoom call.
 
 ### 2. "The Ethical Rainmaker"
-- **Who:** Sales trainers for meaningful sectors (Renewables, MedTech, Non-Profits).
-- **Context:** Teaches "Consultative Selling." Hates "Wolf of Wall Street" tactics.
-- **The Gap:** Wants to train entire teams at scale but looks stuck doing onsite workshops. Needs a "Training OS."
+- **Who:** Sales trainers for meaningful sectors (Renewables, Social Good).
+- **Problem:** Stuck doing onsite workshops. Teaching the same thing to different faces.
+- **Goal:** Standards. Training entire teams at scale with a "Training OS."
+- **Solution:** A platform that feels as high-status and ethical as their in-person training.
 
-### The Pains & Gains Matrix
+### 3. "The System Thinker"
+- **Who:** Growth minds, Lean Ops experts.
+- **Problem:** Trapped in "Excel Hell." Methodology is manual and breaks when they look away.
+- **Goal:** Asset Creation. Turning a consulting process into a software asset.
+- **Solution:** Code that handles the routine logic automatically.
 
-| Feature | The Pain (Fear) | The Gain (Desire) |
-| :--- | :--- | :--- |
-| **Status** | "If I launch a buggy app, I look like a grifter." | **Legacy:** "I want my method to be the Standard." |
-| **Impact** | "Hate turning away people who can't afford me." | **Democratization:** "The 'Junior' version of me for €50/mo." |
-| **Tech** | "I don't want to manage servers." | **Freedom:** "An Exoskeleton that handles admin." |
-| **Market** | "Allergic to passive income bros." | **Authenticity:** "A partner who speaks Human." |
+### The DNA
+- **Fear:** Dilution. Looking cheap or "buggy."
+- **Enemy:** "Passive Income" bros, "Funnels," and marketing slang.
+- **Desire:** Impact. Making the world better, not just the bank account fatter.
+
+---
+
+## 3. THE EXECUTION
+
+We do not just automate. We engineer the physics of your business.
+
+### Phase 1: The Trust Anchor
+**"The Naked Strategy Session"**
+- **Action:** We strip the business to the studs.
+- **Goal:** Separate Signal (Your unique value) from Noise (Ops/Admin).
+- **Deliverable:** A blueprint. What stays Human (REBEL) vs. What becomes Machine (SANE).
+
+### Phase 2: The Architecture
+**Custom Digital Infrastructure (MVP)**
+- **Action:** We build the machine.
+- **The Stack:**
+    - **Brain:** Python + LLMs (AI) for logic.
+    - **Memory:** Supabase (Postgres) for data.
+    - **Nervous System:** n8n for workflow.
+    - **Face:** React/Next.js for the experience.
+- **Outcome:** A living system. Not a course. A product.
+
+### Phase 3: The Partnership
+**"Shared Risk Model"**
+- **Action:** We run the machine. You bring the wisdom.
+- **Deal:** Retainer + Profit Share. We co-invest in the architecture.
 
 ---
 
-## About The Founder: Simon Roser
+## 4. BRAND VOICE
 
-**Founder & Systems Architect**
+**Tone:** Visceral. High-Status. Radically Honest.
+We are engineers of freedom, not polite consultants.
 
-Four years at Google. 500+ companies. Saw the patterns. Left to build. Ran my own company for 5 years. Learned shipping matters more than slides.
+### Vocabulary Rules
+- **Use:** System, Architecture, Physics, Signal, Machine.
+- **FORBIDDEN:** Exoskeleton, Synergy, Deep dive, Journey, "Unlock potential," Hustle.
 
-Then Fractional CMO. Loved the work. Solving problems is addictive. But hit a hard limit: Physics. Could only be in one room at a time. Selling hours.
-
-We didn't want to stop helping. We wanted to multiply the impact. So we built the System. Systems to clone the strategy. Automation to handle the execution.
-
-We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it. To turn complex ideas into reality. Now we build those systems for others. Making authenticity scalable.
-
-**"We don't just advise. We are at our best when we co-create. Build. Work on challenges worth solving."**
-
-### Experience
-- **Google** | 4 years, 500+ high-growth companies accelerated
-- **Founder** | 5 years, Bootstrapped. Learned reality of shipping.
-- **Fractional CMO** | 2 years, Solved growth problems. Hit ceiling of time-for-money.
-- **Now: SANE/REBELS** | Multiplying impact through systems.
+### Key Messages
+- "Machines do machine work. Humans stay human."
+- "Authenticity without infrastructure is just noise."
+- "Sane enough to build it. Rebel enough to ship it."
 
 ---
+
+## 5. VISUAL SYSTEM
+
+**Aesthetic:** High-end terminal meets fashion magazine. Efficient. Beautiful. Dark Mode First.
+
+### Design Tokens
+- **Background:** Deep Purple `oklch(0.12 0.01 280)`
+- **Text:** White `oklch(0.98 0 0)`
+- **Accent:** Electric Purple `oklch(0.78 0.28 295)`
+- **Font:** `Geist Sans` (Structure) + `Geist Mono` (Code).
+- **Interaction:** Magnetic buttons. Smooth snap-scrolling.
+
+---
+
+## 6. OPERATIONAL LOGIC & IP RIGHTS
+
+- **Legal Entity:** KNUS GmbH (Konstanz/Berlin).
+- **Managing Director:** Simon Roser.
+
+### Intellectual Property (The Rules)
+- **Client Owns:** The Brand, The Content, The Data, The "Frontend" Experience.
+- **KNUS GmbH Owns:** The "Background IP" (The Engine, n8n Blueprints, Code Libraries).
+- **The License:** Client gets a perpetual, non-exclusive license to use the Engine. They own the car; we own the patent on the motor.
+
+---
+
+## 7. FOUNDER PROFILE
+
+**Simon Roser. The Architect.**
+
+- **History:** Google (Scale) -> Founder (Shipping) -> Fractional CMO (Strategy).
+- **The Shift:** Realized consulting is limited by physics. Turned to code.
+- **Superpower:** Structural Vision. Seeing the architectural patterns where others only see chaos. Building the infrastructure to make abstract ideas real.
+
+*"We don't just advise. We build. We work on challenges worth solving."*
 
 ---
 
