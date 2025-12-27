@@ -72,7 +72,7 @@ function EnglishTerms() {
 
         <h3 className="font-semibold text-foreground mt-4 mb-2">2.1 Scope of Services</h3>
         <p className="text-foreground/80 mb-2">
-          The Contractor offers a hybrid portfolio of services designed to build the &quot;exoskeleton&quot; for the Client&apos;s business. This includes:
+          The Contractor offers a hybrid portfolio of services designed to build the "digital infrastructure" for the Client&apos;s business. This includes:
         </p>
         <ul className="list-disc list-inside text-foreground/80 space-y-1 mb-4">
           <li><strong>Consulting:</strong> Strategic consulting (e.g., &quot;The Naked Strategy Session&quot;, &quot;The Sanity Audit&quot;).</li>
