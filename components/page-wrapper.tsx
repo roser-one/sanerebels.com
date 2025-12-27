@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft } from "lucide-react"
 import { GrainOverlay } from "@/components/grain-overlay"
+import { SiteFooter } from "@/components/site-footer"
 
 interface PageWrapperProps {
     title: string
@@ -62,9 +63,7 @@ export function PageWrapper({ title, children }: PageWrapperProps) {
                     transition={{ delay: 0.8 }}
                     className="mt-12 md:mt-16 text-center"
                 >
-                    <p className="font-mono text-xs text-foreground/30">
-                        © {new Date().getFullYear()} SANE/REBELS
-                    </p>
+                    <SiteFooter />
                 </motion.div>
             </div>
         </main>

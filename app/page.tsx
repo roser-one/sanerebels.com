@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { GlassCard } from "@/components/glass-card"
+import { SiteFooter } from "@/components/site-footer"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -89,9 +90,7 @@ export default function Home() {
 
       {/* Footer */}
       <div className="absolute bottom-4 md:bottom-6 left-0 right-0 z-10 text-center">
-        <p className="font-mono text-xs text-foreground/30">
-          © {new Date().getFullYear()} SANE/REBELS
-        </p>
+        <SiteFooter />
       </div>
     </main>
   )

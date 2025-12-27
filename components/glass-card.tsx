@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -12,15 +11,7 @@ const navLinks = [
     { href: "/lets", label: "Let's" },
 ]
 
-const legalLinks = [
-    { href: "/imprint", label: "Imprint" },
-    { href: "/privacy", label: "Privacy" },
-    { href: "/terms", label: "Terms" },
-]
-
 export function GlassCard() {
-    const [isLegalExpanded, setIsLegalExpanded] = useState(false)
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -64,43 +55,7 @@ export function GlassCard() {
                     </motion.div>
                 ))}
 
-                {/* Legal - inline expand */}
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7, duration: 0.5 }}
-                    className="flex items-center gap-3 sm:gap-4"
-                >
-                    <button
-                        onClick={() => setIsLegalExpanded(!isLegalExpanded)}
-                        className={cn("nav-link", isLegalExpanded && "text-accent")}
-                    >
-                        Legal
-                    </button>
-
-                    <AnimatePresence>
-                        {isLegalExpanded && (
-                            <>
-                                {legalLinks.map((link, index) => (
-                                    <motion.div
-                                        key={link.href}
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: -10 }}
-                                        transition={{ delay: index * 0.05, duration: 0.2 }}
-                                    >
-                                        <Link
-                                            href={link.href}
-                                            className="nav-link text-muted-foreground"
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    </motion.div>
-                                ))}
-                            </>
-                        )}
-                    </AnimatePresence>
-                </motion.div>
+                {/* Legal links moved to footer */}
             </nav>
         </motion.div>
     )
