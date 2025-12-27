@@ -16,13 +16,11 @@ Service turns into product. It travels to a thousand places at once. You stay in
 
 ### How It Works
 1. **System** — Authenticity, at scale, needs infrastructure. We build the machine backbone. AI and automation handle administration so the product carries your fingerprint.
+    - **Distill** — Identify the magic. Separate strategic value from operational noise.
 2. **Shared Risk** — No "hit-and-run" consulting. If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors.
+    - **Build** — Concepts turn into code. GrowthOS. Automation workflows.
 3. **Momentum** — No 18-month roadmaps. 30-90 day sprints. Learn by shipping. Not by planning.
-
-### The Process
-- **Distill** — Identify the magic. Separate strategic value from operational noise.
-- **Build** — Concepts turn into code. GrowthOS. Automation workflows.
-- **Scale** — Launch. Watch data. Refine.
+    - **Scale** — Launch. Watch data. Refine.
 
 ---
 

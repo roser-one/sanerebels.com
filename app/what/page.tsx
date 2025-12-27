@@ -19,55 +19,50 @@ export default function WhatPage() {
                 </p>
             </div>
 
-            <div className="mt-12 space-y-8">
+            <div className="mt-12 space-y-12">
                 <div>
                     <h3 className="text-lg font-semibold text-accent mb-2">01. System</h3>
-                    <p>
+                    <p className="mb-4">
                         Authenticity, at scale, needs infrastructure. We build the machine backbone. AI and automation handle administration.
                         Data. Routine logic. Service delivery becomes precise. Every time. It carries your fingerprint.
                         Even when you aren&apos;t touching the keyboard.
                     </p>
+                    <div className="border-l-2 border-foreground/20 pl-4">
+                        <p className="font-semibold text-foreground text-sm uppercase tracking-wider mb-1">Distill</p>
+                        <p className="text-foreground/70 text-sm">
+                            We look at your craft. Identify the magic. Frameworks. Decisions. Intuition.
+                            Separate strategic value from operational noise.
+                        </p>
+                    </div>
                 </div>
 
                 <div>
                     <h3 className="text-lg font-semibold text-accent mb-2">02. Shared Risk</h3>
-                    <p>
+                    <p className="mb-4">
                         We believe in what we build. No interest in "hit-and-run" consulting or hourly billing.
                         If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors. You win. We win.
                     </p>
+                    <div className="border-l-2 border-foreground/20 pl-4">
+                        <p className="font-semibold text-foreground text-sm uppercase tracking-wider mb-1">Build</p>
+                        <p className="text-foreground/70 text-sm">
+                            Concepts turn into code. Deployment of custom software. GrowthOS. Automation workflows.
+                            Manual service becomes scalable asset.
+                        </p>
+                    </div>
                 </div>
 
                 <div>
                     <h3 className="text-lg font-semibold text-accent mb-2">03. Momentum</h3>
-                    <p>
+                    <p className="mb-4">
                         No 18-month roadmaps. Work happens in 30-90 day sprints. Define core value. Build it.
                         Put it in hands of real users. Learn by shipping. Not by planning.
                     </p>
-                </div>
-            </div>
-
-            <div className="mt-12 space-y-6">
-                <div className="border-l-2 border-foreground/20 pl-4">
-                    <p className="font-semibold text-foreground">Distill</p>
-                    <p className="text-foreground/70">
-                        We look at your craft. Identify the magic. Frameworks. Decisions. Intuition.
-                        Separate strategic value from operational noise.
-                    </p>
-                </div>
-
-                <div className="border-l-2 border-foreground/20 pl-4">
-                    <p className="font-semibold text-foreground">Build</p>
-                    <p className="text-foreground/70">
-                        Concepts turn into code. Deployment of custom software. GrowthOS. Automation workflows.
-                        Manual service becomes scalable asset.
-                    </p>
-                </div>
-
-                <div className="border-l-2 border-foreground/20 pl-4">
-                    <p className="font-semibold text-foreground">Scale</p>
-                    <p className="text-foreground/70">
-                        Launch. Watch data. Refine. Partnership begins here. We manage tech. You manage vision.
-                    </p>
+                    <div className="border-l-2 border-foreground/20 pl-4">
+                        <p className="font-semibold text-foreground text-sm uppercase tracking-wider mb-1">Scale</p>
+                        <p className="text-foreground/70 text-sm">
+                            Launch. Watch data. Refine. Partnership begins here. We manage tech. You manage vision.
+                        </p>
+                    </div>
                 </div>
             </div>
         </PageWrapper>
