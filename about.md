@@ -78,20 +78,68 @@ We thrive in high speed. Abstractions. Principles. Systems. We build infrastruct
 
 ---
 
-## Manifest (Why)
-
-You have a methodology that works. You help businesses and individuals through meaningful offers. Solve problems. Create impact. But impact is limited by physics. You can only be in one room at a time.
-
-We don't change what you do. We change how it travels. We take expert knowledge. Build digital infrastructure around it. Service turns into product. It travels to a thousand places at once. You stay in one.
-
-Not replacing the human. Letting human do human work. System handles the rest.
-
 ---
 
-## Contact
+## Brand Copy Source (The Live Pages)
 
-- **Website:** sanerebels.com
-- **Email:** hi@sanerebels.com
-- **LinkedIn:** linkedin.com/in/simonroser
+### Manifest (Why)
+We built incredible technology to save time. Then we spent that time acting like the technology.
+We optimized for speed but lost the direction. Most founders try to scale a vision on top of manual labor.
+But impact is limited by physics. You can only be in one room at a time.
+Hiring more people to solve process problems is not scaling. That is bloating.
+
+**Authenticity without infrastructure is just noise.**
+
+To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture.
+We build the Exoskeleton that carries the weight of the business. We replace the chaos of operations with the precision of code.
+
+The enemy is not AI. The enemy is inefficiency. The enemy is a founder buried in spreadsheets instead of strategy.
+
+Machines do machine work. We automate the admin. We engineer the routine.
+Your authentic voice is the only competitive advantage left. It is the only thing that cannot be copied.
+But it cannot be heard if you are drowning.
+
+A business that runs. A founder that sleeps.
+Scale the revenue. Keep the soul.
+
+*Sane enough to build it. Rebel enough to ship it.*
+
+### How It Works (What)
+We don't change what you do. We change how it travels.
+You have a methodology that works. We take that expert knowledge and build digital infrastructure around it. Service turns into product. It travels to a thousand places at once. You stay in one.
+
+**Not replacing the human. Letting human do human work. System handles the rest.**
+
+**01. System**
+Authenticity, at scale, needs infrastructure. We build the machine backbone. AI and automation handle administration. Data. Routine logic. Service delivery becomes precise. Every time. It carries your fingerprint. Even when you aren't touching the keyboard.
+> **Distill:** We look at your craft. Identify the magic. Frameworks. Decisions. Intuition. Separate strategic value from operational noise.
+
+**02. Shared Risk**
+We believe in what we build. No interest in "hit-and-run" consulting or hourly billing. If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors. You win. We win.
+> **Build:** Concepts turn into code. Deployment of custom software. GrowthOS. Automation workflows. Manual service becomes scalable asset.
+
+**03. Momentum**
+No 18-month roadmaps. Work happens in 30-90 day sprints. Define core value. Build it. Put it in hands of real users. Learn by shipping. Not by planning.
+> **Scale:** Launch. Watch data. Refine. Partnership begins here. We manage tech. You manage vision.
+
+### Experience (Who)
+**"We don't just advise. We are at our best when we co-create. Build. Work on challenges worth solving."**
+
+**Founder & Systems Architect: Simon Roser**
+Four years at Google. 500+ companies. Saw the patterns. Left to build. Ran my own company for 5 years. Learned shipping matters more than slides (and so much more).
+
+Then Fractional CMO. Loved the work. Solving problems is addictive. But I ran into physics. I could only be in one room at a time. I was selling hours. But we wanted to share know-how with more than just one board room.
+
+We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it. To turn complex ideas into reality. To handle speed without losing direction. Now we build those systems for others. Making authenticity scalable.
+
+- **Google:** 4 years. 500+ high-growth companies. Saw the blueprint.
+- **Founder:** 5 years. Bootstrapped. Learned reality of shipping.
+- **Fractional CMO:** 2 years. Solved growth problems. Hit ceiling of time-for-money.
+- **Now (SANE/REBELS):** Multiplying impact through systems.
+
+### Contact (Let's)
+Build something that scales. Get back to being **human**.
+- **Email:** hi@sanerebels.com (Direct)
+- **LinkedIn:** linkedin.com/in/simonroser (Connect)
 - **Company:** KNUS GmbH
 - **Location:** Konstanz, Germany (Registered), Berlin (Operating)
