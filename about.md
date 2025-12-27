@@ -38,6 +38,7 @@ We serve experts who have won the "Skill" game but are losing the "Time" game.
 - **Who:** Growth minds, Lean Ops experts.
 - **Problem:** Buried in "Excel Hell." Methodology is manual and breaks when they look away.
 - **Goal:** Asset Creation. Turning a consulting process into a software asset.
+| **Tech** | "I don't want to manage servers." | **Freedom:** "A Machine that handles admin." |
 - **Solution:** Code that handles the routine logic automatically.
 
 ### The DNA
@@ -81,7 +82,7 @@ We are engineers of freedom, not polite consultants.
 
 ### Vocabulary Rules
 - **Use:** System, Architecture, Physics, Signal, Machine.
-- **FORBIDDEN:** Exoskeleton, Synergy, Deep dive, Journey, "Unlock potential," Hustle.
+- **FORBIDDEN:** Exoskeleton, Synergy, Deep dive, Journey, "Unlock potential," Hustle, Trap.
 
 ### Key Messages
 - "You can't scale a human."
@@ -139,7 +140,7 @@ Hiring more people to solve process problems is not scaling. That is bloating.
 **Authenticity without infrastructure is just noise.**
 
 To scale a human story, you need a machine backbone. We do not sell hustle. We sell architecture.
-We build the Exoskeleton that carries the weight of the business. We replace the chaos of operations with the precision of code.
+We build the Machine that carries the weight of the business. We replace the chaos of operations with the precision of code.
 
 The enemy is not AI. The enemy is inefficiency. The enemy is a founder buried in spreadsheets instead of strategy.
 
