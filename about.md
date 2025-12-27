@@ -5,7 +5,7 @@
 **Done trading time? Let's build something.**
 
 You have expert knowledge. You have a service. But it relies on you being in the room.
-That is a trap.
+That is a trap. **You can't scale a human.**
 
 We don't change what you do. We change how it travels. We turn service into product. It travels to a thousand places at once. You stay in one.
 
@@ -84,6 +84,7 @@ We are engineers of freedom, not polite consultants.
 - **FORBIDDEN:** Exoskeleton, Synergy, Deep dive, Journey, "Unlock potential," Hustle.
 
 ### Key Messages
+- "You can't scale a human."
 - "Machines do machine work. Humans stay human."
 - "Authenticity without infrastructure is just noise."
 - "Sane enough to build it. Rebel enough to ship it."
