@@ -27,22 +27,26 @@ Service turns into product. It travels to a thousand places at once. You stay in
 ## The Target: "The Capped Expert"
 
 **Who they are:**
-Veterans of their craft. Consultants, Agencies, Specialized Service Providers. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
+Veterans of their craft. JordKuiper.com is the archetype. High-level coaches, sales trainers in meaningful industries (renewables, social good), or specialized consultants. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
 
-**The Psychographics:**
-- **High Integrity:** They refuse to sell "passive income" dreams. They care deeply about the quality of the delivery.
-- **The "Physics" Wall:** They hit a revenue ceiling that can only be broken by working more hours or hiring an army. They want neither.
-- **The Tension:** They love the work but hate the tether. They want the impact of software with the soul of a service.
+**The Desire (The "Why"):**
+- **Democratization:** They hate that their help is limited to the top 1% who can afford their rates. They *want* to help the people just starting out, but the economics don't work with their current model.
+- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
+- **Impact > Income:** They want to make the world better, not just their bank account fatter.
+
+**The Fear (The "Blocker"):**
+- **Reputation Risk:** They are terrified of launching a sophisticated "product" that breaks or feels cheap. Their status is their currency. A dysfuntional product makes them look amateur.
+- **"Marketing Slang":** They are repelled by "funnels" and "passive income" hype. They want a partner who cares about the *problem*, not just the conversion rate.
 
 **The Current State:**
 - Successful but exhausted.
 - Revenue is linear (Time = Money).
 - Attempted to "productize" before (courses, templates) but it felt hollow or generic.
 
-**What they want:**
-- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
-- **Infrastructure:** A machine that executes their methodology with their precision.
-- **Partnership:** Not a vendor who "does the tech," but a partner who understands the *business logic* of their expertise.
+**Ideal Partners:**
+- **The Healer:** Coaches helping people feel better or overcome trauma.
+- **The Ethical Seller:** Sales trainers for meaningful industries (Renewables, Social Good).
+- **The System Thinker:** Growth minds who want to harden their frameworks into code.
 
 ---
 
