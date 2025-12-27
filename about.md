@@ -24,16 +24,25 @@ Service turns into product. It travels to a thousand places at once. You stay in
 
 ---
 
-## Target Audience
+## The Target: "The Capped Expert"
 
-**Primary:**
-- Subject matter experts who want to scale beyond themselves
-- Service business founders ready to add a product arm
+**Who they are:**
+Veterans of their craft. Consultants, Agencies, Specialized Service Providers. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
 
-**The Pain:**
-- Stuck in the time-for-money trap
-- Successful but burned out
-- Identifying scalability but lacking technical execution
+**The Psychographics:**
+- **High Integrity:** They refuse to sell "passive income" dreams. They care deeply about the quality of the delivery.
+- **The "Physics" Wall:** They hit a revenue ceiling that can only be broken by working more hours or hiring an army. They want neither.
+- **The Tension:** They love the work but hate the tether. They want the impact of software with the soul of a service.
+
+**The Current State:**
+- Successful but exhausted.
+- Revenue is linear (Time = Money).
+- Attempted to "productize" before (courses, templates) but it felt hollow or generic.
+
+**What they want:**
+- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
+- **Infrastructure:** A machine that executes their methodology with their precision.
+- **Partnership:** Not a vendor who "does the tech," but a partner who understands the *business logic* of their expertise.
 
 ---
 
