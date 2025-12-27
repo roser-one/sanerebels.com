@@ -22,8 +22,8 @@ export default function ImprintPage() {
           <h2 className="text-xl font-bold text-foreground mb-4">Contact</h2>
           <p className="text-foreground/80">
             E-Mail:{" "}
-            <a href="mailto:info@myknus.com" className="text-accent hover:underline">
-              info@myknus.com
+            <a href="mailto:hi@sanerebels.com" className="text-accent hover:underline">
+              hi@sanerebels.com
             </a>
           </p>
         </section>
@@ -48,8 +48,8 @@ export default function ImprintPage() {
             <p>Deutschland</p>
             <p className="mt-2">
               E-Mail:{" "}
-              <a href="mailto:info@myknus.com" className="text-accent hover:underline">
-                info@myknus.com
+              <a href="mailto:hi@sanerebels.com" className="text-accent hover:underline">
+                hi@sanerebels.com
               </a>
             </p>
           </div>
