@@ -23,7 +23,7 @@ export default function WhatPage() {
                 <div>
                     <h3 className="text-lg font-semibold text-accent mb-2">01. System</h3>
                     <p>
-                        Authenticity, at scale, needs infrastructure. We build machine backbone. AI and automation handle administration.
+                        Authenticity, at scale, needs infrastructure. We build the machine backbone. AI and automation handle administration.
                         Data. Routine logic. Service delivery becomes precise. Every time. It carries your fingerprint.
                         Even when you aren&apos;t touching the keyboard.
                     </p>
