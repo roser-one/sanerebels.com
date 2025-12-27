@@ -15,7 +15,7 @@ We turn your expert knowledge into a scalable, digital architecture. You have a 
 Service turns into product. It travels to a thousand places at once. You stay in one.
 
 ### How It Works
-1. **System** — Authenticity needs infrastructure. We build machine backbone. AI and automation handle administration so the product carries your fingerprint.
+1. **System** — Authenticity, at scale, needs infrastructure. We build machine backbone. AI and automation handle administration so the product carries your fingerprint.
 2. **Shared Risk** — No "hit-and-run" consulting. If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors.
 3. **Momentum** — No 18-month roadmaps. 30-90 day sprints. Learn by shipping. Not by planning.
 
@@ -63,7 +63,7 @@ We thrive in high speed. Abstractions. Principles. Systems. We build infrastruct
 
 ## Manifest (Why)
 
-You have a methodology that works. You change businesses. Solve problems. Create impact. But impact is limited by physics. You can only be in one room at a time.
+You have a methodology that works. You help businesses and individuals through meaningful offers. Solve problems. Create impact. But impact is limited by physics. You can only be in one room at a time.
 
 We don't change what you do. We change how it travels. We take expert knowledge. Build digital infrastructure around it. Service turns into product. It travels to a thousand places at once. You stay in one.
 

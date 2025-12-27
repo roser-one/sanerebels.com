@@ -13,8 +13,8 @@ export default function TermsPage() {
         <button
           onClick={() => setLanguage("en")}
           className={`px-4 py-2 rounded-lg transition-colors ${language === "en"
-              ? "bg-accent text-background font-semibold"
-              : "bg-foreground/10 text-foreground/70 hover:bg-foreground/20"
+            ? "bg-accent text-background font-semibold"
+            : "bg-foreground/10 text-foreground/70 hover:bg-foreground/20"
             }`}
         >
           English
@@ -22,8 +22,8 @@ export default function TermsPage() {
         <button
           onClick={() => setLanguage("de")}
           className={`px-4 py-2 rounded-lg transition-colors ${language === "de"
-              ? "bg-accent text-background font-semibold"
-              : "bg-foreground/10 text-foreground/70 hover:bg-foreground/20"
+            ? "bg-accent text-background font-semibold"
+            : "bg-foreground/10 text-foreground/70 hover:bg-foreground/20"
             }`}
         >
           Deutsch
@@ -392,9 +392,317 @@ function EnglishTerms() {
 function GermanTerms() {
   return (
     <div className="space-y-8">
-      {/* § 14.4 */}
+      {/* § 1 */}
       <section>
-        <h2 className="text-xl font-bold text-foreground mb-4">§ 14.4 Schriftform</h2>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 1 Geltungsbereich und Vertragsparteien</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">1.1 Vertragsparteien</h3>
+        <p className="text-foreground/80 mb-4">
+          Diese Allgemeinen Geschäftsbedingungen (AGB) regeln das Vertragsverhältnis zwischen der KNUS GmbH, handelnd unter den Marken SANE REBELS und ROSER & REBELS (nachfolgend „Auftragnehmer“ oder „wir“), und dem Auftraggeber (nachfolgend „Auftraggeber“ oder „Sie“). Sie gelten für sämtliche Leistungen einschließlich, aber nicht beschränkt auf, strategische Beratung, maßgeschneiderte Softwareentwicklung, Prozessautomatisierung und digitale Agenturdienstleistungen (Performance Marketing).
+        </p>
+        <div className="text-foreground/80 mb-4">
+          <p className="font-semibold text-foreground">Angaben zum Auftragnehmer:</p>
+          <p>KNUS GmbH</p>
+          <p>Geschäftsführer: Simon Roser</p>
+          <p>Renkenweg 7, 78464 Konstanz, Deutschland</p>
+          <p>E-Mail: hi@sanerebels.com</p>
+          <p>Handelsregister: Amtsgericht Freiburg i. Br., HRB 724642</p>
+          <p>USt-IdNr.: DE344225955</p>
+        </div>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">1.2 Geltungsbereich</h3>
+        <p className="text-foreground/80">
+          Diese AGB gelten ausschließlich für Geschäftskunden (B2B). Entgegenstehende oder abweichende Bedingungen des Auftraggebers finden keine Anwendung, es sei denn, der Auftragnehmer hat diesen ausdrücklich schriftlich zugestimmt.
+        </p>
+      </section>
+
+      {/* § 2 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 2 Leistungen und Vertragsart</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">2.1 Leistungsumfang</h3>
+        <p className="text-foreground/80 mb-2">
+          Der Auftragnehmer bietet ein hybrides Portfolio von Dienstleistungen an, das darauf ausgelegt ist, das „Exoskelett“ für das Geschäft des Auftraggebers zu bauen. Dies umfasst:
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1 mb-4">
+          <li><strong>Beratung:</strong> Strategische Beratung (z.B. „The Naked Strategy Session“, „The Sanity Audit“).</li>
+          <li><strong>Technologie & Automatisierung:</strong> Entwicklung maßgeschneiderter Software, Automatisierungs-Workflows (z.B. n8n-Blueprints) und Bereitstellung proprietärer Tools.</li>
+          <li><strong>Agenturdienstleistungen:</strong> Verwaltung von Werbekampagnen (Google Ads, Bing Ads, Meta) und kreative Leitung.</li>
+        </ul>
+        <p className="text-foreground/80">
+          Der konkrete Umfang wird im Einzelvertrag, Statement of Work (SOW) oder angenommenen Angebot definiert.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">2.2 Rechtliche Einordnung</h3>
+        <p className="text-foreground/80 mb-2">
+          Sofern in der SOW nicht ausdrücklich anders angegeben, werden die Leistungen nach deutschem Recht wie folgt eingeordnet:
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li><strong>Beratungs- & Agenturdienstleistungen (Dienstvertrag):</strong> Leistungen wie Strategiesitzungen, Audits und laufende Werbekontoverwaltung werden als Dienstverträge erbracht. Wir schulden die sorgfältige Erbringung der Leistung nach Best Practices, nicht einen bestimmten wirtschaftlichen Erfolg (z.B. bestimmte ROAS- oder Umsatzziele).</li>
+          <li><strong>Softwareentwicklung (Werkvertrag):</strong> Die maßgeschneiderte Entwicklung spezifischer, fertiger Softwareanwendungen oder Codebasen wird als Werkvertrag erbracht. Der Erfolg ist als Lieferung funktionsfähiger Software gemäß den technischen Spezifikationen definiert.</li>
+        </ul>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">2.3 Künstliche Intelligenz (KI) und Automatisierung</h3>
+        <p className="text-foreground/80 mb-2">
+          Der Auftraggeber erkennt an, dass der Auftragnehmer fortschrittliche KI-Tools (z.B. LLMs, Generative KI) und Automatisierungsplattformen einsetzt, um Dienstleistungen effizient zu erbringen.
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li><strong>Keine Garantie der Einzigartigkeit für KI-Inhalte:</strong> Der Auftraggeber versteht, dass rein KI-generierte Elemente (z.B. Rohtexte oder von Midjourney/Gemini generierte Bilder) nach geltender Gesetzgebung möglicherweise nicht urheberrechtlich geschützt sind und „wie besehen“ bereitgestellt werden.</li>
+          <li><strong>Menschliche Überprüfung:</strong> Obwohl wir als „Erwachsenenaufsicht“ für KI-Outputs fungieren, ist der Auftraggeber für die abschließende rechtliche Compliance-Prüfung aller veröffentlichten Inhalte verantwortlich.</li>
+        </ul>
+      </section>
+
+      {/* § 3 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 3 Vertragsschluss und Laufzeit</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">3.1 Vertragsschluss</h3>
+        <p className="text-foreground/80">
+          Verträge kommen durch schriftliche Vereinbarung (E-Mail ist ausreichend) oder durch Annahme eines schriftlichen Angebots/SOW durch den Auftraggeber zustande.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">3.2 Laufzeit und Kündigung</h3>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li><strong>Einmalige Projekte:</strong> Enden mit Abschluss der vereinbarten Leistung.</li>
+          <li><strong>Retainer/Laufende Engagements:</strong> Sofern nicht anders vereinbart, laufen laufende Verträge auf unbestimmte Zeit und können von beiden Parteien mit einer Frist von 30 Tagen zum Monatsende gekündigt werden.</li>
+          <li><strong>Befristete Verträge:</strong> Verträge mit fester Laufzeit (z.B. 3-Monats-Sprints) können nicht vorzeitig gekündigt werden, außer aus wichtigem Grund.</li>
+        </ul>
+      </section>
+
+      {/* § 4 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 4 Vergütung und Zahlung</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">4.1 Vergütung</h3>
+        <p className="text-foreground/80">
+          Alle Vergütungen sind Nettopreise zuzüglich der zum Zeitpunkt der Rechnungsstellung geltenden gesetzlichen Mehrwertsteuer (MwSt.).
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">4.2 Zahlungsbedingungen</h3>
+        <p className="text-foreground/80">
+          Rechnungen sind innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">4.3 Zahlungsverzug</h3>
+        <p className="text-foreground/80">
+          Im Falle des Verzugs behält sich der Auftragnehmer das Recht vor, gesetzliche Verzugszinsen zu berechnen und alle Leistungen (einschließlich des Pausierens von Werbekampagnen oder der Einschränkung des Zugangs zu Software-Dashboards) auszusetzen, bis die Zahlung vollständig eingegangen ist.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">4.4 Reaktivierungsgebühr</h3>
+        <p className="text-foreground/80">
+          Nach einer Leistungsaussetzung gemäß § 4.3 wird für die Wiederaufnahme der Leistungen eine einmalige Reaktivierungsgebühr erhoben. Diese wird nach dem Stundenaufwand berechnet. Diese Gebühr deckt den administrativen und operativen Aufwand für die Wiederherstellung der Leistungsbereitschaft ab und ist zusätzlich zu allen ausstehenden Beträgen zu entrichten.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">4.5 Alternative Vergütungsmodelle</h3>
+        <p className="text-foreground/80 mb-2">
+          Neben den regulären Vergütungsmodellen können Auftragnehmer und Auftraggeber alternative Vergütungsstrukturen vereinbaren, einschließlich, aber nicht beschränkt auf:
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li>(a) Erfolgsbeteiligungen (Profit Share) basierend auf definierten KPIs oder Umsatzsteigerungen</li>
+          <li>(b) Equity- oder Token-basierte Vergütungen</li>
+          <li>(c) Hybride Modelle aus Retainer und erfolgsabhängiger Komponente</li>
+        </ul>
+        <p className="text-foreground/80 mt-2">
+          Solche alternativen Vergütungsmodelle bedürfen einer gesonderten schriftlichen Vereinbarung (Side Letter), die die spezifischen Konditionen, Berechnungsgrundlagen, Auszahlungsmodalitäten und Laufzeiten regelt. Im Konfliktfall haben die Bestimmungen des Side Letters Vorrang vor diesen AGB.
+        </p>
+      </section>
+
+      {/* § 5 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 5 Änderungsanträge und Scope-Management</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">5.1 Änderungsanträge (Change Requests)</h3>
+        <p className="text-foreground/80">
+          Wünscht der Auftraggeber Änderungen am vereinbarten Leistungsumfang, so sind diese schriftlich als Änderungsantrag (Change Request) einzureichen. Der Auftragnehmer wird innerhalb von fünf (5) Werktagen die Auswirkungen auf Zeitplan und Kosten bewerten und ein entsprechendes Änderungsangebot unterbreiten.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">5.2 Scope-Abgrenzung</h3>
+        <p className="text-foreground/80">
+          Der in der SOW definierte Leistungsumfang ist verbindlich. Leistungen, die nicht ausdrücklich in der SOW aufgeführt sind, gelten als außerhalb des Leistungsumfangs (Out-of-Scope) und werden gesondert nach Aufwand gemäß dem vereinbarten Stundensatz oder einem separaten Angebot berechnet.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">5.3 Freigabeverfahren</h3>
+        <p className="text-foreground/80">
+          Mehraufwand außerhalb des vereinbarten Leistungsumfangs wird nur nach vorheriger schriftlicher Freigabe durch den Auftraggeber erbracht und berechnet. Als schriftliche Freigabe gilt auch die Bestätigung per E-Mail oder über ein vereinbartes Projektmanagement-Tool.
+        </p>
+      </section>
+
+      {/* § 6 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 6 Mitwirkungspflichten des Auftraggebers</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">6.1 Kooperation und Zugang</h3>
+        <p className="text-foreground/80">
+          Der Auftraggeber muss alle notwendigen Informationen, Assets und Zugangsdaten (z.B. Google Ads ID, API-Keys) bereitstellen, die zur Erbringung der Leistungen erforderlich sind. Verzögerungen durch fehlende Informationen seitens des Auftraggebers verlängern die Lieferfristen entsprechend.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">6.2 Kosten Dritter</h3>
+        <p className="text-foreground/80">
+          Der Auftraggeber ist direkt verantwortlich für alle Medienkosten Dritter (z.B. Werbeausgaben, die direkt an Google/Meta gezahlt werden) und Softwarelizenzen Dritter, die für seine spezifische Infrastruktur erforderlich sind (z.B. sein eigenes Shopify- oder CRM-Abonnement), sofern diese nicht ausdrücklich in der Vergütung des Auftragnehmers enthalten sind.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">6.3 Umsetzung</h3>
+        <p className="text-foreground/80">
+          Bei Beratungsleistungen bleibt die Umsetzung der Empfehlungen in alleiniger Verantwortung des Auftraggebers, sofern der Auftragnehmer nicht separat mit der Durchführung beauftragt wird.
+        </p>
+      </section>
+
+      {/* § 7 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 7 Abnahme (Werkverträge)</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">7.1 Abnahmeverfahren</h3>
+        <p className="text-foreground/80">
+          Für Leistungen, die als Werkvertrag (§ 2.2) eingeordnet werden, gilt folgendes Abnahmeverfahren: Nach Fertigstellung des Werks stellt der Auftragnehmer dieses dem Auftraggeber zur Abnahme bereit. Der Auftraggeber hat das Werk innerhalb von vierzehn (14) Werktagen zu prüfen und etwaige Mängel schriftlich zu rügen.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">7.2 Fiktion der Abnahme</h3>
+        <p className="text-foreground/80">
+          Das Werk gilt als abgenommen, wenn der Auftraggeber (a) die Abnahme ausdrücklich erklärt, (b) nach Ablauf der Prüffrist keine Mängel gerügt hat, oder (c) das Werk produktiv nutzt. Die Nutzung in einer Produktivumgebung gilt als konkludente Abnahme.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">7.3 Teilabnahmen</h3>
+        <p className="text-foreground/80">
+          Bei umfangreichen Projekten können Teilabnahmen für definierte Meilensteine oder Module vereinbart werden. Jede Teilabnahme gilt als eigenständige Abnahme für den jeweiligen Leistungsteil.
+        </p>
+      </section>
+
+      {/* § 8 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 8 Vertraulichkeit</h2>
+        <p className="text-foreground/80">
+          Beide Parteien verpflichten sich, alle Geschäftsgeheimnisse und vertraulichen Informationen, die während der Zusammenarbeit erlangt wurden, streng vertraulich zu behandeln. Diese Verpflichtung besteht für einen Zeitraum von drei (3) Jahren nach Beendigung des Vertrages fort.
+        </p>
+      </section>
+
+      {/* § 9 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 9 Geistiges Eigentum</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">9.1 Daten und vorbestehendes IP des Auftraggebers</h3>
+        <p className="text-foreground/80">
+          Der Auftraggeber behält das volle Eigentum an seinen Rohdaten, Marken-Assets und direkten Konten (z.B. der Verlauf des Google Ads-Kontos).
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">9.2 „Background IP“ des Auftragnehmers</h3>
+        <p className="text-foreground/80 mb-2">
+          Der Auftragnehmer behält das ausschließliche Eigentum an allen Methoden, Frameworks, Code-Bibliotheken, Automatisierungs-Blueprints (z.B. n8n-Workflows) und proprietären Software Tools, die vom Auftragnehmer allgemein entwickelt wurden oder zur Erbringung der Leistungen verwendet werden („Background IP“).
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li><strong>Lizenzerteilung:</strong> Bei vollständiger Zahlung aller Vergütungen und ohne ausstehende Forderungen erhält der Auftraggeber eine zeitlich unbefristete, nicht-exklusive, nicht übertragbare Lizenz zur Nutzung der spezifisch in seine Systeme integrierten Background IP für eigene interne Geschäftszwecke.</li>
+          <li><strong>Lizenzbedingung:</strong> Die Lizenz steht unter der aufschiebenden Bedingung der vollständigen Erfüllung aller Zahlungsverpflichtungen. Bei Zahlungsverzug von mehr als 30 Tagen ruht die Lizenz bis zum vollständigen Ausgleich aller Forderungen.</li>
+          <li><strong>Einschränkung:</strong> Der Auftraggeber darf den Code, die Blueprints oder die Infrastruktur des Auftragnehmers nicht weiterverkaufen, White-Labeln oder an Dritte unterlizenzieren.</li>
+        </ul>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">9.3 Arbeitsergebnisse (Spezifische Liefergegenstände)</h3>
+        <p className="text-foreground/80 mb-2">
+          Bei vollständiger Zahlung überträgt der Auftragnehmer dem Auftraggeber die nicht-exklusiven, nicht übertragbaren Rechte zur Nutzung spezifischer kreativer Assets, die einzigartig für den Auftraggeber erstellt wurden (z.B. spezifische Werbetexte, spezifische Grafikdesigns), vorbehaltlich der Einschränkungen bei KI-generierten Inhalten (siehe § 2.3).
+        </p>
+        <p className="text-foreground/80">
+          <strong>Portfolio-Vorbehalt:</strong> Der Auftragnehmer behält sich das Recht vor, alle erstellten Arbeitsergebnisse für eigene Marketing- und Portfoliozwecke zu verwenden, sofern keine schriftliche Vertraulichkeitsvereinbarung dem entgegensteht.
+        </p>
+      </section>
+
+      {/* § 10 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 10 Haftung und Gewährleistung</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">10.1 Allgemeine Haftungsbeschränkung</h3>
+        <p className="text-foreground/80">
+          Der Auftragnehmer haftet für Schäden – unabhängig vom Rechtsgrund – nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit ist die Haftung auf die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) beschränkt und auf die Gesamtvergütung begrenzt, die der Auftraggeber in den zwölf (12) Monaten vor dem schadensbegründenden Ereignis gezahlt hat.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">10.2 Softwaremängel (Gewährleistung)</h3>
+        <p className="text-foreground/80">
+          Für Leistungen, die als Werkvertrag (Softwareentwicklung) eingeordnet werden, ist die gesetzliche Gewährleistungsfrist für Mängel auf zwölf (12) Monate ab Abnahme beschränkt.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">10.3 Beta- und Pilotsoftware</h3>
+        <p className="text-foreground/80 mb-2">
+          Gewährt der Auftragnehmer Zugang zu Software oder Tools, die ausdrücklich als „Beta“, „Alpha“, „Pilot“ oder „Tech Demo“ gekennzeichnet sind:
+        </p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li>(a) Diese werden „wie besehen“ ohne Gewährleistung für unterbrechungsfreie Funktionalität bereitgestellt.</li>
+          <li>(b) Die Haftung für Datenverlust oder Betriebsfehler, die aus der Nutzung von Beta-Software resultieren, ist ausgeschlossen, außer bei Vorsatz.</li>
+        </ul>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">10.4 Ausschlüsse</h3>
+        <p className="text-foreground/80 mb-2">Der Auftragnehmer haftet nicht für:</p>
+        <ul className="list-disc list-inside text-foreground/80 space-y-1">
+          <li>(a) Kontosperrungen oder -einschränkungen durch Drittplattformen (Google, Meta) aufgrund des Geschäftsmodells oder der Landingpage-Inhalte des Auftraggebers.</li>
+          <li>(b) Entgangenen Gewinn oder entgangene Einsparungen.</li>
+          <li>(c) Rechtsverstöße in Werbematerialien, die vom Auftraggeber freigegeben wurden.</li>
+        </ul>
+      </section>
+
+      {/* § 11 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 11 Höhere Gewalt (Force Majeure)</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">11.1 Definition</h3>
+        <p className="text-foreground/80">
+          Keine Partei haftet für die Nichterfüllung oder verspätete Erfüllung ihrer Verpflichtungen, soweit diese Nichterfüllung auf Umständen beruht, die außerhalb ihrer zumutbaren Kontrolle liegen, einschließlich, aber nicht beschränkt auf: Naturkatastrophen, Pandemien, Epidemien, Krieg, Terrorismus, Aufruhr, Embargo, Handlungen von Zivil- oder Militärbehörden, Feuer, Überschwemmungen, Unfälle, Streiks, Aussperrungen, oder Ausfall von Kommunikations- oder Energieversorgungssystemen.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">11.2 Pflichten bei Force Majeure</h3>
+        <p className="text-foreground/80">
+          Die betroffene Partei hat die andere Partei unverzüglich über den Eintritt und die voraussichtliche Dauer des Force-Majeure-Ereignisses zu informieren und alle zumutbaren Anstrengungen zu unternehmen, um die Auswirkungen zu minimieren. Dauert das Force-Majeure-Ereignis länger als neunzig (90) Tage an, kann jede Partei den betroffenen Vertrag mit sofortiger Wirkung kündigen.
+        </p>
+      </section>
+
+      {/* § 12 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 12 Vertragsbeendigung und Datenübergabe</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">12.1 Ordnungsgemäße Beendigung</h3>
+        <p className="text-foreground/80">
+          Bei ordnungsgemäßer Beendigung des Vertragsverhältnisses wird der Auftragnehmer dem Auftraggeber innerhalb von vierzehn (14) Werktagen alle im Eigentum des Auftraggebers stehenden Daten, Dokumentationen und Assets in einem gängigen, maschinenlesbaren Format übergeben.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">12.2 Zugangsentzug</h3>
+        <p className="text-foreground/80">
+          Nach Beendigung des Vertragsverhältnisses werden alle Zugänge des Auftraggebers zu Dashboards, Softwaretools und internen Systemen des Auftragnehmers innerhalb von sieben (7) Werktagen deaktiviert. Der Auftraggeber ist verpflichtet, alle ihm zur Verfügung gestellten Zugangsdaten zu Systemen des Auftragnehmers zu löschen.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">12.3 Datenlöschung</h3>
+        <p className="text-foreground/80">
+          Der Auftragnehmer wird personenbezogene Daten des Auftraggebers gemäß den Anforderungen der DSGVO löschen, sofern keine gesetzlichen Aufbewahrungspflichten bestehen. Auf Anfrage wird der Auftragnehmer eine Löschbestätigung ausstellen.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">12.4 Übergangsunterstützung</h3>
+        <p className="text-foreground/80">
+          Auf Wunsch und gegen gesonderte Vergütung nach Aufwand unterstützt der Auftragnehmer den Auftraggeber bei der Übergabe an einen Nachfolgedienstleister (Transition Services).
+        </p>
+      </section>
+
+      {/* § 13 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 13 Datenschutz</h2>
+        <p className="text-foreground/80">
+          Beide Parteien verpflichten sich, die Vorschriften der DSGVO bzw. die jeweils geltenden Datenschutzbestimmungen in der Rechtsordnung des Auftraggebers einzuhalten. Der Auftragnehmer verarbeitet personenbezogene Daten ausschließlich zum Zweck der Vertragserfüllung. Weitere Einzelheiten sind in der Datenschutzerklärung unter <a href="/privacy" className="text-accent hover:underline">sanerebels.com/privacy</a> geregelt.
+        </p>
+      </section>
+
+      {/* § 14 */}
+      <section>
+        <h2 className="text-xl font-bold text-foreground mb-4">§ 14 Schlussbestimmungen</h2>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">14.1 Anwendbares Recht und Gerichtsstand</h3>
+        <p className="text-foreground/80">
+          Diese AGB und alle daraus entstehenden Vertragsverhältnisse unterliegen dem Recht der Bundesrepublik Deutschland. Ausschließlicher Gerichtsstand für alle Streitigkeiten ist Berlin, Deutschland.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">14.2 Alternative Streitbeilegung</h3>
+        <p className="text-foreground/80">
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">https://ec.europa.eu/odr</a>. Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">14.3 Salvatorische Klausel</h3>
+        <p className="text-foreground/80">
+          Sollte eine Bestimmung dieser AGB unwirksam oder undurchführbar sein oder werden, so berührt dies die Wirksamkeit der übrigen Bestimmungen nicht. Anstelle der unwirksamen Bestimmung gilt eine wirksame Bestimmung als vereinbart, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt.
+        </p>
+
+        <h3 className="font-semibold text-foreground mt-4 mb-2">14.4 Schriftform</h3>
         <p className="text-foreground/80">
           Änderungen und Ergänzungen dieser AGB bedürfen der Schriftform. Dies gilt auch für die Aufhebung dieses Schriftformerfordernisses. Die elektronische Form (E-Mail) genügt der Schriftform.
         </p>
@@ -418,10 +726,6 @@ function GermanTerms() {
         </div>
         <p className="text-foreground/60 mt-6 text-sm">Stand: Dezember 2024</p>
       </section>
-
-      <p className="text-foreground/60 text-sm">
-        Hinweis: Die vollständige deutsche Version der AGB ist auf Anfrage erhältlich. Die englische Version oben dient als Referenz.
-      </p>
     </div>
   )
 }

@@ -6,7 +6,7 @@ export default function WhatPage() {
             <div>
 
                 <p className="mb-4">
-                    You have a methodology that works. You change businesses. Solve problems. Create impact.
+                    You have a methodology that works. You help businesses and individuals through meaningful offers. Solve problems. Create impact.
                     But impact is limited by physics. You can only be in one room at a time.
                 </p>
                 <p className="mb-4">
@@ -23,7 +23,7 @@ export default function WhatPage() {
                 <div>
                     <h3 className="text-lg font-semibold text-accent mb-2">01. System</h3>
                     <p>
-                        Authenticity needs infrastructure. We build machine backbone. AI and automation handle administration.
+                        Authenticity, at scale, needs infrastructure. We build machine backbone. AI and automation handle administration.
                         Data. Routine logic. Service delivery becomes precise. Every time. It carries your fingerprint.
                         Even when you aren&apos;t touching the keyboard.
                     </p>
