@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { PageWrapper } from "@/components/page-wrapper"
 
 export default function WhatPage() {
@@ -64,6 +65,12 @@ export default function WhatPage() {
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-16 text-center">
+                <Link href="/who" className="text-sm text-accent hover:underline decoration-accent/50 underline-offset-4 transition-all">
+                    What&apos;s your experience? &rarr;
+                </Link>
             </div>
         </PageWrapper>
     )

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { PageWrapper } from "@/components/page-wrapper"
 
 export default function AboutPage() {
@@ -78,6 +79,12 @@ export default function AboutPage() {
                     <span className="font-mono text-xs text-accent uppercase py-1">Now</span>
                     <p className="text-sm"><strong className="text-foreground">SANE/REBELS.</strong> Multiplying impact through systems.</p>
                 </div>
+            </div>
+
+            <div className="mt-16 text-center">
+                <Link href="/lets" className="text-sm text-accent hover:underline decoration-accent/50 underline-offset-4 transition-all">
+                    Let&apos;s chat &rarr;
+                </Link>
             </div>
         </PageWrapper>
     )

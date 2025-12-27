@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { PageWrapper } from "@/components/page-wrapper"
 
 export default function WhyPage() {
@@ -40,6 +41,12 @@ export default function WhyPage() {
             <p className="mt-10 font-mono text-sm text-foreground/60 italic">
                 Sane enough to build it. Rebel enough to ship it.
             </p>
+
+            <div className="mt-12 text-center">
+                <Link href="/what" className="text-sm text-accent hover:underline decoration-accent/50 underline-offset-4 transition-all">
+                    Show me how &rarr;
+                </Link>
+            </div>
         </PageWrapper>
     )
 }
