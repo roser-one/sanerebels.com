@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-    { href: "/why", label: "Manifest" },
+    { href: "/why", label: "Wait, but why?" },
     { href: "/what", label: "How" },
     { href: "/who", label: "About" },
     { href: "/lets", label: "Let's" },
