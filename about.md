@@ -14,40 +14,45 @@ We turn your expert knowledge into a scalable, digital architecture. You have a 
 **Vehicle for Expertise.**
 Service turns into product. It travels to a thousand places at once. You stay in one.
 
-### How It Works
-1. **System** — Authenticity, at scale, needs infrastructure. We build the machine backbone. AI and automation handle administration so the product carries your fingerprint.
-    - **Distill** — Identify the magic. Separate strategic value from operational noise.
-2. **Shared Risk** — No "hit-and-run" consulting. If potential exists, we co-invest. Lower upfront risk. Shared upside. Partners. Not vendors.
-    - **Build** — Concepts turn into code. GrowthOS. Automation workflows.
-3. **Momentum** — No 18-month roadmaps. 30-90 day sprints. Learn by shipping. Not by planning.
-    - **Scale** — Launch. Watch data. Refine.
+### The Offer Strategy (The "How")
+
+#### Phase 1: The Trust Anchor
+**"The Naked Strategy Session"** (High Ticket One-Off)
+- **The Promise:** We strip your business to the studs. Map exactly what can be digitized and what *must* remain human.
+- **Why:** Proves we understand your "soul" before touching your tech. Low risk.
+
+#### Phase 2: The "Exoskeleton" (ValueOS)
+**Custom Digital Infrastructure (MVP)**
+- **The Tech:** Clean web app (React/Next.js) + AI "Brain" trained on *your* voice + Automation workflows (n8n).
+- **The Outcome:** A functioning product you can sell immediately. You own the asset.
+
+#### Phase 3: The Partnership (Scale)
+**"Growth Partner"** (Shared Risk)
+- **The Deal:** We run growth/ops. You bring the wisdom.
+- **Model:** Lower Retainer + Profit Share. We only win if your democratized product sells.
 
 ---
 
-## The Target: "The Capped Expert"
+## Detailed Avatars (The "Who")
 
-**Who they are:**
-Veterans of their craft. JordKuiper.com is the archetype. High-level coaches, sales trainers in meaningful industries (renewables, social good), or specialized consultants. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
+### 1. "The Capped Healer" (e.g., Jord Cuiper)
+- **Who:** High-end somatic coaches, trauma therapists, executive mentors.
+- **Context:** Booked solid at €300–€1000/hr. Saying "no" to people who genuinely need help.
+- **The Gap:** Has a folder of worksheets but no way to deliver them without a Zoom call.
 
-**The Desire (The "Why"):**
-- **Democratization:** They hate that their help is limited to the top 1% who can afford their rates. They *want* to help the people just starting out, but the economics don't work with their current model.
-- **Soul of a Service:** They want the impact of software with the *soul of a service*.
-- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
-- **Impact > Income:** They want to make the world better, not just their bank account fatter.
+### 2. "The Ethical Rainmaker"
+- **Who:** Sales trainers for meaningful sectors (Renewables, MedTech, Non-Profits).
+- **Context:** Teaches "Consultative Selling." Hates "Wolf of Wall Street" tactics.
+- **The Gap:** Wants to train entire teams at scale but looks stuck doing onsite workshops. Needs a "Training OS."
 
-**The Fear (The "Blocker"):**
-- **Reputation Risk:** They are terrified of launching a sophisticated "product" that breaks or feels cheap. Their status is their currency. A dysfuntional product makes them look amateur.
-- **"Marketing Slang":** They are repelled by "funnels" and "passive income" hype. They want a partner who cares about the *problem*, not just the conversion rate.
+### The Pains & Gains Matrix
 
-**The Current State:**
-- Successful but exhausted.
-- Revenue is linear (Time = Money).
-- Attempted to "productize" before (courses, templates) but it felt hollow or generic.
-
-**Ideal Partners:**
-- **The Healer:** Coaches helping people feel better or overcome trauma.
-- **The Ethical Seller:** Sales trainers for meaningful industries (Renewables, Social Good).
-- **The System Thinker:** Growth minds who want to harden their frameworks into code.
+| Feature | The Pain (Fear) | The Gain (Desire) |
+| :--- | :--- | :--- |
+| **Status** | "If I launch a buggy app, I look like a grifter." | **Legacy:** "I want my method to be the Standard." |
+| **Impact** | "Hate turning away people who can't afford me." | **Democratization:** "The 'Junior' version of me for €50/mo." |
+| **Tech** | "I don't want to manage servers." | **Freedom:** "An Exoskeleton that handles admin." |
+| **Market** | "Allergic to passive income bros." | **Authenticity:** "A partner who speaks Human." |
 
 ---
 
