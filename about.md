@@ -14,6 +14,33 @@ We turn your expert knowledge into a scalable, digital architecture. You have a 
 **Vehicle for Expertise.**
 Service turns into product. It travels to a thousand places at once. You stay in one.
 
+### The Target: "The Capped Expert"
+
+**Who they are:**
+Veterans of their craft. JordKuiper.com is the archetype. High-level coaches, sales trainers in meaningful industries (renewables, social good), or specialized consultants. They don't need leads; they need cloning. They have already won the "skill" game but are losing the "time" game.
+
+**The Desire (The "Why"):**
+- **Democratization:** They hate that their help is limited to the top 1% who can afford their rates. They *want* to help the people just starting out, but the economics don't work with their current model.
+- **Soul of a Service:** They want the impact of software with the *soul of a service*.
+- **Legacy/Reach:** To travel to a thousand rooms at once without being in them.
+- **Impact > Income:** They want to make the world better, not just their bank account fatter.
+
+**The Fear (The "Blocker"):**
+- **Reputation Risk:** They are terrified of launching a sophisticated "product" that breaks or feels cheap. Their status is their currency. A dysfuntional product makes them look amateur.
+- **"Marketing Slang":** They are repelled by "funnels" and "passive income" hype. They want a partner who cares about the *problem*, not just the conversion rate.
+
+**The Current State:**
+- Successful but exhausted.
+- Revenue is linear (Time = Money).
+- Attempted to "productize" before (courses, templates) but it felt hollow or generic.
+
+**Ideal Partners:**
+- **The Healer:** Coaches helping people feel better or overcome trauma.
+- **The Ethical Seller:** Sales trainers for meaningful industries (Renewables, Social Good).
+- **The System Thinker:** Growth minds who want to harden their frameworks into code.
+
+---
+
 ### The Offer Strategy (The "How")
 
 #### Phase 1: The Trust Anchor
