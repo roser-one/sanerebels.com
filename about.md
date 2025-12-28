@@ -191,6 +191,6 @@ We thrive in high speed. Abstractions. Principles. Systems. We build infrastruct
 ### Contact (Let's)
 Build something that scales. Get back to being **human**.
 - **Email:** hi@sanerebels.com (Direct)
-- **LinkedIn:** linkedin.com/in/simonroser (Connect)
+- **LinkedIn:** linkedin.com/in/simon-roser (Connect)
 - **Company:** KNUS GmbH
 - **Location:** Konstanz, Germany (Registered), Berlin (Operating)

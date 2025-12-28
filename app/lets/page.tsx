@@ -61,13 +61,13 @@ export default function LetsPage() {
                     <ArrowRight className="w-4 h-4 text-foreground/20 group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all" />
                 </a>
 
-                <a href="https://linkedin.com/in/simonroser" target="_blank" rel="noopener noreferrer" className="group flex items-center p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-all duration-300">
+                <a href="https://linkedin.com/in/simon-roser" target="_blank" rel="noopener noreferrer" className="group flex items-center p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/30 transition-all duration-300">
                     <div className="p-3 rounded-full bg-white/5 group-hover:bg-accent/10 transition-colors mr-4">
                         <Linkedin className="w-5 h-5 text-foreground group-hover:text-accent" />
                     </div>
                     <div className="flex-1">
                         <p className="text-[10px] text-foreground/40 uppercase tracking-widest mb-0.5">Connect</p>
-                        <p className="text-base font-medium text-foreground">linkedin.com/in/simonroser</p>
+                        <p className="text-base font-medium text-foreground">linkedin.com/in/simon-roser</p>
                     </div>
                     <ExternalLink className="w-4 h-4 text-foreground/20 group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all" />
                 </a>

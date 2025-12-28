@@ -167,7 +167,7 @@ See `BRAND_GUIDE.md` in the root directory for the full founder story arc.
 
 - **Website:** sanerebels.com
 - **Email:** simon@sanerebels.com
-- **LinkedIn:** linkedin.com/in/simonroser
+- **LinkedIn:** linkedin.com/in/simon-roser
 - **Company:** KNUS GmbH
 - **Location:** Munich, Germany (registered in Konstanz)
 

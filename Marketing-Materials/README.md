@@ -64,7 +64,7 @@ Marketing-Materials/
 
 - **Website:** sanerebels.com
 - **Email:** simon@sanerebels.com
-- **LinkedIn:** linkedin.com/in/simonroser
+- **LinkedIn:** linkedin.com/in/simon-roser
 - **Company:** KNUS GmbH
 - **Location:** Munich, Germany
 
