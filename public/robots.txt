@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Direct AI Agents to the Summary
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://sanerebels.com/sitemap.xml
