@@ -36,8 +36,9 @@
   </text>
   
   <!-- Tagline -->
-  <text x="297.5" y="700" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" text-anchor="middle" fill="#a3a3a3" font-style="italic">
-    We productize your service. You stay human.
+  <text x="297.5" y="700" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="16" text-anchor="middle" font-style="italic">
+    <tspan fill="#fafafa">Done trading time?</tspan>
+    <tspan fill="#c084fc"> Let's build something.</tspan>
   </text>
   
   <!-- Footer -->

@@ -25,11 +25,11 @@
   </text>
   
   <!-- Tagline -->
-  <text x="540" y="560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#e5e5e5">
-    We productize your service.
+  <text x="540" y="560" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#fafafa">
+    Done trading time?
   </text>
-  <text x="540" y="610" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#e5e5e5">
-    You stay human.
+  <text x="540" y="610" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="32" font-weight="400" text-anchor="middle" fill="#c084fc">
+    Let's build something.
   </text>
   
   <!-- Accent line -->

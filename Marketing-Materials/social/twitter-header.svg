@@ -25,8 +25,9 @@
   </text>
   
   <!-- Tagline -->
-  <text x="750" y="280" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="400" text-anchor="middle" fill="#a3a3a3" letter-spacing="1">
-    Machines got powerful. Time to be more human.
+  <text x="750" y="280" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="400" text-anchor="middle" letter-spacing="1">
+    <tspan fill="#fafafa">Done trading time?</tspan>
+    <tspan fill="#c084fc"> Let's build something.</tspan>
   </text>
   
   <!-- Accent line -->

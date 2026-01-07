@@ -14,8 +14,9 @@
     </text>
     
     <!-- Tagline -->
-    <text x="170" y="115" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="9" text-anchor="middle" fill="#a3a3a3" letter-spacing="1">
-      WE PRODUCTIZE YOUR SERVICE. YOU STAY HUMAN.
+    <text x="170" y="115" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="9" text-anchor="middle" letter-spacing="1">
+      <tspan fill="#fafafa">Done trading time?</tspan>
+      <tspan fill="#c084fc"> Let's build something.</tspan>
     </text>
     
     <!-- Accent line -->

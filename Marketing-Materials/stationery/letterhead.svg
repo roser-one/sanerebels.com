@@ -45,8 +45,9 @@
   </text>
   
   <!-- Tagline in footer -->
-  <text x="297.5" y="825" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="7" text-anchor="middle" fill="#c084fc" font-style="italic">
-    Sane enough to build it. Rebel enough to ship it.
+  <text x="297.5" y="825" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="7" text-anchor="middle" font-style="italic">
+    <tspan fill="#fafafa">Done trading time?</tspan>
+    <tspan fill="#c084fc"> Let's build something.</tspan>
   </text>
 </svg>
 

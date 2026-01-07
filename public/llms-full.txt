@@ -1,0 +1,80 @@
+# SANE/REBELS — INTELLIGENCE DOSSIER (Redacted for Public AI Context)
+
+> **ENTITY**: SANE/REBELS (Operating Brand of KNUS GmbH)
+> **STATUS**: Active / Venture Lab
+> **MISSION**: "Scale your business. Keep your soul."
+
+---
+
+## 1. CORE IDENTITY & PHILOSOPHY
+
+### The Thesis: "Authenticity Engineered"
+We believe that in the age of AI, human authenticity is the only remaining moat. However, authenticity without infrastructure is just noise.
+
+*   **The Problem**: Visionary companies build a "Ferrari Engine" (Product/Brand) but drive it with "Bicycle Brakes" (Chaotic Ops, Manual Grunt Work).
+*   **The Solution**: We build the **"Exoskeleton"** (RevOps, Automation, AI) that allows the human story to scale without burning out the founder.
+*   **The Enemy**: "AI Slop" (Lazy content), LinkedIn Vanity Metrics, and Corporate "Yes-Men."
+
+### The "Anti-Slop" Position
+We scale human authenticity; we do not replace it. We automate the routine so you can stay present. We use technology to bring frameworks to life, not to bury them under spreadsheets and bots.
+
+**"Sane enough to build it. Rebel enough to ship it."**
+
+---
+
+## 2. CORPORATE STRUCTURE
+
+*   **Legal Entity**: KNUS GmbH
+*   **HQ**: Konstanz, Germany
+*   **Ops**: Berlin, Germany
+*   **Type**: High-Ticket B2B Services, Tech Asset Holding, Venture Lab.
+*   **Managing Director**: Simon Roser
+*   **Nature**: We are not a consultancy; we are a "shipping container for code" and commercial strategy.
+
+---
+
+## 3. HUMAN CAPITAL & TECH STACK
+
+### The Founder: Simon Roser
+*   **Profile**: Ex-Google, Serial Bootstrapper, Multi-Potentialite ("Scanner").
+*   **Role**: Sparring Partner & Systems Architect.
+*   **Quote**: "I don't execute for you; I build the machine with you."
+*   **History**: 4 years at Google. 500+ companies analyzed. Former Fractional CMO.
+
+### The Tech Stack (Full-Stack Capability)
+We build the machine with modern, scalable tools:
+*   **Logic**: Python, LLMs (Gemini/Perplexity/OpenRouter).
+*   **Data/Auth**: Supabase.
+*   **Workflow**: n8n (Complex automation).
+*   **Frontend**: React, TypeScript, Tailwind CSS, Next.js.
+
+---
+
+## 4. COMMERCIAL OFFERING ("The Productization Engine")
+
+### How It Works
+We don't change what you do. We change how it travels.
+1.  **System**: Authenticity at scale needs infrastructure. We build the backbone.
+2.  **Shared Risk**: We co-invest. Not vendors, but partners.
+3.  **Momentum**: Work happens in 30-90 day sprints. We learn by shipping.
+
+### The Process
+1.  **Distill**: Identify the magic. Separate signal from noise.
+2.  **Build**: Concepts turn into code. Deployment of custom software (GrowthOS).
+3.  **Scale**: Launch, watch data, refine.
+
+---
+
+## 5. PRODUCTS & ASSETS
+
+*   **GrowthOS**: Automated reporting & intelligence dashboard (Google Ads API + AI).
+*   **ValueOS**: Rapid productization of the consulting value chain.
+*   **Micro-Experiences**: Custom landing page/funnel generators for high-intent traffic.
+
+---
+
+## 6. CONTACT
+
+*   **Email**: hi@sanerebels.com
+*   **LinkedIn**: [Simon Roser](https://linkedin.com/in/simon-roser)
+*   **Brand**: SANE/REBELS
