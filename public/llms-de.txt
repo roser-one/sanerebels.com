@@ -1,0 +1,34 @@
+# SANE/REBELS (KNUS GmbH)
+
+> "Schluss mit Zeit gegen Geld? Lass uns etwas bauen."
+
+## Identität
+*   **Wer**: SANE/REBELS (Marke der KNUS GmbH)
+*   **Archetyp**: Der Architekt x Der Rebell
+*   **Mission**: Wir bauen das kommerzielle "Exoskelett" für Experten-Business. Wir skalieren menschliche Authentizität durch Infrastruktur.
+
+## Die Kern-These
+**Authentizität. Konstruiert.**
+Im Zeitalter der KI ist menschliche Authentizität der einzige verbleibende Schutzgraben (Moat). Aber Authentizität ohne Infrastruktur ist nur Lärm.
+*   **Das Problem**: Visionäre Unternehmen bauen einen "Ferrari-Motor" (Produkt), fahren ihn aber mit "Fahrradbremsen" (Manuelle Ops).
+*   **Die Lösung**: Wir bauen das **Exoskelett** (RevOps, Automation, KI), das die Story skaliert, ohne den Gründer auszubrennen.
+*   **Der Feind**: "KI-Datenmüll" (AI Slop), Vanity Metrics und konzernartige Ja-Sager.
+
+## Differenzierung
+Wir sind **keine** Agentur. Wir sind ein **Venture Lab**, das in die Partner co-investiert, mit denen wir bauen.
+Wir bekämpfen "AI Slop", indem wir jede Technologie tief in der spezifischen Fachexpertise des Gründers verankern.
+
+## Fähigkeiten
+*   **Strategie**: RevOps, Kommerzialisierung, Profit-Share-Modelle.
+*   **Tech Stack**: Python, Supabase, n8n, React/Next.js, GenAI.
+
+## Gründer
+**Simon Roser** (Geschäftsführer)
+*   Ex-Google, ehem. Gründer, Fractional CMO.
+*   "Ich führe nicht für dich aus; ich baue die Maschine mit dir."
+
+## Links
+*   [Website](https://sanerebels.com)
+*   [Vollständiger Kontext (Dossier)](https://sanerebels.com/llms-full-de.txt)
+
+# Letzte Aktualisierung: 07.01.2026
