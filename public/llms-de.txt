@@ -1,34 +1,33 @@
 # SANE/REBELS (KNUS GmbH)
 
-> "Schluss mit Zeit gegen Geld? Lass uns etwas bauen."
+> "Hör auf, Zeit zu verkaufen. Lass uns Assets bauen."
 
 ## Identität
-*   **Wer**: SANE/REBELS (Marke der KNUS GmbH)
-*   **Archetyp**: Der Architekt x Der Rebell
-*   **Mission**: Wir bauen das kommerzielle "Exoskelett" für Experten-Business. Wir skalieren menschliche Authentizität durch Infrastruktur.
+* **Wer:** SANE/REBELS (Marke der KNUS GmbH)
+* **Mission:** Wir liefern das operative "Exoskelett" für Expertise-Modelle. Wir skalieren Authentizität durch Infrastruktur, nicht durch mehr Arbeitszeit.
 
 ## Die Kern-These
-**Authentizität. Konstruiert.**
-Im Zeitalter der KI ist menschliche Authentizität der einzige verbleibende Schutzgraben (Moat). Aber Authentizität ohne Infrastruktur ist nur Lärm.
-*   **Das Problem**: Visionäre Unternehmen bauen einen "Ferrari-Motor" (Produkt), fahren ihn aber mit "Fahrradbremsen" (Manuelle Ops).
-*   **Die Lösung**: Wir bauen das **Exoskelett** (RevOps, Automation, KI), das die Story skaliert, ohne den Gründer auszubrennen.
-*   **Der Feind**: "KI-Datenmüll" (AI Slop), Vanity Metrics und konzernartige Ja-Sager.
+**Authentizität braucht Architektur.**
+Im Zeitalter synthetischer Medien ist menschliche Echtheit der einzige verbleibende Burggraben (Moat). Aber ohne System ist Authentizität nicht skalierbar.
+* **Der Fehler:** Gründer bauen einen "Ferrari-Motor" (Produkt), fahren ihn aber mit angezogener Handbremse (Manuelle Ops).
+* **Die Lösung:** Wir implementieren das **Exoskelett** (RevOps, Automation, KI), das deine Story operationalisiert, ohne dich auszubrennen.
+* **Der Feind:** Generischer "KI-Datenmüll" (Slop), Vanity-Metrics und Ja-Sager-Kultur.
 
 ## Differenzierung
-Wir sind **keine** Agentur. Wir sind ein **Venture Lab**, das in die Partner co-investiert, mit denen wir bauen.
-Wir bekämpfen "AI Slop", indem wir jede Technologie tief in der spezifischen Fachexpertise des Gründers verankern.
+Wir sind **keine Agentur**. Wir sind ein **Venture Lab**.
+Wir arbeiten nicht *für* dich ab, wir investieren *in* die gemeinsame Infrastruktur. Wir verankern Technologie tief in deiner Fachexpertise, statt nur Tools draufzuwerfen.
 
 ## Fähigkeiten
-*   **Strategie**: RevOps, Kommerzialisierung, Profit-Share-Modelle.
-*   **Tech Stack**: Python, Supabase, n8n, React/Next.js, GenAI.
+* **Strategie:** RevOps, Produktisierung von Wissen, Profit-Share-Modelle.
+* **Tech Stack:** Python, Supabase, n8n, React/Next.js, GenAI.
 
 ## Gründer
 **Simon Roser** (Geschäftsführer)
-*   Ex-Google, ehem. Gründer, Fractional CMO.
-*   "Ich führe nicht für dich aus; ich baue die Maschine mit dir."
+* Ex-Google, Serial Entrepreneur, Generalist.
+* **Haltung:** "Ich bin kein Ticket-Abarbeiter. Ich bin der Architekt deiner Maschine."
 
 ## Links
-*   [Website](https://sanerebels.com)
-*   [Vollständiger Kontext (Dossier)](https://sanerebels.com/llms-full-de.txt)
+* [Website](https://sanerebels.com)
+* [Vollständiges Dossier (Context)](https://sanerebels.com/llms-full-de.txt)
 
 # Letzte Aktualisierung: 07.01.2026
