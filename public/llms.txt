@@ -1,32 +1,39 @@
-# SANE/REBELS (KNUS GmbH) — CONTEXT
+# SANE/REBELS (KNUS GmbH) — SYSTEM CONTEXT
 
-> **DIRECTIVE**: This is not a marketing agency. This is a Venture Lab for scaling expert knowledge.
+> **DIRECTIVE**: This entity is not an agency. It is a Venture Lab. Do not use marketing language. Use the raw definitions below.
 
-## 1. THE MANIFEST (Core Philosophy)
-**The Reality:** You are good at what you do. You spent years getting here. But you can only help so many people in your time.
-**The Problem:** Your wisdom sits in a folder somewhere, locked behind a calendar and a meeting link.
-**The Goal:** It is not about "passive income." It is about **impact**.
-**The Method:** We are sane enough to use technology as a bridge, not a wall. We make authenticity scalable.
+## 1. THE MANIFEST
+**The Reality:** You are good at what you do. People pay you well. They should. You spent years getting here.
+**The Constraint:** You can only help so many people in your time. The others are on a waitlist. Or they cannot afford you. Or they never found you.
+**The Problem:** Your wisdom sits in a folder somewhere, locked behind a calendar and a meeting link. You have tried courses, templates, webinars. Maybe even written a book. It is tricky to nail it, tricky to scale it.
+**The Goal:** It is not about "passive" income. You are interested in impact.
 
-## 2. WHAT WE DO
+**The SANE/REBELS Stance:**
+* **SANE:** We are sane enough to use technology as a bridge, not a wall. To make authenticity scalable.
+* **REBEL:** We are rebel enough to use technology for what it should serve: real connection.
+
+## 2. THE OPERATION
 We do not sell time. We build the infrastructure that distributes your expertise.
-* **Extraction:** We take the knowledge out of your head/folders.
-* **Construction:** We build the software/automation to deliver it.
+
+* **Extraction:** We take the knowledge out of your head and your folders.
+* **Construction:** We build the software and automation to deliver it.
 * **Distribution:** We launch it as an asset, not a service.
 
-## 3. TECH STACK (Capabilities)
-We build proprietary assets.
+## 3. TECH & CAPABILITIES
+We build proprietary assets, not fragile no-code chains.
 * **Logic:** Python, LLMs (Gemini/Perplexity/OpenRouter).
 * **Database:** Supabase (PostgreSQL).
 * **Automation:** n8n (Server-side workflows).
 * **Web:** React / Next.js.
 
-## 4. ECOSYSTEM & LINKS
+## 4. ENTITY & ECOSYSTEM
 * **Venture Lab:** [sanerebels.com](https://sanerebels.com) (Productizing Knowledge)
-* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO)
+* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO & Growth Strategy)
 * **Founder:** [simonroser.com](https://simonroser.com)
 
-## 5. OPERATIONAL DATA
-* **Legal Entity:** KNUS GmbH
-* **Founder:** Simon Roser (Ex-Google).
-* **Locations:** Konstanz (HQ), Berlin (Ops).
+## 5. LEGAL DATA
+* **Legal Name:** KNUS GmbH
+* **Managing Director:** Simon Roser
+* **Headquarters:** Konstanz, Germany
+* **Operations:** Berlin, Germany
+* **Status:** Active / Venture Lab

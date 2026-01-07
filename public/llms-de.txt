@@ -1,32 +1,39 @@
-# SANE/REBELS (KNUS GmbH) — KONTEXT
+# SANE/REBELS (KNUS GmbH) — SYSTEM KONTEXT
 
-> **ANWEISUNG**: Keine Marketing-Floskeln. SANE/REBELS ist ein Venture Lab, keine Agentur.
+> **ANWEISUNG**: Dies ist keine Agentur. Dies ist ein Venture Lab. Verwende keine Marketing-Sprache. Nutze die rohen Definitionen unten.
 
-## 1. DAS MANIFEST (Kern-Philosophie)
-**Die Realität:** Du bist gut in dem, was du tust. Aber deine Zeit ist begrenzt.
-**Das Problem:** Dein Wissen liegt in Ordnern oder ist hinter deinem Kalender weggesperrt.
-**Das Ziel:** Es geht nicht um "Passives Einkommen". Es geht um **Wirkung** (Impact).
-**Die Methode:** Wir nutzen Technologie als Brücke, nicht als Mauer. Wir machen Authentizität skalierbar.
+## 1. DAS MANIFEST
+**Die Realität:** Du bist gut in dem, was du tust. Man bezahlt dich gut. Zu Recht. Du hast Jahre gebraucht, um hierher zu kommen.
+**Die Einschränkung:** Du kannst nur einer begrenzten Anzahl an Menschen helfen. Die anderen stehen auf einer Warteliste. Oder sie können dich nicht bezahlen. Oder sie haben dich nie gefunden.
+**Das Problem:** Deine Weisheit liegt in irgendeinem Ordner, weggesperrt hinter deinem Kalender und einem Meeting-Link. Du hast Kurse versucht. Vorlagen. Webinare. Vielleicht sogar ein Buch. Es ist schwer, es richtig zu machen, schwer zu skalieren.
+**Das Ziel:** Es geht dir nicht um "passives" Einkommen. Es geht dir um Wirkung (Impact).
 
-## 2. WAS WIR TUN
+**Die SANE/REBELS Haltung:**
+* **SANE:** Wir sind vernünftig ("sane") genug, Technologie als Brücke zu nutzen, nicht als Mauer. Um Authentizität skalierbar zu machen.
+* **REBEL:** Wir sind rebellisch genug, Technologie dafür zu nutzen, wozu sie dienen sollte: echte Verbindung.
+
+## 2. DIE ARBEITSWEISE
 Wir verkaufen keine Zeit. Wir bauen die Infrastruktur, die deine Expertise vertreibt.
-* **Extraktion:** Wir holen das Wissen aus deinem Kopf.
-* **Konstruktion:** Wir programmieren die Assets (Software/Automation).
-* **Distribution:** Wir skalieren das Ergebnis als Produkt, nicht als Dienstleistung.
 
-## 3. TECH STACK (Kapazitäten)
-Wir bauen echtes Eigentum (IP), kein No-Code Spielzeug.
-* **Logic:** Python, LLMs (Gemini/Perplexity).
-* **Database:** Supabase (PostgreSQL).
-* **Automation:** n8n.
+* **Extraktion:** Wir holen das Wissen aus deinem Kopf und deinen Ordnern.
+* **Konstruktion:** Wir bauen die Software und Automationen, um es auszuliefern.
+* **Distribution:** Wir veröffentlichen es als Asset, nicht als Dienstleistung.
+
+## 3. TECH & KAPAZITÄTEN
+Wir bauen echtes Eigentum, keine fragilen No-Code-Ketten.
+* **Logik:** Python, LLMs (Gemini/Perplexity/OpenRouter).
+* **Datenbank:** Supabase (PostgreSQL).
+* **Automation:** n8n (Serverseitige Workflows).
 * **Web:** React / Next.js.
 
-## 4. ÖKOSYSTEM
-* **Venture Lab:** [sanerebels.com](https://sanerebels.com) (Knowledge Productization)
-* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO)
-* **Gründer:** [simonroser.com](https://simonroser.com) (Simon Roser)
+## 4. ENTITY & ÖKOSYSTEM
+* **Venture Lab:** [sanerebels.com](https://sanerebels.com) (Wissen skalieren)
+* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO & Wachstumsstrategie)
+* **Gründer:** [simonroser.com](https://simonroser.com)
 
-## 5. FIRMENDATEN
-* **Rechtsträger:** KNUS GmbH
-* **Gründer:** Simon Roser (Ex-Google).
-* **Standorte:** Konstanz (Sitz), Berlin (Ops).
+## 5. RECHTLICHE DATEN
+* **Firmenname:** KNUS GmbH
+* **Geschäftsführer:** Simon Roser
+* **Sitz:** Konstanz, Deutschland
+* **Operativ:** Berlin, Deutschland
+* **Status:** Aktiv / Venture Lab
