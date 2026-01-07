@@ -28,8 +28,8 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback", system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --font-sans: var(--font-geist-sans), "Geist", "Geist Fallback", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", "Geist Mono Fallback", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -111,86 +111,135 @@
    SANE and REBELS alternate visibility with color shift
    ===================================================== */
 
-@keyframes logo-pulse-sane {
-  0% {
-    opacity: 1;
-    color: oklch(0.98 0 0);
-  }
+/* SANE Animations */
+/* Base layer (Accent): Handles the visibility (fade out/in) */
+@keyframes logo-pulse-sane-base {
 
-  20% {
-    opacity: 1;
-    color: oklch(0.98 0 0);
-  }
-
-  35% {
-    opacity: 1;
-    color: oklch(0.78 0.28 295);
-  }
-
-  50% {
-    opacity: 0;
-    color: oklch(0.78 0.28 295);
-  }
-
-  70% {
-    opacity: 0;
-    color: oklch(0.78 0.28 295);
-  }
-
-  85% {
-    opacity: 1;
-    color: oklch(0.78 0.28 295);
-  }
-
+  0%,
+  35%,
+  85%,
   100% {
     opacity: 1;
-    color: oklch(0.98 0 0);
+  }
+
+  50%,
+  70% {
+    opacity: 0;
   }
 }
 
-@keyframes logo-pulse-rebels {
-  0% {
-    opacity: 0;
-    color: oklch(0.78 0.28 295);
-  }
+/* Overlay layer (White): Handles the color shift (White -> Transparent/Accent) */
+@keyframes logo-pulse-sane-overlay {
 
-  20% {
-    opacity: 0;
-    color: oklch(0.78 0.28 295);
-  }
-
-  35% {
+  0%,
+  20%,
+  100% {
     opacity: 1;
-    color: oklch(0.78 0.28 295);
   }
 
-  50% {
-    opacity: 1;
-    color: oklch(0.98 0 0);
-  }
-
-  70% {
-    opacity: 1;
-    color: oklch(0.98 0 0);
-  }
-
+  /* White */
+  35%,
   85% {
-    opacity: 1;
-    color: oklch(0.78 0.28 295);
+    opacity: 0;
   }
 
+  /* Reveals Accent */
+}
+
+/* REBELS Animations */
+/* Base layer (White): Handles visibility and is the target color for the middle phase */
+@keyframes logo-pulse-rebels-base {
+
+  0%,
+  20%,
+  35%,
+  85%,
+  100% {
+    opacity: 1;
+  }
+
+  /* Main visibility is controlled here? 
+     REBELS: Accent -> White -> Accent.
+     Wait, original REBELS was:
+     0-20%: Opacity 0 (Hidden)
+     35%: Opacity 1 (Accent)
+     50-70%: Opacity 1 (White)
+     85%: Opacity 1 (Accent)
+     100%: Opacity 0 (Hidden)
+  */
+  0%,
+  20%,
   100% {
     opacity: 0;
-    color: oklch(0.78 0.28 295);
+  }
+
+  35%,
+  85% {
+    opacity: 1;
   }
 }
 
-.animate-logo-pulse-sane {
-  animation: logo-pulse-sane 8s ease-in-out infinite;
+/* Overlay layer (Accent): Sits on top of white? 
+   Actually for REBELS:
+   It's simpler to have:
+   Layer 1 (Accent): Always Accent color. 
+   Layer 2 (White): Always White color.
+   
+   Timeline:
+   0-20%: Both Opacity 0 (Hidden)
+   20-35%: Fade In Accent (Layer 1 Opacity 0->1). Layer 2 Opacity 0.
+   35-50%: Color Shift to White (Layer 2 Opacity 0->1). Layer 1 stays 1 (behind).
+   50-70%: White (Layer 2 Opacity 1).
+   70-85%: Color Shift to Accent (Layer 2 Opacity 1->0).
+   85-100%: Fade Out Accent (Layer 1 Opacity 1->0).
+*/
+
+@keyframes logo-pulse-rebels-accent {
+
+  0%,
+  20%,
+  100% {
+    opacity: 0;
+  }
+
+  35%,
+  85% {
+    opacity: 1;
+  }
 }
 
-.animate-logo-pulse-rebels {
-  animation: logo-pulse-rebels 8s ease-in-out infinite;
+@keyframes logo-pulse-rebels-white {
+
+  0%,
+  35%,
+  85%,
+  100% {
+    opacity: 0;
+  }
+
+  50%,
+  70% {
+    opacity: 1;
+  }
+}
+
+.animate-logo-pulse-sane-base {
+  animation: logo-pulse-sane-base 8s ease-in-out infinite;
+}
+
+.animate-logo-pulse-sane-overlay {
+  animation: logo-pulse-sane-overlay 8s ease-in-out infinite;
+  /* When this opacity is 0, we see base (Accent). When 1, we see Overlay (White) */
+}
+
+.animate-logo-pulse-rebels-base {
+  /* White Layer */
+  animation: logo-pulse-rebels-white 8s ease-in-out infinite;
+}
+
+.animate-logo-pulse-rebels-overlay {
+  /* Accent Layer */
+  animation: logo-pulse-rebels-accent 8s ease-in-out infinite;
 }
 
 /* =====================================================

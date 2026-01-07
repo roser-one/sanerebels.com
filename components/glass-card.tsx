@@ -20,14 +20,18 @@ export function GlassCard() {
             className="glass-card"
         >
             {/* Logo */}
-            <div className="flex items-center justify-center gap-1 mb-6 md:mb-8">
-                <span className="font-bold text-base md:text-lg tracking-tight animate-logo-pulse-sane">
-                    SANE
-                </span>
-                <span className="text-accent font-bold text-base md:text-lg">/</span>
-                <span className="font-bold text-base md:text-lg tracking-tight animate-logo-pulse-rebels">
-                    REBELS
-                </span>
+            <div className="flex items-center justify-center gap-1 mb-6 md:mb-8 text-base md:text-lg font-bold tracking-tight">
+                <div className="relative">
+                    <span className="opacity-0">SANE</span>
+                    <span className="absolute inset-0 text-accent animate-logo-pulse-sane-base">SANE</span>
+                    <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
+                </div>
+                <span className="text-accent">/</span>
+                <div className="relative">
+                    <span className="opacity-0">REBELS</span>
+                    <span className="absolute inset-0 text-foreground animate-logo-pulse-rebels-base">REBELS</span>
+                    <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
+                </div>
             </div>
 
             {/* Tagline */}
