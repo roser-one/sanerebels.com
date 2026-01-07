@@ -127,6 +127,20 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <noscript>
+          <h1>SANE/REBELS - The Productization Engine</h1>
+          <p>
+            Done trading time? Let&apos;s build something. SANE/REBELS (KNUS GmbH) is the commercial
+            &quot;Exoskeleton&quot; for expert businesses. We seek to productize human authenticity
+            using GenAI infrastructure, moving founders from manual service delivery to scalable
+            assets.
+          </p>
+          <p>
+            The Solution: We build the &quot;Exoskeleton&quot; (RevOps, Automation, AI) that
+            allows the human story to scale without burning out the founder.
+          </p>
+          <a href="/llms.txt">View AI Summary</a>
+        </noscript>
         {children}
         <Analytics />
       </body>
