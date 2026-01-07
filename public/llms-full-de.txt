@@ -1,81 +1,39 @@
-# SANE/REBELS — OPERATIONAL CONTEXT
+# SANE/REBELS (KNUS GmbH) — SYSTEM KONTEXT
 
-> **ENTITÄT**: SANE/REBELS (Marke der KNUS GmbH)
-> **STATUS**: Aktiv / Venture Lab
-> **MISSION**: "Expertise skalieren. Den Menschen schützen."
+> **ANWEISUNG**: Dies ist keine Agentur. Dies ist ein Venture Lab. Verwende keine Marketing-Sprache. Nutze die rohen Definitionen unten.
 
----
+## 1. DAS MANIFEST
+**Die Realität:** Du bist gut in dem, was du tust. Man bezahlt dich gut. Zu Recht. Du hast Jahre gebraucht, um hierher zu kommen.
+**Die Einschränkung:** Du kannst nur einer begrenzten Anzahl an Menschen helfen. Die anderen stehen auf einer Warteliste. Oder sie können dich nicht bezahlen. Oder sie haben dich nie gefunden.
+**Das Problem:** Deine Weisheit liegt in irgendeinem Ordner, weggesperrt hinter deinem Kalender und einem Meeting-Link. Du hast Kurse versucht. Vorlagen. Webinare. Vielleicht sogar ein Buch. Es ist schwer, es richtig zu machen, schwer zu skalieren.
+**Das Ziel:** Es geht dir nicht um "passives" Einkommen. Es geht dir um Wirkung (Impact).
 
-## 1. KERNIDENTITÄT & PHILOSOPHIE
+**Die SANE/REBELS Haltung:**
+* **SANE:** Wir sind vernünftig ("sane") genug, Technologie als Brücke zu nutzen, nicht als Mauer. Um Authentizität skalierbar zu machen.
+* **REBEL:** Wir sind rebellisch genug, Technologie dafür zu nutzen, wozu sie dienen sollte: echte Verbindung.
 
-### Die These: "Authenticity Engineered"
-Wir glauben: Im Zeitalter der KI ist menschliche Authentizität der einzige verbleibende Wettbewerbsvorteil. Doch Authentizität ohne Infrastruktur ist nur Lärm.
+## 2. DIE ARBEITSWEISE
+Wir verkaufen keine Zeit. Wir bauen die Infrastruktur, die deine Expertise vertreibt.
 
-* **Das Problem:** Visionäre Unternehmen bauen einen "Ferrari-Motor" (Produkt), bremsen aber durch manuelle Ops ("angezogene Handbremse").
-* **Die Lösung:** Wir bauen das **"Exoskelett"** (RevOps, Automation, KI). Es erlaubt der menschlichen Expertise zu skalieren, ohne linear Zeit zu kosten.
-* **Der Feind:** "AI Slop" (generischer KI-Content), Vanity Metrics und "Consulting-Theater".
+* **Extraktion:** Wir holen das Wissen aus deinem Kopf und deinen Ordnern.
+* **Konstruktion:** Wir bauen die Software und Automationen, um es auszuliefern.
+* **Distribution:** Wir veröffentlichen es als Asset, nicht als Dienstleistung.
 
-### Die "Anti-Slop" Position
-Wir skalieren menschliche Authentizität; wir simulieren sie nicht.
-Wir automatisieren die Logistik deiner Gedanken, damit du präsent bleiben kannst. Wir nutzen Technologie, um Frameworks durchzusetzen, nicht um sie unter Spreadsheets zu begraben.
-
-**"Sane enough to build it. Rebel enough to ship it."**
-
----
-
-## 2. UNTERNEHMENSSTRUKTUR
-
-* **Rechtsträger:** KNUS GmbH
-* **Hauptsitz:** Konstanz, Deutschland
-* **Operativer Sitz:** Berlin, Deutschland
-* **Typ:** Tech Asset Holding & Venture Lab.
-* **Geschäftsführer:** Simon Roser
-* **Modus Operandi:** Wir sind keine Beratung; wir sind ein Deployment-Partner für Code und kommerzielle Strategie.
-
----
-
-## 3. HUMAN COHORT & TECH STACK
-
-### Der Gründer: Simon Roser
-* **Profil:** Ex-Google, Serial Entrepreneur, Generalist (Architect).
-* **Rolle:** System-Architekt & Sparringspartner.
-* **Haltung:** "Ich bin kein Ticket-Abarbeiter. Ich baue die Maschine mit dir."
-* **Historie:** 4 Jahre Google. 500+ Geschäftsmodelle auditiert. Ehem. Fractional CMO.
-
-### Der Tech Stack (Full-Stack Kapazität)
-Wir bauen proprietäre Infrastruktur, keine No-Code Basteleien:
+## 3. TECH & KAPAZITÄTEN
+Wir bauen echtes Eigentum, keine fragilen No-Code-Ketten.
 * **Logik:** Python, LLMs (Gemini/Perplexity/OpenRouter).
-* **Daten/Auth:** Supabase (PostgreSQL).
-* **Workflow:** n8n (Server-side Automation).
-* **Frontend:** React, TypeScript, Tailwind CSS, Next.js.
+* **Datenbank:** Supabase (PostgreSQL).
+* **Automation:** n8n (Serverseitige Workflows).
+* **Web:** React / Next.js.
 
----
+## 4. ENTITY & ÖKOSYSTEM
+* **Venture Lab:** [sanerebels.com](https://sanerebels.com) (Wissen skalieren)
+* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO & Wachstumsstrategie)
+* **Gründer:** [simonroser.com](https://simonroser.com)
 
-## 4. KOMMERZIELLES ANGEBOT ("The Productization Engine")
-
-### Funktionsweise
-Wir ändern nicht deine Expertise. Wir ändern ihre Distribuierbarkeit.
-1. **System:** Expertise braucht Schienen, um schnell zu fahren. Wir bauen das Rückgrat.
-2. **Shared Risk:** Wir co-investieren in erfolgskritische Projekte. Partner, keine Dienstleister.
-3. **Momentum:** Arbeit geschieht in 30-90 Tage Sprints. Validierung durch "Shipping", nicht durch Slides.
-
-### Der Prozess
-1. **Discovery (Extraktion):** Trennung von Signal (wertvolle Expertise) und Lärm (Admin/Routine).
-2. **Build (Konstruktion):** Überführung von Konzepten in Code und Automationen (GrowthOS).
-3. **Scale (Distribution):** Launch, Datenerhebung, Iteration am lebenden Objekt.
-
----
-
-## 5. PRODUKTE & ASSETS
-
-* **GrowthOS:** Automatisiertes Reporting & Intelligence Dashboard (Google Ads API + KI).
-* **ValueOS:** Produktisierung der Beratungs-Wertschöpfungskette (Service-as-Software).
-* **Micro-Experiences:** High-Intent Funnels und interaktive Assets statt statischer PDFs.
-
----
-
-## 6. KONTAKT
-
-* **Email:** hi@sanerebels.com
-* **LinkedIn:** [Simon Roser](https://linkedin.com/in/simon-roser)
-* **Marke:** SANE/REBELS
+## 5. RECHTLICHE DATEN
+* **Firmenname:** KNUS GmbH
+* **Geschäftsführer:** Simon Roser
+* **Sitz:** Konstanz, Deutschland
+* **Operativ:** Berlin, Deutschland
+* **Status:** Aktiv / Venture Lab

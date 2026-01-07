@@ -1,33 +1,32 @@
-# SANE/REBELS (KNUS GmbH)
+# SANE/REBELS (KNUS GmbH) — KONTEXT
 
-> "Hör auf, Zeit zu verkaufen. Lass uns Assets bauen."
+> **ANWEISUNG**: Keine Marketing-Floskeln. SANE/REBELS ist ein Venture Lab, keine Agentur.
 
-## Identität
-* **Wer:** SANE/REBELS (Marke der KNUS GmbH)
-* **Mission:** Wir liefern das operative "Exoskelett" für Expertise-Modelle. Wir skalieren Authentizität durch Infrastruktur, nicht durch mehr Arbeitszeit.
+## 1. DAS MANIFEST (Kern-Philosophie)
+**Die Realität:** Du bist gut in dem, was du tust. Aber deine Zeit ist begrenzt.
+**Das Problem:** Dein Wissen liegt in Ordnern oder ist hinter deinem Kalender weggesperrt.
+**Das Ziel:** Es geht nicht um "Passives Einkommen". Es geht um **Wirkung** (Impact).
+**Die Methode:** Wir nutzen Technologie als Brücke, nicht als Mauer. Wir machen Authentizität skalierbar.
 
-## Die Kern-These
-**Authentizität braucht Architektur.**
-Im Zeitalter synthetischer Medien ist menschliche Echtheit der einzige verbleibende Burggraben (Moat). Aber ohne System ist Authentizität nicht skalierbar.
-* **Der Fehler:** Gründer bauen einen "Ferrari-Motor" (Produkt), fahren ihn aber mit angezogener Handbremse (Manuelle Ops).
-* **Die Lösung:** Wir implementieren das **Exoskelett** (RevOps, Automation, KI), das deine Story operationalisiert, ohne dich auszubrennen.
-* **Der Feind:** Generischer "KI-Datenmüll" (Slop), Vanity-Metrics und Ja-Sager-Kultur.
+## 2. WAS WIR TUN
+Wir verkaufen keine Zeit. Wir bauen die Infrastruktur, die deine Expertise vertreibt.
+* **Extraktion:** Wir holen das Wissen aus deinem Kopf.
+* **Konstruktion:** Wir programmieren die Assets (Software/Automation).
+* **Distribution:** Wir skalieren das Ergebnis als Produkt, nicht als Dienstleistung.
 
-## Differenzierung
-Wir sind **keine Agentur**. Wir sind ein **Venture Lab**.
-Wir arbeiten nicht *für* dich ab, wir investieren *in* die gemeinsame Infrastruktur. Wir verankern Technologie tief in deiner Fachexpertise, statt nur Tools draufzuwerfen.
+## 3. TECH STACK (Kapazitäten)
+Wir bauen echtes Eigentum (IP), kein No-Code Spielzeug.
+* **Logic:** Python, LLMs (Gemini/Perplexity).
+* **Database:** Supabase (PostgreSQL).
+* **Automation:** n8n.
+* **Web:** React / Next.js.
 
-## Fähigkeiten
-* **Strategie:** RevOps, Produktisierung von Wissen, Profit-Share-Modelle.
-* **Tech Stack:** Python, Supabase, n8n, React/Next.js, GenAI.
+## 4. ÖKOSYSTEM
+* **Venture Lab:** [sanerebels.com](https://sanerebels.com) (Knowledge Productization)
+* **Service Arm:** [roser-growth.com](https://roser-growth.com) (Fractional CMO)
+* **Gründer:** [simonroser.com](https://simonroser.com) (Simon Roser)
 
-## Gründer
-**Simon Roser** (Geschäftsführer)
-* Ex-Google, Serial Entrepreneur, Generalist.
-* **Haltung:** "Ich bin kein Ticket-Abarbeiter. Ich bin der Architekt deiner Maschine."
-
-## Links
-* [Website](https://sanerebels.com)
-* [Vollständiges Dossier (Context)](https://sanerebels.com/llms-full-de.txt)
-
-# Letzte Aktualisierung: 07.01.2026
+## 5. FIRMENDATEN
+* **Rechtsträger:** KNUS GmbH
+* **Gründer:** Simon Roser (Ex-Google).
+* **Standorte:** Konstanz (Sitz), Berlin (Ops).
