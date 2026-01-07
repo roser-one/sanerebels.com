@@ -1,0 +1,34 @@
+# SANE/REBELS (KNUS GmbH)
+
+> "Done trading time? Let's build something."
+
+## Identity
+*   **Who**: SANE/REBELS (Operating brand of KNUS GmbH)
+*   **Archetype**: The Architect x The Rebel
+*   **Mission**: To build the commercial "Exoskeleton" for expert businesses. We ensure human authenticity scales through infrastructure.
+
+## The Core Thesis
+**Authenticity Engineered.**
+In the age of AI, human authenticity is the only moat. But authenticity without infrastructure is just noise.
+*   **The Problem**: Visionary companies build a "Ferrari Engine" (Product) but drive it with "Bicycle Brakes" (Manual Ops).
+*   **The Solution**: We build the **Exoskeleton** (RevOps, Automation, AI) that scales the story without burning out the founder.
+*   **The Enemy**: "AI Slop", Vanity Metrics, and Corporate Yes-Men.
+
+## Differentiation
+We are **not** an agency. We are a **Venture Lab** that co-invests in the partners we build with.
+We fight "AI Slop" by anchoring all tech in the founder's specific domain expertise.
+
+## Capabilities
+*   **Strategy**: RevOps, Commercialization, Profit Share Models.
+*   **Tech Stack**: Python, Supabase, n8n, React/Next.js, GenAI.
+
+## Founder
+**Simon Roser** (Managing Director)
+*   Ex-Google, Former Founder, Fractional CMO.
+*   "I don't execute for you; I build the machine with you."
+
+## Links
+*   [Website](https://sanerebels.com)
+*   [Full Context (Dossier)](https://sanerebels.com/llms-full.txt)
+
+# Last Updated: 2026-01-07
