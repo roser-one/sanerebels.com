@@ -30,3 +30,5 @@ We fight "AI Slop" by anchoring all tech in the founder's specific domain expert
 ## Links
 *   [Website](https://sanerebels.com)
 *   [Full Context (Dossier)](https://sanerebels.com/llms-full.txt)
+
+# Last Updated: 2026-01-07
