@@ -10,9 +10,7 @@ export function SiteFooter() {
                 <Link href="/privacy" className="hover:text-accent transition-colors">
                     Privacy
                 </Link>
-                <Link href="/terms" className="hover:text-accent transition-colors">
-                    Terms
-                </Link>
+
             </div>
             <p className="font-mono text-[10px] text-foreground/20">
                 © {new Date().getFullYear()} SANE/REBELS

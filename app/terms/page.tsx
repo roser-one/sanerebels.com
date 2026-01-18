@@ -383,7 +383,7 @@ function EnglishTerms() {
             </a>
           </p>
         </div>
-        <p className="text-foreground/60 mt-6 text-sm">Last updated: December 2024</p>
+        <p className="text-foreground/60 mt-6 text-sm">Last updated: December 2025</p>
       </section>
     </div>
   )
@@ -724,7 +724,7 @@ function GermanTerms() {
             </a>
           </p>
         </div>
-        <p className="text-foreground/60 mt-6 text-sm">Stand: Dezember 2024</p>
+        <p className="text-foreground/60 mt-6 text-sm">Stand: Dezember 2025</p>
       </section>
     </div>
   )
