@@ -3,50 +3,12 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-
-const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/lets", label: "Let's Talk" },
-]
+import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 export default function AboutPage() {
   return (
     <main className="relative min-h-screen w-full bg-background">
-      {/* Navigation */}
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
-      >
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-12">
-            <Link href="/" className="flex items-center gap-1 font-medium text-sm tracking-tight">
-              <span className="text-foreground">SANE</span>
-              <span className="text-accent">/</span>
-              <span className="text-foreground">REBELS</span>
-            </Link>
-          </div>
-          <div className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/lets"
-              className="px-5 py-2.5 bg-foreground text-background text-sm font-medium rounded-md hover:bg-foreground/90 transition-colors"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-        <div className="border-b border-border" />
-      </motion.nav>
+      <AnimatedNav />
 
       {/* Hero */}
       <section className="pt-32 pb-20 bg-background">
@@ -79,9 +41,9 @@ export default function AboutPage() {
           >
             {/* Founder Card */}
             <div className="w-full md:w-80 flex-shrink-0">
-              <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-[#c97b5d] to-[#b86d4f] aspect-[3/4]">
+              <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] aspect-[3/4]">
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
-                  <p className="text-lg font-medium mb-1">Simon Rosenberg</p>
+                  <p className="text-lg font-medium mb-1">Simon Roser</p>
                   <p className="text-sm text-white/70">Founder</p>
                 </div>
               </div>
@@ -90,7 +52,7 @@ export default function AboutPage() {
             {/* Intro Text */}
             <div className="flex-1">
               <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-                I spent 15 years as a product leader and strategic advisor—at Siemens, BMW, and alongside startup founders building products people actually use.
+                I spent 15 years as a product leader and strategic advisor, working with companies like Siemens and BMW, and alongside startup founders building products people actually use.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Along the way, I kept running into the same wall: brilliant experts trapped in their own success. Their methodology was the moat. But they couldn't scale themselves. The more successful they got, the less time they had.
@@ -103,8 +65,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Manifesto Sections - Delphi Style Numbered */}
-      <section className="py-20 bg-[#f5f0eb]">
+      {/* Manifesto Sections - Storytelling Approach */}
+      <section className="py-20 bg-background">
         <div className="max-w-3xl mx-auto px-6">
           {/* Section I */}
           <motion.div
@@ -114,7 +76,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h3 className="font-serif text-lg text-accent mb-6">I. The Gold Rush</h3>
+            <h3 className="font-serif text-lg text-accent font-bold mb-6">I. The Gold Rush</h3>
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 Everyone is talking about AI. <span className="font-medium">57% of small businesses</span> are investing in it now. Up from 36% two years ago. And the average worker using AI saves <span className="font-medium">5.6 hours a week</span>.
@@ -142,7 +104,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h3 className="font-serif text-lg text-accent mb-6">II. Why Technology Fails</h3>
+            <h3 className="font-serif text-lg text-accent font-bold mb-6">II. Why Technology Fails</h3>
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 <span className="font-medium">80% of Gen Z</span> felt lonely this year. The most connected generation in history.
@@ -170,7 +132,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <h3 className="font-serif text-lg text-accent mb-6">III. The Right Partner</h3>
+            <h3 className="font-serif text-lg text-accent font-bold mb-6">III. The Right Partner</h3>
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 This space is moving faster than best practices. The playbook hasn't been written yet.
@@ -194,7 +156,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="font-serif text-lg text-accent mb-6">IV. SANE/REBELS</h3>
+            <h3 className="font-serif text-lg text-accent font-bold mb-6">IV. SANE/REBELS</h3>
             <div className="space-y-6 text-foreground leading-relaxed">
               <p>
                 We co-build productized systems with service providers who are done being the bottleneck in their own business.
@@ -203,13 +165,13 @@ export default function AboutPage() {
                 Your expertise. Our engineering. Something that scales your way.
               </p>
               <div className="grid md:grid-cols-2 gap-8 py-8">
-                <div>
+                <div className="bg-card border border-border rounded-xl p-6">
                   <h4 className="font-medium text-foreground mb-2">SANE</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Grounded. Research-backed. We don't build on hype. We build on what works. Every system is architected with intention—designed to last, not just to launch.
+                    Grounded. Research-backed. We don't build on hype. We build on what works. Every system is architected with intention, designed to last, not just to launch.
                   </p>
                 </div>
-                <div>
+                <div className="bg-card border border-border rounded-xl p-6">
                   <h4 className="font-medium text-foreground mb-2">REBELS</h4>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     Bold. Experimental. We ship before it's perfect because that's how you learn. We question the playbook and write new pages when the old ones don't fit.
@@ -234,24 +196,24 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="grid md:grid-cols-3 gap-10"
           >
-            <div>
+            <div className="bg-card border border-border rounded-xl p-6">
               <h4 className="font-serif text-lg text-foreground mb-3">Company</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 KNUS GmbH<br />
-                Berlin, Germany
+                Konstanz, Germany
               </p>
             </div>
-            <div>
+            <div className="bg-card border border-border rounded-xl p-6">
               <h4 className="font-serif text-lg text-foreground mb-3">Experience</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 15+ years in product leadership<br />
                 Siemens, BMW, startups
               </p>
             </div>
-            <div>
+            <div className="bg-card border border-border rounded-xl p-6">
               <h4 className="font-serif text-lg text-foreground mb-3">Infrastructure</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                EU-hosted · GDPR-native<br />
+                EU-hosted, GDPR-native<br />
                 Your methodology stays yours
               </p>
             </div>
@@ -269,7 +231,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="relative rounded-2xl overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#c97b5d] via-[#d4876a] to-[#e8a088]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95]" />
             <div className="relative z-10 p-14 md:p-20 text-center">
               <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">
                 Ready to build your system?
@@ -279,7 +241,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/lets"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#8b5a42] font-medium rounded-md hover:bg-white/95 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-medium rounded-md hover:bg-white/95 transition-all"
               >
                 Start the Conversation
                 <ArrowRight className="w-4 h-4" />
@@ -289,43 +251,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-14 border-t border-border bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <Link href="/" className="flex items-center gap-1 font-medium text-sm">
-              <span className="text-foreground">SANE</span>
-              <span className="text-accent">/</span>
-              <span className="text-foreground">REBELS</span>
-            </Link>
-            
-            <div className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            
-            <p className="text-sm text-muted-foreground">
-              KNUS GmbH · Berlin
-            </p>
-          </div>
-          
-          <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-muted-foreground">
-              EU-hosted · GDPR-native · Your methodology stays yours
-            </p>
-            <p className="text-xs text-muted-foreground font-serif italic">
-              Sane enough to build it. Rebel enough to ship it.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <AnimatedFooter />
     </main>
   )
 }

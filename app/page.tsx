@@ -5,11 +5,7 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart } from "lucide-react"
 import { ShaderBackground } from "@/components/shader-background"
-
-const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/lets", label: "Let's Talk" },
-]
+import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 const useCases = [
   {
@@ -50,14 +46,13 @@ const useCases = [
   },
 ]
 
-// Evolution of Expertise Timeline based on your diagram
+// Evolution of Expertise Timeline
 const evolutionTimeline = [
   {
     stage: "Individuality",
     era: "Verbal Communication",
     year: "100,000 B.C.",
     outcome: "Sound, Local Reach",
-    premium: "Knowledge was premium",
     icon: Users,
     style: "neutral",
   },
@@ -66,7 +61,6 @@ const evolutionTimeline = [
     era: "Printing Press",
     year: "1455",
     outcome: "Books, Duplication",
-    premium: "Reach was premium",
     icon: BookOpen,
     style: "neutral",
   },
@@ -75,7 +69,6 @@ const evolutionTimeline = [
     era: "Radio / Television",
     year: "1910-1929",
     outcome: "Mass Media, Audiences",
-    premium: "Speed was premium",
     icon: Radio,
     style: "neutral",
   },
@@ -84,7 +77,6 @@ const evolutionTimeline = [
     era: "Podcast / Digital",
     year: "2003+",
     outcome: "Content, Platforms",
-    premium: "Personality was premium",
     icon: Headphones,
     style: "neutral",
   },
@@ -93,7 +85,6 @@ const evolutionTimeline = [
     era: "Conversational AI",
     year: "2024+",
     outcome: "Answers, Personalization",
-    premium: "Responsiveness is premium",
     icon: MessageCircle,
     style: "gold",
   },
@@ -102,7 +93,6 @@ const evolutionTimeline = [
     era: "AI + Real Presence",
     year: "Today",
     outcome: "Answers, Experience, Trust",
-    premium: "Your authentic energy is premium",
     icon: Heart,
     style: "accent",
   },
@@ -132,48 +122,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen w-full bg-background">
-      {/* Navigation */}
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
-      >
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-12">
-            {/* Animated Logo */}
-            <Link href="/" className="flex items-center gap-1 font-medium text-sm tracking-tight">
-              <span className="relative">
-                <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
-                <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
-              </span>
-              <span className="text-accent">/</span>
-              <span className="relative">
-                <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
-                <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
-              </span>
-            </Link>
-          </div>
-          <div className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/lets"
-              className="px-5 py-2.5 bg-accent text-accent-foreground text-sm font-medium rounded-md hover:bg-accent/90 transition-colors"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-        <div className="border-b border-border" />
-      </motion.nav>
+      <AnimatedNav />
 
       {/* Hero Section - Animated Shader Gradient */}
       <section className="relative pt-20 overflow-hidden min-h-[80vh] flex items-center">
@@ -228,7 +177,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               The Philosophy
             </p>
             <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
@@ -241,8 +190,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Evolution Timeline Section */}
-      <section className="py-24 md:py-32 bg-secondary">
+      {/* Evolution Timeline Section - Card-based like Delphi */}
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -251,7 +200,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
               From Information to Presence:
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
@@ -259,7 +208,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Timeline with connector line */}
+          {/* Timeline Cards with Top Connector Dots */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -267,72 +216,81 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Timeline connector line */}
-            <div className="absolute top-12 left-0 right-0 h-0.5 bg-border hidden lg:block" />
-            <div className="absolute top-12 right-0 w-1/6 h-0.5 bg-gradient-to-r from-border via-accent to-accent hidden lg:block" />
+            {/* Horizontal connector line at top */}
+            <div className="absolute top-4 left-[8%] right-[8%] h-px bg-border hidden lg:block" />
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {evolutionTimeline.map((item, i) => {
                 const Icon = item.icon
+                const isGold = item.style === "gold"
+                const isAccent = item.style === "accent"
+                
                 return (
                   <div
                     key={item.stage}
-                    className={`relative rounded-xl p-5 flex flex-col items-center text-center transition-all ${
-                      item.style === "gold"
-                        ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520] shadow-lg"
-                        : item.style === "accent"
-                        ? "bg-accent text-accent-foreground shadow-lg ring-2 ring-accent/50"
-                        : "bg-card border border-border shadow-sm"
-                    }`}
+                    className="relative flex flex-col"
                   >
-                    {/* Timeline dot */}
-                    <div className={`absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-2 hidden lg:block ${
-                      item.style === "gold" ? "bg-[#d4a574] border-[#c99a64]" :
-                      item.style === "accent" ? "bg-accent border-accent" : "bg-card border-border"
-                    }`} />
-                    
-                    <p className={`text-xs font-medium mb-4 ${
-                      item.style === "gold" ? "text-[#2a2520]/70" : 
-                      item.style === "accent" ? "text-accent-foreground/70" : "text-accent"
-                    }`}>
-                      {item.stage}
-                    </p>
-                    
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${
-                      item.style === "gold" ? "bg-[#2a2520]/10" :
-                      item.style === "accent" ? "bg-accent-foreground/10" : "bg-accent/10"
-                    }`}>
-                      <Icon className={`w-5 h-5 ${
-                        item.style === "gold" ? "text-[#2a2520]" :
-                        item.style === "accent" ? "text-accent-foreground" : "text-accent"
+                    {/* Top dot connector */}
+                    <div className="flex justify-center mb-4 relative">
+                      <div className={`w-3 h-3 rounded-full border-2 ${
+                        isGold ? "bg-[#d4a574] border-[#c99a64]" :
+                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
                       }`} />
                     </div>
                     
-                    <p className={`text-sm font-medium mb-1 ${
-                      item.style === "gold" ? "text-[#2a2520]" :
-                      item.style === "accent" ? "text-accent-foreground" : "text-foreground"
-                    }`}>
-                      {item.era}
-                    </p>
-                    
-                    <div className={`w-8 h-px my-3 ${
-                      item.style === "gold" ? "bg-[#2a2520]/20" :
-                      item.style === "accent" ? "bg-accent-foreground/20" : "bg-border"
-                    }`} />
-                    
-                    <p className={`text-xs mb-2 ${
-                      item.style === "gold" ? "text-[#2a2520]/70" :
-                      item.style === "accent" ? "text-accent-foreground/70" : "text-muted-foreground"
-                    }`}>
-                      {item.year}
-                    </p>
-                    
-                    <p className={`text-xs leading-relaxed ${
-                      item.style === "gold" ? "text-[#2a2520]/80" :
-                      item.style === "accent" ? "text-accent-foreground/80" : "text-muted-foreground"
-                    }`}>
-                      {item.outcome}
-                    </p>
+                    {/* Card */}
+                    <div
+                      className={`flex-1 rounded-xl p-5 flex flex-col text-center ${
+                        isGold
+                          ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
+                          : isAccent
+                          ? "bg-accent text-accent-foreground"
+                          : "bg-card border border-border"
+                      }`}
+                    >
+                      <p className={`text-xs font-medium mb-4 ${
+                        isGold ? "text-[#2a2520]/70" : 
+                        isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                      }`}>
+                        {item.stage}
+                      </p>
+                      
+                      <div className={`w-10 h-10 mx-auto rounded-full flex items-center justify-center mb-4 ${
+                        isGold ? "bg-[#2a2520]/10" :
+                        isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                      }`}>
+                        <Icon className={`w-5 h-5 ${
+                          isGold ? "text-[#2a2520]" :
+                          isAccent ? "text-accent-foreground" : "text-accent"
+                        }`} />
+                      </div>
+                      
+                      <p className={`text-sm font-medium mb-1 ${
+                        isGold ? "text-[#2a2520]" :
+                        isAccent ? "text-accent-foreground" : "text-foreground"
+                      }`}>
+                        {item.era}
+                      </p>
+                      
+                      <div className={`w-8 h-px mx-auto my-3 ${
+                        isGold ? "bg-[#2a2520]/20" :
+                        isAccent ? "bg-accent-foreground/20" : "bg-border"
+                      }`} />
+                      
+                      <p className={`text-xs mb-2 ${
+                        isGold ? "text-[#2a2520]/70" :
+                        isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                      }`}>
+                        {item.year}
+                      </p>
+                      
+                      <p className={`text-xs leading-relaxed ${
+                        isGold ? "text-[#2a2520]/80" :
+                        isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                      }`}>
+                        {item.outcome}
+                      </p>
+                    </div>
                   </div>
                 )
               })}
@@ -367,7 +325,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               What We Enable
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -402,7 +360,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-secondary border border-border rounded-xl p-8"
+                className="bg-card border border-border rounded-xl p-8"
               >
                 <h3 className="font-serif text-xl text-foreground mb-3">
                   {outcome.title}
@@ -420,7 +378,7 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -448,7 +406,7 @@ export default function Home() {
                 onClick={() => setActiveUseCase(i)}
                 className={`text-sm transition-colors pb-2 ${
                   activeUseCase === i
-                    ? "text-accent border-b-2 border-accent font-medium"
+                    ? "text-accent border-b-2 border-accent font-bold"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -465,9 +423,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden shadow-lg"
+              className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden border border-border"
             >
-              {/* Image Side - Purple gradient instead of orange */}
+              {/* Image Side - Purple gradient */}
               <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] flex items-center justify-center min-h-[400px]">
                 <div className="text-center text-white p-10">
                   <p className="text-sm text-white/70 mb-3">{useCases[activeUseCase].label}</p>
@@ -476,7 +434,7 @@ export default function Home() {
               </div>
 
               {/* Content Side */}
-              <div className="bg-card border border-border p-10 md:p-12 flex flex-col justify-center">
+              <div className="bg-card p-10 md:p-12 flex flex-col justify-center">
                 <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
                   {useCases[activeUseCase].headline}
                 </h3>
@@ -500,7 +458,7 @@ export default function Home() {
                 
                 <Link
                   href="/lets"
-                  className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all"
                 >
                   SANE/REBELS for {useCases[activeUseCase].label}
                   <ArrowRight className="w-4 h-4" />
@@ -521,7 +479,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               Real Concerns, Real Answers
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -540,7 +498,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-secondary border border-border rounded-xl p-8"
+                className="bg-card border border-border rounded-xl p-8"
               >
                 <p className="font-serif text-lg text-foreground mb-4">
                   "{fear.question}"
@@ -555,7 +513,7 @@ export default function Home() {
       </section>
 
       {/* European Advantage Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-20 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -564,7 +522,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-14"
           >
-            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               The European Advantage
             </p>
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
@@ -640,75 +598,45 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - 4-Step Timeline */}
-          <div className="grid md:grid-cols-4 gap-8 mt-14">
-            {[
-              { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "Your methodology codified. We uncover what makes your work actually work." },
-              { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured. Systems designed to scale your way." },
-              { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels. Website, community, wherever it matters." },
-              { num: "04", title: "Amplify", timing: "Ongoing", desc: "Every conversation makes it smarter. Continuous learning, continuous improvement." },
-            ].map((step, i) => (
-              <motion.div
-                key={step.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-              >
-                <p className="text-accent font-medium mb-2">{step.num}</p>
-                <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                <p className="text-xs text-accent/70 mb-3">{step.timing}</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
+          {/* Process Steps - 4-Step Timeline with visual connector */}
+          <div className="relative mt-14">
+            {/* Connector line */}
+            <div className="absolute top-5 left-[12%] right-[12%] h-px bg-border hidden md:block" />
+            
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "Your methodology codified. We uncover what makes your work actually work." },
+                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured. Systems designed to scale your way." },
+                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels. Website, community, wherever it matters." },
+                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Every conversation makes it smarter. Continuous learning, continuous improvement." },
+              ].map((step, i) => (
+                <motion.div
+                  key={step.num}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="relative"
+                >
+                  {/* Dot */}
+                  <div className="hidden md:flex justify-center mb-4">
+                    <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
+                  </div>
+                  
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <p className="text-accent font-bold mb-2">{step.num}</p>
+                    <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                    <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-14 border-t border-border bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Animated Footer Logo */}
-            <Link href="/" className="flex items-center gap-1 font-medium text-sm">
-              <span className="relative">
-                <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
-                <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
-              </span>
-              <span className="text-accent">/</span>
-              <span className="relative">
-                <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
-                <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
-              </span>
-            </Link>
-            
-            <div className="flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            
-            <p className="text-sm text-muted-foreground">
-              KNUS GmbH · Berlin
-            </p>
-          </div>
-          
-          <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-muted-foreground">
-              EU-hosted · GDPR-native · Your methodology stays yours
-            </p>
-            <p className="text-xs text-muted-foreground font-serif italic">
-              Sane enough to build it. Rebel enough to ship it.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <AnimatedFooter />
     </main>
   )
 }
