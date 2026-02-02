@@ -117,11 +117,6 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Divider */}
-            <div className="flex justify-center mb-16">
-              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
-            </div>
-
             {/* Section II */}
             <div className="mb-16">
               <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
@@ -139,11 +134,6 @@ export default function AboutPage() {
                   This reframes every fear. "Will AI replace me?" No, it frees you to do what only you can do. "Will this feel inauthentic?" No, it makes your presence more powerful.
                 </p>
               </div>
-            </div>
-
-            {/* Divider */}
-            <div className="flex justify-center mb-16">
-              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
             </div>
 
             {/* Section III */}
@@ -164,11 +154,6 @@ export default function AboutPage() {
                 </p>
                 <p className="text-foreground font-medium">We don't replace your presence. We protect it.</p>
               </div>
-            </div>
-
-            {/* Divider */}
-            <div className="flex justify-center mb-16">
-              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
             </div>
 
             {/* Section IV */}

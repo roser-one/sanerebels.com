@@ -445,20 +445,15 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden border border-border"
             >
-              {/* Image Side - Purple gradient with face */}
-              <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] flex items-center justify-center min-h-[400px]">
-                {/* Person image overlay */}
-                <div className="absolute inset-0 flex items-end justify-center">
-                  <img
-                    src={useCases[activeUseCase].image}
-                    alt={useCases[activeUseCase].label}
-                    className="w-[300px] h-[300px] object-cover opacity-40 mix-blend-luminosity"
-                  />
-                </div>
-                <div className="relative text-center text-white p-10 z-10">
-                  <p className="text-sm text-white/70 mb-3">{useCases[activeUseCase].label}</p>
-                  <p className="font-serif text-3xl leading-tight">{useCases[activeUseCase].headline}</p>
-                </div>
+              {/* Image Side - Purple gradient with face filling container */}
+              <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] min-h-[400px] overflow-hidden">
+                {/* Person image overlay - fills container */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={useCases[activeUseCase].image}
+                  alt={useCases[activeUseCase].label}
+                  className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity"
+                />
               </div>
 
               {/* Content Side */}
@@ -619,15 +614,13 @@ export default function Home() {
               className="hidden md:block relative z-10"
             >
               <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
-                {/* Face image */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="https://i.pravatar.cc/400?img=68"
-                    alt="Expert"
-                    className="w-[200px] h-[200px] opacity-30 mix-blend-luminosity"
-                  />
-                </div>
+                {/* Face image - fills container */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://i.pravatar.cc/400?img=68"
+                  alt="Expert"
+                  className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
+                />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
                   <p className="text-lg font-medium mb-1">Your Expert System</p>
                   <p className="text-sm text-white/70 mb-8">Protected</p>
