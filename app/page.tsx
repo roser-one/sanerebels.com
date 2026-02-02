@@ -1,5 +1,5 @@
 "use client"
-
+// SANE/REBELS Homepage
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
@@ -233,13 +233,12 @@ export default function Home() {
               <span>Present</span>
             </div>
 
-            {/* Cards - TOP ALIGNED, first smallest growing to last largest */}
-            <div className="flex flex-wrap lg:flex-nowrap gap-3 items-start pt-4">
+            {/* Desktop: Horizontal cards */}
+            <div className="hidden lg:flex gap-3 items-start pt-4">
               {evolutionTimeline.map((item, i) => {
                 const Icon = item.icon
                 const isGold = item.style === "gold"
                 const isAccent = item.style === "accent"
-                // Height grows from first (smallest) to last (largest)
                 const baseHeight = 200
                 const increment = 25
                 const cardHeight = baseHeight + (i * increment)
@@ -247,10 +246,10 @@ export default function Home() {
                 return (
                   <div
                     key={item.stage}
-                    className="relative flex flex-col w-[calc(50%-6px)] md:w-[calc(33.33%-8px)] lg:w-auto lg:flex-1"
+                    className="relative flex flex-col flex-1"
                   >
                     {/* Top dot - aligned to the line */}
-                    <div className="hidden lg:flex justify-center mb-3">
+                    <div className="flex justify-center mb-3">
                       <div className={`w-3 h-3 rounded-full border-2 ${
                         isGold ? "bg-[#d4a574] border-[#c99a64]" :
                         isAccent ? "bg-accent border-accent" : "bg-card border-border"
@@ -314,6 +313,90 @@ export default function Home() {
                   </div>
                 )
               })}
+            </div>
+            
+            {/* Mobile: Vertical timeline with alternating cards */}
+            <div className="lg:hidden relative pt-4">
+              {/* Vertical line down center */}
+              <div className="absolute left-1/2 top-4 bottom-0 w-px bg-border -translate-x-1/2" />
+              
+              <div className="space-y-6">
+                {evolutionTimeline.map((item, i) => {
+                  const Icon = item.icon
+                  const isGold = item.style === "gold"
+                  const isAccent = item.style === "accent"
+                  const isLeft = i % 2 === 0
+                  
+                  return (
+                    <div
+                      key={item.stage}
+                      className="relative"
+                    >
+                      {/* Dot on center line */}
+                      <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full -translate-x-1/2 z-10 border-2 ${
+                        isGold ? "bg-[#d4a574] border-[#c99a64]" :
+                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
+                      }`} />
+                      
+                      {/* Card - alternating left/right */}
+                      <div className={`${isLeft ? 'pr-6 mr-auto' : 'pl-6 ml-auto'} w-[calc(50%-8px)]`}>
+                        <div
+                          className={`rounded-xl p-4 text-center ${
+                            isGold
+                              ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
+                              : isAccent
+                              ? "bg-accent text-accent-foreground"
+                              : "bg-card border border-border"
+                          }`}
+                        >
+                          <p className={`text-xs font-medium mb-2 ${
+                            isGold ? "text-[#2a2520]/70" : 
+                            isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                          }`}>
+                            {item.stage}
+                          </p>
+                          
+                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center mb-2 ${
+                            isGold ? "bg-[#2a2520]/10" :
+                            isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                          }`}>
+                            <Icon className={`w-4 h-4 ${
+                              isGold ? "text-[#2a2520]" :
+                              isAccent ? "text-accent-foreground" : "text-accent"
+                            }`} />
+                          </div>
+                          
+                          <p className={`text-sm font-medium mb-1 ${
+                            isGold ? "text-[#2a2520]" :
+                            isAccent ? "text-accent-foreground" : "text-foreground"
+                          }`}>
+                            {item.era}
+                          </p>
+                          
+                          <div className={`w-6 h-px mx-auto my-2 ${
+                            isGold ? "bg-[#2a2520]/20" :
+                            isAccent ? "bg-accent-foreground/20" : "bg-border"
+                          }`} />
+                          
+                          <p className={`text-xs ${
+                            isGold ? "text-[#2a2520]/70" :
+                            isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                          }`}>
+                            {item.year}
+                          </p>
+                          
+                          <p className={`text-xs leading-relaxed mt-2 ${
+                            isGold ? "text-[#2a2520]/80" :
+                            isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                          }`}>
+                            {item.outcome}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </motion.div>
 
@@ -607,7 +690,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full min-h-[720px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Face image - fills container */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -702,9 +785,22 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-{/* Process Steps */}
-          <div className="relative mt-14">
+      {/* Process Section */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              Our Process
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+              How We Work
+            </h2>
+          </div>
+          
+          <div className="relative">
             {/* Desktop: Horizontal with top dots and line */}
             <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
               {[
@@ -793,49 +889,6 @@ export default function Home() {
                   )
                 })}
               </div>
-            </div>
-          </div>
-            </div>
-            
-            {/* Cards - TOP ALIGNED */}
-            <div className="flex flex-wrap md:flex-nowrap gap-4 items-start">
-              {[
-                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
-                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
-                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
-                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
-              ].map((step, i) => {
-                // Height grows from first (smallest) to last (largest)
-                const baseHeight = 160
-                const increment = 20
-                const cardHeight = baseHeight + (i * increment)
-                
-                return (
-                  <motion.div
-                    key={step.num}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative w-full md:flex-1"
-                  >
-                    {/* Dot at top */}
-                    <div className="hidden md:flex justify-center mb-3">
-                      <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
-                    </div>
-                    
-                    <div 
-                      className="bg-card border border-border rounded-xl p-6 flex flex-col"
-                      style={{ minHeight: `${cardHeight}px` }}
-                    >
-                      <p className="text-accent font-bold mb-2">{step.num}</p>
-                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                )
-              })}
             </div>
           </div>
         </div>
