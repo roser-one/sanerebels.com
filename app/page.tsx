@@ -621,12 +621,11 @@ export default function Home() {
               <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Face image */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src="https://i.pravatar.cc/400?img=68"
                     alt="Expert"
-                    width={200}
-                    height={200}
-                    className="opacity-30 mix-blend-luminosity"
+                    className="w-[200px] h-[200px] opacity-30 mix-blend-luminosity"
                   />
                 </div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
