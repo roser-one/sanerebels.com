@@ -4,8 +4,12 @@ import { useEffect } from "react"
 import Link from "next/link"
 import { getCalApi } from "@calcom/embed-react"
 import { motion } from "framer-motion"
-import { PageWrapper } from "@/components/page-wrapper"
 import { ArrowRight, Mail, Linkedin, Calendar, ExternalLink } from "lucide-react"
+
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/lets", label: "Let's Talk" },
+]
 
 export default function LetsPage() {
   useEffect(() => {
@@ -30,146 +34,276 @@ export default function LetsPage() {
   }
 
   return (
-    <PageWrapper 
-      title="Build something that scales."
-      subtitle="Let's Talk"
-      currentPath="/lets"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
+    <main className="relative min-h-screen w-full bg-background">
+      {/* Navigation */}
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="space-y-4"
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
       >
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Get back to being <span className="text-accent font-medium">human</span>.
-        </p>
-        <p className="text-muted-foreground">
-          No pitch deck required. No sales call. Just clarity about what you're trying to build and whether we can help.
-        </p>
-      </motion.div>
-
-      {/* Main CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="mt-10"
-      >
-        <button
-          onClick={openCalPopup}
-          className="group relative w-full flex items-center justify-center gap-3 px-8 py-5 bg-foreground text-background text-lg font-medium rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
-        >
-          <Calendar className="w-5 h-5" />
-          <span>Start the Conversation</span>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </button>
-      </motion.div>
-
-      {/* What to Expect */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-16 pt-16 border-t border-border"
-      >
-        <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
-          What to Expect
-        </p>
-
-        <div className="space-y-6">
-          <div className="flex gap-4">
-            <span className="text-accent font-serif text-xl">01</span>
-            <div>
-              <p className="text-foreground font-medium mb-1">30-minute conversation</p>
-              <p className="text-sm text-muted-foreground">We'll explore what you're building and whether there's a fit.</p>
-            </div>
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-12">
+            <Link href="/" className="flex items-center gap-1 font-medium text-sm tracking-tight">
+              <span className="text-foreground">SANE</span>
+              <span className="text-accent">/</span>
+              <span className="text-foreground">REBELS</span>
+            </Link>
           </div>
-          <div className="flex gap-4">
-            <span className="text-accent font-serif text-xl">02</span>
-            <div>
-              <p className="text-foreground font-medium mb-1">No pressure</p>
-              <p className="text-sm text-muted-foreground">This is discovery for both of us. We say no to 80% of projects.</p>
-            </div>
-          </div>
-          <div className="flex gap-4">
-            <span className="text-accent font-serif text-xl">03</span>
-            <div>
-              <p className="text-foreground font-medium mb-1">Clarity, either way</p>
-              <p className="text-sm text-muted-foreground">You'll leave knowing if this is the right path, even if we don't work together.</p>
-            </div>
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/lets"
+              className="px-5 py-2.5 bg-foreground text-background text-sm font-medium rounded-md hover:bg-foreground/90 transition-colors"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
-      </motion.div>
+        <div className="border-b border-border" />
+      </motion.nav>
+
+      {/* Hero */}
+      <section className="pt-32 pb-16 bg-background">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
+              Let's talk.
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+              Ready to turn your expertise into a scalable system? Start with a conversation.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-12 bg-background">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Book a Call */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-[#f5f0eb] rounded-xl p-8 md:p-10"
+            >
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                <Calendar className="w-5 h-5 text-accent" />
+              </div>
+              <h2 className="font-serif text-2xl text-foreground mb-4">
+                Book a discovery call
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                30 minutes to explore what you're building, where you're stuck, and whether we're the right partner.
+              </p>
+              <button
+                onClick={openCalPopup}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background font-medium rounded-md hover:bg-foreground/90 transition-all"
+              >
+                Schedule Now
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </motion.div>
+
+            {/* Email */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="bg-[#f5f0eb] rounded-xl p-8 md:p-10"
+            >
+              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6">
+                <Mail className="w-5 h-5 text-accent" />
+              </div>
+              <h2 className="font-serif text-2xl text-foreground mb-4">
+                Send a message
+              </h2>
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                Prefer to write? Tell us about your business and what you're trying to build. We'll respond within 48 hours.
+              </p>
+              <a
+                href="mailto:hi@sanerebels.com"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-foreground text-foreground font-medium rounded-md hover:bg-foreground hover:text-background transition-all"
+              >
+                hi@sanerebels.com
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expectations */}
+      <section className="py-16 bg-[#f5f0eb]">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-10 text-center">
+              What to expect
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  num: "01",
+                  title: "Discovery",
+                  desc: "We'll understand your methodology, your business model, and where the bottleneck actually is."
+                },
+                {
+                  num: "02",
+                  title: "Clarity",
+                  desc: "You'll leave knowing if this is the right path—even if we don't work together. No pressure."
+                },
+                {
+                  num: "03",
+                  title: "Partnership",
+                  desc: "If there's a fit, we work alongside you as co-builders, not vendors. Skin in the game."
+                }
+              ].map((step) => (
+                <div key={step.num}>
+                  <p className="text-accent font-medium mb-3">{step.num}</p>
+                  <h3 className="font-serif text-lg text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Good Fit Section */}
+      <section className="py-16 bg-background">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-serif text-2xl text-foreground mb-8">
+              You might be a good fit if...
+            </h2>
+            <ul className="space-y-4 text-muted-foreground">
+              {[
+                "You're an expert, coach, or consultant who's hit a ceiling",
+                "Your methodology is proven but you can't scale yourself",
+                "You want a partner, not a vendor—someone with skin in the game",
+                "You're ready to move fast and iterate together",
+                "You're based in or serving the EU market"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-accent mt-1">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Alternative Contact */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-16 pt-16 border-t border-border"
-      >
-        <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
-          Prefer Another Way?
-        </p>
-
-        <div className="space-y-3">
-          <a
-            href="mailto:hi@sanerebels.com"
-            className="group flex items-center p-4 rounded-xl bg-card border border-border hover:border-accent/30 transition-all duration-300"
+      <section className="py-16 bg-[#f5f0eb]">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="p-3 rounded-full bg-muted group-hover:bg-accent/10 transition-colors mr-4">
-              <Mail className="w-5 h-5 text-foreground group-hover:text-accent" />
+            <h2 className="font-serif text-xl text-foreground mb-6">
+              Connect another way
+            </h2>
+            <div className="space-y-3">
+              <a
+                href="https://linkedin.com/in/simon-roser"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center p-4 rounded-xl bg-background border border-border hover:border-accent/30 transition-all"
+              >
+                <div className="p-3 rounded-full bg-muted group-hover:bg-accent/10 transition-colors mr-4">
+                  <Linkedin className="w-5 h-5 text-foreground group-hover:text-accent" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-foreground">LinkedIn</p>
+                  <p className="text-xs text-muted-foreground">linkedin.com/in/simon-roser</p>
+                </div>
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-all" />
+              </a>
             </div>
-            <div className="flex-1">
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">Email</p>
-              <p className="text-base font-medium text-foreground">hi@sanerebels.com</p>
-            </div>
-            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all" />
-          </a>
 
-          <a
-            href="https://linkedin.com/in/simon-roser"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center p-4 rounded-xl bg-card border border-border hover:border-accent/30 transition-all duration-300"
-          >
-            <div className="p-3 rounded-full bg-muted group-hover:bg-accent/10 transition-colors mr-4">
-              <Linkedin className="w-5 h-5 text-foreground group-hover:text-accent" />
+            <div className="mt-10 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-2">Already productized?</p>
+              <a
+                href="https://roser-growth.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors text-sm font-medium"
+              >
+                Looking for scale instead?
+                <span className="underline decoration-accent/50 group-hover:decoration-accent underline-offset-4">
+                  roser-growth.com
+                </span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
             </div>
-            <div className="flex-1">
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">LinkedIn</p>
-              <p className="text-base font-medium text-foreground">linkedin.com/in/simon-roser</p>
-            </div>
-            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-accent opacity-0 group-hover:opacity-100 transition-all" />
-          </a>
+          </motion.div>
         </div>
-      </motion.div>
+      </section>
 
-      {/* Already Productized */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="mt-16 pt-16 border-t border-border"
-      >
-        <p className="text-sm text-muted-foreground mb-2">Already productized?</p>
-        <a
-          href="https://roser-growth.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors text-sm font-medium"
-        >
-          Looking for scale instead?
-          <span className="underline decoration-accent/50 group-hover:decoration-accent underline-offset-4 transition-all">
-            roser-growth.com
-          </span>
-          <ExternalLink className="w-3 h-3 group-hover:text-accent transition-colors" />
-        </a>
-      </motion.div>
-    </PageWrapper>
+      {/* Footer */}
+      <footer className="py-14 border-t border-border bg-background">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <Link href="/" className="flex items-center gap-1 font-medium text-sm">
+              <span className="text-foreground">SANE</span>
+              <span className="text-accent">/</span>
+              <span className="text-foreground">REBELS</span>
+            </Link>
+            
+            <div className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            
+            <p className="text-sm text-muted-foreground">
+              KNUS GmbH · Berlin
+            </p>
+          </div>
+          
+          <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-muted-foreground">
+              EU-hosted · GDPR-native · Your methodology stays yours
+            </p>
+            <p className="text-xs text-muted-foreground font-serif italic">
+              Sane enough to build it. Rebel enough to ship it.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
   )
 }

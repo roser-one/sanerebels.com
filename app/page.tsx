@@ -3,13 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Check, Shield, Server, Lock, Users } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 
 const navLinks = [
-  { href: "/why", label: "Why" },
-  { href: "/what", label: "How" },
-  { href: "/who", label: "About" },
-  { href: "/lets", label: "Let's" },
+  { href: "/about", label: "About" },
+  { href: "/lets", label: "Let's Talk" },
 ]
 
 const useCases = [
@@ -17,14 +15,13 @@ const useCases = [
     id: "coaches",
     label: "Coaches",
     headline: "Be Present, Even When You're Not",
-    subheadline: "And practitioners & healers too.",
+    subheadline: "And practitioners & healers.",
     description: "You're at capacity. Every client gets you, which is why they keep coming. But you can't help more people without losing what makes the work effective.",
     benefits: [
       "Scale your practice without diluting your methodology",
       "Support clients between sessions, authentically",
       "Reach people you'll never meet in person",
     ],
-    cta: "Build for Coaches",
   },
   {
     id: "consultants",
@@ -37,7 +34,6 @@ const useCases = [
       "Qualify leads with your actual framework",
       "Deliver your approach at enterprise scale",
     ],
-    cta: "Build for Consultants",
   },
   {
     id: "experts",
@@ -47,40 +43,19 @@ const useCases = [
     description: "You see patterns others miss. You've built frameworks that actually work. But explaining them takes too long, and nobody else can deliver them like you can.",
     benefits: [
       "Engineer delivery systems for your intellectual property",
-      "Monetize expertise without extra effort",
-      "Create personalized, interactive learning experiences",
+      "Monetize expertise without trading more hours",
+      "Create personalized, interactive experiences at scale",
     ],
-    cta: "Build for Experts",
   },
 ]
 
-const trustPillars = [
-  {
-    title: "Built to protect your methodology",
-    description: "Your intellectual property maintains integrity over time. Your authenticity stays intact, trusted by your audience now—and forever.",
-    icon: Shield,
-  },
-  {
-    title: "Complete ownership",
-    description: "We believe your methodology is your most precious asset. It's securely stored, fully documented, and never shared or sold.",
-    icon: Lock,
-  },
-  {
-    title: "Privacy first, always",
-    description: "We uphold strict privacy standards. GDPR-native infrastructure keeps your business private and your clients protected.",
-    icon: Server,
-  },
-  {
-    title: "You're in control",
-    description: "Your productized system speaks only your methodology. It never improvises without your consent. You stay in the loop.",
-    icon: Users,
-  },
-]
-
-const stats = [
-  { value: "57%", label: "of small businesses investing in AI now" },
-  { value: "5.6h", label: "saved weekly by workers using AI" },
-  { value: "6%", label: "of companies see real returns" },
+const timelineEvents = [
+  { year: "100,000 B.C.", label: "Verbal Communication", icon: "speech" },
+  { year: "1455", label: "Printing Press", icon: "book" },
+  { year: "1910", label: "Radio", icon: "radio" },
+  { year: "2003", label: "Podcast", icon: "mic" },
+  { year: "1929", label: "Television", icon: "tv" },
+  { year: "Today", label: "SANE/REBELS", icon: "sparkle", highlight: true },
 ]
 
 export default function Home() {
@@ -93,14 +68,16 @@ export default function Home() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md"
+        className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-1 font-semibold text-sm tracking-tight">
-            <span className="text-foreground">SANE</span>
-            <span className="text-accent">/</span>
-            <span className="text-foreground">REBELS</span>
-          </Link>
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-12">
+            <Link href="/" className="flex items-center gap-1 font-medium text-sm tracking-tight">
+              <span className="text-foreground">SANE</span>
+              <span className="text-accent">/</span>
+              <span className="text-foreground">REBELS</span>
+            </Link>
+          </div>
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -113,38 +90,39 @@ export default function Home() {
             ))}
             <Link
               href="/lets"
-              className="px-4 py-2 bg-foreground text-background text-sm font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+              className="px-5 py-2.5 bg-foreground text-background text-sm font-medium rounded-md hover:bg-foreground/90 transition-colors"
             >
               Get Started
             </Link>
           </div>
         </div>
+        <div className="border-b border-border" />
       </motion.nav>
 
-      {/* Hero Section - Warm Gradient */}
-      <section className="relative pt-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.70_0.14_50)] via-[oklch(0.65_0.15_45)] to-[oklch(0.60_0.16_40)]" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
+      {/* Hero Section - Warm Gradient like Delphi */}
+      <section className="relative pt-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#c97b5d] via-[#d4876a] to-[#e8a088]" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 py-28 md:py-36 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <p className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/90 mb-8">
-              <span className="text-white/70">SANE/REBELS</span>
+            <p className="text-sm text-white/80 mb-6 tracking-wide">
+              SANE/REBELS
             </p>
             
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.15] mb-6 text-balance">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] mb-6">
               Your Expertise, Amplified
             </h1>
             
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-              We co-build productized systems with service providers who are done being the bottleneck. Your methodology becomes a machine that scales—without losing what makes it work.
+            <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
+              We co-build productized systems with service providers who are done being the bottleneck. Your methodology becomes architecture that scales—without losing what makes it work.
             </p>
             
             <Link
               href="/lets"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white/90 text-[oklch(0.35_0.05_50)] font-medium rounded-lg hover:bg-white transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#d4876a] text-white font-medium rounded-md hover:bg-[#c97b5d] transition-all border border-white/20"
             >
               Start the Conversation
             </Link>
@@ -152,7 +130,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Proposition Section */}
+      {/* Value Proposition - Multiply Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -162,31 +140,31 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
               Multiply your
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
               expert impact.
             </h2>
-            <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto">
-              With SANE/REBELS, you'll be able to serve clients at scale, maintain consistent support between sessions, and gain valuable insights into your community's needs.
+            <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              With SANE/REBELS, you can serve clients at scale, maintain consistent support between sessions, and gain valuable insights into your community's needs.
             </p>
           </motion.div>
 
-          {/* Feature Card */}
+          {/* Feature Card - Delphi Style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-card border border-border"
+            className="grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden bg-[#f5f0eb]"
           >
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
+            <div className="p-10 md:p-14 flex flex-col justify-center">
+              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-5">
                 Scale your practice
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Offer the gift of conversation to your customers. Let them turn to your system for advice, tips, and clarifications on material covered during your sessions. All responses are delivered in your authentic voice, drawing exclusively from content you've authored—ensuring every insight truly comes from you.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Offer the gift of conversation to your customers. Let them turn to your system for advice, tips, and clarifications. All responses are delivered in your authentic voice, drawing exclusively from your methodology—ensuring every insight truly comes from you.
               </p>
               <Link
                 href="/lets"
@@ -195,10 +173,10 @@ export default function Home() {
                 Get Started <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="relative bg-gradient-to-br from-[oklch(0.70_0.14_50)] to-[oklch(0.60_0.16_40)] p-8 md:p-12 flex items-end justify-end min-h-[300px]">
+            <div className="relative bg-gradient-to-br from-[#c97b5d] to-[#d4876a] p-10 md:p-14 flex items-end justify-end min-h-[340px]">
               <div className="absolute top-8 left-8 flex flex-wrap gap-2">
                 {["Books", "Notes", "Substack", "YouTube", "Slack"].map((source) => (
-                  <span key={source} className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs text-white">
+                  <span key={source} className="px-3 py-1.5 bg-white/15 backdrop-blur-sm rounded-full text-xs text-white/90">
                     {source}
                   </span>
                 ))}
@@ -208,9 +186,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Reality Section */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* The Reality Section - Editorial */}
+      <section className="py-24 md:py-32 bg-[#f5f0eb]">
+        <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +198,7 @@ export default function Home() {
             <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
               The Reality
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight mb-8">
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground leading-tight mb-10">
               Everyone is talking about AI.
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -230,31 +208,15 @@ export default function Home() {
               <p>
                 But most people are running in circles. Trying every tool. Committing to nothing. <span className="text-foreground font-medium">45% worry</span> that too much AI will hurt their reputation.
               </p>
-              <p className="text-xl text-foreground">
+              <p className="text-xl text-foreground font-serif">
                 The people actually winning aren't loud about it. They figured out something simple: their methodology is the asset. Not their time.
               </p>
             </div>
           </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border"
-          >
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-3xl md:text-4xl font-serif text-accent mb-2">{stat.value}</p>
-                <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
-      {/* Use Cases Section - Delphi Style Tabs */}
+      {/* Use Cases Section - Delphi Style */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -276,14 +238,14 @@ export default function Home() {
           </motion.div>
 
           {/* Use Case Tabs */}
-          <div className="flex justify-center gap-8 mb-12">
+          <div className="flex justify-center gap-10 mb-14">
             {useCases.map((useCase, i) => (
               <button
                 key={useCase.id}
                 onClick={() => setActiveUseCase(i)}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm transition-colors pb-2 ${
                   activeUseCase === i
-                    ? "text-accent"
+                    ? "text-accent border-b-2 border-accent font-medium"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -300,43 +262,44 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="grid md:grid-cols-2 gap-12 items-center"
+              className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden"
             >
               {/* Image Side */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-[oklch(0.70_0.14_50)] to-[oklch(0.60_0.16_40)]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <p className="text-sm text-white/70 mb-2">{useCases[activeUseCase].label}</p>
-                    <p className="font-serif text-2xl">{useCases[activeUseCase].headline}</p>
-                  </div>
+              <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-[#c97b5d] to-[#b86d4f] flex items-center justify-center min-h-[400px]">
+                <div className="text-center text-white p-10">
+                  <p className="text-sm text-white/70 mb-3">{useCases[activeUseCase].label}</p>
+                  <p className="font-serif text-3xl leading-tight">{useCases[activeUseCase].headline}</p>
                 </div>
               </div>
 
               {/* Content Side */}
-              <div className="bg-card rounded-2xl p-8 md:p-10 border border-border">
+              <div className="bg-[#f5f0eb] p-10 md:p-12 flex flex-col justify-center">
                 <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
                   {useCases[activeUseCase].headline}
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-sm text-muted-foreground mb-6">
+                  {useCases[activeUseCase].subheadline}
+                </p>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
                   {useCases[activeUseCase].description}
                 </p>
                 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-4 mb-10">
                   {useCases[activeUseCase].benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full border border-accent/40 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-accent" />
                       </div>
-                      <span className="text-foreground">{benefit}</span>
+                      <span className="text-foreground text-sm">{benefit}</span>
                     </div>
                   ))}
                 </div>
                 
                 <Link
                   href="/lets"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-foreground text-foreground font-medium rounded-lg hover:bg-foreground hover:text-background transition-all"
+                  className="inline-flex items-center gap-2 text-foreground font-medium hover:gap-3 transition-all"
                 >
-                  {useCases[activeUseCase].cta}
+                  SANE/REBELS for {useCases[activeUseCase].label}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -345,8 +308,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Not Clone Section */}
-      <section className="py-24 md:py-32 bg-card">
+      {/* Timeline Section - Knowledge Transfer Evolution */}
+      <section className="py-24 md:py-32 bg-background border-t border-border">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
+              The Next Evolution of Knowledge Transfer
+            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
+              Conversational Systems
+            </h2>
+          </motion.div>
+
+          {/* Timeline Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-[#f5f0eb] rounded-xl p-10 md:p-14"
+          >
+            <div className="relative">
+              {/* Timeline bar */}
+              <div className="absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-1/2" />
+              
+              {/* Timeline markers */}
+              <div className="relative flex justify-between items-center">
+                {timelineEvents.map((event, i) => (
+                  <div key={i} className="flex flex-col items-center relative z-10">
+                    <div className={`w-3 h-8 rounded-sm mb-4 ${
+                      event.highlight 
+                        ? "bg-accent" 
+                        : i % 2 === 0 
+                          ? "bg-accent/60" 
+                          : "bg-accent/30"
+                    }`} />
+                    <p className={`text-xs font-medium mb-1 ${
+                      event.highlight ? "text-accent" : "text-muted-foreground"
+                    }`}>
+                      {event.label}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground">
+                      {event.year}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center mt-14">
+              <p className="text-muted-foreground max-w-lg mx-auto mb-8">
+                Instantaneous, personalized, and highly curated delivery of your expertise—without you being there.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-foreground text-foreground font-medium rounded-md hover:bg-foreground hover:text-background transition-all"
+              >
+                About SANE/REBELS
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Section - Two Cards */}
+      <section className="py-24 md:py-32 bg-[#f5f0eb]">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -365,13 +397,13 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-background rounded-2xl p-8 border border-border"
+              className="bg-background rounded-xl p-8 border border-border"
             >
               <h3 className="font-serif text-xl text-foreground mb-4">
                 Never Repeat Yourself Again
@@ -386,7 +418,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background rounded-2xl p-8 border border-border"
+              className="bg-background rounded-xl p-8 border border-border"
             >
               <h3 className="font-serif text-xl text-foreground mb-4">
                 Keep Every Relationship Alive
@@ -399,63 +431,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Section - Delphi Style */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border text-sm text-muted-foreground mb-6">
-              Trust
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              Your methodology
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              is Yours.
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {trustPillars.map((pillar, i) => (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border"
-              >
-                <pillar.icon className="w-6 h-6 text-accent mb-4" />
-                <h3 className="font-serif text-lg text-foreground mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {pillar.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section - Gradient */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-3xl overflow-hidden"
+            className="relative rounded-2xl overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.70_0.14_50)] via-[oklch(0.65_0.15_45)] to-[oklch(0.60_0.16_40)]" />
-            <div className="relative z-10 p-12 md:p-16 text-center">
-              <Link href="/" className="inline-flex items-center gap-1 font-semibold text-sm text-white/80 mb-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#c97b5d] via-[#d4876a] to-[#e8a088]" />
+            <div className="relative z-10 p-14 md:p-20 text-center">
+              <Link href="/" className="inline-flex items-center gap-1 font-medium text-sm text-white/80 mb-6">
                 <span>SANE</span>
                 <span className="text-white/60">/</span>
                 <span>REBELS</span>
@@ -465,13 +453,13 @@ export default function Home() {
                 Build your Productized System
               </h2>
               
-              <p className="text-white/80 max-w-xl mx-auto mb-10">
-                Ready to turn your expertise into a scalable product? Join the exclusive community of experts building transformational businesses.
+              <p className="text-white/85 max-w-xl mx-auto mb-10 leading-relaxed">
+                Ready to turn your expertise into a scalable system? Join the experts building transformational businesses without sacrificing authenticity.
               </p>
               
               <Link
                 href="/lets"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[oklch(0.35_0.05_50)] font-medium rounded-lg hover:bg-white/90 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#8b5a42] font-medium rounded-md hover:bg-white/95 transition-all"
               >
                 Get Started
               </Link>
@@ -479,7 +467,7 @@ export default function Home() {
           </motion.div>
 
           {/* Process Steps */}
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
+          <div className="grid md:grid-cols-3 gap-10 mt-14">
             {[
               { num: "01", title: "Uncover your methodology", desc: "We extract what makes your work actually work—the patterns you see that others miss." },
               { num: "02", title: "Architect the system", desc: "We design the productized version that scales without diluting your value." },
@@ -492,9 +480,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
-                <p className="text-accent font-medium mb-2">{step.num}</p>
+                <p className="text-accent font-medium mb-3">{step.num}</p>
                 <h3 className="font-serif text-lg text-foreground mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground">{step.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -502,10 +490,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border bg-card">
+      <footer className="py-14 border-t border-border bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <Link href="/" className="flex items-center gap-1 font-semibold text-sm">
+            <Link href="/" className="flex items-center gap-1 font-medium text-sm">
               <span className="text-foreground">SANE</span>
               <span className="text-accent">/</span>
               <span className="text-foreground">REBELS</span>
@@ -528,11 +516,11 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted-foreground">
               EU-hosted · GDPR-native · Your methodology stays yours
             </p>
-            <p className="text-xs text-muted-foreground italic">
+            <p className="text-xs text-muted-foreground font-serif italic">
               Sane enough to build it. Rebel enough to ship it.
             </p>
           </div>
