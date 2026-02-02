@@ -62,45 +62,37 @@ export function AnimatedNav({ variant = "light" }: AnimatedNavProps) {
 
 export function AnimatedFooter() {
   return (
-    <footer className="py-14 border-t border-border bg-background">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Animated Footer Logo */}
-          <Link href="/" className="flex items-center gap-1 font-medium text-sm">
-            <span className="relative">
-              <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
-              <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
-            </span>
-            <span className="text-accent">/</span>
-            <span className="relative">
-              <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
-              <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
-            </span>
-          </Link>
-          
-          <div className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+    <footer className="py-16 border-t border-border bg-background">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+          {/* Left side - Logo and legal */}
+          <div>
+            <Link href="/" className="flex items-center gap-1 font-medium text-sm mb-2">
+              <span className="relative">
+                <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
+                <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
+              </span>
+              <span className="text-accent">/</span>
+              <span className="relative">
+                <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
+                <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
+              </span>
+            </Link>
+            <p className="text-xs text-muted-foreground mb-6">
+              © 2025 KNUS GmbH
+            </p>
+            <div className="flex gap-6 text-xs text-muted-foreground">
+              <Link href="/imprint" className="hover:text-foreground transition-colors">Imprint</Link>
+              <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+            </div>
           </div>
           
-          <p className="text-sm text-muted-foreground">
-            KNUS GmbH · Germany
-          </p>
-        </div>
-        
-        <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
-            EU-hosted · GDPR-native · Your methodology stays yours
-          </p>
-          <p className="text-xs text-muted-foreground font-serif italic">
-            Sane enough to build it. Rebel enough to ship it.
+          {/* Right side - Snappy statement like Delphi */}
+          <p className="font-serif text-xl md:text-2xl text-foreground max-w-xs md:text-right leading-snug">
+            Scale your expertise.
+            <br />
+            <span className="text-muted-foreground italic">Stay yourself.</span>
           </p>
         </div>
       </div>

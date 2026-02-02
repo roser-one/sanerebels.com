@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 export default function AboutPage() {
@@ -10,176 +9,263 @@ export default function AboutPage() {
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-background">
+      {/* Hero - Delphi Style */}
+      <section className="pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-sm text-muted-foreground mb-6"
+          >
+            About
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-3"
+          >
+            One founder.
+          </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-muted-foreground italic"
+          >
+            Building expert systems.
+          </motion.h2>
+        </div>
+      </section>
+
+      {/* Founder Image - Large Hero Style like Delphi */}
+      <section className="pb-6">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#c97b5d] via-[#d4876a] to-[#e8a088] aspect-[16/9]"
+          >
+            <div className="absolute inset-0 flex items-end p-8">
+              <div className="text-white">
+                <p className="text-xl font-medium mb-1">Simon Roser</p>
+                <p className="text-white/70">Founder</p>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Founder Card Below Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-4 flex items-center justify-between bg-card border border-border rounded-xl p-4"
           >
-            <p className="text-sm text-muted-foreground mb-4">About</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              Curious minds
-            </h1>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-muted-foreground italic">
-              Building expert systems.
-            </h1>
+            <div>
+              <p className="font-medium text-foreground">Simon Roser</p>
+              <p className="text-sm text-muted-foreground">Founder</p>
+            </div>
+            <Link
+              href="/lets"
+              className="px-4 py-2 text-sm border border-border rounded-full hover:bg-muted transition-colors"
+            >
+              Talk to Simon
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section className="py-20 bg-background">
+      {/* Background & Thinking - Instead of "We're featured in" */}
+      <section className="py-16 border-t border-border mt-12">
         <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-[200px_1fr] gap-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="font-serif text-2xl text-foreground"
+            >
+              Background & Thinking
+            </motion.h2>
+            
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { 
+                  label: "Ex-Google", 
+                  desc: "5+ years scaling products and growth teams across EMEA markets"
+                },
+                { 
+                  label: "Fractional CMO", 
+                  desc: "Helped 30+ startups and scaleups grow from zero to traction"
+                },
+                { 
+                  label: "Product Builder", 
+                  desc: "Shipped products used by millions. Failed at a few too. Both teach."
+                },
+                { 
+                  label: "AI-Native Thinker", 
+                  desc: "Building at the intersection of human expertise and machine scale"
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="bg-card border border-border rounded-xl p-5"
+                >
+                  <p className="font-medium text-foreground mb-2">{item.label}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Manifest Section I */}
+      <section className="py-16">
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col md:flex-row gap-12 items-start"
+            className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            {/* Founder Card */}
-            <div className="w-full md:w-80 flex-shrink-0">
-              <div className="relative rounded-xl overflow-hidden bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] aspect-[3/4]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
-                  <p className="text-lg font-medium mb-1">Simon Roser</p>
-                  <p className="text-sm text-white/70">Founder</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Intro Text */}
-            <div className="flex-1">
-              <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-                I spent 15 years as a product leader and strategic advisor, working with companies like Siemens and BMW, and alongside startup founders building products people actually use.
+            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+            
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+              I. The Pattern I Kept Seeing
+            </h3>
+            
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>
+                At Google, I watched the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time. Every meeting, every email, every "quick call" chipped away at the work that actually mattered.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Along the way, I kept running into the same wall: brilliant experts trapped in their own success. Their methodology was the moat. But they couldn't scale themselves. The more successful they got, the less time they had.
+              <p>
+                Then I went fractional. Worked with founders, coaches, consultants across 30+ companies. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.
               </p>
-              <p className="text-lg text-foreground leading-relaxed">
-                Then I realized: <span className="italic">As AI becomes abundant, human presence becomes premium.</span> Information isn't the bottleneck anymore. Connection, curation, trust, and energy are. That's what we build for.
+              <p>
+                The conventional answer? "Clone yourself." Build a course. Hire a team. Franchise your brain.
+              </p>
+              <p>
+                But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Manifesto Sections - Storytelling Approach */}
-      <section className="py-20 bg-background">
-        <div className="max-w-3xl mx-auto px-6">
-          {/* Section I */}
+      {/* Manifest Section II */}
+      <section className="py-16">
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            <h3 className="font-serif text-lg text-accent font-bold mb-6">I. The Gold Rush</h3>
-            <div className="space-y-6 text-foreground leading-relaxed">
+            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+            
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+              II. The Shift That Changes Everything
+            </h3>
+            
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                Everyone is talking about AI. <span className="font-medium">57% of small businesses</span> are investing in it now. Up from 36% two years ago. And the average worker using AI saves <span className="font-medium">5.6 hours a week</span>.
+                Information used to be scarce. Having knowledge was premium.
               </p>
               <p>
-                But most people are running in circles. Trying every tool. Committing to nothing. 45% worry that too much AI will hurt their reputation.
+                Then access became scarce. Reach was premium.
               </p>
               <p>
-                Only <span className="font-medium">6% of companies</span> see real returns from AI. The difference isn't the tools. It's knowing what to automate.
+                Then attention became scarce. Personality was premium.
               </p>
-              <p className="text-muted-foreground">
-                71% of creators earn under $30,000 a year. Less than 5% break $100K. Customer acquisition costs jumped 400-600%. What used to cost $50 per lead now costs $300. The "passive income" playbook is a graveyard. Courses nobody finishes. Funnels that don't convert. Content that sounds like everyone else.
+              <p>
+                Now? <span className="text-foreground font-medium">Presence is scarce. Your authentic energy is premium.</span>
               </p>
-              <p className="font-serif text-xl italic text-foreground">
-                What's missing isn't technology. It's architecture. A system that captures what makes your work actually work.
+              <p>
+                AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.
+              </p>
+              <p>
+                This reframes every fear. "Will AI replace me?" No, it frees you to do what only you can do. "Will this feel inauthentic?" No, it makes your presence more powerful.
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Section II */}
+      {/* Manifest Section III */}
+      <section className="py-16">
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            <h3 className="font-serif text-lg text-accent font-bold mb-6">II. Why Technology Fails</h3>
-            <div className="space-y-6 text-foreground leading-relaxed">
+            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+            
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+              III. What We Actually Build
+            </h3>
+            
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                <span className="font-medium">80% of Gen Z</span> felt lonely this year. The most connected generation in history.
+                Not chatbots. Not courses. Not clones.
               </p>
               <p>
-                People who spend 2+ hours a day on social media are twice as likely to feel isolated as those who spend less than 30 minutes.
+                We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.
               </p>
               <p>
-                We built tools that promised closeness and delivered comparison. Platforms that strip nuance out of everything. That turn experts into content machines.
+                The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.
               </p>
-              <p className="font-serif text-xl italic text-foreground">
-                But there's another way to use technology. Not to replace the human expert with something generic. To extend your reach while preserving your voice.
+              <p>
+                The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.
               </p>
-              <p className="text-muted-foreground">
-                That's what we build. Systems that sound like you. Help like you would. Guide people the way you would guide them. So you can reach people you'll never meet, without losing what makes your work matter.
+              <p className="text-foreground font-medium">
+                We don't replace your presence. We protect it.
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Section III */}
+      {/* Manifest Section IV */}
+      <section className="py-16">
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-20"
+            className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            <h3 className="font-serif text-lg text-accent font-bold mb-6">III. The Right Partner</h3>
-            <div className="space-y-6 text-foreground leading-relaxed">
+            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+            
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+              IV. Why The Name
+            </h3>
+            
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                This space is moving faster than best practices. The playbook hasn't been written yet.
-              </p>
-              <p>
-                That's terrifying if you want guarantees. That's exciting if you've got the right partner building alongside you.
-              </p>
-              <p>
-                We're obsessed with where technology meets human behavior. What makes people tick. What makes systems scale without losing soul.
-              </p>
-              <p className="text-muted-foreground">
-                We don't chase hype. We've seen cycles come and go. But we stay curious enough to experiment at the edge. To ship before it's perfect. To learn by building.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Section IV */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="font-serif text-lg text-accent font-bold mb-6">IV. SANE/REBELS</h3>
-            <div className="space-y-6 text-foreground leading-relaxed">
-              <p>
-                We co-build productized systems with service providers who are done being the bottleneck in their own business.
+                <span className="text-foreground font-medium">SANE</span> because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.
               </p>
               <p>
-                Your expertise. Our engineering. Something that scales your way.
+                <span className="text-foreground font-medium">REBELS</span> because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.
               </p>
-              <div className="grid md:grid-cols-2 gap-8 py-8">
-                <div className="bg-card border border-border rounded-xl p-6">
-                  <h4 className="font-medium text-foreground mb-2">SANE</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Grounded. Research-backed. We don't build on hype. We build on what works. Every system is architected with intention, designed to last, not just to launch.
-                  </p>
-                </div>
-                <div className="bg-card border border-border rounded-xl p-6">
-                  <h4 className="font-medium text-foreground mb-2">REBELS</h4>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    Bold. Experimental. We ship before it's perfect because that's how you learn. We question the playbook and write new pages when the old ones don't fit.
-                  </p>
-                </div>
-              </div>
-              <p className="font-serif text-xl italic text-center text-foreground pt-4">
-                Sane enough to build it. Rebel enough to ship it.
+              <p>
+                The "/" matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.
+              </p>
+              <p className="text-foreground italic font-serif text-lg pt-4">
+                Sane enough to build it right. Rebel enough to ship it anyway.
               </p>
             </div>
           </motion.div>
@@ -187,67 +273,27 @@ export default function AboutPage() {
       </section>
 
       {/* Company Details */}
-      <section className="py-20 bg-background">
+      <section className="py-16 border-t border-border">
         <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid md:grid-cols-3 gap-10"
-          >
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h4 className="font-serif text-lg text-foreground mb-3">Company</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                KNUS GmbH<br />
-                Konstanz, Germany
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h4 className="font-serif text-lg text-foreground mb-3">Experience</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                15+ years in product leadership<br />
-                Siemens, BMW, startups
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h4 className="font-serif text-lg text-foreground mb-3">Infrastructure</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                EU-hosted, GDPR-native<br />
-                Your methodology stays yours
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative rounded-2xl overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95]" />
-            <div className="relative z-10 p-14 md:p-20 text-center">
-              <h2 className="font-serif text-3xl md:text-4xl text-white mb-6">
-                Ready to build your system?
-              </h2>
-              <p className="text-white/85 max-w-lg mx-auto mb-10">
-                Let's talk about what you're building and whether we're the right partner to help you scale it.
-              </p>
-              <Link
-                href="/lets"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-medium rounded-md hover:bg-white/95 transition-all"
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { label: "Legal Entity", value: "KNUS GmbH" },
+              { label: "Location", value: "Germany, EU" },
+              { label: "Contact", value: "hi@sanerebels.com" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center md:text-left"
               >
-                Start the Conversation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
+                <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
+                <p className="text-foreground">{item.value}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
