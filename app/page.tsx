@@ -702,9 +702,22 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-{/* Process Steps */}
-          <div className="relative mt-14">
+      {/* Process Section */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              Our Process
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
+              How We Work
+            </h2>
+          </div>
+          
+          <div className="relative">
             {/* Desktop: Horizontal with top dots and line */}
             <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
               {[
@@ -795,7 +808,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       <AnimatedFooter />
     </main>
