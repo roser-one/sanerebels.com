@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, Shield, Lock, Database, Key } from "lucide-react"
 import { ShaderBackground } from "@/components/shader-background"
@@ -19,6 +20,7 @@ const useCases = [
       "Support clients between sessions, authentically",
       "Reach people you'll never meet in person",
     ],
+    image: "https://i.pravatar.cc/400?img=32",
   },
   {
     id: "consultants",
@@ -31,6 +33,7 @@ const useCases = [
       "Qualify leads with your actual framework",
       "Deliver your approach at enterprise scale",
     ],
+    image: "https://i.pravatar.cc/400?img=60",
   },
   {
     id: "experts",
@@ -43,10 +46,11 @@ const useCases = [
       "Monetize expertise without trading more hours",
       "Create personalized, interactive experiences at scale",
     ],
+    image: "https://i.pravatar.cc/400?img=47",
   },
 ]
 
-// Evolution of Expertise Timeline - first card smallest, growing to last
+// Evolution of Expertise Timeline
 const evolutionTimeline = [
   {
     stage: "Individuality",
@@ -120,25 +124,11 @@ const fears = [
 export default function Home() {
   const [activeUseCase, setActiveUseCase] = useState(0)
 
-  // Calculate heights for timeline cards (smallest first, biggest last)
-  const getCardHeight = (index: number) => {
-    const baseHeight = 280
-    const increment = 20
-    return baseHeight + (index * increment)
-  }
-  
-  // Calculate heights for process cards (smallest first, biggest last)
-  const getProcessCardHeight = (index: number) => {
-    const baseHeight = 180
-    const increment = 15
-    return baseHeight + (index * increment)
-  }
-
   return (
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
 
-      {/* Hero Section - Animated Shader Gradient */}
+      {/* Hero Section */}
       <section className="relative pt-20 overflow-hidden min-h-[80vh] flex items-center">
         <ShaderBackground className="absolute inset-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-28 md:py-36 text-center">
@@ -147,7 +137,6 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Animated Logo in Hero */}
             <div className="flex items-center justify-center gap-1 font-medium text-sm text-white/80 mb-6">
               <span className="relative">
                 <span className="text-[#c084fc] animate-logo-pulse-sane-base">SANE</span>
@@ -204,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Evolution Timeline Section - Cards with progressive height */}
+      {/* Evolution Timeline - TOP ALIGNED with arrow */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -222,7 +211,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Timeline with horizontal line and cards */}
+          {/* Timeline Container */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -230,55 +219,68 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Horizontal connector line */}
-            <div className="absolute top-6 left-[8%] right-[8%] h-px bg-border hidden lg:block">
-              {/* Gold/accent progression overlay on the right */}
+            {/* Horizontal line with arrow - positioned at card tops */}
+            <div className="absolute top-[54px] left-0 right-4 h-px bg-border hidden lg:block">
               <div className="absolute right-0 w-[35%] h-full bg-gradient-to-r from-transparent via-[#d4a574]/50 to-accent/50" />
+              {/* Arrow at right end */}
+              <div className="absolute -right-1 top-1/2 -translate-y-1/2">
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-accent" />
+              </div>
             </div>
             
-            <div className="flex flex-wrap lg:flex-nowrap gap-3 items-end justify-center">
+            {/* X-axis labels */}
+            <div className="hidden lg:flex justify-between mb-2 px-4 text-[10px] text-muted-foreground uppercase tracking-wider">
+              <span>Past</span>
+              <span>Present</span>
+            </div>
+
+            {/* Cards - TOP ALIGNED, first smallest growing to last largest */}
+            <div className="flex flex-wrap lg:flex-nowrap gap-3 items-start pt-4">
               {evolutionTimeline.map((item, i) => {
                 const Icon = item.icon
                 const isGold = item.style === "gold"
                 const isAccent = item.style === "accent"
-                const cardHeight = getCardHeight(i)
+                // Height grows from first (smallest) to last (largest)
+                const baseHeight = 200
+                const increment = 25
+                const cardHeight = baseHeight + (i * increment)
                 
                 return (
                   <div
                     key={item.stage}
                     className="relative flex flex-col w-[calc(50%-6px)] md:w-[calc(33.33%-8px)] lg:w-auto lg:flex-1"
                   >
-                    {/* Top dot connector */}
-                    <div className="hidden lg:flex justify-center mb-4 relative z-10">
+                    {/* Top dot - aligned to the line */}
+                    <div className="hidden lg:flex justify-center mb-3">
                       <div className={`w-3 h-3 rounded-full border-2 ${
                         isGold ? "bg-[#d4a574] border-[#c99a64]" :
                         isAccent ? "bg-accent border-accent" : "bg-card border-border"
                       }`} />
                     </div>
                     
-                    {/* Card with progressive height */}
+                    {/* Card */}
                     <div
-                      className={`rounded-xl p-5 flex flex-col text-center ${
+                      className={`rounded-xl p-4 flex flex-col text-center ${
                         isGold
                           ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
                           : isAccent
                           ? "bg-accent text-accent-foreground"
                           : "bg-card border border-border"
                       }`}
-                      style={{ minHeight: `${cardHeight}px` }}
+                      style={{ height: `${cardHeight}px` }}
                     >
-                      <p className={`text-xs font-medium mb-4 ${
+                      <p className={`text-xs font-medium mb-3 ${
                         isGold ? "text-[#2a2520]/70" : 
                         isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
                       }`}>
                         {item.stage}
                       </p>
                       
-                      <div className={`w-10 h-10 mx-auto rounded-full flex items-center justify-center mb-4 ${
+                      <div className={`w-9 h-9 mx-auto rounded-full flex items-center justify-center mb-3 ${
                         isGold ? "bg-[#2a2520]/10" :
                         isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
                       }`}>
-                        <Icon className={`w-5 h-5 ${
+                        <Icon className={`w-4 h-4 ${
                           isGold ? "text-[#2a2520]" :
                           isAccent ? "text-accent-foreground" : "text-accent"
                         }`} />
@@ -291,19 +293,19 @@ export default function Home() {
                         {item.era}
                       </p>
                       
-                      <div className={`w-8 h-px mx-auto my-3 ${
+                      <div className={`w-6 h-px mx-auto my-2 ${
                         isGold ? "bg-[#2a2520]/20" :
                         isAccent ? "bg-accent-foreground/20" : "bg-border"
                       }`} />
                       
-                      <p className={`text-xs mb-2 ${
+                      <p className={`text-xs mb-auto ${
                         isGold ? "text-[#2a2520]/70" :
                         isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
                       }`}>
                         {item.year}
                       </p>
                       
-                      <p className={`text-xs leading-relaxed mt-auto ${
+                      <p className={`text-xs leading-relaxed mt-3 ${
                         isGold ? "text-[#2a2520]/80" :
                         isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
                       }`}>
@@ -396,7 +398,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Use Cases Section */}
+      {/* Use Cases Section with face images */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -444,9 +446,19 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden border border-border"
             >
-              {/* Image Side - Purple gradient */}
+              {/* Image Side - Purple gradient with face */}
               <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] flex items-center justify-center min-h-[400px]">
-                <div className="text-center text-white p-10">
+                {/* Person image overlay */}
+                <div className="absolute inset-0 flex items-end justify-center">
+                  <Image
+                    src={useCases[activeUseCase].image}
+                    alt={useCases[activeUseCase].label}
+                    width={300}
+                    height={300}
+                    className="object-cover opacity-40 mix-blend-luminosity"
+                  />
+                </div>
+                <div className="relative text-center text-white p-10 z-10">
                   <p className="text-sm text-white/70 mb-3">{useCases[activeUseCase].label}</p>
                   <p className="font-serif text-3xl leading-tight">{useCases[activeUseCase].headline}</p>
                 </div>
@@ -531,7 +543,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Section */}
+      {/* Trust Section - with dotted lines to center */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -552,10 +564,22 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Trust Grid - 2x2 with center portrait */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* Trust Grid - 2x2 with center element and dotted lines */}
+          <div className="relative grid md:grid-cols-3 gap-6">
+            {/* Dotted lines pointing to center - visible on md+ */}
+            <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
+              {/* Top-left to center */}
+              <line x1="33%" y1="25%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
+              {/* Bottom-left to center */}
+              <line x1="33%" y1="75%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
+              {/* Top-right to center */}
+              <line x1="67%" y1="25%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
+              {/* Bottom-right to center */}
+              <line x1="67%" y1="75%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
+            </svg>
+
             {/* Left Column */}
-            <div className="space-y-6">
+            <div className="space-y-6 relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -589,16 +613,26 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Center Portrait */}
+            {/* Center Portrait with face */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden md:block"
+              className="hidden md:block relative z-10"
             >
               <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
+                {/* Face image */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image
+                    src="https://i.pravatar.cc/400?img=68"
+                    alt="Expert"
+                    width={200}
+                    height={200}
+                    className="opacity-30 mix-blend-luminosity"
+                  />
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
                   <p className="text-lg font-medium mb-1">Your Expert System</p>
                   <p className="text-sm text-white/70 mb-8">Protected</p>
                   
@@ -606,8 +640,8 @@ export default function Home() {
                   <div className="w-full px-4 mt-auto">
                     <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
                       C3V0B9FP2E4CL5C0DJ2EHNFT2LH0MM2C9YCE
-                      2I0C<span className="text-accent">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-accent">2</span>CH2CL0CT0CT4
-                      CH9CG4CI0C0C2C7C<span className="text-accent">B</span>0CN2CIC3P4V0ME2PFJD
+                      2I0C<span className="text-[#c084fc]">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-[#c084fc]">2</span>CH2CL0CT0CT4
+                      CH9CG4CI0C0C2C7C<span className="text-[#c084fc]">B</span>0CN2CIC3P4V0ME2PFJD
                     </div>
                   </div>
                 </div>
@@ -615,7 +649,7 @@ export default function Home() {
             </motion.div>
 
             {/* Right Column */}
-            <div className="space-y-6">
+            <div className="space-y-6 relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -652,7 +686,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section - Purple Gradient */}
+      {/* CTA Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
@@ -664,7 +698,6 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95]" />
             <div className="relative z-10 p-14 md:p-20 text-center">
-              {/* Animated Logo */}
               <div className="inline-flex items-center gap-1 font-medium text-sm text-white/80 mb-6">
                 <span className="relative">
                   <span className="text-[#c084fc] animate-logo-pulse-sane-base">SANE</span>
@@ -694,19 +727,28 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - Cards with progressive height (first smallest, last biggest) */}
+          {/* Process Steps - TOP ALIGNED, first smallest growing to last largest */}
           <div className="relative mt-14">
-            {/* Connector line at top */}
-            <div className="absolute top-6 left-[12%] right-[12%] h-px bg-border hidden md:block" />
+            {/* Connector line at top with arrow */}
+            <div className="absolute top-[14px] left-[12%] right-[8%] h-px bg-border hidden md:block">
+              <div className="absolute -right-1 top-1/2 -translate-y-1/2">
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
+              </div>
+            </div>
             
-            <div className="flex flex-wrap md:flex-nowrap gap-4 items-end justify-center">
+            {/* Cards - TOP ALIGNED */}
+            <div className="flex flex-wrap md:flex-nowrap gap-4 items-start">
               {[
                 { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
                 { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
                 { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
                 { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
               ].map((step, i) => {
-                const cardHeight = getProcessCardHeight(i)
+                // Height grows from first (smallest) to last (largest)
+                const baseHeight = 160
+                const increment = 20
+                const cardHeight = baseHeight + (i * increment)
+                
                 return (
                   <motion.div
                     key={step.num}
@@ -716,19 +758,19 @@ export default function Home() {
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     className="relative w-full md:flex-1"
                   >
-                    {/* Dot */}
-                    <div className="hidden md:flex justify-center mb-4">
+                    {/* Dot at top */}
+                    <div className="hidden md:flex justify-center mb-3">
                       <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
                     </div>
                     
                     <div 
                       className="bg-card border border-border rounded-xl p-6 flex flex-col"
-                      style={{ minHeight: `${cardHeight}px` }}
+                      style={{ height: `${cardHeight}px` }}
                     >
                       <p className="text-accent font-bold mb-2">{step.num}</p>
                       <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
                       <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{step.desc}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
                   </motion.div>
                 )

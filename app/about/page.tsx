@@ -1,60 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
-import { useState } from "react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
-// Manifest card data
-const manifestCards = [
-  {
-    id: 1,
-    title: "I. The Pattern I Kept Seeing",
-    content: [
-      "Four years at Google. 500+ high-growth companies. I saw the blueprint. I also saw the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time.",
-      "Then I went fractional. Worked with founders, coaches, consultants. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.",
-      "The conventional answer? 'Clone yourself.' Build a course. Hire a team.",
-      "But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.",
-    ],
-  },
-  {
-    id: 2,
-    title: "II. The Shift That Changes Everything",
-    content: [
-      "Information used to be scarce. Having knowledge was premium.",
-      "Then access became scarce. Reach was premium.",
-      "Then attention became scarce. Personality was premium.",
-      "Now? Presence is scarce. Your authentic energy is premium.",
-      "AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.",
-      "This reframes every fear. 'Will AI replace me?' No, it frees you to do what only you can do. 'Will this feel inauthentic?' No, it makes your presence more powerful.",
-    ],
-  },
-  {
-    id: 3,
-    title: "III. What We Actually Build",
-    content: [
-      "Not chatbots. Not courses. Not clones.",
-      "We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.",
-      "The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.",
-      "The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.",
-      "We don't replace your presence. We protect it.",
-    ],
-  },
-  {
-    id: 4,
-    title: "IV. Why The Name",
-    content: [
-      "SANE because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.",
-      "REBELS because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.",
-      "The '/' matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.",
-    ],
-    closing: "Sane enough to build it right. Rebel enough to ship it anyway.",
-  },
-]
-
 export default function AboutPage() {
-  const [activeCard, setActiveCard] = useState(0)
-
   return (
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
@@ -89,15 +40,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder Image - Large Hero Style like Delphi */}
+      {/* Founder Image - Large Hero using Simon's actual image */}
       <section className="pb-6">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#c97b5d] via-[#d4876a] to-[#e8a088] aspect-[16/9]"
+            className="relative rounded-2xl overflow-hidden aspect-[16/9]"
           >
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-MSdkKVpSUl5h8Zy9tDiQv1hGSYi8A5.jpeg"
+              alt="Simon Roser"
+              fill
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <div className="absolute inset-0 flex items-end p-8">
               <div className="text-white">
                 <p className="text-xl font-medium mb-1">Simon Roser</p>
@@ -127,70 +85,117 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Manifest Section - Tab-based Cards (cleaner than scroll stacking) */}
+      {/* Manifest Section - ONE CONTINUOUS CONTAINER like Delphi */}
       <section className="py-20">
         <div className="max-w-2xl mx-auto px-6">
-          {/* Card Navigation */}
-          <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
-            {manifestCards.map((card, index) => (
-              <button
-                key={card.id}
-                onClick={() => setActiveCard(index)}
-                className={`text-sm whitespace-nowrap pb-2 transition-colors ${
-                  activeCard === index
-                    ? "text-accent border-b-2 border-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {card.title.split(". ")[0]}.
-              </button>
-            ))}
-          </div>
-
-          {/* Active Card Display */}
           <motion.div
-            key={activeCard}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-            
-            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-              {manifestCards[activeCard].title}
-            </h3>
-            
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              {manifestCards[activeCard].content.map((paragraph, i) => (
-                <p key={i} className={paragraph.startsWith("Now?") || paragraph.includes("We don't replace") ? "text-foreground font-medium" : ""}>
-                  {paragraph}
+            {/* Section I */}
+            <div className="mb-16">
+              <p className="text-accent font-bold text-center mb-8">SANE<span className="text-accent/50">/</span>REBELS</p>
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                I. The Pattern I Kept Seeing
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  Four years at Google. 500+ high-growth companies. I saw the blueprint for scaling. I also saw the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time.
                 </p>
-              ))}
-              {manifestCards[activeCard].closing && (
-                <p className="text-foreground italic font-serif text-lg pt-4">
-                  {manifestCards[activeCard].closing}
+                <p>
+                  Then I went fractional. Worked with founders, coaches, consultants. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.
                 </p>
-              )}
+                <p>
+                  The conventional answer? "Clone yourself." Build a course. Hire a team.
+                </p>
+                <p>
+                  But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="flex justify-center mb-16">
+              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
+            </div>
+
+            {/* Section II */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                II. The Shift That Changes Everything
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>Information used to be scarce. Having knowledge was premium.</p>
+                <p>Then access became scarce. Reach was premium.</p>
+                <p>Then attention became scarce. Personality was premium.</p>
+                <p className="text-foreground font-medium">Now? Presence is scarce. Your authentic energy is premium.</p>
+                <p>
+                  AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.
+                </p>
+                <p>
+                  This reframes every fear. "Will AI replace me?" No, it frees you to do what only you can do. "Will this feel inauthentic?" No, it makes your presence more powerful.
+                </p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="flex justify-center mb-16">
+              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
+            </div>
+
+            {/* Section III */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                III. What We Actually Build
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>Not chatbots. Not courses. Not clones.</p>
+                <p>
+                  We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.
+                </p>
+                <p>
+                  The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.
+                </p>
+                <p>
+                  The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.
+                </p>
+                <p className="text-foreground font-medium">We don't replace your presence. We protect it.</p>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="flex justify-center mb-16">
+              <p className="text-accent/30 font-bold">SANE<span>/</span>REBELS</p>
+            </div>
+
+            {/* Section IV */}
+            <div>
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                IV. Why The Name
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  SANE because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.
+                </p>
+                <p>
+                  REBELS because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.
+                </p>
+                <p>
+                  The "/" matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.
+                </p>
+                <p className="text-foreground font-serif italic text-lg pt-4 text-center">
+                  Sane enough to build it right. Rebel enough to ship it anyway.
+                </p>
+              </div>
             </div>
           </motion.div>
-
-          {/* Card Navigation Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {manifestCards.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveCard(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  activeCard === index ? "bg-accent" : "bg-border hover:bg-muted-foreground"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Background & Thinking - With CORRECT Simon info */}
+      {/* Background & Thinking - Moved below manifest */}
       <section className="py-16 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-[200px_1fr] gap-12">
