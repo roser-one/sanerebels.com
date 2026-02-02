@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, Shield, Lock, Database, Key } from "lucide-react"
 import { ShaderBackground } from "@/components/shader-background"
@@ -450,12 +449,10 @@ export default function Home() {
               <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] flex items-center justify-center min-h-[400px]">
                 {/* Person image overlay */}
                 <div className="absolute inset-0 flex items-end justify-center">
-                  <Image
+                  <img
                     src={useCases[activeUseCase].image}
                     alt={useCases[activeUseCase].label}
-                    width={300}
-                    height={300}
-                    className="object-cover opacity-40 mix-blend-luminosity"
+                    className="w-[300px] h-[300px] object-cover opacity-40 mix-blend-luminosity"
                   />
                 </div>
                 <div className="relative text-center text-white p-10 z-10">
