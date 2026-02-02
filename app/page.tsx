@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Check, MessageCircle, Headphones, Tv, Radio, BookOpen, Users, Heart } from "lucide-react"
 
 const navLinks = [
   { href: "/about", label: "About" },
@@ -49,13 +49,87 @@ const useCases = [
   },
 ]
 
-const timelineEvents = [
-  { year: "100,000 B.C.", label: "Verbal Communication", icon: "speech" },
-  { year: "1455", label: "Printing Press", icon: "book" },
-  { year: "1910", label: "Radio", icon: "radio" },
-  { year: "2003", label: "Podcast", icon: "mic" },
-  { year: "1929", label: "Television", icon: "tv" },
-  { year: "Today", label: "SANE/REBELS", icon: "sparkle", highlight: true },
+// Evolution of Expertise Timeline based on your diagram
+const evolutionTimeline = [
+  {
+    stage: "Individuality",
+    era: "Verbal Communication",
+    year: "100,000 B.C.",
+    outcome: "Sound, Local Reach",
+    scarcity: "Information was scarce",
+    premium: "Having knowledge was premium",
+    icon: Users,
+    style: "neutral",
+  },
+  {
+    stage: "Access",
+    era: "Printing Press",
+    year: "1455",
+    outcome: "Books, Duplication",
+    scarcity: "Access was scarce",
+    premium: "Reach was premium",
+    icon: BookOpen,
+    style: "neutral",
+  },
+  {
+    stage: "Immediacy",
+    era: "Radio / Television",
+    year: "1910-1929",
+    outcome: "Mass Media, Audiences",
+    scarcity: "Speed was scarce",
+    premium: "Immediacy was premium",
+    icon: Radio,
+    style: "neutral",
+  },
+  {
+    stage: "On-Demand",
+    era: "Podcast / Digital",
+    year: "2003+",
+    outcome: "Content, Platforms",
+    scarcity: "Attention was scarce",
+    premium: "Personality was premium",
+    icon: Headphones,
+    style: "neutral",
+  },
+  {
+    stage: "Interaction",
+    era: "Conversational AI",
+    year: "2024+",
+    outcome: "Answers, Personalization",
+    scarcity: "Interaction was scarce",
+    premium: "Responsiveness is premium",
+    icon: MessageCircle,
+    style: "gold",
+  },
+  {
+    stage: "Embodiment",
+    era: "AI + Real Presence",
+    year: "Today",
+    outcome: "Answers, Experience, Trust",
+    scarcity: "Presence is now scarce",
+    premium: "Your authentic energy is premium",
+    icon: Heart,
+    style: "accent",
+  },
+]
+
+const fears = [
+  {
+    question: "Will this replace me?",
+    answer: "No. It frees you to do what only you can do. Your presence becomes 100% focused on transformation, not logistics.",
+  },
+  {
+    question: "Will this make me inauthentic?",
+    answer: "No. It makes your presence more powerful. Every interaction uses your words, your frameworks, your voice.",
+  },
+  {
+    question: "What if it says something not-me?",
+    answer: "You have direct editing and control constraints. Nothing goes out that you haven't approved.",
+  },
+  {
+    question: "Will clients feel impersonal?",
+    answer: "The opposite. They're pre-educated for your sessions, which increases intimacy and depth when you do show up.",
+  },
 ]
 
 export default function Home() {
@@ -99,7 +173,7 @@ export default function Home() {
         <div className="border-b border-border" />
       </motion.nav>
 
-      {/* Hero Section - Warm Gradient like Delphi */}
+      {/* Hero Section - Warm Gradient */}
       <section className="relative pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#c97b5d] via-[#d4876a] to-[#e8a088]" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-28 md:py-36 text-center">
@@ -112,17 +186,20 @@ export default function Home() {
               SANE/REBELS
             </p>
             
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] mb-6">
-              Your Expertise, Amplified
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] mb-4">
+              Scale Your Impact.
+            </h1>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white/80 italic leading-[1.1] mb-8">
+              Stay Yourself.
             </h1>
             
             <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
-              We co-build productized systems with service providers who are done being the bottleneck. Your methodology becomes architecture that scales—without losing what makes it work.
+              The bottleneck is your time, not your thinking. We systematize one and free up the other—so your energy goes to the 20% that transforms people.
             </p>
             
             <Link
               href="/lets"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#d4876a] text-white font-medium rounded-md hover:bg-[#c97b5d] transition-all border border-white/20"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 text-white font-medium rounded-md hover:bg-white/25 transition-all border border-white/30 backdrop-blur-sm"
             >
               Start the Conversation
             </Link>
@@ -130,7 +207,134 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Proposition - Multiply Section */}
+      {/* Philosophy Section */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+              The Philosophy
+            </p>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
+              "As AI becomes abundant, human energy becomes premium. Information is no longer the bottleneck. Connection, curation, trust, and energy are."
+            </blockquote>
+            <p className="text-muted-foreground">
+              Your presence becomes 100% focused on transformation, not logistics.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Evolution Timeline Section */}
+      <section className="py-24 md:py-32 bg-[#f5f0eb]">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
+              From Information to Presence:
+            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
+              The Evolution of Expertise
+            </h2>
+          </motion.div>
+
+          {/* Timeline Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"
+          >
+            {evolutionTimeline.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div
+                  key={item.stage}
+                  className={`relative rounded-xl p-5 flex flex-col items-center text-center transition-all ${
+                    item.style === "gold"
+                      ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
+                      : item.style === "accent"
+                      ? "bg-foreground text-background"
+                      : "bg-background border border-border"
+                  }`}
+                >
+                  <p className={`text-xs font-medium mb-4 ${
+                    item.style === "gold" ? "text-[#2a2520]/70" : 
+                    item.style === "accent" ? "text-background/70" : "text-accent"
+                  }`}>
+                    {item.stage}
+                  </p>
+                  
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${
+                    item.style === "gold" ? "bg-[#2a2520]/10" :
+                    item.style === "accent" ? "bg-background/10" : "bg-accent/10"
+                  }`}>
+                    <Icon className={`w-5 h-5 ${
+                      item.style === "gold" ? "text-[#2a2520]" :
+                      item.style === "accent" ? "text-background" : "text-accent"
+                    }`} />
+                  </div>
+                  
+                  <p className={`text-sm font-medium mb-1 ${
+                    item.style === "gold" ? "text-[#2a2520]" :
+                    item.style === "accent" ? "text-background" : "text-foreground"
+                  }`}>
+                    {item.era}
+                  </p>
+                  
+                  <div className={`w-8 h-px my-3 ${
+                    item.style === "gold" ? "bg-[#2a2520]/20" :
+                    item.style === "accent" ? "bg-background/20" : "bg-border"
+                  }`} />
+                  
+                  <p className={`text-xs mb-2 ${
+                    item.style === "gold" ? "text-[#2a2520]/70" :
+                    item.style === "accent" ? "text-background/70" : "text-muted-foreground"
+                  }`}>
+                    {item.year}
+                  </p>
+                  
+                  <p className={`text-xs leading-relaxed ${
+                    item.style === "gold" ? "text-[#2a2520]/80" :
+                    item.style === "accent" ? "text-background/80" : "text-muted-foreground"
+                  }`}>
+                    {item.outcome}
+                  </p>
+                </div>
+              )
+            })}
+          </motion.div>
+
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mt-16"
+          >
+            <p className="font-serif text-2xl md:text-3xl text-foreground">
+              When Knowledge is Abundant,
+            </p>
+            <p className="font-serif text-2xl md:text-3xl">
+              Presence Becomes <span className="text-accent italic">Premium.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Three Outcomes Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -140,84 +344,60 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
+            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+              The Outcomes
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              Multiply your
+              Not features.
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              expert impact.
+              Results.
             </h2>
-            <p className="mt-8 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              With SANE/REBELS, you can serve clients at scale, maintain consistent support between sessions, and gain valuable insights into your community's needs.
-            </p>
           </motion.div>
 
-          {/* Feature Card - Delphi Style */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-0 rounded-xl overflow-hidden bg-[#f5f0eb]"
-          >
-            <div className="p-10 md:p-14 flex flex-col justify-center">
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-5">
-                Scale your practice
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Offer the gift of conversation to your customers. Let them turn to your system for advice, tips, and clarifications. All responses are delivered in your authentic voice, drawing exclusively from your methodology—ensuring every insight truly comes from you.
-              </p>
-              <Link
-                href="/lets"
-                className="inline-flex items-center gap-2 text-foreground font-medium hover:gap-3 transition-all"
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Capacity Without Burnout",
+                desc: "Work 30 hrs/week instead of 60, serve 10x more clients, same depth.",
+                detail: "Your system handles the repetition. You show up for the breakthrough moments.",
+              },
+              {
+                title: "Monetization You Control",
+                desc: "Layer recurring revenue without trading more hours.",
+                detail: "Digital access tiers, premium 1:1, everything in between—your methodology, your pricing.",
+              },
+              {
+                title: "Impact Without Dilution",
+                desc: "Your digital mind increases depth. It doesn't replace you.",
+                detail: "Clients arrive pre-educated. Sessions go deeper. Your presence means more.",
+              },
+            ].map((outcome, i) => (
+              <motion.div
+                key={outcome.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-[#f5f0eb] rounded-xl p-8"
               >
-                Get Started <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="relative bg-gradient-to-br from-[#c97b5d] to-[#d4876a] p-10 md:p-14 flex items-end justify-end min-h-[340px]">
-              <div className="absolute top-8 left-8 flex flex-wrap gap-2">
-                {["Books", "Notes", "Substack", "YouTube", "Slack"].map((source) => (
-                  <span key={source} className="px-3 py-1.5 bg-white/15 backdrop-blur-sm rounded-full text-xs text-white/90">
-                    {source}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+                <h3 className="font-serif text-xl text-foreground mb-3">
+                  {outcome.title}
+                </h3>
+                <p className="text-foreground font-medium mb-4">
+                  {outcome.desc}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {outcome.detail}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* The Reality Section - Editorial */}
+      {/* Use Cases Section */}
       <section className="py-24 md:py-32 bg-[#f5f0eb]">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
-              The Reality
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground leading-tight mb-10">
-              Everyone is talking about AI.
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                <span className="text-foreground font-medium">57% of small businesses</span> are investing in it now. Up from 36% two years ago. And the average worker using AI saves <span className="text-foreground font-medium">5.6 hours a week</span>.
-              </p>
-              <p>
-                But most people are running in circles. Trying every tool. Committing to nothing. <span className="text-foreground font-medium">45% worry</span> that too much AI will hurt their reputation.
-              </p>
-              <p className="text-xl text-foreground font-serif">
-                The people actually winning aren't loud about it. They figured out something simple: their methodology is the asset. Not their time.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Use Cases Section - Delphi Style */}
-      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -226,7 +406,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border text-sm text-muted-foreground mb-6">
+            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-background text-sm text-muted-foreground mb-6">
               Use Cases
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -273,7 +453,7 @@ export default function Home() {
               </div>
 
               {/* Content Side */}
-              <div className="bg-[#f5f0eb] p-10 md:p-12 flex flex-col justify-center">
+              <div className="bg-background p-10 md:p-12 flex flex-col justify-center">
                 <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
                   {useCases[activeUseCase].headline}
                 </h3>
@@ -308,9 +488,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Timeline Section - Knowledge Transfer Evolution */}
-      <section className="py-24 md:py-32 bg-background border-t border-border">
-        <div className="max-w-5xl mx-auto px-6">
+      {/* Fears/Objections Section */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -318,121 +498,41 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
+            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+              Real Concerns, Real Answers
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              The Next Evolution of Knowledge Transfer
+              The market is already moving.
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              Conversational Systems
-            </h2>
-          </motion.div>
-
-          {/* Timeline Visual */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-[#f5f0eb] rounded-xl p-10 md:p-14"
-          >
-            <div className="relative">
-              {/* Timeline bar */}
-              <div className="absolute top-1/2 left-0 right-0 h-px bg-border -translate-y-1/2" />
-              
-              {/* Timeline markers */}
-              <div className="relative flex justify-between items-center">
-                {timelineEvents.map((event, i) => (
-                  <div key={i} className="flex flex-col items-center relative z-10">
-                    <div className={`w-3 h-8 rounded-sm mb-4 ${
-                      event.highlight 
-                        ? "bg-accent" 
-                        : i % 2 === 0 
-                          ? "bg-accent/60" 
-                          : "bg-accent/30"
-                    }`} />
-                    <p className={`text-xs font-medium mb-1 ${
-                      event.highlight ? "text-accent" : "text-muted-foreground"
-                    }`}>
-                      {event.label}
-                    </p>
-                    <p className="text-[10px] text-muted-foreground">
-                      {event.year}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="text-center mt-14">
-              <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-                Instantaneous, personalized, and highly curated delivery of your expertise—without you being there.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-foreground text-foreground font-medium rounded-md hover:bg-foreground hover:text-background transition-all"
-              >
-                About SANE/REBELS
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Section - Two Cards */}
-      <section className="py-24 md:py-32 bg-[#f5f0eb]">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border text-sm text-muted-foreground mb-6">
-              Why SANE/REBELS
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-              Never miss a question.
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic mb-12">
-              Never miss a connection.
+              Better to lead than follow.
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-background rounded-xl p-8 border border-border"
-            >
-              <h3 className="font-serif text-xl text-foreground mb-4">
-                Never Repeat Yourself Again
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Your productized system answers the questions you've already answered, so you don't have to. That means less repetition, more impact, and time back for what matters most.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background rounded-xl p-8 border border-border"
-            >
-              <h3 className="font-serif text-xl text-foreground mb-4">
-                Keep Every Relationship Alive
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Never ghost anyone again. With your system, you can recognize loyal clients, follow up with intent, and make sure the right people always feel heard.
-              </p>
-            </motion.div>
+            {fears.map((fear, i) => (
+              <motion.div
+                key={fear.question}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-[#f5f0eb] rounded-xl p-8"
+              >
+                <p className="font-serif text-lg text-foreground mb-4">
+                  "{fear.question}"
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {fear.answer}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Gradient */}
-      <section className="py-24 md:py-32 bg-background">
+      {/* CTA Section - Purple Accent */}
+      <section className="py-24 md:py-32 bg-[#f5f0eb]">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -450,7 +550,7 @@ export default function Home() {
               </Link>
               
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                Build your Productized System
+                Build Your Productized System
               </h2>
               
               <p className="text-white/85 max-w-xl mx-auto mb-10 leading-relaxed">

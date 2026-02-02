@@ -92,8 +92,11 @@ export default function AboutPage() {
               <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
                 I spent 15 years as a product leader and strategic advisor—at Siemens, BMW, and alongside startup founders building products people actually use.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Along the way, I kept running into the same wall: brilliant experts trapped in their own success. Their methodology was the moat. But they couldn't scale themselves. The more successful they got, the less time they had.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                Then I realized: <span className="italic">As AI becomes abundant, human presence becomes premium.</span> Information isn't the bottleneck anymore. Connection, curation, trust, and energy are. That's what we build for.
               </p>
             </div>
           </motion.div>
