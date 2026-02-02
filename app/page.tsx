@@ -531,6 +531,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* European Advantage Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-14"
+          >
+            <p className="text-sm font-medium text-accent mb-6 uppercase tracking-wider">
+              The European Advantage
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
+              Your mind is yours.
+            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-muted-foreground italic">
+              Always.
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { title: "GDPR-Native", desc: "Not an afterthought. Built from the ground up for European privacy standards." },
+              { title: "EU Data Residency", desc: "Your data never leaves Europe. Hosted in Germany, processed in Germany." },
+              { title: "Complete Ownership", desc: "Export anytime. No lock-in. Your methodology and data stay yours." },
+              { title: "No Training on Your Data", desc: "Your IP is protected. We never use your content to train other models." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-[#f5f0eb] rounded-xl p-6"
+              >
+                <h3 className="font-medium text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section - Purple Accent */}
       <section className="py-24 md:py-32 bg-[#f5f0eb]">
         <div className="max-w-4xl mx-auto px-6">
@@ -566,12 +610,13 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps */}
-          <div className="grid md:grid-cols-3 gap-10 mt-14">
+          {/* Process Steps - 4-Step Timeline */}
+          <div className="grid md:grid-cols-4 gap-8 mt-14">
             {[
-              { num: "01", title: "Uncover your methodology", desc: "We extract what makes your work actually work—the patterns you see that others miss." },
-              { num: "02", title: "Architect the system", desc: "We design the productized version that scales without diluting your value." },
-              { num: "03", title: "Scale everywhere", desc: "Deploy across your business—on your site, in your community, wherever it matters." },
+              { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "Your methodology codified. We uncover what makes your work actually work." },
+              { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured. Systems designed to scale your way." },
+              { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels. Website, community, wherever it matters." },
+              { num: "04", title: "Amplify", timing: "Forever", desc: "Every conversation makes it smarter. Continuous learning, continuous improvement." },
             ].map((step, i) => (
               <motion.div
                 key={step.num}
@@ -580,8 +625,9 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
-                <p className="text-accent font-medium mb-3">{step.num}</p>
-                <h3 className="font-serif text-lg text-foreground mb-2">{step.title}</h3>
+                <p className="text-accent font-medium mb-2">{step.num}</p>
+                <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                <p className="text-xs text-accent/70 mb-3">{step.timing}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
