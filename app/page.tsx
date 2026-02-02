@@ -795,51 +795,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-            </div>
-            
-            {/* Cards - TOP ALIGNED */}
-            <div className="flex flex-wrap md:flex-nowrap gap-4 items-start">
-              {[
-                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
-                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
-                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
-                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
-              ].map((step, i) => {
-                // Height grows from first (smallest) to last (largest)
-                const baseHeight = 160
-                const increment = 20
-                const cardHeight = baseHeight + (i * increment)
-                
-                return (
-                  <motion.div
-                    key={step.num}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative w-full md:flex-1"
-                  >
-                    {/* Dot at top */}
-                    <div className="hidden md:flex justify-center mb-3">
-                      <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
-                    </div>
-                    
-                    <div 
-                      className="bg-card border border-border rounded-xl p-6 flex flex-col"
-                      style={{ minHeight: `${cardHeight}px` }}
-                    >
-                      <p className="text-accent font-bold mb-2">{step.num}</p>
-                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
       <AnimatedFooter />
     </main>
