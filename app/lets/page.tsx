@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 import { getCalApi } from "@calcom/embed-react"
 import { motion } from "framer-motion"
-import { ArrowRight, Mail, Calendar } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 export default function LetsPage() {
@@ -74,9 +74,6 @@ export default function LetsPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-card border border-border rounded-2xl p-8"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
-                <Calendar className="w-5 h-5 text-accent" />
-              </div>
               <h2 className="font-serif text-xl text-foreground mb-3">Book a discovery call</h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 30 minutes to explore what you're building, where you're stuck, and whether we're the right fit.
@@ -97,9 +94,6 @@ export default function LetsPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-card border border-border rounded-2xl p-8"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
-                <Mail className="w-5 h-5 text-accent" />
-              </div>
               <h2 className="font-serif text-xl text-foreground mb-3">Send a message</h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 Prefer to write? Tell us about your business and what you're trying to build. We respond within 48 hours.
