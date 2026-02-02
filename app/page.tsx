@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart } from "lucide-react"
+import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, Shield, Lock, Database, Key } from "lucide-react"
 import { ShaderBackground } from "@/components/shader-background"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
@@ -46,7 +46,7 @@ const useCases = [
   },
 ]
 
-// Evolution of Expertise Timeline
+// Evolution of Expertise Timeline - with scaling (80% to 100%)
 const evolutionTimeline = [
   {
     stage: "Individuality",
@@ -55,6 +55,7 @@ const evolutionTimeline = [
     outcome: "Sound, Local Reach",
     icon: Users,
     style: "neutral",
+    scale: 0.82,
   },
   {
     stage: "Access",
@@ -63,6 +64,7 @@ const evolutionTimeline = [
     outcome: "Books, Duplication",
     icon: BookOpen,
     style: "neutral",
+    scale: 0.86,
   },
   {
     stage: "Immediacy",
@@ -71,6 +73,7 @@ const evolutionTimeline = [
     outcome: "Mass Media, Audiences",
     icon: Radio,
     style: "neutral",
+    scale: 0.90,
   },
   {
     stage: "On-Demand",
@@ -79,6 +82,7 @@ const evolutionTimeline = [
     outcome: "Content, Platforms",
     icon: Headphones,
     style: "neutral",
+    scale: 0.94,
   },
   {
     stage: "Interaction",
@@ -87,6 +91,7 @@ const evolutionTimeline = [
     outcome: "Answers, Personalization",
     icon: MessageCircle,
     style: "gold",
+    scale: 0.97,
   },
   {
     stage: "Embodiment",
@@ -95,13 +100,14 @@ const evolutionTimeline = [
     outcome: "Answers, Experience, Trust",
     icon: Heart,
     style: "accent",
+    scale: 1.0,
   },
 ]
 
 const fears = [
   {
     question: "Will this replace me?",
-    answer: "No. It frees you to do what only you can do. Your presence becomes 100% focused on transformation, not logistics.",
+    answer: "No. It frees you to do what only you can do. Your time shifts to the conversations that actually transform people.",
   },
   {
     question: "Will this make me inauthentic?",
@@ -113,7 +119,7 @@ const fears = [
   },
   {
     question: "Will clients feel impersonal?",
-    answer: "The opposite. They're pre-educated for your sessions, which increases intimacy and depth when you do show up.",
+    answer: "The opposite. They arrive pre-educated, which increases intimacy and depth when you do show up.",
   },
 ]
 
@@ -184,13 +190,13 @@ export default function Home() {
               "As AI becomes abundant, human energy becomes premium. Information is no longer the bottleneck. Connection, curation, trust, and energy are."
             </blockquote>
             <p className="text-muted-foreground">
-              Your presence becomes 100% focused on transformation, not logistics.
+              We help you spend more time where it matters most.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Evolution Timeline Section - Card-based like Delphi */}
+      {/* Evolution Timeline Section - Card-based with scaling */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -208,7 +214,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Timeline Cards with Top Connector Dots */}
+          {/* Timeline Cards with Top Connector Dots and Scaling */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +225,7 @@ export default function Home() {
             {/* Horizontal connector line at top */}
             <div className="absolute top-4 left-[8%] right-[8%] h-px bg-border hidden lg:block" />
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 items-end">
               {evolutionTimeline.map((item, i) => {
                 const Icon = item.icon
                 const isGold = item.style === "gold"
@@ -229,6 +235,7 @@ export default function Home() {
                   <div
                     key={item.stage}
                     className="relative flex flex-col"
+                    style={{ transform: `scale(${item.scale})`, transformOrigin: 'bottom center' }}
                   >
                     {/* Top dot connector */}
                     <div className="flex justify-center mb-4 relative">
@@ -512,46 +519,123 @@ export default function Home() {
         </div>
       </section>
 
-      {/* European Advantage Section */}
-      <section className="py-20 bg-background">
+      {/* Trust Section - Delphi-inspired but SANE/REBELS tone */}
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              The European Advantage
+            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
+              Trust
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
-              Your mind is yours.
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
+              Your methodology
             </h2>
-            <h2 className="font-serif text-3xl md:text-4xl text-muted-foreground italic">
-              Always.
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
+              is Yours.
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { title: "GDPR-Native", desc: "Not an afterthought. Built from the ground up for European privacy standards." },
-              { title: "EU Data Residency", desc: "Your data never leaves Europe. Hosted in Germany, processed in Germany." },
-              { title: "Complete Ownership", desc: "Export anytime. No lock-in. Your methodology and data stay yours." },
-              { title: "No Training on Your Data", desc: "Your IP is protected. We never use your content to train other models." },
-            ].map((item, i) => (
+          {/* Trust Grid - 2x2 with center portrait */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Left Column */}
+            <div className="space-y-6">
               <motion.div
-                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <h3 className="font-medium text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-serif text-lg text-foreground mb-3">Built to protect your IP</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Your frameworks maintain integrity over time. Your authenticity stays intact, trusted by your audience now and always.
+                </p>
               </motion.div>
-            ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-card border border-border rounded-xl p-6"
+              >
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <Lock className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-serif text-lg text-foreground mb-3">Privacy first, always</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  GDPR-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Center Portrait */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden md:block"
+            >
+              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
+                  <p className="text-lg font-medium mb-1">Your Expert System</p>
+                  <p className="text-sm text-white/70 mb-8">Protected</p>
+                  
+                  {/* Encryption visual */}
+                  <div className="w-full px-4 mt-auto">
+                    <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
+                      C3V0B9FP2E4CL5C0DJ2EHNFT2LH0MM2C9YCE
+                      2I0C<span className="text-accent">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-accent">2</span>CH2CL0CT0CT4
+                      CH9CG4CI0C0C2C7C<span className="text-accent">B</span>0CN2CIC3P4V0ME2PFJD
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column */}
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="bg-card border border-border rounded-xl p-6"
+              >
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <Database className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-serif text-lg text-foreground mb-3">Complete ownership</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="bg-card border border-border rounded-xl p-6"
+              >
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                  <Key className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-serif text-lg text-foreground mb-3">You're in control</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Your system speaks only your words. It never improvises without your consent. Edit, constrain, and approve everything.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -598,17 +682,17 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - 4-Step Timeline with visual connector */}
+          {/* Process Steps - 4-Step Timeline with scaling */}
           <div className="relative mt-14">
             {/* Connector line */}
             <div className="absolute top-5 left-[12%] right-[12%] h-px bg-border hidden md:block" />
             
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-4 gap-4 items-end">
               {[
-                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "Your methodology codified. We uncover what makes your work actually work." },
-                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured. Systems designed to scale your way." },
-                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels. Website, community, wherever it matters." },
-                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Every conversation makes it smarter. Continuous learning, continuous improvement." },
+                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work.", scale: 0.88 },
+                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured.", scale: 0.92 },
+                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app.", scale: 0.96 },
+                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement.", scale: 1.0 },
               ].map((step, i) => (
                 <motion.div
                   key={step.num}
@@ -617,6 +701,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="relative"
+                  style={{ transform: `scale(${step.scale})`, transformOrigin: 'bottom center' }}
                 >
                   {/* Dot */}
                   <div className="hidden md:flex justify-center mb-4">

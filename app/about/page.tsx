@@ -1,8 +1,111 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
+
+// Manifest card data
+const manifestCards = [
+  {
+    id: 1,
+    title: "I. The Pattern I Kept Seeing",
+    content: [
+      "At Google, I watched the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time. Every meeting, every email, every 'quick call' chipped away at the work that actually mattered.",
+      "Then I went fractional. Worked with founders, coaches, consultants across 30+ companies. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.",
+      "The conventional answer? 'Clone yourself.' Build a course. Hire a team. Franchise your brain.",
+      "But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.",
+    ],
+  },
+  {
+    id: 2,
+    title: "II. The Shift That Changes Everything",
+    content: [
+      "Information used to be scarce. Having knowledge was premium.",
+      "Then access became scarce. Reach was premium.",
+      "Then attention became scarce. Personality was premium.",
+      "Now? Presence is scarce. Your authentic energy is premium.",
+      "AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.",
+      "This reframes every fear. 'Will AI replace me?' No, it frees you to do what only you can do. 'Will this feel inauthentic?' No, it makes your presence more powerful.",
+    ],
+  },
+  {
+    id: 3,
+    title: "III. What We Actually Build",
+    content: [
+      "Not chatbots. Not courses. Not clones.",
+      "We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.",
+      "The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.",
+      "The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.",
+      "We don't replace your presence. We protect it.",
+    ],
+  },
+  {
+    id: 4,
+    title: "IV. Why The Name",
+    content: [
+      "SANE because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.",
+      "REBELS because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.",
+      "The '/' matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.",
+    ],
+    closing: "Sane enough to build it right. Rebel enough to ship it anyway.",
+  },
+]
+
+function ManifestCard({ card, index, totalCards }: { card: typeof manifestCards[0]; index: number; totalCards: number }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "start center"]
+  })
+  
+  const x = useTransform(scrollYProgress, [0, 1], [100, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 1])
+  
+  // Calculate z-index so later cards stack on top
+  const zIndex = index + 1
+  // Calculate offset for stacking effect - each card slightly visible
+  const topOffset = index * 8
+  
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{ 
+        x: index === 0 ? 0 : x, 
+        opacity: index === 0 ? 1 : opacity,
+        zIndex,
+        marginTop: index === 0 ? 0 : -180,
+      }}
+      className="sticky top-32"
+    >
+      <div 
+        className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-lg"
+        style={{ 
+          transform: `translateY(${topOffset}px)`,
+        }}
+      >
+        <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+        
+        <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+          {card.title}
+        </h3>
+        
+        <div className="space-y-5 text-muted-foreground leading-relaxed">
+          {card.content.map((paragraph, i) => (
+            <p key={i} className={paragraph.startsWith("Now?") || paragraph.includes("We don't replace") ? "text-foreground font-medium" : ""}>
+              {paragraph}
+            </p>
+          ))}
+          {card.closing && (
+            <p className="text-foreground italic font-serif text-lg pt-4">
+              {card.closing}
+            </p>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 export default function AboutPage() {
   return (
@@ -26,7 +129,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-3"
           >
-            One founder.
+            One vision.
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -77,8 +180,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Background & Thinking - Instead of "We're featured in" */}
-      <section className="py-16 border-t border-border mt-12">
+      {/* Manifest Section - Stacking Cards */}
+      <section className="py-20">
+        <div className="max-w-2xl mx-auto px-6">
+          <div className="relative">
+            {manifestCards.map((card, index) => (
+              <ManifestCard 
+                key={card.id} 
+                card={card} 
+                index={index} 
+                totalCards={manifestCards.length} 
+              />
+            ))}
+          </div>
+          {/* Spacer for scroll */}
+          <div className="h-[50vh]" />
+        </div>
+      </section>
+
+      {/* Background & Thinking - Moved below manifest */}
+      <section className="py-16 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-[200px_1fr] gap-12">
             <motion.h2
@@ -124,151 +245,6 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Manifest Section I */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-card border border-border rounded-2xl p-8 md:p-12"
-          >
-            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-            
-            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-              I. The Pattern I Kept Seeing
-            </h3>
-            
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                At Google, I watched the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time. Every meeting, every email, every "quick call" chipped away at the work that actually mattered.
-              </p>
-              <p>
-                Then I went fractional. Worked with founders, coaches, consultants across 30+ companies. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.
-              </p>
-              <p>
-                The conventional answer? "Clone yourself." Build a course. Hire a team. Franchise your brain.
-              </p>
-              <p>
-                But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Manifest Section II */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-card border border-border rounded-2xl p-8 md:p-12"
-          >
-            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-            
-            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-              II. The Shift That Changes Everything
-            </h3>
-            
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                Information used to be scarce. Having knowledge was premium.
-              </p>
-              <p>
-                Then access became scarce. Reach was premium.
-              </p>
-              <p>
-                Then attention became scarce. Personality was premium.
-              </p>
-              <p>
-                Now? <span className="text-foreground font-medium">Presence is scarce. Your authentic energy is premium.</span>
-              </p>
-              <p>
-                AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.
-              </p>
-              <p>
-                This reframes every fear. "Will AI replace me?" No, it frees you to do what only you can do. "Will this feel inauthentic?" No, it makes your presence more powerful.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Manifest Section III */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-card border border-border rounded-2xl p-8 md:p-12"
-          >
-            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-            
-            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-              III. What We Actually Build
-            </h3>
-            
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                Not chatbots. Not courses. Not clones.
-              </p>
-              <p>
-                We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.
-              </p>
-              <p>
-                The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.
-              </p>
-              <p>
-                The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.
-              </p>
-              <p className="text-foreground font-medium">
-                We don't replace your presence. We protect it.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Manifest Section IV */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-card border border-border rounded-2xl p-8 md:p-12"
-          >
-            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-            
-            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-              IV. Why The Name
-            </h3>
-            
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                <span className="text-foreground font-medium">SANE</span> because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.
-              </p>
-              <p>
-                <span className="text-foreground font-medium">REBELS</span> because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.
-              </p>
-              <p>
-                The "/" matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.
-              </p>
-              <p className="text-foreground italic font-serif text-lg pt-4">
-                Sane enough to build it right. Rebel enough to ship it anyway.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
