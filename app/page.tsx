@@ -407,7 +407,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               Who We Work With
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -545,7 +545,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               Trust
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -579,9 +579,6 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Built to protect your IP</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your frameworks maintain integrity over time. Your authenticity stays intact, trusted by your audience now and always.
@@ -595,9 +592,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Lock className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Privacy first, always</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   GDPR-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
@@ -646,9 +640,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Database className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Complete ownership</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.
@@ -662,9 +653,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Key className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">You're in control</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your system speaks only your words. It never improvises without your consent. Edit, constrain, and approve everything.
@@ -699,13 +687,12 @@ export default function Home() {
                 </span>
               </div>
               
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                Build Your Expert System
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+                Scale Your Expertise.
               </h2>
-              
-              <p className="text-white/85 max-w-xl mx-auto mb-10 leading-relaxed">
-                Ready to turn your expertise into a scalable system? Join the experts building transformational businesses without sacrificing authenticity.
-              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white/80 italic mb-10">
+                Stay Yourself.
+              </h2>
               
               <Link
                 href="/lets"
@@ -754,7 +741,7 @@ export default function Home() {
                     
                     <div 
                       className="bg-card border border-border rounded-xl p-6 flex flex-col"
-                      style={{ height: `${cardHeight}px` }}
+                      style={{ minHeight: `${cardHeight}px` }}
                     >
                       <p className="text-accent font-bold mb-2">{step.num}</p>
                       <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>

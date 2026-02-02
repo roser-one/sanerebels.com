@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 
 const navLinks = [
   { href: "/about", label: "About" },
-  { href: "/lets", label: "Let's Talk" },
 ]
 
 interface AnimatedNavProps {
@@ -51,7 +50,7 @@ export function AnimatedNav({ variant = "light" }: AnimatedNavProps) {
             href="/lets"
             className="px-5 py-2.5 bg-accent text-accent-foreground text-sm font-medium rounded-md hover:bg-accent/90 transition-colors"
           >
-            Get Started
+            Let's
           </Link>
         </div>
       </div>
