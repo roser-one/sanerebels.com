@@ -607,7 +607,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+              <div className="relative h-full min-h-[720px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Face image - fills container */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -703,13 +703,98 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - TOP ALIGNED, first smallest growing to last largest */}
+{/* Process Steps */}
           <div className="relative mt-14">
-            {/* Connector line at top with arrow */}
-            <div className="absolute top-[14px] left-[12%] right-[8%] h-px bg-border hidden md:block">
-              <div className="absolute -right-1 top-1/2 -translate-y-1/2">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
+            {/* Desktop: Horizontal with top dots and line */}
+            <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
+              {[
+                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
+                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
+                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
+                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
+              ].map((step, i, arr) => {
+                const baseHeight = 160
+                const increment = 20
+                const cardHeight = baseHeight + (i * increment)
+                const isLast = i === arr.length - 1
+                
+                return (
+                  <motion.div
+                    key={step.num}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="relative flex-1"
+                  >
+                    {/* Dot with line */}
+                    <div className="flex items-center justify-center relative mb-3">
+                      <div className="w-3 h-3 rounded-full bg-accent z-10" />
+                      {!isLast && (
+                        <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-px bg-border" />
+                      )}
+                      {isLast && (
+                        <div className="absolute left-[calc(50%+8px)] top-1/2 -translate-y-1/2">
+                          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div 
+                      className="bg-card border border-border rounded-xl p-6"
+                      style={{ minHeight: `${cardHeight}px` }}
+                    >
+                      <p className="text-accent font-bold mb-2">{step.num}</p>
+                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+            
+            {/* Mobile: Vertical timeline with alternating cards */}
+            <div className="md:hidden relative">
+              {/* Vertical line down center */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+              
+              <div className="space-y-8">
+                {[
+                  { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
+                  { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
+                  { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
+                  { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
+                ].map((step, i) => {
+                  const isLeft = i % 2 === 0
+                  
+                  return (
+                    <motion.div
+                      key={step.num}
+                      initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.1 }}
+                      className="relative"
+                    >
+                      {/* Dot on center line */}
+                      <div className="absolute left-1/2 top-8 w-3 h-3 rounded-full bg-accent -translate-x-1/2 z-10" />
+                      
+                      {/* Card - alternating left/right */}
+                      <div className={`${isLeft ? 'pr-8' : 'pl-8 ml-auto'} w-[calc(50%-12px)]`}>
+                        <div className="bg-card border border-border rounded-xl p-6">
+                          <p className="text-accent font-bold mb-2">{step.num}</p>
+                          <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                          <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
+            </div>
+          </div>
             </div>
             
             {/* Cards - TOP ALIGNED */}
