@@ -1,6 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -28,7 +44,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com https://cal.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://cal.com https://app.cal.com; img-src 'self' blob: data: https://cal.com https://app.cal.com; font-src 'self' https://cal.com https://app.cal.com; connect-src 'self' https://vitals.vercel-insights.com https://cal.com https://app.cal.com; frame-src 'self' https://cal.com https://app.cal.com; worker-src 'self' blob:;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com https://cal.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://cal.com https://app.cal.com; img-src 'self' blob: data: https://cal.com https://app.cal.com https://i.pravatar.cc https://*.public.blob.vercel-storage.com https://hebbkx1anhila5yf.public.blob.vercel-storage.com; font-src 'self' https://cal.com https://app.cal.com; connect-src 'self' https://vitals.vercel-insights.com https://cal.com https://app.cal.com; frame-src 'self' https://cal.com https://app.cal.com; worker-src 'self' blob:;",
           },
         ],
       },
