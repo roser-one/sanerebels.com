@@ -1,89 +1,216 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import { PageWrapper } from "@/components/page-wrapper"
+
+const experience = [
+    {
+        role: "Google",
+        duration: "4 years",
+        description: "500+ high-growth companies. Saw the blueprint. Learned what scales.",
+    },
+    {
+        role: "Founder",
+        duration: "5 years",
+        description: "Bootstrapped. Learned the reality of shipping. Solved problems nobody paid for.",
+    },
+    {
+        role: "Fractional CMO",
+        duration: "2 years",
+        description: "Solved growth problems. Hit the ceiling of time-for-money.",
+        link: { url: "https://roser-growth.com", label: "roser-growth.com" },
+    },
+    {
+        role: "Now",
+        duration: "SANE/REBELS",
+        description: "Multiplying impact through systems. Building what I wish existed.",
+    },
+]
 
 export default function AboutPage() {
     return (
         <PageWrapper title="About">
-            {/* Top Quote & Logo */}
-            <div className="mb-16 text-center max-w-2xl mx-auto">
-                <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
-                    &ldquo;We don&apos;t just advise. We are at our best when we co-create. Build. Work on challenges worth solving.&rdquo;
+            {/* Philosophy Quote */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-16"
+            >
+                <blockquote className="text-xl md:text-2xl text-foreground leading-relaxed">
+                    "We don't just advise. We are at our best when we co-create. Build. Work on challenges worth solving."
                 </blockquote>
+            </motion.div>
 
-                <div className="flex items-center justify-center gap-1 mt-8 opacity-90 scale-110">
-                    <span className="font-bold text-xl tracking-tight">SANE</span>
-                    <span className="text-accent font-bold text-xl">/</span>
-                    <span className="font-bold text-xl tracking-tight">REBELS</span>
-                </div>
-            </div>
-
-            <div className="border-t border-white/10 my-12 w-full max-w-xs mx-auto" />
+            <div className="border-t border-white/10 my-12" />
 
             {/* Meet the Founder */}
-            <h2 className="text-sm font-mono text-accent mb-8 text-center uppercase tracking-widest">Meet the Founder</h2>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+            >
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-8">
+                    Meet the Founder
+                </p>
 
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-                {/* Photo - Styled more elegantly */}
-                <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-transparent blur-xl" />
-                    <Image
-                        src="/founder.jpeg"
-                        alt="Simon Roser"
-                        width={160}
-                        height={160}
-                        className="rounded-full w-full h-full object-cover border-2 border-white/10 shadow-2xl relative z-10"
-                    />
+                <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                    {/* Photo */}
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0 mx-auto md:mx-0">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-transparent blur-xl" />
+                        <Image
+                            src="/founder.jpeg"
+                            alt="Simon Roser"
+                            width={160}
+                            height={160}
+                            className="rounded-full w-full h-full object-cover border-2 border-white/10 shadow-2xl relative z-10"
+                        />
+                    </div>
+
+                    {/* Bio */}
+                    <div className="flex-1">
+                        <h2 className="text-2xl font-bold text-foreground mb-1 text-center md:text-left">Simon Roser</h2>
+                        <p className="text-foreground/60 font-mono text-xs uppercase tracking-wider mb-6 text-center md:text-left">
+                            Founder & Systems Architect
+                        </p>
+
+                        <div className="space-y-4 text-foreground/80">
+                            <p>
+                                Four years at Google. 500+ companies. Saw the patterns. Left to build.
+                            </p>
+                            <p>
+                                Ran my own company for 5 years. Learned shipping matters more than slides. Learned the hard way what doesn't scale.
+                            </p>
+                            <p>
+                                Then Fractional CMO. Loved the work. Solving problems is addictive. But I ran into physics. I could only be in one room at a time. I was selling hours. But we wanted to share know-how with more than just one room.
+                            </p>
+                            <p className="text-foreground">
+                                We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it. To turn complex ideas into reality. To handle speed without losing direction.
+                            </p>
+                            <p>
+                                Now we build those systems for others. Making authenticity scalable.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+            </motion.div>
 
-                {/* Bio */}
-                <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-foreground mb-1 text-center md:text-left">Simon Roser</h2>
-                    <p className="text-foreground/60 font-mono text-xs uppercase tracking-wider mb-6 text-center md:text-left">Founder & Systems Architect</p>
+            <div className="border-t border-white/10 my-12" />
 
+            {/* Experience Timeline */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-8">
+                    Experience
+                </p>
+
+                <div className="space-y-6">
+                    {experience.map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                            className="flex gap-6"
+                        >
+                            <div className="flex-shrink-0 w-28">
+                                <p className="font-mono text-sm text-accent">{item.role}</p>
+                                <p className="text-xs text-foreground/40">{item.duration}</p>
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-foreground/70">
+                                    {item.description}
+                                    {item.link && (
+                                        <>
+                                            {" "}
+                                            <a
+                                                href={item.link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-accent hover:underline decoration-accent/50 underline-offset-4"
+                                            >
+                                                {item.link.label}
+                                            </a>
+                                        </>
+                                    )}
+                                </p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </motion.div>
+
+            <div className="border-t border-white/10 my-12" />
+
+            {/* The Name */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+            >
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-6">
+                    Why SANE/REBELS?
+                </p>
+
+                <div className="space-y-4">
                     <p>
-                        Four years at Google. 500+ companies. Saw the patterns. Left to build.
-                        Ran my own company for 5 years. Learned shipping matters more than slides (and so much more).
+                        <span className="text-foreground font-medium">Sane</span> — deliberate enough to work on what matters. To use the means the modern world provides. To build infrastructure that actually works.
                     </p>
                     <p>
-                        Then Fractional CMO. Loved the work. Solving problems is addictive. But I ran into physics.
-                        I could only be in one room at a time. I was selling hours.
-                        But we wanted to share know-how with more than just one room.
+                        <span className="text-foreground font-medium">Rebel</span> — refusing to lose authenticity, even as we scale. Shipping before it's perfect. Learning by building. Staying curious at the edge.
                     </p>
-                    <p>
-                        We thrive in high speed. Abstractions. Principles. Systems. We build infrastructure because we need it.
-                        To turn complex ideas into reality. To handle speed without losing direction.
-                        Now we build those systems for others. Making authenticity scalable.
+                    <p className="text-foreground">
+                        We automate the routine so you can stay present. We use technology to bring your frameworks to life, not to bury them under spreadsheets and bots.
                     </p>
                 </div>
-            </div>
 
-            <h2 className="text-xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wider text-sm">Experience</h2>
-            <div className="space-y-6">
-                <div className="grid grid-cols-[100px_1fr] gap-4">
-                    <span className="font-mono text-xs text-accent uppercase py-1">Google</span>
-                    <p className="text-sm"><strong className="text-foreground">4 years.</strong> 500+ high-growth companies. Saw the blueprint.</p>
+                <div className="mt-10 p-6 rounded-xl bg-accent/5 border border-accent/20">
+                    <p className="text-center text-foreground/80">
+                        We work towards a future where machines serve humans, not replace them.
+                    </p>
                 </div>
+            </motion.div>
 
-                <div className="grid grid-cols-[100px_1fr] gap-4">
-                    <span className="font-mono text-xs text-accent uppercase py-1">Founder</span>
-                    <p className="text-sm"><strong className="text-foreground">5 years.</strong> Bootstrapped. Learned reality of shipping.</p>
-                </div>
+            <div className="border-t border-white/10 my-12" />
 
-                <div className="grid grid-cols-[100px_1fr] gap-4">
-                    <span className="font-mono text-xs text-accent uppercase py-1">Fractional CMO</span>
-                    <p className="text-sm"><strong className="text-foreground">2 years.</strong> Solved growth problems. Hit ceiling of time-for-money. (more at <a href="https://roser-growth.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">roser-growth.com</a>)</p>
-                </div>
+            {/* The Entity */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+            >
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent mb-6">
+                    The Entity
+                </p>
 
-                <div className="grid grid-cols-[100px_1fr] gap-4">
-                    <span className="font-mono text-xs text-accent uppercase py-1">Now</span>
-                    <p className="text-sm"><strong className="text-foreground">SANE/REBELS.</strong> Multiplying impact through systems.</p>
+                <div className="grid grid-cols-2 gap-6">
+                    <div>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Company</p>
+                        <p className="text-foreground">KNUS GmbH</p>
+                    </div>
+                    <div>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Location</p>
+                        <p className="text-foreground">Berlin, Germany</p>
+                    </div>
+                    <div>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Infrastructure</p>
+                        <p className="text-foreground">EU-hosted</p>
+                    </div>
+                    <div>
+                        <p className="text-xs text-foreground/40 uppercase tracking-wider mb-1">Compliance</p>
+                        <p className="text-foreground">GDPR-native</p>
+                    </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="mt-16 text-center">
                 <Link href="/lets" className="text-sm text-accent hover:underline decoration-accent/50 underline-offset-4 transition-all">
-                    Let&apos;s chat &rarr;
+                    Let's talk &rarr;
                 </Link>
             </div>
         </PageWrapper>
