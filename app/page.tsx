@@ -407,7 +407,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               Who We Work With
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -545,7 +545,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="inline-flex items-center px-4 py-2 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
               Trust
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
@@ -579,9 +579,6 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Built to protect your IP</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your frameworks maintain integrity over time. Your authenticity stays intact, trusted by your audience now and always.
@@ -595,9 +592,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Lock className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Privacy first, always</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   GDPR-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
@@ -613,7 +607,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+              <div className="relative h-full min-h-[720px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Face image - fills container */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -646,9 +640,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Database className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">Complete ownership</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.
@@ -662,9 +653,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <Key className="w-5 h-5 text-accent" />
-                </div>
                 <h3 className="font-serif text-lg text-foreground mb-3">You're in control</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Your system speaks only your words. It never improvises without your consent. Edit, constrain, and approve everything.
@@ -699,13 +687,12 @@ export default function Home() {
                 </span>
               </div>
               
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                Build Your Expert System
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+                Scale Your Expertise.
               </h2>
-              
-              <p className="text-white/85 max-w-xl mx-auto mb-10 leading-relaxed">
-                Ready to turn your expertise into a scalable system? Join the experts building transformational businesses without sacrificing authenticity.
-              </p>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white/80 italic mb-10">
+                Stay Yourself.
+              </h2>
               
               <Link
                 href="/lets"
@@ -716,13 +703,98 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - TOP ALIGNED, first smallest growing to last largest */}
+{/* Process Steps */}
           <div className="relative mt-14">
-            {/* Connector line at top with arrow */}
-            <div className="absolute top-[14px] left-[12%] right-[8%] h-px bg-border hidden md:block">
-              <div className="absolute -right-1 top-1/2 -translate-y-1/2">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
+            {/* Desktop: Horizontal with top dots and line */}
+            <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
+              {[
+                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
+                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
+                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
+                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
+              ].map((step, i, arr) => {
+                const baseHeight = 160
+                const increment = 20
+                const cardHeight = baseHeight + (i * increment)
+                const isLast = i === arr.length - 1
+                
+                return (
+                  <motion.div
+                    key={step.num}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="relative flex-1"
+                  >
+                    {/* Dot with line */}
+                    <div className="flex items-center justify-center relative mb-3">
+                      <div className="w-3 h-3 rounded-full bg-accent z-10" />
+                      {!isLast && (
+                        <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-px bg-border" />
+                      )}
+                      {isLast && (
+                        <div className="absolute left-[calc(50%+8px)] top-1/2 -translate-y-1/2">
+                          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div 
+                      className="bg-card border border-border rounded-xl p-6"
+                      style={{ minHeight: `${cardHeight}px` }}
+                    >
+                      <p className="text-accent font-bold mb-2">{step.num}</p>
+                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+            
+            {/* Mobile: Vertical timeline with alternating cards */}
+            <div className="md:hidden relative">
+              {/* Vertical line down center */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
+              
+              <div className="space-y-8">
+                {[
+                  { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
+                  { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
+                  { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
+                  { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
+                ].map((step, i) => {
+                  const isLeft = i % 2 === 0
+                  
+                  return (
+                    <motion.div
+                      key={step.num}
+                      initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.1 }}
+                      className="relative"
+                    >
+                      {/* Dot on center line */}
+                      <div className="absolute left-1/2 top-8 w-3 h-3 rounded-full bg-accent -translate-x-1/2 z-10" />
+                      
+                      {/* Card - alternating left/right */}
+                      <div className={`${isLeft ? 'pr-8' : 'pl-8 ml-auto'} w-[calc(50%-12px)]`}>
+                        <div className="bg-card border border-border rounded-xl p-6">
+                          <p className="text-accent font-bold mb-2">{step.num}</p>
+                          <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                          <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )
+                })}
               </div>
+            </div>
+          </div>
             </div>
             
             {/* Cards - TOP ALIGNED */}
@@ -754,7 +826,7 @@ export default function Home() {
                     
                     <div 
                       className="bg-card border border-border rounded-xl p-6 flex flex-col"
-                      style={{ height: `${cardHeight}px` }}
+                      style={{ minHeight: `${cardHeight}px` }}
                     >
                       <p className="text-accent font-bold mb-2">{step.num}</p>
                       <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
