@@ -46,7 +46,7 @@ const useCases = [
   },
 ]
 
-// Evolution of Expertise Timeline - with scaling (80% to 100%)
+// Evolution of Expertise Timeline - first card smallest, growing to last
 const evolutionTimeline = [
   {
     stage: "Individuality",
@@ -55,7 +55,6 @@ const evolutionTimeline = [
     outcome: "Sound, Local Reach",
     icon: Users,
     style: "neutral",
-    scale: 0.82,
   },
   {
     stage: "Access",
@@ -64,7 +63,6 @@ const evolutionTimeline = [
     outcome: "Books, Duplication",
     icon: BookOpen,
     style: "neutral",
-    scale: 0.86,
   },
   {
     stage: "Immediacy",
@@ -73,7 +71,6 @@ const evolutionTimeline = [
     outcome: "Mass Media, Audiences",
     icon: Radio,
     style: "neutral",
-    scale: 0.90,
   },
   {
     stage: "On-Demand",
@@ -82,7 +79,6 @@ const evolutionTimeline = [
     outcome: "Content, Platforms",
     icon: Headphones,
     style: "neutral",
-    scale: 0.94,
   },
   {
     stage: "Interaction",
@@ -91,7 +87,6 @@ const evolutionTimeline = [
     outcome: "Answers, Personalization",
     icon: MessageCircle,
     style: "gold",
-    scale: 0.97,
   },
   {
     stage: "Embodiment",
@@ -100,7 +95,6 @@ const evolutionTimeline = [
     outcome: "Answers, Experience, Trust",
     icon: Heart,
     style: "accent",
-    scale: 1.0,
   },
 ]
 
@@ -125,6 +119,20 @@ const fears = [
 
 export default function Home() {
   const [activeUseCase, setActiveUseCase] = useState(0)
+
+  // Calculate heights for timeline cards (smallest first, biggest last)
+  const getCardHeight = (index: number) => {
+    const baseHeight = 280
+    const increment = 20
+    return baseHeight + (index * increment)
+  }
+  
+  // Calculate heights for process cards (smallest first, biggest last)
+  const getProcessCardHeight = (index: number) => {
+    const baseHeight = 180
+    const increment = 15
+    return baseHeight + (index * increment)
+  }
 
   return (
     <main className="relative min-h-screen w-full bg-background">
@@ -190,13 +198,13 @@ export default function Home() {
               "As AI becomes abundant, human energy becomes premium. Information is no longer the bottleneck. Connection, curation, trust, and energy are."
             </blockquote>
             <p className="text-muted-foreground">
-              We help you spend more time where it matters most.
+              We help you reclaim time for the work that only you can do.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Evolution Timeline Section - Card-based with scaling */}
+      {/* Evolution Timeline Section - Cards with progressive height */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -214,7 +222,7 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Timeline Cards with Top Connector Dots and Scaling */}
+          {/* Timeline with horizontal line and cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -222,38 +230,42 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            {/* Horizontal connector line at top */}
-            <div className="absolute top-4 left-[8%] right-[8%] h-px bg-border hidden lg:block" />
+            {/* Horizontal connector line */}
+            <div className="absolute top-6 left-[8%] right-[8%] h-px bg-border hidden lg:block">
+              {/* Gold/accent progression overlay on the right */}
+              <div className="absolute right-0 w-[35%] h-full bg-gradient-to-r from-transparent via-[#d4a574]/50 to-accent/50" />
+            </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 items-end">
+            <div className="flex flex-wrap lg:flex-nowrap gap-3 items-end justify-center">
               {evolutionTimeline.map((item, i) => {
                 const Icon = item.icon
                 const isGold = item.style === "gold"
                 const isAccent = item.style === "accent"
+                const cardHeight = getCardHeight(i)
                 
                 return (
                   <div
                     key={item.stage}
-                    className="relative flex flex-col"
-                    style={{ transform: `scale(${item.scale})`, transformOrigin: 'bottom center' }}
+                    className="relative flex flex-col w-[calc(50%-6px)] md:w-[calc(33.33%-8px)] lg:w-auto lg:flex-1"
                   >
                     {/* Top dot connector */}
-                    <div className="flex justify-center mb-4 relative">
+                    <div className="hidden lg:flex justify-center mb-4 relative z-10">
                       <div className={`w-3 h-3 rounded-full border-2 ${
                         isGold ? "bg-[#d4a574] border-[#c99a64]" :
                         isAccent ? "bg-accent border-accent" : "bg-card border-border"
                       }`} />
                     </div>
                     
-                    {/* Card */}
+                    {/* Card with progressive height */}
                     <div
-                      className={`flex-1 rounded-xl p-5 flex flex-col text-center ${
+                      className={`rounded-xl p-5 flex flex-col text-center ${
                         isGold
                           ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
                           : isAccent
                           ? "bg-accent text-accent-foreground"
                           : "bg-card border border-border"
                       }`}
+                      style={{ minHeight: `${cardHeight}px` }}
                     >
                       <p className={`text-xs font-medium mb-4 ${
                         isGold ? "text-[#2a2520]/70" : 
@@ -291,7 +303,7 @@ export default function Home() {
                         {item.year}
                       </p>
                       
-                      <p className={`text-xs leading-relaxed ${
+                      <p className={`text-xs leading-relaxed mt-auto ${
                         isGold ? "text-[#2a2520]/80" :
                         isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
                       }`}>
@@ -519,7 +531,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Section - Delphi-inspired but SANE/REBELS tone */}
+      {/* Trust Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -666,7 +678,7 @@ export default function Home() {
               </div>
               
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                Build Your Productized System
+                Build Your Expert System
               </h2>
               
               <p className="text-white/85 max-w-xl mx-auto mb-10 leading-relaxed">
@@ -682,40 +694,45 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Process Steps - 4-Step Timeline with scaling */}
+          {/* Process Steps - Cards with progressive height (first smallest, last biggest) */}
           <div className="relative mt-14">
-            {/* Connector line */}
-            <div className="absolute top-5 left-[12%] right-[12%] h-px bg-border hidden md:block" />
+            {/* Connector line at top */}
+            <div className="absolute top-6 left-[12%] right-[12%] h-px bg-border hidden md:block" />
             
-            <div className="grid md:grid-cols-4 gap-4 items-end">
+            <div className="flex flex-wrap md:flex-nowrap gap-4 items-end justify-center">
               {[
-                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work.", scale: 0.88 },
-                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured.", scale: 0.92 },
-                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app.", scale: 0.96 },
-                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement.", scale: 1.0 },
-              ].map((step, i) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className="relative"
-                  style={{ transform: `scale(${step.scale})`, transformOrigin: 'bottom center' }}
-                >
-                  {/* Dot */}
-                  <div className="hidden md:flex justify-center mb-4">
-                    <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
-                  </div>
-                  
-                  <div className="bg-card border border-border rounded-xl p-6">
-                    <p className="text-accent font-bold mb-2">{step.num}</p>
-                    <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                    <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
+                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
+                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
+                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
+                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
+              ].map((step, i) => {
+                const cardHeight = getProcessCardHeight(i)
+                return (
+                  <motion.div
+                    key={step.num}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="relative w-full md:flex-1"
+                  >
+                    {/* Dot */}
+                    <div className="hidden md:flex justify-center mb-4">
+                      <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent" />
+                    </div>
+                    
+                    <div 
+                      className="bg-card border border-border rounded-xl p-6 flex flex-col"
+                      style={{ minHeight: `${cardHeight}px` }}
+                    >
+                      <p className="text-accent font-bold mb-2">{step.num}</p>
+                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
+                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </div>

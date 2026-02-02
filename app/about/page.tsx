@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { motion } from "framer-motion"
+import { useState } from "react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 // Manifest card data
@@ -11,9 +11,9 @@ const manifestCards = [
     id: 1,
     title: "I. The Pattern I Kept Seeing",
     content: [
-      "At Google, I watched the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time. Every meeting, every email, every 'quick call' chipped away at the work that actually mattered.",
-      "Then I went fractional. Worked with founders, coaches, consultants across 30+ companies. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.",
-      "The conventional answer? 'Clone yourself.' Build a course. Hire a team. Franchise your brain.",
+      "Four years at Google. 500+ high-growth companies. I saw the blueprint. I also saw the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time.",
+      "Then I went fractional. Worked with founders, coaches, consultants. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.",
+      "The conventional answer? 'Clone yourself.' Build a course. Hire a team.",
       "But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.",
     ],
   },
@@ -52,62 +52,9 @@ const manifestCards = [
   },
 ]
 
-function ManifestCard({ card, index, totalCards }: { card: typeof manifestCards[0]; index: number; totalCards: number }) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "start center"]
-  })
-  
-  const x = useTransform(scrollYProgress, [0, 1], [100, 0])
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.5, 1])
-  
-  // Calculate z-index so later cards stack on top
-  const zIndex = index + 1
-  // Calculate offset for stacking effect - each card slightly visible
-  const topOffset = index * 8
-  
-  return (
-    <motion.div
-      ref={cardRef}
-      style={{ 
-        x: index === 0 ? 0 : x, 
-        opacity: index === 0 ? 1 : opacity,
-        zIndex,
-        marginTop: index === 0 ? 0 : -180,
-      }}
-      className="sticky top-32"
-    >
-      <div 
-        className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-lg"
-        style={{ 
-          transform: `translateY(${topOffset}px)`,
-        }}
-      >
-        <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
-        
-        <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
-          {card.title}
-        </h3>
-        
-        <div className="space-y-5 text-muted-foreground leading-relaxed">
-          {card.content.map((paragraph, i) => (
-            <p key={i} className={paragraph.startsWith("Now?") || paragraph.includes("We don't replace") ? "text-foreground font-medium" : ""}>
-              {paragraph}
-            </p>
-          ))}
-          {card.closing && (
-            <p className="text-foreground italic font-serif text-lg pt-4">
-              {card.closing}
-            </p>
-          )}
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
 export default function AboutPage() {
+  const [activeCard, setActiveCard] = useState(0)
+
   return (
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
@@ -180,25 +127,70 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Manifest Section - Stacking Cards */}
+      {/* Manifest Section - Tab-based Cards (cleaner than scroll stacking) */}
       <section className="py-20">
         <div className="max-w-2xl mx-auto px-6">
-          <div className="relative">
+          {/* Card Navigation */}
+          <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
             {manifestCards.map((card, index) => (
-              <ManifestCard 
-                key={card.id} 
-                card={card} 
-                index={index} 
-                totalCards={manifestCards.length} 
+              <button
+                key={card.id}
+                onClick={() => setActiveCard(index)}
+                className={`text-sm whitespace-nowrap pb-2 transition-colors ${
+                  activeCard === index
+                    ? "text-accent border-b-2 border-accent font-bold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {card.title.split(". ")[0]}.
+              </button>
+            ))}
+          </div>
+
+          {/* Active Card Display */}
+          <motion.div
+            key={activeCard}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-card border border-border rounded-2xl p-8 md:p-12"
+          >
+            <p className="text-accent font-bold mb-6">SANE<span className="animate-pulse">/</span>REBELS</p>
+            
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-8">
+              {manifestCards[activeCard].title}
+            </h3>
+            
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              {manifestCards[activeCard].content.map((paragraph, i) => (
+                <p key={i} className={paragraph.startsWith("Now?") || paragraph.includes("We don't replace") ? "text-foreground font-medium" : ""}>
+                  {paragraph}
+                </p>
+              ))}
+              {manifestCards[activeCard].closing && (
+                <p className="text-foreground italic font-serif text-lg pt-4">
+                  {manifestCards[activeCard].closing}
+                </p>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Card Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {manifestCards.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveCard(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  activeCard === index ? "bg-accent" : "bg-border hover:bg-muted-foreground"
+                }`}
               />
             ))}
           </div>
-          {/* Spacer for scroll */}
-          <div className="h-[50vh]" />
         </div>
       </section>
 
-      {/* Background & Thinking - Moved below manifest */}
+      {/* Background & Thinking - With CORRECT Simon info */}
       <section className="py-16 border-t border-border">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-[200px_1fr] gap-12">
@@ -215,20 +207,20 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-5">
               {[
                 { 
-                  label: "Ex-Google", 
-                  desc: "5+ years scaling products and growth teams across EMEA markets"
+                  label: "Google", 
+                  desc: "4 years. 500+ high-growth companies. Saw the blueprint."
+                },
+                { 
+                  label: "Founder", 
+                  desc: "5 years. Bootstrapped. Learned reality of shipping."
                 },
                 { 
                   label: "Fractional CMO", 
-                  desc: "Helped 30+ startups and scaleups grow from zero to traction"
+                  desc: "2 years. Solved growth problems. Hit ceiling of time-for-money."
                 },
                 { 
-                  label: "Product Builder", 
-                  desc: "Shipped products used by millions. Failed at a few too. Both teach."
-                },
-                { 
-                  label: "AI-Native Thinker", 
-                  desc: "Building at the intersection of human expertise and machine scale"
+                  label: "Now", 
+                  desc: "SANE/REBELS. Multiplying impact through systems."
                 },
               ].map((item, i) => (
                 <motion.div
