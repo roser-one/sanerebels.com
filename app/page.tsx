@@ -607,7 +607,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full min-h-[720px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Face image - fills container */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
