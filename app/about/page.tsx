@@ -10,7 +10,7 @@ export default function AboutPage() {
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
 
-      {/* Hero - Delphi Style */}
+      {/* Hero Section */}
       <section className="pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.p
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Manifest Section - ONE CONTINUOUS CONTAINER like Delphi */}
+      {/* Manifest Section */}
       <section className="py-20">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div
