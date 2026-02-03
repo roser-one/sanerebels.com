@@ -111,7 +111,7 @@ export default function TermsPage() {
                 </h1>
                 <div className="bg-card border border-border rounded-xl p-6 mb-6">
                   <p className="text-lg text-muted-foreground mb-2">KNUS GmbH</p>
-                  <p className="text-sm text-muted-foreground">(handelnd unter den Marken SANE/REBELS und ROSER & REBELS)</p>
+                  <p className="text-sm text-muted-foreground">(handelnd unter den Marken SANE/REBELS und KNUS)</p>
                   <p className="text-sm text-muted-foreground mt-4">Stand: Januar 2026</p>
                 </div>
               </div>

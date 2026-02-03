@@ -640,7 +640,7 @@ export default function Home() {
           </motion.div>
 
           {/* Trust Grid - 2x2 with center element and dotted lines */}
-          <div className="relative grid md:grid-cols-3 gap-6">
+          <div className="relative grid md:grid-cols-3 gap-6 items-end">
             {/* Dotted lines pointing to center - visible on md+ */}
             <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
               {/* Top-left to center */}
@@ -677,7 +677,7 @@ export default function Home() {
               >
                 <h3 className="font-serif text-lg text-foreground mb-3">Privacy first, always</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  GDPR-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
+                  Privacy-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
                 </p>
               </motion.div>
             </div>
@@ -690,19 +690,19 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full min-h-[520px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+              <div className="relative h-full min-h-[420px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
                 {/* Header text */}
                 <div className="absolute top-0 left-0 right-0 flex flex-col items-center text-white p-8 z-10">
                   <p className="text-lg font-medium mb-1">Your Expert System</p>
                   <p className="text-sm text-white/70">Protected</p>
                 </div>
                 
-                {/* Face image - positioned at bottom, transparent PNG lets gradient show */}
+                {/* Face image - positioned at bottom */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
+                  src="/expert-system.jpg"
                   alt="Expert"
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[70%] object-contain"
+                  className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
                 />
                   
                 {/* Encryption visual at bottom */}
