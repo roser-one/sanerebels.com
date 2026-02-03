@@ -120,7 +120,7 @@ export default function AboutPage() {
                 II. Transformer
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>2022. I'd quit Google, spent months wandering Southeast Asia, landed in Tbilisi, Georgia. The streets smelled like flowers. Strawberries and fresh bread everywhere.</p>
+                <p>2022. I'd quit Google, spent months wandering Southeast Asia, landed in Tbilisi, Georgia. The streets smelled like flowers. Strawberries and fresh bread everywhere. Hills hugging the city in green.</p>
                 <p>The first real LLMs had just emerged. I was tinkering with vector databases, breaking things constantly.</p>
                 <p>I decided to build a digital twin of myself. Not for a client. Just to see how close it could get.</p>
                 <p>I fed it years of my writing. Notes, journals, half-finished essays. Everything I'd thought carefully about, now queryable.</p>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <p>Information used to be scarce. Then access. Then attention.</p>
                 <p className="text-foreground font-medium">Now? Presence.</p>
                 <p>Undivided, prolonged, human presence is the rarest thing in modern life.</p>
-                <p>80% of Gen Z feels lonely. People who spend 2+ hours on social media are twice as likely to feel isolated. We built tools that promised connection and delivered comparison.</p>
+                <p>80% of Gen Z feels lonely. People who spend 2+ hours on social media are twice as likely to feel isolated. We built tools that promised connection and delivered comparison. That optimized for engagement, not meaning.</p>
                 <p>The world is starved for a calm moment. For someone who's actually there. For expertise that doesn't feel like content.</p>
                 <p className="text-foreground font-medium">That's what scales now. Not reach. Presence.</p>
               </div>
@@ -189,12 +189,9 @@ export default function AboutPage() {
                 VII. Sane/Rebels
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p><span className="text-foreground font-medium">SANE</span> because we build things that work. No hype. No vaporware.</p>
-                <p><span className="text-foreground font-medium">REBELS</span> because we reject the premise that scaling means sacrificing quality. That technology means losing humanity.</p>
-                <p>The <span className="text-accent font-bold">/</span> is the tension. Rigor and rebellion. Building carefully, shipping boldly.</p>
-                <p className="text-foreground font-serif italic text-lg pt-4 text-center">
-                  Sane enough to build it right.<br />Rebel enough to ship it anyway.
-                </p>
+                <p><span className="text-foreground font-medium">SANE</span> because the world is drowning in noise. We build for clarity. For calm. For technology that helps you see clearly instead of scroll endlessly.</p>
+                <p><span className="text-foreground font-medium">REBELS</span> because we refuse to build what everyone else is building. Technology that replaces humans. That optimizes for engagement. That turns people into content. We reject the premise.</p>
+                <p>The <span className="text-accent font-bold">/</span> is the tension. Clarity without conformity. Calm without complacency.</p>
               </div>
             </div>
 
@@ -204,12 +201,15 @@ export default function AboutPage() {
                 VIII. Let's
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>The infrastructure for scaling expertise is being built right now. Most of it wrong. Designed to replace humans, not enable them.</p>
+                <p>The infrastructure for scaling expertise is being built right now. Most of it wrong. Designed to replace humans, not enable them. To add noise, not create presence.</p>
                 <p>We're building something different.</p>
-                <p>For people who believe their methodology deserves to reach further than their calendar allows. Who refuse to become noise. Who want technology that makes humans more human, not less.</p>
+                <p>For people who believe their methodology deserves to reach further than their calendar allows. Who refuse to become generic. Who want technology that makes humans more human, not less.</p>
                 <p className="text-foreground font-medium">If that's you, let's build something.</p>
                 <p className="text-foreground font-serif italic text-lg pt-4 text-center border-t border-border mt-8">
                   Your expertise. Our engineering. Your presence, amplified.
+                </p>
+                <p className="text-foreground font-bold text-sm text-center mt-4">
+                  SANE/REBELS<br /><span className="font-normal text-muted-foreground">Berlin</span>
                 </p>
               </div>
             </div>
