@@ -50,7 +50,7 @@ export default function AboutPage() {
             className="relative rounded-2xl overflow-hidden aspect-[16/9]"
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Portrait%20Business%20Picture-YxJoh6xpiBlRGMzyk0ZZaGM95gdQ1f.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
               alt="Simon Roser"
               fill
               className="object-cover object-top"
