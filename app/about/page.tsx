@@ -35,7 +35,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-4xl md:text-5xl lg:text-6xl text-muted-foreground italic"
           >
-            Scale expertise for presence.
+            Solve for presence.
           </motion.h2>
         </div>
       </section>

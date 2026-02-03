@@ -1,13 +1,12 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link"
+import { useEffect, useState } from "react"
 import { getCalApi } from "@calcom/embed-react"
 import { motion } from "framer-motion"
-import { ArrowRight, Zap } from "lucide-react"
-import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 export default function LetsPage() {
+  const [hoveredWord, setHoveredWord] = useState<string | null>(null)
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "sanerebels" })
@@ -30,126 +29,216 @@ export default function LetsPage() {
   }
 
   return (
-    <main className="relative min-h-screen w-full">
-      <AnimatedNav />
+    <main className="relative min-h-screen w-full bg-[#0a0a0a] overflow-hidden">
+      {/* Noise texture overlay */}
+      <div className="fixed inset-0 opacity-[0.03] pointer-events-none z-50" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+      }} />
 
-      {/* Hero - Dark & Bold */}
-      <section className="relative pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
-        {/* Gradient orb */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[150px] opacity-50" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      {/* Floating neon orbs */}
+      <div className="fixed top-20 left-10 w-64 h-64 bg-[#c8ff00]/20 rounded-full blur-[120px] animate-pulse" />
+      <div className="fixed bottom-20 right-10 w-96 h-96 bg-accent/30 rounded-full blur-[150px]" />
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#c8ff00]/5 rounded-full blur-[200px]" />
+
+      {/* Minimal nav */}
+      <nav className="fixed top-0 left-0 right-0 z-40 p-6 flex justify-between items-center">
+        <a href="/" className="text-white/60 hover:text-white transition-colors text-sm">
+          SANE<span className="text-accent">/</span>REBELS
+        </a>
+        <a href="mailto:hi@sanerebels.com" className="text-white/40 hover:text-[#c8ff00] transition-colors text-sm">
+          hi@sanerebels.com
+        </a>
+      </nav>
+
+      {/* Hero - Full screen statement */}
+      <section className="relative min-h-screen flex items-center justify-center px-6">
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+          {/* Main statement */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
+            transition={{ duration: 0.8 }}
+            className="mb-16"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#c8ff00]/10 border border-[#c8ff00]/30 rounded-full text-[#c8ff00] text-sm font-medium">
-              <Zap className="w-4 h-4" />
-              Ready to rebel?
-            </span>
+            <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-bold text-white leading-[1.1] tracking-tight mb-4">
+              Sane enough
+              <br />
+              to build it.
+            </h1>
+            
+            {/* Handwritten script line - using SVG for authentic brush feel */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative"
+            >
+              <p 
+                className="text-[clamp(2rem,7vw,5rem)] text-[#c8ff00] leading-[1.2]"
+                style={{ 
+                  fontFamily: "'Caveat', 'Brush Script MT', cursive",
+                  fontWeight: 700,
+                  textShadow: '0 0 60px rgba(200, 255, 0, 0.5), 0 0 120px rgba(200, 255, 0, 0.3)'
+                }}
+              >
+                Rebel enough to ship it.
+              </p>
+            </motion.div>
           </motion.div>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-          >
-            Sane enough to build it.
-          </motion.h1>
-          
+
+          {/* Provocative subtext */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="font-serif text-3xl md:text-5xl lg:text-6xl text-[#c8ff00] italic mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-white/40 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Rebel enough to ship it.
+            We build expert systems for people who refuse to trade time for money.
+            <br />
+            <span className="text-white/60">If that's not you, this isn't for you.</span>
           </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
-          >
-            Your methodology is the asset. Not your time. Let's build systems that sound like you, help like you, guide like you.
-          </motion.p>
-          
+
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.6, delay: 0.7 }}
           >
             <button
               onClick={openCalPopup}
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#c8ff00] text-black font-bold text-lg rounded-xl hover:bg-[#d4ff33] transition-all hover:scale-105"
+              className="group relative px-12 py-5 bg-[#c8ff00] text-black font-bold text-lg rounded-none hover:rounded-xl transition-all duration-300 overflow-hidden"
+              onMouseEnter={() => setHoveredWord("talk")}
+              onMouseLeave={() => setHoveredWord(null)}
             >
-              Book a Call
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className={`transition-all duration-300 ${hoveredWord === "talk" ? "opacity-0" : "opacity-100"}`}>
+                Let's Talk
+              </span>
+              <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${hoveredWord === "talk" ? "opacity-100" : "opacity-0"}`}>
+                30 min. No fluff.
+              </span>
             </button>
-            <a
-              href="mailto:hi@sanerebels.com"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-medium text-lg rounded-xl hover:border-white/40 hover:bg-white/5 transition-all"
-            >
-              hi@sanerebels.com
-            </a>
+          </motion.div>
+
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          >
+            <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           </motion.div>
         </div>
       </section>
 
-      {/* What We Build - Split Section */}
-      <section className="py-20 bg-[#0a0a0a] border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Statement */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+      {/* The Manifesto - Raw text */}
+      <section className="relative py-32 px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <p className="text-2xl md:text-3xl text-white/90 leading-relaxed font-light">
+              Your methodology is the asset.
+              <br />
+              <span 
+                className="text-[#c8ff00] inline-block"
+                style={{ 
+                  fontFamily: "'Caveat', cursive",
+                  fontSize: '1.3em',
+                  textShadow: '0 0 40px rgba(200, 255, 0, 0.4)'
+                }}
+              >
+                Not your time.
+              </span>
+            </p>
+
+            <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
+              We extract what makes you <em>you</em>. Your frameworks. Your voice. Your way of seeing around corners.
+            </p>
+
+            <p className="text-xl md:text-2xl text-white/60 leading-relaxed">
+              Then we build systems that{" "}
+              <span className="relative inline-block">
+                sound like you
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#c8ff00]/50 -skew-x-6" />
+              </span>
+              . Help like you. Guide like you.
+            </p>
+
+            <p className="text-lg text-white/40 pt-8 border-t border-white/10">
+              Not chatbots. Not courses. Not clones.
+              <br />
+              <span className="text-white/60">Expert systems that protect your presence while scaling your impact.</span>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Filter - Polarizing section */}
+      <section className="relative py-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <h2 
+              className="text-4xl md:text-5xl text-[#c8ff00] mb-4"
+              style={{ 
+                fontFamily: "'Caveat', cursive",
+                textShadow: '0 0 60px rgba(200, 255, 0, 0.4)'
+              }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                Build systems that{" "}
-                <span className="relative">
-                  Sound like you.
-                  <span className="absolute -bottom-1 left-0 w-full h-2 bg-[#c8ff00]/40 -skew-x-3" />
-                </span>
-                <br />
-                Help like you. Guide like you.
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed">
-                We don't just build AI tools. We extract your methodology, your voice, your frameworks - and turn them into systems that scale your presence without diluting your authenticity.
-              </p>
-            </motion.div>
-            
-            {/* Right - Cards */}
+              This is for you if...
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Left - YES */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.6 }}
               className="space-y-4"
             >
               {[
-                { label: "Extract", desc: "Your methodology, distilled" },
-                { label: "Architect", desc: "Your digital mind, configured" },
-                { label: "Deploy", desc: "Your presence, scaled" },
+                "You're an expert who's hit a ceiling",
+                "Your methodology is proven but trapped in your head",
+                "You want a partner, not a vendor",
+                "You move fast and iterate faster",
               ].map((item, i) => (
-                <div
-                  key={item.label}
-                  className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-[#c8ff00]/30 transition-colors"
-                >
-                  <span className="flex-shrink-0 w-10 h-10 bg-[#c8ff00] text-black font-bold rounded-lg flex items-center justify-center">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <p className="font-bold text-white">{item.label}</p>
-                    <p className="text-sm text-white/50">{item.desc}</p>
-                  </div>
+                <div key={i} className="flex items-start gap-4 group">
+                  <span className="flex-shrink-0 mt-1.5 w-3 h-3 bg-[#c8ff00] rounded-full group-hover:scale-125 transition-transform" />
+                  <p className="text-white/70 text-lg group-hover:text-white transition-colors">{item}</p>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Right - NO */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="space-y-4"
+            >
+              <p className="text-white/30 text-sm uppercase tracking-wider mb-4">Not for you if...</p>
+              {[
+                "You want a quick chatbot slapped together",
+                "You're not ready to go deep on your methodology",
+                "You need hand-holding on every decision",
+                "You're looking for the cheapest option",
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 group opacity-50 hover:opacity-100 transition-opacity">
+                  <span className="flex-shrink-0 mt-1.5 w-3 h-3 border border-white/30 rounded-full" />
+                  <p className="text-white/50 text-lg line-through decoration-white/20">{item}</p>
                 </div>
               ))}
             </motion.div>
@@ -157,76 +246,66 @@ export default function LetsPage() {
         </div>
       </section>
 
-      {/* You're a Rebel If... */}
-      <section className="py-20 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              You're a <span className="text-[#c8ff00]">rebel</span> if...
-            </h2>
-          </motion.div>
+      {/* Final CTA - Full bleed */}
+      <section className="relative py-40 px-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#c8ff00]/10 to-transparent" />
+        
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 max-w-3xl mx-auto text-center"
+        >
+          <p className="text-white/40 text-sm uppercase tracking-widest mb-8">30 minutes. Real talk. No pitch deck.</p>
           
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "You're an expert who's hit a ceiling - your calendar is full but your impact is capped",
-              "Your methodology is proven but you can't clone yourself (yet)",
-              "You want a partner with skin in the game, not another vendor",
-              "You're ready to move fast, break things, and iterate together",
-              "You believe your frameworks should outlive your calendar",
-              "You're done trading time for money"
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="flex items-start gap-3 p-4 bg-white/5 border border-white/10 rounded-xl"
-              >
-                <span className="flex-shrink-0 w-6 h-6 bg-[#c8ff00] rounded-full flex items-center justify-center">
-                  <span className="w-2 h-2 bg-black rounded-full" />
-                </span>
-                <p className="text-white/80 leading-relaxed">{item}</p>
-              </motion.div>
-            ))}
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            Still here?
+          </h2>
+          
+          <p 
+            className="text-3xl md:text-4xl text-[#c8ff00] mb-12"
+            style={{ 
+              fontFamily: "'Caveat', cursive",
+              textShadow: '0 0 40px rgba(200, 255, 0, 0.4)'
+            }}
+          >
+            Let's see if we click.
+          </p>
+
+          <button
+            onClick={openCalPopup}
+            className="px-16 py-6 bg-[#c8ff00] text-black font-bold text-xl hover:bg-white transition-colors"
+          >
+            Book a Call
+          </button>
+
+          <p className="text-white/30 text-sm mt-8">
+            or email{" "}
+            <a href="mailto:hi@sanerebels.com" className="text-white/50 hover:text-[#c8ff00] transition-colors underline">
+              hi@sanerebels.com
+            </a>
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Minimal footer */}
+      <footer className="relative py-12 px-6 border-t border-white/5">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-sm">
+          <p>SANE<span className="text-accent">/</span>REBELS</p>
+          <div className="flex gap-6">
+            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <a href="/about" className="hover:text-white transition-colors">About</a>
+            <a href="/imprint" className="hover:text-white transition-colors">Imprint</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
           </div>
         </div>
-      </section>
+      </footer>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] to-accent/20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-[#c8ff00] font-medium mb-6">30 minutes. No fluff. Just clarity.</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
-              Let's see if we're a fit.
-            </h2>
-            <button
-              onClick={openCalPopup}
-              className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#c8ff00] text-black font-bold text-xl rounded-xl hover:bg-[#d4ff33] transition-all hover:scale-105"
-            >
-              Book Your Discovery Call
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Footer with dark theme override */}
-      <div className="bg-[#0a0a0a]">
-        <AnimatedFooter />
-      </div>
+      {/* Load Caveat font */}
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+      `}</style>
     </main>
   )
 }
