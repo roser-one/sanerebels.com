@@ -10,7 +10,7 @@ export default function AboutPage() {
     <main className="relative min-h-screen w-full bg-background">
       <AnimatedNav />
 
-      {/* Hero - Delphi Style */}
+      {/* Hero Section */}
       <section className="pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.p
@@ -35,7 +35,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-serif text-4xl md:text-5xl lg:text-6xl text-muted-foreground italic"
           >
-            Scale expertise for presence.
+            Solve for presence.
           </motion.h2>
         </div>
       </section>
@@ -50,7 +50,7 @@ export default function AboutPage() {
             className="relative rounded-2xl overflow-hidden aspect-[16/9]"
           >
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-MSdkKVpSUl5h8Zy9tDiQv1hGSYi8A5.jpeg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
               alt="Simon Roser"
               fill
               className="object-cover object-top"
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Manifest Section - ONE CONTINUOUS CONTAINER like Delphi */}
+      {/* Manifest Section */}
       <section className="py-20">
         <div className="max-w-2xl mx-auto px-6">
           <motion.div
@@ -95,84 +95,121 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="bg-card border border-border rounded-2xl p-8 md:p-12"
           >
-            {/* Section I */}
+            {/* Section I - Twins */}
             <div className="mb-16">
               <p className="text-accent font-bold text-center mb-8">SANE<span className="text-accent/50">/</span>REBELS</p>
               <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
-                I. The Pattern I Kept Seeing
+                I. Twins
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Four years at Google. 500+ high-growth companies. I saw the blueprint for scaling. I also saw the smartest people in the room hit a wall. Not because they lacked ideas. Because they lacked time.
+                  At Google, we used data to find people who think like you, decide like you, buy like you. Clients loved it. I was fascinated by it.
                 </p>
                 <p>
-                  Then I went fractional. Worked with founders, coaches, consultants. Different industries, same story: brilliant people trading hours for dollars, unable to scale what made them valuable in the first place.
+                  But we were using it to sell ads. To make people click things they didn't need.
                 </p>
                 <p>
-                  The conventional answer? "Clone yourself." Build a course. Hire a team.
-                </p>
-                <p>
-                  But cloning misses the point. People don't buy your knowledge. They buy your judgment. Your pattern recognition. The way you see around corners.
+                  I kept wondering: what if you could use this for something that actually mattered?
                 </p>
               </div>
             </div>
 
-            {/* Section II */}
+            {/* Section II - Transformer */}
             <div className="mb-16">
               <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
-                II. The Shift That Changes Everything
+                II. Transformer
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>Information used to be scarce. Having knowledge was premium.</p>
-                <p>Then access became scarce. Reach was premium.</p>
-                <p>Then attention became scarce. Personality was premium.</p>
-                <p className="text-foreground font-medium">Now? Presence is scarce. Your authentic energy is premium.</p>
-                <p>
-                  AI didn't create this shift. It accelerated it. When anyone can generate content, the person behind the content becomes the differentiator.
-                </p>
-                <p>
-                  This reframes every fear. "Will AI replace me?" No, it frees you to do what only you can do. "Will this feel inauthentic?" No, it makes your presence more powerful.
-                </p>
+                <p>2022. I'd quit Google, spent months wandering Southeast Asia, landed in Tbilisi, Georgia. The streets smelled like flowers. Strawberries and fresh bread everywhere.</p>
+                <p>The first real LLMs had just emerged. I was tinkering with vector databases, breaking things constantly.</p>
+                <p>I decided to build a digital twin of myself. Not for a client. Just to see how close it could get.</p>
+                <p>I fed it years of my writing. Notes, journals, half-finished essays. Everything I'd thought carefully about, now queryable.</p>
+                <p className="text-foreground font-medium">Then I started talking to it.</p>
               </div>
             </div>
 
-            {/* Section III */}
+            {/* Section III - Words */}
             <div className="mb-16">
               <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
-                III. What We Actually Build
+                III. Words
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>Not chatbots. Not courses. Not clones.</p>
-                <p>
-                  We build expert systems. Digital architectures that capture your methodology, your frameworks, your way of thinking, and make them available at scale.
-                </p>
-                <p>
-                  The boring stuff? Handled. First-pass analysis, routine questions, onboarding, follow-ups.
-                </p>
-                <p>
-                  The work that matters? That's still you. The breakthrough conversations. The judgment calls. The moments where human presence is irreplaceable.
-                </p>
-                <p className="text-foreground font-medium">We don't replace your presence. We protect it.</p>
+                <p>Here's what I didn't expect: reading my own words reflected back was powerful enough to make me want to change.</p>
+                <p>The things I'd written about who I wanted to become? It remembered better than I did. The patterns I'd never noticed? Visible. The contradictions between what I said I valued and how I actually behaved? Exposed.</p>
+                <p>We're only ever one decision away from change. But most of us can't see the decision clearly. We're too close. Too distracted.</p>
+                <p className="text-foreground font-medium">What if technology could help people see themselves more clearly?</p>
               </div>
             </div>
 
-            {/* Section IV */}
+            {/* Section IV - Presence */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                IV. Presence
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>Information used to be scarce. Then access. Then attention.</p>
+                <p className="text-foreground font-medium">Now? Presence.</p>
+                <p>Undivided, prolonged, human presence is the rarest thing in modern life.</p>
+                <p>80% of Gen Z feels lonely. People who spend 2+ hours on social media are twice as likely to feel isolated. We built tools that promised connection and delivered comparison.</p>
+                <p>The world is starved for a calm moment. For someone who's actually there. For expertise that doesn't feel like content.</p>
+                <p className="text-foreground font-medium">That's what scales now. Not reach. Presence.</p>
+              </div>
+            </div>
+
+            {/* Section V - O2O */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                V. O2O
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>Real growth doesn't happen on LinkedIn.</p>
+                <p>It happens at the dinner table. When you're telling someone about an idea that shifted something. A conversation you can't stop thinking about.</p>
+                <p>I don't care about technology that makes people perform their growth for an audience. I care about growth that shows up in how you live.</p>
+                <p className="text-foreground font-medium">Online to offline. That's the direction that matters.</p>
+              </div>
+            </div>
+
+            {/* Section VI - Time */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                VI. Time
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>Expert systems for people who actually help people.</p>
+                <p>The ones whose work is too nuanced for a course. Who've spent years developing methodologies that work. Who are tired of trading hours for dollars but refuse to become generic.</p>
+                <p>We capture their thinking. Their frameworks. Their way of seeing. And we build systems that extend their presence without diluting it.</p>
+                <p>The repetitive stuff? Handled. The work that matters? Still them.</p>
+                <p className="text-foreground font-medium">We don't remove the human. We remove the bottleneck so the human can be more present where it counts.</p>
+              </div>
+            </div>
+
+            {/* Section VII - Sane/Rebels */}
+            <div className="mb-16">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
+                VII. Sane/Rebels
+              </h3>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p><span className="text-foreground font-medium">SANE</span> because we build things that work. No hype. No vaporware.</p>
+                <p><span className="text-foreground font-medium">REBELS</span> because we reject the premise that scaling means sacrificing quality. That technology means losing humanity.</p>
+                <p>The <span className="text-accent font-bold">/</span> is the tension. Rigor and rebellion. Building carefully, shipping boldly.</p>
+                <p className="text-foreground font-serif italic text-lg pt-4 text-center">
+                  Sane enough to build it right.<br />Rebel enough to ship it anyway.
+                </p>
+              </div>
+            </div>
+
+            {/* Section VIII - Let's */}
             <div>
               <h3 className="font-serif text-xl md:text-2xl text-foreground text-center mb-8">
-                IV. Why The Name
+                VIII. Let's
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
-                <p>
-                  SANE because we build things that work. No hype. No vaporware. Systems that solve real problems for real people.
-                </p>
-                <p>
-                  REBELS because we reject the premise. The idea that scaling means sacrificing quality. That growth requires burning out. That AI means losing your humanity.
-                </p>
-                <p>
-                  The "/" matters. It's the tension between rigor and rebellion. Between building carefully and shipping boldly.
-                </p>
-                <p className="text-foreground font-serif italic text-lg pt-4 text-center">
-                  Sane enough to build it right. Rebel enough to ship it anyway.
+                <p>The infrastructure for scaling expertise is being built right now. Most of it wrong. Designed to replace humans, not enable them.</p>
+                <p>We're building something different.</p>
+                <p>For people who believe their methodology deserves to reach further than their calendar allows. Who refuse to become noise. Who want technology that makes humans more human, not less.</p>
+                <p className="text-foreground font-medium">If that's you, let's build something.</p>
+                <p className="text-foreground font-serif italic text-lg pt-4 text-center border-t border-border mt-8">
+                  Your expertise. Our engineering. Your presence, amplified.
                 </p>
               </div>
             </div>

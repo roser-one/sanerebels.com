@@ -87,7 +87,7 @@ export function AnimatedFooter() {
             </div>
           </div>
           
-          {/* Right side - Snappy statement like Delphi */}
+          {/* Right side - Brand statement */}
           <p className="font-serif text-xl md:text-2xl text-foreground max-w-xs md:text-right leading-snug">
             Scale your expertise.
             <br />
