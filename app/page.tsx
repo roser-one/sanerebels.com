@@ -19,7 +19,7 @@ const useCases = [
       "Support clients between sessions, authentically",
       "Reach people you'll never meet in person",
     ],
-    image: "https://i.pravatar.cc/400?img=32",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Person%20in%20Glasses%20Photo-hRHfmN8In2CWRcl0f3CrW90jPgBuVG.jpg",
   },
   {
     id: "consultants",
@@ -32,7 +32,7 @@ const useCases = [
       "Qualify leads with your actual framework",
       "Deliver your approach at enterprise scale",
     ],
-    image: "https://i.pravatar.cc/400?img=60",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Portrait%20Business%20Picture-YxJoh6xpiBlRGMzyk0ZZaGM95gdQ1f.jpg",
   },
   {
     id: "experts",
@@ -45,7 +45,7 @@ const useCases = [
       "Monetize expertise without trading more hours",
       "Create personalized, interactive experiences at scale",
     ],
-    image: "https://i.pravatar.cc/400?img=47",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Man%20with%20Beard%20Blue%20Shirt-AVVZM84SX3k5i43lzUYNb7VMxOWZt3.jpg",
   },
 ]
 
@@ -694,9 +694,9 @@ export default function Home() {
                 {/* Face image - fills container */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://i.pravatar.cc/400?img=68"
-                  alt="Expert"
-                  className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
+                  alt="Founder"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[85%] object-contain"
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
                   <p className="text-lg font-medium mb-1">Your Expert System</p>
