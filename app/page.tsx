@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, Shield, Lock, Database, Key } from "lucide-react"
+import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart } from "lucide-react"
 import { ShaderBackground } from "@/components/shader-background"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
