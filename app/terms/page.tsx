@@ -116,7 +116,7 @@ export default function TermsPage() {
                 Allgemeine Geschäftsbedingungen
               </h1>
               <p className="text-lg text-muted-foreground mb-2">KNUS GmbH</p>
-              <p className="text-sm text-muted-foreground">(handelnd unter den Marken SANE/REBELS und ROSER & REBELS)</p>
+              <p className="text-sm text-muted-foreground">(handelnd unter der Marke SANE/REBELS)</p>
               <p className="text-sm text-muted-foreground mt-4">Stand: Januar 2026</p>
             </div>
 
