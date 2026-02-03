@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
+import { ShaderBackground } from "@/components/shader-background"
 
 export default function AboutPage() {
   return (
@@ -42,27 +43,24 @@ export default function AboutPage() {
 
       {/* Founder Image - Large Hero using Simon's actual image */}
       <section className="pb-6">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative rounded-2xl overflow-hidden aspect-[16/9]"
-          >
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative rounded-2xl overflow-hidden aspect-[16/9]"
+        >
+          <ShaderBackground className="absolute inset-0" />
+          <div className="relative z-10 w-full h-full flex items-end justify-center">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
               alt="Simon Roser"
-              fill
-              className="object-cover object-top"
+              width={600}
+              height={600}
+              className="object-contain object-bottom h-full w-auto"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            <div className="absolute inset-0 flex items-end p-8">
-              <div className="text-white">
-                <p className="text-xl font-medium mb-1">Simon Roser</p>
-                <p className="text-white/70">Founder</p>
-              </div>
-            </div>
-          </motion.div>
+          </div>
+        </motion.div>
           
           {/* Founder Card Below Image */}
           <motion.div
