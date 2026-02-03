@@ -62,36 +62,40 @@ export function AnimatedNav({ variant = "light" }: AnimatedNavProps) {
 export function AnimatedFooter() {
   return (
     <footer className="w-full py-16 border-t border-border bg-background">
-      <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
-          {/* Left side - Logo and legal */}
-          <div className="w-full md:w-auto">
-            <Link href="/" className="flex items-center gap-1 font-medium text-sm mb-2">
-              <span className="relative">
-                <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
-                <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
-              </span>
-              <span className="text-accent">/</span>
-              <span className="relative">
-                <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
-                <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
-              </span>
-            </Link>
-            <p className="text-xs text-muted-foreground mb-6">
-              © 2025 KNUS GmbH
-            </p>
-            <div className="flex gap-6 text-xs text-muted-foreground">
+      <div className="w-full px-6">
+        <div className="w-full max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {/* Left - Logo and copyright */}
+            <div>
+              <Link href="/" className="flex items-center gap-1 font-medium text-sm mb-2">
+                <span className="relative">
+                  <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
+                  <span className="absolute inset-0 text-foreground animate-logo-pulse-sane-overlay">SANE</span>
+                </span>
+                <span className="text-accent">/</span>
+                <span className="relative">
+                  <span className="text-foreground animate-logo-pulse-rebels-base">REBELS</span>
+                  <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
+                </span>
+              </Link>
+              <p className="text-xs text-muted-foreground">
+                © 2026 KNUS GmbH
+              </p>
+            </div>
+            
+            {/* Middle - Legal links */}
+            <div className="flex gap-6 text-xs text-muted-foreground justify-start md:justify-center">
               <Link href="/imprint" className="hover:text-foreground transition-colors">Imprint</Link>
               <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
             </div>
+            
+            {/* Right - Tagline */}
+            <p className="font-serif text-xl md:text-2xl text-foreground md:text-right leading-snug">
+              Scale your expertise.
+              <br />
+              <span className="text-muted-foreground italic">Stay yourself.</span>
+            </p>
           </div>
-          
-          {/* Right side - Brand statement */}
-          <p className="font-serif text-xl md:text-2xl text-foreground max-w-xs md:text-right leading-snug">
-            Scale your expertise.
-            <br />
-            <span className="text-muted-foreground italic">Stay yourself.</span>
-          </p>
         </div>
       </div>
     </footer>
