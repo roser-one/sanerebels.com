@@ -106,7 +106,7 @@ export default function AboutPage() {
                   At Google, we used data to find people who think like you, decide like you, buy like you. Clients loved it. I was fascinated by it.
                 </p>
                 <p>
-                  But we were using it to sell ads. To make people click things they didn't need.
+                  But we were using it to sell ads. To make people... click.
                 </p>
                 <p>
                   I kept wondering: what if you could use this for something that actually mattered?
