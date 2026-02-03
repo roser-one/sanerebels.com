@@ -176,7 +176,7 @@ export default function AboutPage() {
               </h3>
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>Expert systems for people who actually help people.</p>
-                <p>The ones whose work is too nuanced for a course. Who've spent years developing methodologies that work. Who are tired of trading hours for dollars but refuse to become generic.</p>
+                <p>The ones whose work is too nuanced for a course. Who've spent years developing methodologies that work. Who are tired of trading hours for money but refuse to become generic.</p>
                 <p>We capture their thinking. Their frameworks. Their way of seeing. And we build systems that extend their presence without diluting it.</p>
                 <p>The repetitive stuff? Handled. The work that matters? Still them.</p>
                 <p className="text-foreground font-medium">We don't remove the human. We remove the bottleneck so the human can be more present where it counts.</p>
