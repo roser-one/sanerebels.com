@@ -690,25 +690,27 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:block relative z-10"
             >
-              <div className="relative h-full rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
-                {/* Face image - fills container */}
+              <div className="relative h-full min-h-[520px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
+                {/* Header text */}
+                <div className="absolute top-0 left-0 right-0 flex flex-col items-center text-white p-8 z-10">
+                  <p className="text-lg font-medium mb-1">Your Expert System</p>
+                  <p className="text-sm text-white/70">Protected</p>
+                </div>
+                
+                {/* Face image - positioned at bottom, transparent PNG lets gradient show */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Portrait%20Business%20Picture-YxJoh6xpiBlRGMzyk0ZZaGM95gdQ1f.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
                   alt="Expert"
-                  className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[70%] object-contain"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 z-10">
-                  <p className="text-lg font-medium mb-1">Your Expert System</p>
-                  <p className="text-sm text-white/70 mb-8">Protected</p>
                   
-                  {/* Encryption visual */}
-                  <div className="w-full px-4 mt-auto">
-                    <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
-                      C3V0B9FP2E4CL5C0DJ2EHNFT2LH0MM2C9YCE
-                      2I0C<span className="text-[#c084fc]">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-[#c084fc]">2</span>CH2CL0CT0CT4
-                      CH9CG4CI0C0C2C7C<span className="text-[#c084fc]">B</span>0CN2CIC3P4V0ME2PFJD
-                    </div>
+                {/* Encryption visual at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                  <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
+                    C3V0B9FP2E4CL5C0DJ2EHNFT2LH0MM2C9YCE
+                    2I0C<span className="text-[#c084fc]">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-[#c084fc]">2</span>CH2CL0CT0CT4
+                    CH9CG4CI0C0C2C7C<span className="text-[#c084fc]">B</span>0CN2CIC3P4V0ME2PFJD
                   </div>
                 </div>
               </div>

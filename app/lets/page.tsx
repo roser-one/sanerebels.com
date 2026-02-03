@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import Link from "next/link"
 import { getCalApi } from "@calcom/embed-react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 export default function LetsPage() {
@@ -12,7 +12,7 @@ export default function LetsPage() {
     (async function () {
       const cal = await getCalApi({ namespace: "sanerebels" })
       cal("ui", {
-        theme: "light",
+        theme: "dark",
         hideEventTypeDetails: false,
         layout: "month_view",
       })
@@ -24,168 +24,209 @@ export default function LetsPage() {
       const cal = await getCalApi({ namespace: "sanerebels" })
       cal("modal", {
         calLink: "sroser/knus-intro",
-        config: { layout: "month_view", theme: "light" },
+        config: { layout: "month_view", theme: "dark" },
       })
     })()
   }
 
   return (
-    <main className="relative min-h-screen w-full bg-background">
+    <main className="relative min-h-screen w-full">
       <AnimatedNav />
 
-      {/* Hero */}
-      <section className="pt-32 pb-12">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
+      {/* Hero - Dark & Bold */}
+      <section className="relative pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
+        {/* Gradient orb */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[150px] opacity-50" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-sm text-muted-foreground mb-6"
+            transition={{ duration: 0.6 }}
+            className="mb-8"
           >
-            Contact
-          </motion.p>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#c8ff00]/10 border border-[#c8ff00]/30 rounded-full text-[#c8ff00] text-sm font-medium">
+              <Zap className="w-4 h-4" />
+              Ready to rebel?
+            </span>
+          </motion.div>
+          
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-4xl md:text-5xl text-foreground mb-4"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
           >
-            Let's talk.
+            Sane enough to build it.
           </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-serif text-3xl md:text-5xl lg:text-6xl text-[#c8ff00] italic mb-12"
+          >
+            Rebel enough to ship it.
+          </motion.p>
+          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-lg mx-auto"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10"
           >
-            Ready to turn your expertise into a scalable system? Start with a conversation.
+            Your methodology is the asset. Not your time. Let's build systems that sound like you, help like you, guide like you.
           </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button
+              onClick={openCalPopup}
+              className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#c8ff00] text-black font-bold text-lg rounded-xl hover:bg-[#d4ff33] transition-all hover:scale-105"
+            >
+              Book a Call
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <a
+              href="mailto:hi@sanerebels.com"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-medium text-lg rounded-xl hover:border-white/40 hover:bg-white/5 transition-all"
+            >
+              hi@sanerebels.com
+            </a>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact Options */}
-      <section className="py-12">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Book a Call */}
+      {/* What We Build - Split Section */}
+      <section className="py-20 bg-[#0a0a0a] border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Statement */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-card border border-border rounded-2xl p-8"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
             >
-              <h2 className="font-serif text-xl text-foreground mb-3">Book a discovery call</h2>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                30 minutes to explore what you're building, where you're stuck, and whether we're the right fit.
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+                Build systems that{" "}
+                <span className="relative">
+                  Sound like you.
+                  <span className="absolute -bottom-1 left-0 w-full h-2 bg-[#c8ff00]/40 -skew-x-3" />
+                </span>
+                <br />
+                Help like you. Guide like you.
+              </h2>
+              <p className="text-white/60 text-lg leading-relaxed">
+                We don't just build AI tools. We extract your methodology, your voice, your frameworks - and turn them into systems that scale your presence without diluting your authenticity.
               </p>
-              <button
-                onClick={openCalPopup}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent/90 transition-colors"
-              >
-                Schedule Now
-                <ArrowRight className="w-4 h-4" />
-              </button>
             </motion.div>
-
-            {/* Send a Message */}
+            
+            {/* Right - Cards */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-card border border-border rounded-2xl p-8"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="space-y-4"
             >
-              <h2 className="font-serif text-xl text-foreground mb-3">Send a message</h2>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Prefer to write? Tell us about your business and what you're trying to build. We respond within 48 hours.
-              </p>
-              <a
-                href="mailto:hi@sanerebels.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-medium rounded-lg hover:bg-muted transition-colors"
-              >
-                hi@sanerebels.com
-              </a>
+              {[
+                { label: "Extract", desc: "Your methodology, distilled" },
+                { label: "Architect", desc: "Your digital mind, configured" },
+                { label: "Deploy", desc: "Your presence, scaled" },
+              ].map((item, i) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-[#c8ff00]/30 transition-colors"
+                >
+                  <span className="flex-shrink-0 w-10 h-10 bg-[#c8ff00] text-black font-bold rounded-lg flex items-center justify-center">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p className="font-bold text-white">{item.label}</p>
+                    <p className="text-sm text-white/50">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* What to Expect */}
-      <section className="py-16 border-t border-border mt-8">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+      {/* You're a Rebel If... */}
+      <section className="py-20 bg-[#0a0a0a]">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-serif text-2xl text-foreground text-center mb-12"
+            transition={{ duration: 0.7 }}
+            className="text-center mb-12"
           >
-            What to expect
-          </motion.h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              You're a <span className="text-[#c8ff00]">rebel</span> if...
+            </h2>
+          </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             {[
-              {
-                num: "01",
-                title: "Discovery",
-                desc: "We understand your methodology, your business model, and where the bottleneck actually is."
-              },
-              {
-                num: "02",
-                title: "Clarity",
-                desc: "You leave knowing if this is the right path, even if we don't work together. No pressure."
-              },
-              {
-                num: "03",
-                title: "Partnership",
-                desc: "If there's a fit, we work alongside you as co-builders, not vendors. Skin in the game."
-              }
-            ].map((step, i) => (
+              "You're an expert who's hit a ceiling - your calendar is full but your impact is capped",
+              "Your methodology is proven but you can't clone yourself (yet)",
+              "You want a partner with skin in the game, not another vendor",
+              "You're ready to move fast, break things, and iterate together",
+              "You believe your frameworks should outlive your calendar",
+              "You're done trading time for money"
+            ].map((item, i) => (
               <motion.div
-                key={step.num}
+                key={i}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-xl p-6"
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className="flex items-start gap-3 p-4 bg-white/5 border border-white/10 rounded-xl"
               >
-                <p className="text-accent font-bold text-sm mb-3">{step.num}</p>
-                <h3 className="font-medium text-foreground mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <span className="flex-shrink-0 w-6 h-6 bg-[#c8ff00] rounded-full flex items-center justify-center">
+                  <span className="w-2 h-2 bg-black rounded-full" />
+                </span>
+                <p className="text-white/80 leading-relaxed">{item}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Good Fit Section */}
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto px-6">
+      {/* Final CTA */}
+      <section className="py-24 bg-gradient-to-b from-[#0a0a0a] to-accent/20">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-card border border-border rounded-2xl p-8"
+            transition={{ duration: 0.7 }}
           >
-            <h2 className="font-serif text-xl text-foreground mb-6">You might be a good fit if...</h2>
-            <ul className="space-y-3">
-              {[
-                "You're an expert, coach, or consultant who's hit a ceiling",
-                "Your methodology is proven but you can't scale yourself",
-                "You want a partner, not a vendor. Someone with skin in the game.",
-                "You're ready to move fast and iterate together"
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
-                  <span className="text-accent mt-0.5">-</span>
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="text-[#c8ff00] font-medium mb-6">30 minutes. No fluff. Just clarity.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+              Let's see if we're a fit.
+            </h2>
+            <button
+              onClick={openCalPopup}
+              className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#c8ff00] text-black font-bold text-xl rounded-xl hover:bg-[#d4ff33] transition-all hover:scale-105"
+            >
+              Book Your Discovery Call
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+            </button>
           </motion.div>
         </div>
       </section>
 
-      <AnimatedFooter />
+      {/* Footer with dark theme override */}
+      <div className="bg-[#0a0a0a]">
+        <AnimatedFooter />
+      </div>
     </main>
   )
 }
