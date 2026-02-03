@@ -37,7 +37,7 @@ export default function RootLayout({
         "@id": "https://sanerebels.com/#organization",
         name: "SANE/REBELS",
         legalName: "KNUS GmbH",
-        alternateName: ["ROSER & REBELS"],
+
         url: "https://sanerebels.com",
         logo: "https://sanerebels.com/logo-light.svg",
         slogan: "Done trading time? Let's build something.",
