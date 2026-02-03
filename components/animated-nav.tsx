@@ -61,11 +61,11 @@ export function AnimatedNav({ variant = "light" }: AnimatedNavProps) {
 
 export function AnimatedFooter() {
   return (
-    <footer className="py-16 border-t border-border bg-background">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+    <footer className="w-full py-16 border-t border-border bg-background">
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
           {/* Left side - Logo and legal */}
-          <div>
+          <div className="w-full md:w-auto">
             <Link href="/" className="flex items-center gap-1 font-medium text-sm mb-2">
               <span className="relative">
                 <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
@@ -83,7 +83,6 @@ export function AnimatedFooter() {
             <div className="flex gap-6 text-xs text-muted-foreground">
               <Link href="/imprint" className="hover:text-foreground transition-colors">Imprint</Link>
               <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
-              <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
             </div>
           </div>
           
