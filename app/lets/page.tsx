@@ -9,7 +9,7 @@ export default function LetsPage() {
 
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "sanerebels" })
+      const cal = await getCalApi()
       cal("ui", {
         theme: "dark",
         hideEventTypeDetails: false,
@@ -20,9 +20,9 @@ export default function LetsPage() {
 
   const openCalPopup = () => {
     (async function () {
-      const cal = await getCalApi({ namespace: "sanerebels" })
+      const cal = await getCalApi()
       cal("modal", {
-        calLink: "sroser/knus-intro",
+        calLink: "sroser/sane-rebels",
         config: { layout: "month_view", theme: "dark" },
       })
     })()
