@@ -9,6 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
+            url: 'https://sanerebels.com/about',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sanerebels.com/lets',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://sanerebels.com/llms.txt',
             lastModified: new Date(),
             changeFrequency: 'weekly',
