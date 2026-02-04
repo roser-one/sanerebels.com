@@ -90,11 +90,14 @@ export function AnimatedFooter() {
             </div>
             
             {/* Right - Tagline */}
-            <p className="font-serif text-xl md:text-2xl text-foreground md:text-right leading-snug">
-              Scale your expertise.
-              <br />
-              <span className="text-muted-foreground italic">Stay yourself.</span>
-            </p>
+            <div className="md:text-right">
+              <p className="font-serif text-xl md:text-2xl text-foreground leading-snug">
+                Scale your expertise.
+                <br />
+                <span className="text-muted-foreground italic">Stay yourself.</span>
+              </p>
+              <p className="text-xs text-muted-foreground mt-2">Berlin</p>
+            </div>
           </div>
         </div>
       </div>
