@@ -100,7 +100,6 @@ export function AnimatedFooter() {
                 <br />
                 <span className="text-muted-foreground italic">Stay yourself.</span>
               </p>
-              <p className="text-xs text-muted-foreground mt-2">Berlin</p>
             </div>
           </div>
         </div>
