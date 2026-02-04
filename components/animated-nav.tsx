@@ -64,9 +64,9 @@ export function AnimatedFooter() {
     <footer className="w-full py-16 border-t border-border bg-background">
       <div className="w-full px-6">
         <div className="w-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            {/* Left - Logo and copyright */}
-            <div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-start">
+            {/* Left - Logo, copyright, and legal links */}
+            <div className="col-span-1 md:col-span-1">
               <Link href="/" className="flex items-center gap-1 font-medium text-sm mb-2">
                 <span className="relative">
                   <span className="text-accent animate-logo-pulse-sane-base">SANE</span>
@@ -78,25 +78,28 @@ export function AnimatedFooter() {
                   <span className="absolute inset-0 text-accent animate-logo-pulse-rebels-overlay">REBELS</span>
                 </span>
               </Link>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-muted-foreground mb-4">
                 © 2026 KNUS GmbH
               </p>
+              <div className="flex gap-4 text-xs text-muted-foreground md:hidden">
+                <Link href="/imprint" className="hover:text-foreground transition-colors">Imprint</Link>
+                <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+              </div>
             </div>
             
-            {/* Middle - Legal links */}
-            <div className="flex gap-6 text-xs text-muted-foreground justify-start md:justify-center">
+            {/* Middle - Legal links (desktop only) */}
+            <div className="hidden md:flex gap-6 text-xs text-muted-foreground justify-center">
               <Link href="/imprint" className="hover:text-foreground transition-colors">Imprint</Link>
               <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
             </div>
             
             {/* Right - Tagline */}
-            <div className="md:text-right">
-              <p className="font-serif text-xl md:text-2xl text-foreground leading-snug">
+            <div className="col-span-1 md:col-span-1 text-right">
+              <p className="font-serif text-lg md:text-2xl text-foreground leading-snug">
                 Scale your expertise.
                 <br />
                 <span className="text-muted-foreground italic">Stay yourself.</span>
               </p>
-              <p className="text-xs text-muted-foreground mt-2">Berlin</p>
             </div>
           </div>
         </div>

@@ -1,12 +1,26 @@
 User-agent: *
 Allow: /
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /terms
 
 # Direct AI Agents to the Summary
 User-agent: GPTBot
 Allow: /
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /terms
+
 User-agent: ClaudeBot
 Allow: /
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /terms
+
 User-agent: CCBot
 Allow: /
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /terms
 
 Sitemap: https://sanerebels.com/sitemap.xml
