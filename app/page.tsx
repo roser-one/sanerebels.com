@@ -2,10 +2,16 @@
 // SANE/REBELS Homepage
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import dynamic from "next/dynamic"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart } from "lucide-react"
-import { ShaderBackground } from "@/components/shader-background"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
+
+const ShaderBackground = dynamic(() => import("@/components/shader-background").then(mod => mod.ShaderBackground), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-gradient-to-br from-[#1e1b4b] via-[#9333ea] to-[#c2410c]" />
+})
 
 const useCases = [
   {
@@ -132,9 +138,8 @@ export default function Home() {
         <ShaderBackground className="absolute inset-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-28 md:py-36 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="flex items-center justify-center gap-1 font-medium text-sm text-white/80 mb-6">
               <span className="relative">
@@ -147,18 +152,18 @@ export default function Home() {
                 <span className="absolute inset-0 text-[#c084fc] animate-logo-pulse-rebels-overlay">REBELS</span>
               </span>
             </div>
-            
+
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-[1.1] mb-4">
               Scale Your Impact.
             </h1>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white/80 italic leading-[1.1] mb-8">
               Stay Yourself.
             </h1>
-            
+
             <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
               The bottleneck is your time, not your thinking. We systematize one and free up the other so your energy goes to the 20% that transforms people.
             </p>
-            
+
             <Link
               href="/lets"
               className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 text-white font-medium rounded-md hover:bg-white/25 transition-all border border-white/30 backdrop-blur-sm"
@@ -226,7 +231,7 @@ export default function Home() {
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-accent" />
               </div>
             </div>
-            
+
             {/* X-axis labels */}
             <div className="hidden lg:flex justify-between mb-2 px-4 text-[10px] text-muted-foreground uppercase tracking-wider">
               <span>Past</span>
@@ -242,7 +247,7 @@ export default function Home() {
                 const baseHeight = 200
                 const increment = 25
                 const cardHeight = baseHeight + (i * increment)
-                
+
                 return (
                   <div
                     key={item.stage}
@@ -250,63 +255,54 @@ export default function Home() {
                   >
                     {/* Top dot - aligned to the line */}
                     <div className="flex justify-center mb-3">
-                      <div className={`w-3 h-3 rounded-full border-2 ${
-                        isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
-                      }`} />
+                      <div className={`w-3 h-3 rounded-full border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
+                          isAccent ? "bg-accent border-accent" : "bg-card border-border"
+                        }`} />
                     </div>
-                    
+
                     {/* Card */}
                     <div
-                      className={`rounded-xl p-4 flex flex-col text-center ${
-                        isGold
+                      className={`rounded-xl p-4 flex flex-col text-center ${isGold
                           ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
                           : isAccent
-                          ? "bg-accent text-accent-foreground"
-                          : "bg-card border border-border"
-                      }`}
+                            ? "bg-accent text-accent-foreground"
+                            : "bg-card border border-border"
+                        }`}
                       style={{ height: `${cardHeight}px` }}
                     >
-                      <p className={`text-xs font-medium mb-3 ${
-                        isGold ? "text-[#2a2520]/70" : 
-                        isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
-                      }`}>
+                      <p className={`text-xs font-medium mb-3 ${isGold ? "text-[#2a2520]/70" :
+                          isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                        }`}>
                         {item.stage}
                       </p>
-                      
-                      <div className={`w-9 h-9 mx-auto rounded-full flex items-center justify-center mb-3 ${
-                        isGold ? "bg-[#2a2520]/10" :
-                        isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
-                      }`}>
-                        <Icon className={`w-4 h-4 ${
-                          isGold ? "text-[#2a2520]" :
-                          isAccent ? "text-accent-foreground" : "text-accent"
-                        }`} />
+
+                      <div className={`w-9 h-9 mx-auto rounded-full flex items-center justify-center mb-3 ${isGold ? "bg-[#2a2520]/10" :
+                          isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                        }`}>
+                        <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
+                            isAccent ? "text-accent-foreground" : "text-accent"
+                          }`} />
                       </div>
-                      
-                      <p className={`text-sm font-medium mb-1 ${
-                        isGold ? "text-[#2a2520]" :
-                        isAccent ? "text-accent-foreground" : "text-foreground"
-                      }`}>
+
+                      <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
+                          isAccent ? "text-accent-foreground" : "text-foreground"
+                        }`}>
                         {item.era}
                       </p>
-                      
-                      <div className={`w-6 h-px mx-auto my-2 ${
-                        isGold ? "bg-[#2a2520]/20" :
-                        isAccent ? "bg-accent-foreground/20" : "bg-border"
-                      }`} />
-                      
-                      <p className={`text-xs mb-auto ${
-                        isGold ? "text-[#2a2520]/70" :
-                        isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
-                      }`}>
+
+                      <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
+                          isAccent ? "bg-accent-foreground/20" : "bg-border"
+                        }`} />
+
+                      <p className={`text-xs mb-auto ${isGold ? "text-[#2a2520]/70" :
+                          isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                        }`}>
                         {item.year}
                       </p>
-                      
-                      <p className={`text-xs leading-relaxed mt-3 ${
-                        isGold ? "text-[#2a2520]/80" :
-                        isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
-                      }`}>
+
+                      <p className={`text-xs leading-relaxed mt-3 ${isGold ? "text-[#2a2520]/80" :
+                          isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                        }`}>
                         {item.outcome}
                       </p>
                     </div>
@@ -314,81 +310,72 @@ export default function Home() {
                 )
               })}
             </div>
-            
+
             {/* Mobile: Vertical timeline with alternating cards */}
             <div className="lg:hidden relative pt-4">
               {/* Vertical line down center */}
               <div className="absolute left-1/2 top-4 bottom-0 w-px bg-border -translate-x-1/2" />
-              
+
               <div className="space-y-6">
                 {evolutionTimeline.map((item, i) => {
                   const Icon = item.icon
                   const isGold = item.style === "gold"
                   const isAccent = item.style === "accent"
                   const isLeft = i % 2 === 0
-                  
+
                   return (
                     <div
                       key={item.stage}
                       className="relative"
                     >
                       {/* Dot on center line */}
-                      <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full -translate-x-1/2 z-10 border-2 ${
-                        isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
-                      }`} />
-                      
+                      <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full -translate-x-1/2 z-10 border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
+                          isAccent ? "bg-accent border-accent" : "bg-card border-border"
+                        }`} />
+
                       {/* Card - alternating left/right */}
                       <div className={`${isLeft ? 'pr-6 mr-auto' : 'pl-6 ml-auto'} w-[calc(50%-8px)]`}>
                         <div
-                          className={`rounded-xl p-4 text-center ${
-                            isGold
+                          className={`rounded-xl p-4 text-center ${isGold
                               ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
                               : isAccent
-                              ? "bg-accent text-accent-foreground"
-                              : "bg-card border border-border"
-                          }`}
+                                ? "bg-accent text-accent-foreground"
+                                : "bg-card border border-border"
+                            }`}
                         >
-                          <p className={`text-xs font-medium mb-2 ${
-                            isGold ? "text-[#2a2520]/70" : 
-                            isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
-                          }`}>
+                          <p className={`text-xs font-medium mb-2 ${isGold ? "text-[#2a2520]/70" :
+                              isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                            }`}>
                             {item.stage}
                           </p>
-                          
-                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center mb-2 ${
-                            isGold ? "bg-[#2a2520]/10" :
-                            isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
-                          }`}>
-                            <Icon className={`w-4 h-4 ${
-                              isGold ? "text-[#2a2520]" :
-                              isAccent ? "text-accent-foreground" : "text-accent"
-                            }`} />
+
+                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center mb-2 ${isGold ? "bg-[#2a2520]/10" :
+                              isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                            }`}>
+                            <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
+                                isAccent ? "text-accent-foreground" : "text-accent"
+                              }`} />
                           </div>
-                          
-                          <p className={`text-sm font-medium mb-1 ${
-                            isGold ? "text-[#2a2520]" :
-                            isAccent ? "text-accent-foreground" : "text-foreground"
-                          }`}>
+
+                          <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
+                              isAccent ? "text-accent-foreground" : "text-foreground"
+                            }`}>
                             {item.era}
                           </p>
-                          
-                          <div className={`w-6 h-px mx-auto my-2 ${
-                            isGold ? "bg-[#2a2520]/20" :
-                            isAccent ? "bg-accent-foreground/20" : "bg-border"
-                          }`} />
-                          
-                          <p className={`text-xs ${
-                            isGold ? "text-[#2a2520]/70" :
-                            isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
-                          }`}>
+
+                          <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
+                              isAccent ? "bg-accent-foreground/20" : "bg-border"
+                            }`} />
+
+                          <p className={`text-xs ${isGold ? "text-[#2a2520]/70" :
+                              isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                            }`}>
                             {item.year}
                           </p>
-                          
-                          <p className={`text-xs leading-relaxed mt-2 ${
-                            isGold ? "text-[#2a2520]/80" :
-                            isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
-                          }`}>
+
+                          <p className={`text-xs leading-relaxed mt-2 ${isGold ? "text-[#2a2520]/80" :
+                              isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                            }`}>
                             {item.outcome}
                           </p>
                         </div>
@@ -507,11 +494,10 @@ export default function Home() {
               <button
                 key={useCase.id}
                 onClick={() => setActiveUseCase(i)}
-                className={`text-sm transition-colors pb-2 ${
-                  activeUseCase === i
+                className={`text-sm transition-colors pb-2 ${activeUseCase === i
                     ? "text-accent border-b-2 border-accent font-bold"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {useCase.label}
               </button>
@@ -531,10 +517,10 @@ export default function Home() {
               {/* Image Side - Purple gradient with face filling container */}
               <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] min-h-[400px] overflow-hidden">
                 {/* Person image overlay - fills container */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={useCases[activeUseCase].image}
                   alt={useCases[activeUseCase].label}
+                  fill
                   className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity"
                 />
               </div>
@@ -550,7 +536,7 @@ export default function Home() {
                 <p className="text-muted-foreground mb-8 leading-relaxed">
                   {useCases[activeUseCase].description}
                 </p>
-                
+
                 <div className="space-y-4 mb-10">
                   {useCases[activeUseCase].benefits.map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -561,7 +547,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                
+
                 <Link
                   href="/lets"
                   className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all"
@@ -667,7 +653,7 @@ export default function Home() {
                   Your frameworks maintain integrity over time. Your authenticity stays intact, trusted by your audience now and always.
                 </p>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -696,15 +682,15 @@ export default function Home() {
                   <p className="text-lg font-medium mb-1">Your Expert System</p>
                   <p className="text-sm text-white/70">Protected</p>
                 </div>
-                
+
                 {/* Face image - positioned at bottom */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/expert-system.jpg"
                   alt="Expert"
+                  fill
                   className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
                 />
-                  
+
                 {/* Encryption visual at bottom */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                   <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
@@ -730,7 +716,7 @@ export default function Home() {
                   Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.
                 </p>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -771,14 +757,14 @@ export default function Home() {
                   <span className="absolute inset-0 text-[#c084fc] animate-logo-pulse-rebels-overlay">REBELS</span>
                 </span>
               </div>
-              
+
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-2">
                 Scale Your Expertise.
               </h2>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white/80 italic mb-10">
                 Stay Yourself.
               </h2>
-              
+
               <Link
                 href="/lets"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-medium rounded-md hover:bg-white/95 transition-all"
@@ -801,7 +787,7 @@ export default function Home() {
               How We Work
             </h2>
           </div>
-          
+
           <div className="relative">
             {/* Desktop: Horizontal with top dots and line */}
             <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
@@ -815,7 +801,7 @@ export default function Home() {
                 const increment = 20
                 const cardHeight = baseHeight + (i * increment)
                 const isLast = i === arr.length - 1
-                
+
                 return (
                   <motion.div
                     key={step.num}
@@ -837,8 +823,8 @@ export default function Home() {
                         </div>
                       )}
                     </div>
-                    
-                    <div 
+
+                    <div
                       className="bg-card border border-border rounded-xl p-6"
                       style={{ minHeight: `${cardHeight}px` }}
                     >
@@ -851,12 +837,12 @@ export default function Home() {
                 )
               })}
             </div>
-            
+
             {/* Mobile: Vertical timeline with alternating cards */}
             <div className="md:hidden relative">
               {/* Vertical line down center */}
               <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
-              
+
               <div className="space-y-8">
                 {[
                   { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
@@ -865,7 +851,7 @@ export default function Home() {
                   { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
                 ].map((step, i) => {
                   const isLeft = i % 2 === 0
-                  
+
                   return (
                     <motion.div
                       key={step.num}
@@ -877,7 +863,7 @@ export default function Home() {
                     >
                       {/* Dot on center line */}
                       <div className="absolute left-1/2 top-8 w-3 h-3 rounded-full bg-accent -translate-x-1/2 z-10" />
-                      
+
                       {/* Card - alternating left/right */}
                       <div className={`${isLeft ? 'pr-8' : 'pl-8 ml-auto'} w-[calc(50%-12px)]`}>
                         <div className="bg-card border border-border rounded-xl p-6">
