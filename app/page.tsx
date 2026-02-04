@@ -256,52 +256,52 @@ export default function Home() {
                     {/* Top dot - aligned to the line */}
                     <div className="flex justify-center mb-3">
                       <div className={`w-3 h-3 rounded-full border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                          isAccent ? "bg-accent border-accent" : "bg-card border-border"
+                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
                         }`} />
                     </div>
 
                     {/* Card */}
                     <div
                       className={`rounded-xl p-4 flex flex-col text-center ${isGold
-                          ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
-                          : isAccent
-                            ? "bg-accent text-accent-foreground"
-                            : "bg-card border border-border"
+                        ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
+                        : isAccent
+                          ? "bg-accent text-accent-foreground"
+                          : "bg-card border border-border"
                         }`}
                       style={{ height: `${cardHeight}px` }}
                     >
                       <p className={`text-xs font-medium mb-3 ${isGold ? "text-[#2a2520]/70" :
-                          isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                        isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
                         }`}>
                         {item.stage}
                       </p>
 
                       <div className={`w-9 h-9 mx-auto rounded-full flex items-center justify-center mb-3 ${isGold ? "bg-[#2a2520]/10" :
-                          isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                        isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
                         }`}>
                         <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
-                            isAccent ? "text-accent-foreground" : "text-accent"
+                          isAccent ? "text-accent-foreground" : "text-accent"
                           }`} />
                       </div>
 
                       <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
-                          isAccent ? "text-accent-foreground" : "text-foreground"
+                        isAccent ? "text-accent-foreground" : "text-foreground"
                         }`}>
                         {item.era}
                       </p>
 
                       <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
-                          isAccent ? "bg-accent-foreground/20" : "bg-border"
+                        isAccent ? "bg-accent-foreground/20" : "bg-border"
                         }`} />
 
                       <p className={`text-xs mb-auto ${isGold ? "text-[#2a2520]/70" :
-                          isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                        isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
                         }`}>
                         {item.year}
                       </p>
 
                       <p className={`text-xs leading-relaxed mt-3 ${isGold ? "text-[#2a2520]/80" :
-                          isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                        isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
                         }`}>
                         {item.outcome}
                       </p>
@@ -330,51 +330,51 @@ export default function Home() {
                     >
                       {/* Dot on center line */}
                       <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full -translate-x-1/2 z-10 border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                          isAccent ? "bg-accent border-accent" : "bg-card border-border"
+                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
                         }`} />
 
                       {/* Card - alternating left/right */}
                       <div className={`${isLeft ? 'pr-6 mr-auto' : 'pl-6 ml-auto'} w-[calc(50%-8px)]`}>
                         <div
                           className={`rounded-xl p-4 text-center ${isGold
-                              ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
-                              : isAccent
-                                ? "bg-accent text-accent-foreground"
-                                : "bg-card border border-border"
+                            ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
+                            : isAccent
+                              ? "bg-accent text-accent-foreground"
+                              : "bg-card border border-border"
                             }`}
                         >
                           <p className={`text-xs font-medium mb-2 ${isGold ? "text-[#2a2520]/70" :
-                              isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
+                            isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
                             }`}>
                             {item.stage}
                           </p>
 
                           <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center mb-2 ${isGold ? "bg-[#2a2520]/10" :
-                              isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
+                            isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
                             }`}>
                             <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
-                                isAccent ? "text-accent-foreground" : "text-accent"
+                              isAccent ? "text-accent-foreground" : "text-accent"
                               }`} />
                           </div>
 
                           <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
-                              isAccent ? "text-accent-foreground" : "text-foreground"
+                            isAccent ? "text-accent-foreground" : "text-foreground"
                             }`}>
                             {item.era}
                           </p>
 
                           <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
-                              isAccent ? "bg-accent-foreground/20" : "bg-border"
+                            isAccent ? "bg-accent-foreground/20" : "bg-border"
                             }`} />
 
                           <p className={`text-xs ${isGold ? "text-[#2a2520]/70" :
-                              isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
+                            isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
                             }`}>
                             {item.year}
                           </p>
 
                           <p className={`text-xs leading-relaxed mt-2 ${isGold ? "text-[#2a2520]/80" :
-                              isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
+                            isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
                             }`}>
                             {item.outcome}
                           </p>
@@ -495,8 +495,8 @@ export default function Home() {
                 key={useCase.id}
                 onClick={() => setActiveUseCase(i)}
                 className={`text-sm transition-colors pb-2 ${activeUseCase === i
-                    ? "text-accent border-b-2 border-accent font-bold"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "text-accent border-b-2 border-accent font-bold"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {useCase.label}
@@ -521,6 +521,7 @@ export default function Home() {
                   src={useCases[activeUseCase].image}
                   alt={useCases[activeUseCase].label}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-luminosity"
                 />
               </div>
@@ -688,6 +689,7 @@ export default function Home() {
                   src="/expert-system.jpg"
                   alt="Expert"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
                 />
 
