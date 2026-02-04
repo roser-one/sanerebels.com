@@ -51,13 +51,13 @@ export default function AboutPage() {
           className="relative rounded-2xl overflow-hidden aspect-[16/9]"
         >
           <ShaderBackground className="absolute inset-0" />
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
+          <div className="relative z-10 w-full h-full flex items-end justify-center">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/me-senza-background-8rz3nvKOI7iB8cFqwJl8FnNAidvxvK.png"
               alt="Simon Roser"
               width={600}
               height={600}
-              className="object-contain object-center h-[90%] w-auto"
+              className="object-contain object-bottom h-[105%] w-auto translate-y-[5%]"
             />
           </div>
         </motion.div>
