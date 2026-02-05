@@ -25,30 +25,34 @@ export default async function Image() {
                     fontFamily: "serif",
                 }}
             >
-                {/* S/R Logo Icon */}
-                <div style={{ display: "flex", marginBottom: 20 }}>
-                    <svg
-                        width="256"
-                        height="256"
-                        viewBox="0 0 512 512"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                {/* S/R Logo Container - Recreated with pure CSS/Divs for stability */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: "256px",
+                        height: "256px",
+                        background: "#0a0a0a",
+                        borderRadius: "32px",
+                        marginBottom: "20px",
+                        boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+                    }}
+                >
+                    {/* Logo Text "S/R" */}
+                    <div
+                        style={{
+                            fontFamily: "sans-serif",
+                            fontSize: "120px", // Adjusted for 256px container
+                            fontWeight: 900,
+                            color: "#fafafa",
+                            display: "flex",
+                            alignItems: "center",
+                            letterSpacing: "-8px",
+                        }}
                     >
-                        <rect width="512" height="512" rx="64" fill="#0a0a0a" />
-                        <text
-                            x="256"
-                            y="320"
-                            font-family="sans-serif"
-                            font-size="220"
-                            font-weight="900"
-                            text-anchor="middle"
-                            letter-spacing="-15"
-                        >
-                            <tspan fill="#fafafa">S</tspan>
-                            <tspan fill="#c084fc">/</tspan>
-                            <tspan fill="#fafafa">R</tspan>
-                        </text>
-                    </svg>
+                        S<span style={{ color: "#c084fc", margin: "0 4px" }}>/</span>R
+                    </div>
                 </div>
 
                 {/* Tagline */}
@@ -60,6 +64,7 @@ export default async function Image() {
                         marginTop: 40,
                         letterSpacing: "-0.02em",
                         textAlign: "center",
+                        textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                     }}
                 >
                     Solve for presence.
