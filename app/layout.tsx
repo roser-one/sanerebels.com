@@ -18,9 +18,28 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "SANE/REBELS — Done trading time? Let's build something.",
+  title: {
+    default: "SANE/REBELS — Scale Your Insight. Solve for Presence.",
+    template: "%s | SANE/REBELS",
+  },
   description:
-    "The 'Exoskeleton' for expert businesses. We productize human authenticity using GenAI infrastructure. Scale your business, keep your soul. Operated by KNUS GmbH.",
+    "Undivided, prolonged, human presence is the rarest thing in modern life. Turn your expertise into an always-on presence. We help you scale your methodology without sacrificing authenticity.",
+  openGraph: {
+    title: "SANE/REBELS — Scale Your Insight. Solve for Presence.",
+    description:
+      "Undivided, prolonged, human presence is the rarest thing in modern life. Turn your expertise into an always-on presence. We help you scale your methodology without sacrificing authenticity.",
+    url: "https://sanerebels.com",
+    siteName: "SANE/REBELS",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SANE/REBELS — Scale Your Insight. Solve for Presence.",
+    description:
+      "Undivided, prolonged, human presence is the rarest thing in modern life. Turn your expertise into an always-on presence. We help you scale your methodology without sacrificing authenticity.",
+  },
+  metadataBase: new URL("https://sanerebels.com"),
   generator: "v0.app",
 }
 
