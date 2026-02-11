@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { motion, AnimatePresence, useScroll, useTransform, type MotionValue } from "framer-motion"
-import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, AlertTriangle, Plus, Minus } from "lucide-react"
+import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, AlertTriangle, Plus, Minus, GraduationCap } from "lucide-react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 const ShaderBackground = dynamic(() => import("@/components/shader-background").then(mod => mod.ShaderBackground), {
@@ -87,6 +87,14 @@ const evolutionTimeline = [
     year: "2003+",
     outcome: "Content, Platforms",
     icon: Headphones,
+    style: "neutral",
+  },
+  {
+    stage: "Validation",
+    era: "MOOCs / Online Courses",
+    year: "2012+",
+    outcome: "Low completion, No presence",
+    icon: GraduationCap,
     style: "neutral",
   },
   {
@@ -283,10 +291,10 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
   })
 
   // Start with some padding, end shifted enough to center last item
-  // 6 items * 280px = 1680px width
-  // To center last item (at ~1540px), we need to shift left by ~1200px depending on viewport.
+  // 8 items * 280px = 2240px width
+  // To center last item (at ~2100px), we need to shift left by ~2100px depending on viewport.
   // Using percentage for responsiveness: mostly shifting the whole track left.
-  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 1540px)"])
+  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 2100px)"])
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
