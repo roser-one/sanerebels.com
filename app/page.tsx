@@ -32,7 +32,7 @@ const useCases = [
     label: "Consultants",
     headline: "Your Methodology, Multiplied",
     subheadline: "And advisors, strategists, and fractional leaders.",
-    description: "Your work is too nuanced to productize. That's what you've told yourself. But the nuance IS the product. We just need to capture it properly.",
+    description: "Your work is too nuanced to productize. That\u2019s what you\u2019ve told yourself. But the nuance IS the product. We just need to capture it properly.",
     benefits: [
       "Architect methodologies that scale without becoming generic",
       "Qualify leads with your actual framework",
@@ -45,7 +45,7 @@ const useCases = [
     label: "Experts",
     headline: "Frameworks That Work Without You",
     subheadline: "And specialists, authors, and thought leaders.",
-    description: "You've spent years spotting patterns and understanding nuances others miss. We know your core can't be replaced. But everyone has that one component that can be brought to life digitally, without sacrificing authenticity. That's where we come in.",
+    description: "You\u2019ve spent years spotting patterns and understanding nuances others miss. We know your core can\u2019t be replaced. But everyone has that one component that can be brought to life digitally, without sacrificing authenticity. That\u2019s where we come in.",
     benefits: [
       "Engineer delivery systems for your intellectual property",
       "Monetize expertise without trading more hours",
@@ -55,139 +55,42 @@ const useCases = [
   },
 ]
 
-// Evolution of Expertise Timeline
 const evolutionTimeline = [
-  {
-    stage: "Individuality",
-    era: "Verbal Communication",
-    year: "~100,000 BC",
-    outcome: "Sound, Local Reach",
-    stat: null,
-    icon: Users,
-    style: "neutral",
-  },
-  {
-    stage: "Access",
-    era: "Printing Press",
-    year: "1440",
-    outcome: "Books, Duplication",
-    stat: null,
-    icon: BookOpen,
-    style: "neutral",
-  },
-  {
-    stage: "Immediacy",
-    era: "Radio / Television",
-    year: "1920s",
-    outcome: "Mass Media, Audiences",
-    stat: null,
-    icon: Radio,
-    style: "neutral",
-  },
-  {
-    stage: "On-Demand",
-    era: "Podcast / Digital",
-    year: "2003+",
-    outcome: "Content, Platforms",
-    stat: "500M+ podcast listeners globally",
-    icon: Headphones,
-    style: "neutral",
-  },
-  {
-    stage: "Validation",
-    era: "MOOCs / Online Courses",
-    year: "2012+",
-    outcome: "Massive access, no transformation",
-    stat: "3% completion rate after 6 years · 52% never start",
-    statSource: "Reich & Ruipérez-Valiente, Science, 2019 — MIT/Harvard edX data, 2012–2018",
-    icon: GraduationCap,
-    style: "neutral",
-  },
-  {
-    stage: "Overload",
-    era: "Social & Creator Economy",
-    year: "2007 – 2020",
-    outcome: "Experts told to build a brand. Became content machines.",
-    stat: "62% report burnout · Gets worse with tenure, not better",
-    statSource: "C4MH & Lupiani Insights, 2025 — 542 creators · Endorsed by Harvard T.H. Chan SPH",
-    icon: AlertTriangle,
-    style: "warning",
-  },
-  {
-    stage: "Commoditization",
-    era: "Generic AI",
-    year: "2023+",
-    outcome: "Answers without authorship. Advice without accountability.",
-    stat: "Up to 40% hallucination rate · 66% use AI, fewer than half trust it",
-    statSource: "Chelli et al., JMIR, 2024 / Gillespie et al., Univ. of Melbourne & KPMG, 2025",
-    icon: MessageCircle,
-    style: "warning",
-  },
-  {
-    stage: "Demand",
-    era: "More People Want You Than You Can Reach",
-    year: "2024+",
-    outcome: "Clients will pay more for you. There just aren't enough of you.",
-    stat: "80% of affluent clients will pay 5× more for human guidance",
-    statSource: "McKinsey, Feb 2025 — Affluent & HNW Consumer Survey, n ≈ 7,000 US investors",
-    icon: Users,
-    style: "neutral",
-  },
-  {
-    stage: "Embodiment",
-    era: "Expert AI + Real Presence",
-    year: "Now",
-    outcome: "Your methodology, carried further. Your presence, where it matters most.",
-    stat: "$1T+ in expert services · Demand is growing 3× faster than the people who deliver it",
-    statSource: "Precedence Research, 2025 / McKinsey, 2025",
-    icon: Heart,
-    style: "accent",
-  },
+  { stage: "Individuality", era: "Verbal Communication", year: "~100,000 BC", outcome: "Sound, Local Reach", stat: null, statSource: null, icon: Users, style: "neutral" },
+  { stage: "Access", era: "Printing Press", year: "1440", outcome: "Books, Duplication", stat: null, statSource: null, icon: BookOpen, style: "neutral" },
+  { stage: "Immediacy", era: "Radio / Television", year: "1920s", outcome: "Mass Media, Audiences", stat: null, statSource: null, icon: Radio, style: "neutral" },
+  { stage: "On-Demand", era: "Podcast / Digital", year: "2003+", outcome: "Content, Platforms", stat: "500M+ podcast listeners globally", statSource: null, icon: Headphones, style: "neutral" },
+  { stage: "Overload", era: "Social & Creator Economy", year: "2007 – 2020", outcome: "Experts told to build a brand. Became content machines.", stat: "62% report burnout \u00b7 Gets worse with tenure, not better", statSource: "C4MH & Lupiani Insights, 2025 \u2014 542 creators \u00b7 Endorsed by Harvard T.H. Chan SPH", icon: AlertTriangle, style: "warning" },
+  { stage: "Validation", era: "MOOCs / Online Courses", year: "2012+", outcome: "Massive access, no transformation", stat: "3% completion rate after 6 years \u00b7 52% never start", statSource: "Reich & Ruip\u00e9rez-Valiente, Science, 2019 \u2014 MIT/Harvard edX data, 2012\u20132018", icon: GraduationCap, style: "neutral" },
+  { stage: "Commoditization", era: "Generic AI", year: "2023+", outcome: "Answers without authorship. Advice without accountability.", stat: "Up to 40% hallucination rate \u00b7 66% use AI, fewer than half trust it", statSource: "Chelli et al., JMIR, 2024 / Gillespie et al., Univ. of Melbourne & KPMG, 2025", icon: MessageCircle, style: "warning" },
+  { stage: "Demand", era: "More People Want You Than You Can Reach", year: "2024+", outcome: "Clients will pay more for you. There just aren\u2019t enough of you.", stat: "80% of affluent clients will pay 5\u00d7 more for human guidance", statSource: "McKinsey, Feb 2025 \u2014 Affluent & HNW Consumer Survey, n \u2248 7,000 US investors", icon: Users, style: "neutral" },
+  { stage: "Embodiment", era: "Expert AI + Real Presence", year: "Now", outcome: "Your methodology, carried further. Your presence, where it matters most.", stat: "$1T+ in expert services \u00b7 Demand is growing 3\u00d7 faster than the people who deliver it", statSource: "Precedence Research, 2025 / McKinsey, 2025", icon: Heart, style: "accent" },
 ]
 
 const fears = [
-  {
-    question: "Will this replace me?",
-    answer: "No. It frees you to do what only you can do. Your time shifts to the conversations that actually transform people.",
-  },
-  {
-    question: "Will this make me inauthentic?",
-    answer: "The opposite. It makes you more you. Every output is trained on your actual thinking. Not a template. Not a generic chatbot. Your fingerprint on every response.",
-  },
-  {
-    question: "What if it says something not-me?",
-    answer: "That's a fair concern. We can't guarantee perfection. But we can show you what it does today, how close it gets, and you decide if it's good enough.",
-  },
-  {
-    question: "How much of my time does this take?",
-    answer: "Upfront, a few deep sessions where we extract your thinking. After that, you stay involved as much or as little as you want. The system does the heavy lifting.",
-  },
-  {
-    question: "What if generic AI makes my work invisible?",
-    answer: "Generic AI gives generic answers. Your methodology exists because generic isn't enough. We build something that carries your name and your thinking. Branded, recognizable, unmistakably yours.",
-  },
-  {
-    question: "Is this therapy or medical advice?",
-    answer: "No. We don't build medical products. Our systems serve people who'd otherwise take an online course, read a book, or watch a lecture about your methodology. AI handles the guidance and structure. You stay focused on the work that actually requires your expertise.",
-  },
-  {
-    question: "Do I own my content?",
-    answer: "Yes, completely. Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.",
-  },
+  { question: "Will this replace me?", answer: "No. It frees you to do what only you can do. Your time shifts to the conversations that actually transform people." },
+  { question: "Will this make me inauthentic?", answer: "The opposite. It makes you more you. Every output is trained on your actual thinking. Not a template. Not a generic chatbot. Your fingerprint on every response." },
+  { question: "What if it says something not-me?", answer: "That\u2019s a fair concern. We can\u2019t guarantee perfection. But we can show you what it does today, how close it gets, and you decide if it\u2019s good enough." },
+  { question: "How much of my time does this take?", answer: "Upfront, a few deep sessions where we extract your thinking. After that, you stay involved as much or as little as you want. The system does the heavy lifting." },
+  { question: "What if generic AI makes my work invisible?", answer: "Generic AI gives generic answers. Your methodology exists because generic isn\u2019t enough. We build something that carries your name and your thinking. Branded, recognizable, unmistakably yours." },
+  { question: "Is this therapy or medical advice?", answer: "No. We don\u2019t build medical products. Our systems serve people who\u2019d otherwise take an online course, read a book, or watch a lecture about your methodology. AI handles the guidance and structure. You stay focused on the work that actually requires your expertise." },
+  { question: "Do I own my content?", answer: "Yes, completely. Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models." },
 ]
 
-// --- Scroll Timeline Components ---
-// --- Scroll Timeline Components ---
+// ─── Timeline layout constants ───
+// Fixed heights ensure every dot sits at the exact same Y coordinate.
+const LABEL_H = 130
+const STEM_H = 40
+const GAP = 16
+const DOT_SIZE = 12
+const DOT_TOP = LABEL_H + GAP + STEM_H
+const TOTAL_ITEM_H = LABEL_H + GAP + STEM_H + DOT_SIZE + STEM_H + GAP + LABEL_H
+const LINE_Y = DOT_TOP + DOT_SIZE / 2
+
 function ScrollTimelineItem({
-  item,
-  index,
-  scrollProgress,
-  total,
+  item, index, scrollProgress, total,
 }: {
-  item: typeof evolutionTimeline[number]
-  index: number
-  scrollProgress: MotionValue<number>
-  total: number
+  item: typeof evolutionTimeline[number]; index: number; scrollProgress: MotionValue<number>; total: number
 }) {
   const Icon = item.icon
   const isWarning = item.style === "warning"
@@ -197,10 +100,6 @@ function ScrollTimelineItem({
   const scale = useTransform(scrollProgress, (p) => {
     const center = p * (total - 1)
     const dist = Math.abs(index - center)
-    // User requested "Expert AI" (last item) to be 2x bigger
-    if (index === total - 1) {
-      return Math.max(1.0, 2.5 - dist * 0.25)
-    }
     return Math.max(0.75, 1.2 - dist * 0.1)
   })
 
@@ -210,25 +109,18 @@ function ScrollTimelineItem({
     return Math.max(0.35, 1 - dist * 0.12)
   })
 
-  // Theme: Neutral/Accent only. Rose is ONLY for keywords.
   const stemColor = isAccent ? "bg-accent" : "bg-border"
   const dotColor = isAccent
     ? "bg-accent shadow-[0_0_12px_rgba(168,85,247,0.4)]"
     : "bg-muted-foreground/40"
-
   const labelColor = isAccent ? "text-accent" : "text-foreground"
   const subLabelColor = isAccent ? "text-accent/70" : "text-muted-foreground"
 
-  // Keyword highlighting logic for warning items
   const renderOutcome = () => {
     if (isWarning) {
       const keywords = ["Addiction", "Isolation", "Noise", "Mass advice", "No provenance", "burnout", "quitting", "hallucination"]
-      let text = item.outcome
-      // We'll split by keywords to visually highlight them
-      // This is a simple regex approach
       const pattern = new RegExp(`(${keywords.join("|")})`, "gi")
-      const parts = text.split(pattern)
-
+      const parts = item.outcome.split(pattern)
       return (
         <span>
           {parts.map((part, i) =>
@@ -242,28 +134,23 @@ function ScrollTimelineItem({
     return item.outcome
   }
 
+  // All nodes use the same label structure — no card, no special treatment
   const label = (
-    <div className="text-center min-h-[85px] flex flex-col justify-center">
+    <div className="text-center flex flex-col justify-center">
       <div className="flex items-center justify-center gap-1.5 mb-1.5">
         <Icon className={`w-4 h-4 ${subLabelColor}`} />
-        <p className={`text-sm font-medium ${labelColor}`}>
-          {item.era}
-        </p>
+        <p className={`text-sm font-medium ${labelColor}`}>{item.era}</p>
       </div>
-      <p className={`text-xs font-mono mb-2 ${subLabelColor}`}>
-        {item.year}
-      </p>
+      <p className={`text-xs font-mono mb-2 ${subLabelColor}`}>{item.year}</p>
       <p className="text-[11px] text-muted-foreground leading-snug px-2">
         {renderOutcome()}
       </p>
-      {/* Stat Line */}
-      {/* @ts-ignore - stat and statSource exist in our updated data but type inference might lag */}
       {item.stat && (
-        <p className={`text-[10px] font-mono mt-1.5 px-2 leading-snug ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/80" : "text-muted-foreground/70"}`}>
+        <p className={`text-[10px] font-mono mt-1.5 px-2 leading-snug ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/80" : "text-muted-foreground/70"
+          }`}>
           {item.stat}
         </p>
       )}
-      {/* @ts-ignore */}
       {item.statSource && (
         <p className="text-[9px] text-muted-foreground/0 group-hover:text-muted-foreground/40 mt-0.5 px-2 italic transition-all duration-500">
           {item.statSource}
@@ -274,45 +161,54 @@ function ScrollTimelineItem({
 
   return (
     <motion.div
-      className="relative flex flex-col items-center flex-shrink-0 group"
-      style={{
-        scale,
-        opacity: itemOpacity,
-        width: "280px",
-      }}
+      className="relative flex-shrink-0 group"
+      style={{ scale, opacity: itemOpacity, width: "280px", height: `${TOTAL_ITEM_H}px` }}
     >
-      {/* Label area - above or below */}
-      {isAbove ? (
-        <>
-          <div className="mb-4">{label}</div>
-          <div className={`w-0.5 h-10 rounded-full ${stemColor}`} />
-        </>
-      ) : (
-        <>
-          <div className="min-h-[85px]" />
-          <div className="h-10" />
-        </>
+      {/* Flashing background for last item */}
+      {index === total - 1 && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] bg-accent/5 rounded-full blur-3xl animate-pulse -z-10" />
       )}
 
-      {/* Node on the line */}
-      <div className="relative my-1">
+      {/* Dot — absolute at fixed Y */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 z-10"
+        style={{ top: `${DOT_TOP}px`, width: DOT_SIZE, height: DOT_SIZE }}
+      >
         {isAccent && (
           <div className="absolute inset-[-4px] rounded-full bg-accent/20 animate-ping" style={{ animationDuration: "3s" }} />
         )}
         <div className={`w-3 h-3 rounded-full relative z-10 ${dotColor}`} />
       </div>
 
-      {/* Below stem + label */}
-      {!isAbove ? (
-        <>
-          <div className={`w-0.5 h-10 rounded-full ${stemColor}`} />
-          <div className="mt-4">{label}</div>
-        </>
+      {/* Stem — above connects label to dot, below connects dot to label */}
+      {isAbove && (
+        <div
+          className={`absolute left-1/2 -translate-x-1/2 w-0.5 rounded-full ${stemColor}`}
+          style={{ top: `${LABEL_H + GAP}px`, height: `${STEM_H}px` }}
+        />
+      )}
+      {!isAbove && (
+        <div
+          className={`absolute left-1/2 -translate-x-1/2 w-0.5 rounded-full ${stemColor}`}
+          style={{ top: `${DOT_TOP + DOT_SIZE}px`, height: `${STEM_H}px` }}
+        />
+      )}
+
+      {/* Label — pinned to top or bottom zone */}
+      {isAbove ? (
+        <div
+          className="absolute left-0 right-0 flex items-end justify-center"
+          style={{ top: 0, height: `${LABEL_H}px` }}
+        >
+          {label}
+        </div>
       ) : (
-        <>
-          <div className="h-10" />
-          <div className="min-h-[85px]" />
-        </>
+        <div
+          className="absolute left-0 right-0 flex items-start justify-center"
+          style={{ top: `${DOT_TOP + DOT_SIZE + STEM_H + GAP}px`, height: `${LABEL_H}px` }}
+        >
+          {label}
+        </div>
       )}
     </motion.div>
   )
@@ -325,17 +221,14 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
     offset: ["start end", "end start"],
   })
 
-  // Start with some padding, end shifted enough to center last item
-  // 9 items * 280px = 2520px width
-  // To center last item (at ~2380px), we need to shift left by ~2380px depending on viewport.
-  // Using percentage for responsiveness: mostly shifting the whole track left.
+  // 9 items x 280px = 2520px
   const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 2380px)"])
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "350vh" }}>
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        {/* Header - Pinned inside the timeline section */}
-        <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 w-full relative z-10">
+      <div className="sticky top-0 h-screen flex flex-col justify-between pt-[12vh] pb-[8vh] overflow-hidden">
+        {/* Header */}
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -343,9 +236,7 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              WHY
-            </p>
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">WHY</p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
               The world learned to distribute information.
             </h2>
@@ -355,24 +246,30 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
           </motion.div>
         </div>
 
-        {/* Timeline Track */}
-        <motion.div
-          className="flex items-center gap-0 pl-[10vw]"
-          style={{ x }}
-        >
-          {/* Horizontal line behind all items */}
-          <div className="absolute left-0 right-0 h-px bg-border" style={{ top: "50%" }} />
+        {/* Timeline track container — fixed height matches items */}
+        <div className="relative" style={{ height: `${TOTAL_ITEM_H}px` }}>
+          {/* Horizontal line at exact dot center Y — extends full width */}
+          <div
+            className="absolute left-0 h-px bg-border pointer-events-none"
+            style={{ top: `${LINE_Y}px`, width: "300vw" }}
+          />
 
-          {items.map((item, i) => (
-            <ScrollTimelineItem
-              key={item.stage}
-              item={item}
-              index={i}
-              scrollProgress={scrollYProgress}
-              total={items.length}
-            />
-          ))}
-        </motion.div>
+          {/* Scrolling items */}
+          <motion.div
+            className="absolute top-0 left-0 flex items-start gap-0 pl-[10vw]"
+            style={{ x, height: `${TOTAL_ITEM_H}px` }}
+          >
+            {items.map((item, i) => (
+              <ScrollTimelineItem
+                key={item.stage}
+                item={item}
+                index={i}
+                scrollProgress={scrollYProgress}
+                total={items.length}
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   )
@@ -390,10 +287,7 @@ export default function Home() {
       <section className="relative pt-20 overflow-hidden min-h-[80vh] flex items-center">
         <ShaderBackground className="absolute inset-0" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-28 md:py-36 text-center">
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }}>
             <div className="flex items-center justify-center gap-1 font-medium text-sm text-white/80 mb-6">
               <span className="relative">
                 <span className="text-[#c084fc] animate-logo-pulse-sane-base">SANE</span>
@@ -427,7 +321,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section (Moved) */}
+      {/* Philosophy Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
@@ -437,24 +331,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Philosophy
-            </p>
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">Philosophy</p>
             <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
-              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
+              &ldquo;As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are.&rdquo;
             </blockquote>
-            <p className="text-muted-foreground">
-              We handle the repetition. You show up for the breakthroughs.
-            </p>
+            <p className="text-muted-foreground">We handle the repetition. You show up for the breakthroughs.</p>
           </motion.div>
         </div>
       </section>
 
-      {/* Evolution Timeline - Scroll-Driven Dock Style */}
+      {/* Evolution Timeline */}
       <section className="bg-background">
-
-
-        {/* Desktop: Scroll-driven horizontal timeline */}
         <div className="hidden lg:block">
           <ScrollTimeline items={evolutionTimeline} />
         </div>
@@ -479,59 +366,39 @@ export default function Home() {
                   className="relative pl-16"
                 >
                   <div className={`absolute left-10 top-2 -translate-x-1/2 z-10 ${isWarning ? "w-3 h-3" : isAccent ? "w-4 h-4" : "w-2.5 h-2.5"}`}>
-                    <div className={`w-full h-full rounded-full ${isWarning ? "bg-rose-500" :
-                      isAccent ? "bg-accent" :
-                        "bg-muted-foreground/30 border border-border"
+                    <div className={`w-full h-full rounded-full ${isWarning ? "bg-rose-500" : isAccent ? "bg-accent" : "bg-muted-foreground/30 border border-border"
                       }`} />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 flex-shrink-0 ${isWarning ? "text-rose-500" :
-                      isAccent ? "text-accent" :
-                        "text-muted-foreground"
-                      }`} />
-                    <p className={`text-sm font-medium ${isWarning ? "text-rose-700" :
-                      isAccent ? "text-accent" :
-                        "text-foreground"
-                      }`}>{item.era}</p>
-                    <span className={`text-xs font-mono ml-auto ${isWarning ? "text-rose-500" :
-                      isAccent ? "text-accent/60" :
-                        "text-muted-foreground"
-                      }`}>{item.year}</span>
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <Icon className={`w-4 h-4 flex-shrink-0 ${isWarning ? "text-rose-500" : isAccent ? "text-accent" : "text-muted-foreground"
+                        }`} />
+                      <p className={`text-sm font-medium ${isWarning ? "text-rose-700" : isAccent ? "text-accent" : "text-foreground"
+                        }`}>{item.era}</p>
+                      <span className={`text-xs font-mono ml-auto ${isWarning ? "text-rose-500" : isAccent ? "text-accent/60" : "text-muted-foreground"
+                        }`}>{item.year}</span>
+                    </div>
+                    {item.outcome && (
+                      <p className="text-sm text-muted-foreground mt-1.5 leading-snug">{item.outcome}</p>
+                    )}
+                    {item.stat && (
+                      <p className={`text-xs font-mono mt-1 ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/70" : "text-muted-foreground/60"
+                        }`}>{item.stat}</p>
+                    )}
+                    {item.statSource && (
+                      <p className="text-[10px] text-muted-foreground/30 mt-0.5 italic">{item.statSource}</p>
+                    )}
                   </div>
-                  {/* @ts-ignore */}
-                  {item.outcome && (
-                    <p className="text-sm text-muted-foreground mt-1.5 leading-snug">
-                      {item.outcome}
-                    </p>
-                  )}
-                  {/* @ts-ignore */}
-                  {item.stat && (
-                    <p className={`text-xs font-mono mt-1 ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/70" : "text-muted-foreground/60"}`}>
-                      {item.stat}
-                    </p>
-                  )}
-                  {/* @ts-ignore */}
-                  {item.statSource && (
-                    <p className="text-[10px] text-muted-foreground/30 mt-0.5 italic">
-                      {item.statSource}
-                    </p>
-                  )}
                 </motion.div>
               )
             })}
           </div>
         </div>
 
-        {/* Tagline */}
-        <div className="max-w-7xl mx-auto px-6 pb-0 md:pb-0">
-          {/* Tagline removed */}
-        </div>
+        <div className="max-w-7xl mx-auto px-6 pb-0 md:pb-0" />
       </section>
 
-
-
-
-      {/* Use Cases Section with face images */}
+      {/* Use Cases Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -541,9 +408,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Who We Work With
-            </p>
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">Who We Work With</p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
               Built for people whose methods
             </h2>
@@ -552,7 +417,6 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Use Case Tabs */}
           <div className="flex justify-center gap-10 mb-14">
             {useCases.map((useCase, i) => (
               <button
@@ -568,7 +432,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Active Use Case Content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeUseCase}
@@ -578,9 +441,7 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="grid md:grid-cols-2 gap-0 items-stretch rounded-xl overflow-hidden border border-border"
             >
-              {/* Image Side - Purple gradient with face filling container */}
               <div className="relative aspect-[4/5] md:aspect-auto bg-gradient-to-br from-accent via-[#7c3aed] to-[#4c1d95] min-h-[400px] overflow-hidden">
-                {/* Person image overlay - fills container */}
                 <Image
                   src={useCases[activeUseCase].image}
                   alt={useCases[activeUseCase].label}
@@ -590,7 +451,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Content Side */}
               <div className="bg-card p-10 md:p-12 flex flex-col justify-center">
                 <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
                   {useCases[activeUseCase].headline}
@@ -624,9 +484,9 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
         </div>
-      </section >
+      </section>
 
-      {/* Three Outcomes Section (Moved) */}
+      {/* Three Outcomes Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -636,9 +496,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              What We Enable
-            </p>
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">What We Enable</p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
               What changes when your methods
             </h2>
@@ -649,18 +507,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                title: "Reach Without Limits",
-                description: "Two things used to be mutually exclusive: reaching more people and going deeper with each one. We dare to challenge that. Your system handles the repetition. You show up for the breakthrough moments."
-              },
-              {
-                title: "Scale Without Compromise",
-                description: "Your methodology becomes a living resource. Accessible always, specifically tailored, endlessly patient. Your knowledge compounds. Your calendar stays yours."
-              },
-              {
-                title: "Impact Without Dilution",
-                description: "Your methodology reaches thousands. And those who decide to work with you offline? They come prepared. Sessions start deeper. Your presence means more, not less."
-              }
+              { title: "Reach Without Limits", description: "Two things used to be mutually exclusive: reaching more people and going deeper with each one. We dare to challenge that. Your system handles the repetition. You show up for the breakthrough moments." },
+              { title: "Scale Without Compromise", description: "Your methodology becomes a living resource. Accessible always, specifically tailored, endlessly patient. Your knowledge compounds. Your calendar stays yours." },
+              { title: "Impact Without Dilution", description: "Your methodology reaches thousands. And those who decide to work with you offline? They come prepared. Sessions start deeper. Your presence means more, not less." },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -671,20 +520,16 @@ export default function Home() {
                 className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-colors"
               >
                 <div className="w-10 h-0.5 bg-accent mb-6" />
-                <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
+                <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Fears/Objections - Interactive Accordion */}
-      < section className="py-24 md:py-40 bg-background" >
+      {/* Fears/Objections */}
+      <section className="py-24 md:py-40 bg-background">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -693,15 +538,9 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Honest Questions
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
-              You're wondering.
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              Good.
-            </h2>
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">Honest Questions</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">You're wondering.</h2>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">Good.</h2>
           </motion.div>
 
           <div className="space-y-0">
@@ -726,9 +565,7 @@ export default function Home() {
                     <span className="font-serif text-lg md:text-xl text-foreground flex-1 leading-snug">
                       {fear.question}
                     </span>
-                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen
-                      ? "border-accent/40 bg-accent/10"
-                      : "border-white/[0.08] group-hover:border-white/[0.15]"
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? "border-accent/40 bg-accent/10" : "border-white/[0.08] group-hover:border-white/[0.15]"
                       }`}>
                       {isOpen
                         ? <Minus className="w-3.5 h-3.5 text-accent" />
@@ -747,9 +584,7 @@ export default function Home() {
                       >
                         <div className="pl-10 pb-8 pr-12">
                           <div className="relative pl-5 border-l-2 border-accent/30">
-                            <p className="text-muted-foreground leading-relaxed">
-                              {fear.answer}
-                            </p>
+                            <p className="text-muted-foreground leading-relaxed">{fear.answer}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -758,15 +593,13 @@ export default function Home() {
                 </motion.div>
               )
             })}
-            {/* Bottom border for last item */}
             <div className="border-t border-white/[0.06]" />
           </div>
         </div>
-      </section >
-
+      </section>
 
       {/* CTA Section */}
-      < section className="py-24 md:py-32 bg-background" >
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -805,11 +638,9 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section >
-
-
+      </section>
 
       <AnimatedFooter />
-    </main >
+    </main>
   )
 }
