@@ -58,78 +58,62 @@ const useCases = [
 // Evolution of Expertise Timeline
 const evolutionTimeline = [
   {
-    stage: "Individuality",
-    era: "Verbal Communication",
-    year: "~100,000 BC",
-    outcome: "Sound, Local Reach",
+    stage: "Distribution",
+    era: "Oral → Print → Broadcast",
+    year: "Ancient – 1950s",
+    outcome: "Knowledge scaled. Presence didn't.",
     stat: null,
-    icon: Users,
-    style: "neutral",
-  },
-  {
-    stage: "Access",
-    era: "Printing Press",
-    year: "1440",
-    outcome: "Books, Duplication",
-    stat: null,
-    icon: BookOpen,
-    style: "neutral",
-  },
-  {
-    stage: "Immediacy",
-    era: "Radio / Television",
-    year: "1920s",
-    outcome: "Mass Media, Audiences",
-    stat: null,
+    statSource: null,
     icon: Radio,
     style: "neutral",
   },
   {
-    stage: "On-Demand",
-    era: "Podcast / Digital",
-    year: "2003+",
-    outcome: "Content, Platforms",
-    stat: "500M+ podcast listeners globally",
-    icon: Headphones,
-    style: "neutral",
-  },
-  {
-    stage: "Validation",
-    era: "MOOCs / Online Courses",
-    year: "2012+",
-    outcome: "Massive access, no transformation",
-    stat: "96% average dropout · 12.6% median completion",
-    statSource: "MIT, 2019 / Jordan, 2015 (221 MOOCs)",
+    stage: "Access",
+    era: "Digital Content & Courses",
+    year: "2003 – 2015",
+    outcome: "Access exploded. Completion collapsed.",
+    stat: "96% avg. dropout · 12.6% median completion",
+    statSource: "MIT, 2019 / Jordan, 2015 — 221 MOOCs",
     icon: GraduationCap,
     style: "neutral",
   },
   {
-    stage: "⚠ Overload",
-    era: "Social Media / Feeds",
-    year: "2007–2020",
-    outcome: "Addiction, Isolation, Noise",
-    stat: "50% of US adults report loneliness · 29% higher premature death risk",
-    statSource: "US Surgeon General Advisory, 2023",
+    stage: "Overload",
+    era: "Social & Creator Economy",
+    year: "2007 – 2020",
+    outcome: "Experts told to build a brand. Became content machines.",
+    stat: "52% report burnout · 37% considering quitting",
+    statSource: "Billion Dollar Boy, 2025 — 2,000 respondents US/UK",
     icon: AlertTriangle,
     style: "warning",
   },
   {
-    stage: "⚠ Commoditization",
-    era: "Generic AI / ChatGPT",
+    stage: "Commoditization",
+    era: "Generic AI",
     year: "2023+",
-    outcome: "Mass advice, No provenance",
-    stat: "Up to 40% hallucination rate · No attribution, no methodology",
-    statSource: "JMIR, 2024 / OpenAI, 2025",
+    outcome: "Answers without authorship. Advice without accountability.",
+    stat: "~40% hallucination rate · 66% use AI, <46% trust it",
+    statSource: "JMIR, 2024 / Melbourne–KPMG, 2025 — 48K respondents",
     icon: MessageCircle,
     style: "warning",
   },
   {
+    stage: "Demand",
+    era: "More People Want You Than You Can Reach",
+    year: "2024+",
+    outcome: "Clients will pay more for you. There just aren't enough of you.",
+    stat: "80% of affluent clients pay 5× more for human guidance over AI",
+    statSource: "McKinsey, 2024 — affluent & HNW investor survey",
+    icon: Users,
+    style: "neutral",
+  },
+  {
     stage: "Embodiment",
     era: "Expert AI + Real Presence",
-    year: "Today",
-    outcome: "Branded answers, Trust, Methods preserved",
-    stat: "$7.3B coaching market · 87% report positive ROI · 72% prefer hybrid",
-    statSource: "ICF / PwC Global Coaching Study, 2025",
+    year: "Now",
+    outcome: "Your methodology, carried further. Your presence, where it matters most.",
+    stat: "$1T+ in expert services · The bottleneck isn't demand. It's infrastructure.",
+    statSource: "Precedence Research, 2024 / ICF–PwC, 2025",
     icon: Heart,
     style: "accent",
   },
@@ -212,17 +196,17 @@ function ScrollTimelineItem({
   // Keyword highlighting logic for warning items
   const renderOutcome = () => {
     if (isWarning) {
-      const keywords = ["Addiction", "Isolation", "Noise", "Mass advice", "No provenance"]
+      const keywords = ["Addiction", "Isolation", "Noise", "Mass advice", "No provenance", "burnout", "quitting", "hallucination"]
       let text = item.outcome
       // We'll split by keywords to visually highlight them
       // This is a simple regex approach
-      const pattern = new RegExp(`(${keywords.join("|")})`, "g")
+      const pattern = new RegExp(`(${keywords.join("|")})`, "gi")
       const parts = text.split(pattern)
 
       return (
         <span>
           {parts.map((part, i) =>
-            keywords.includes(part)
+            keywords.some(k => k.toLowerCase() === part.toLowerCase())
               ? <span key={i} className="text-rose-500 font-medium">{part}</span>
               : <span key={i}>{part}</span>
           )}
@@ -249,14 +233,14 @@ function ScrollTimelineItem({
       {/* Stat Line */}
       {/* @ts-ignore - stat and statSource exist in our updated data but type inference might lag */}
       {item.stat && (
-        <p className={`text-[10px] font-mono mt-1.5 px-2 leading-snug ${isWarning ? "text-rose-400/70" : "text-accent/70"}`}>
+        <p className={`text-[10px] font-mono mt-1.5 px-2 leading-snug ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/80" : "text-muted-foreground/70"}`}>
           {item.stat}
         </p>
       )}
       {/* @ts-ignore */}
       {item.statSource && (
-        <p className="text-[9px] text-muted-foreground/40 mt-0.5 px-2">
-          — {item.statSource}
+        <p className="text-[9px] text-muted-foreground/0 group-hover:text-muted-foreground/40 mt-0.5 px-2 italic transition-all duration-500">
+          {item.statSource}
         </p>
       )}
     </div>
@@ -264,7 +248,7 @@ function ScrollTimelineItem({
 
   return (
     <motion.div
-      className="relative flex flex-col items-center flex-shrink-0"
+      className="relative flex flex-col items-center flex-shrink-0 group"
       style={{
         scale,
         opacity: itemOpacity,
@@ -316,13 +300,13 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
   })
 
   // Start with some padding, end shifted enough to center last item
-  // 8 items * 280px = 2240px width
-  // To center last item (at ~2100px), we need to shift left by ~2100px depending on viewport.
+  // 6 items * 280px = 1680px width
+  // To center last item (at ~1540px), we need to shift left by ~1200px depending on viewport.
   // Using percentage for responsiveness: mostly shifting the whole track left.
-  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 2100px)"])
+  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 1540px)"])
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         {/* Header - Pinned inside the timeline section */}
         <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 w-full relative z-10">
@@ -337,10 +321,10 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
               WHY
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
-              Every era solved access.
+              The world learned to distribute information.
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              None solved presence. Until now.
+              It never learned to distribute you.
             </h2>
           </motion.div>
         </div>
@@ -454,7 +438,7 @@ export default function Home() {
           <div className="absolute left-10 top-0 bottom-0 w-px">
             <div className="h-full bg-gradient-to-b from-transparent via-border to-accent/30" />
           </div>
-          <div className="space-y-4">
+          <div className="space-y-8">
             {evolutionTimeline.map((item, i) => {
               const Icon = item.icon
               const isWarning = item.style === "warning"
@@ -488,6 +472,24 @@ export default function Home() {
                         "text-muted-foreground"
                       }`}>{item.year}</span>
                   </div>
+                  {/* @ts-ignore */}
+                  {item.outcome && (
+                    <p className="text-sm text-muted-foreground mt-1.5 leading-snug">
+                      {item.outcome}
+                    </p>
+                  )}
+                  {/* @ts-ignore */}
+                  {item.stat && (
+                    <p className={`text-xs font-mono mt-1 ${isWarning ? "text-rose-400/70" : isAccent ? "text-accent/70" : "text-muted-foreground/60"}`}>
+                      {item.stat}
+                    </p>
+                  )}
+                  {/* @ts-ignore */}
+                  {item.statSource && (
+                    <p className="text-[10px] text-muted-foreground/30 mt-0.5 italic">
+                      {item.statSource}
+                    </p>
+                  )}
                 </motion.div>
               )
             })}
