@@ -60,24 +60,27 @@ const evolutionTimeline = [
   {
     stage: "Individuality",
     era: "Verbal Communication",
-    year: "100,000 B.C.",
+    year: "~100,000 BC",
     outcome: "Sound, Local Reach",
+    stat: null,
     icon: Users,
     style: "neutral",
   },
   {
     stage: "Access",
     era: "Printing Press",
-    year: "1455",
+    year: "1440",
     outcome: "Books, Duplication",
+    stat: null,
     icon: BookOpen,
     style: "neutral",
   },
   {
     stage: "Immediacy",
     era: "Radio / Television",
-    year: "1910-1929",
+    year: "1920s",
     outcome: "Mass Media, Audiences",
+    stat: null,
     icon: Radio,
     style: "neutral",
   },
@@ -86,6 +89,7 @@ const evolutionTimeline = [
     era: "Podcast / Digital",
     year: "2003+",
     outcome: "Content, Platforms",
+    stat: "500M+ podcast listeners globally",
     icon: Headphones,
     style: "neutral",
   },
@@ -93,15 +97,19 @@ const evolutionTimeline = [
     stage: "Validation",
     era: "MOOCs / Online Courses",
     year: "2012+",
-    outcome: "Low completion, No presence",
+    outcome: "Massive access, no transformation",
+    stat: "96% average dropout · 12.6% median completion",
+    statSource: "MIT, 2019 / Jordan, 2015 (221 MOOCs)",
     icon: GraduationCap,
     style: "neutral",
   },
   {
     stage: "⚠ Overload",
     era: "Social Media / Feeds",
-    year: "2007-2020",
+    year: "2007–2020",
     outcome: "Addiction, Isolation, Noise",
+    stat: "50% of US adults report loneliness · 29% higher premature death risk",
+    statSource: "US Surgeon General Advisory, 2023",
     icon: AlertTriangle,
     style: "warning",
   },
@@ -110,6 +118,8 @@ const evolutionTimeline = [
     era: "Generic AI / ChatGPT",
     year: "2023+",
     outcome: "Mass advice, No provenance",
+    stat: "Up to 40% hallucination rate · No attribution, no methodology",
+    statSource: "JMIR, 2024 / OpenAI, 2025",
     icon: MessageCircle,
     style: "warning",
   },
@@ -118,6 +128,8 @@ const evolutionTimeline = [
     era: "Expert AI + Real Presence",
     year: "Today",
     outcome: "Branded answers, Trust, Methods preserved",
+    stat: "$7.3B coaching market · 87% report positive ROI · 72% prefer hybrid",
+    statSource: "ICF / PwC Global Coaching Study, 2025",
     icon: Heart,
     style: "accent",
   },
@@ -234,6 +246,19 @@ function ScrollTimelineItem({
       <p className="text-[11px] text-muted-foreground leading-snug px-2">
         {renderOutcome()}
       </p>
+      {/* Stat Line */}
+      {/* @ts-ignore - stat and statSource exist in our updated data but type inference might lag */}
+      {item.stat && (
+        <p className={`text-[10px] font-mono mt-1.5 px-2 leading-snug ${isWarning ? "text-rose-400/70" : "text-accent/70"}`}>
+          {item.stat}
+        </p>
+      )}
+      {/* @ts-ignore */}
+      {item.statSource && (
+        <p className="text-[9px] text-muted-foreground/40 mt-0.5 px-2">
+          — {item.statSource}
+        </p>
+      )}
     </div>
   )
 
@@ -312,10 +337,10 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
               WHY
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
-              From Information to Presence:
+              Every era solved access.
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              The Evolution of Expertise
+              None solved presence. Until now.
             </h2>
           </motion.div>
         </div>
@@ -392,6 +417,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Philosophy Section (Moved) */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-3xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              Philosophy
+            </p>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
+              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
+            </blockquote>
+            <p className="text-muted-foreground">
+              We handle the repetition. You show up for the breakthroughs.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Evolution Timeline - Scroll-Driven Dock Style */}
       <section className="bg-background">
 
@@ -452,28 +500,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section (Moved) */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Philosophy
-            </p>
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
-              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
-            </blockquote>
-            <p className="text-muted-foreground">
-              We handle the repetition. You show up for the breakthroughs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+
 
 
       {/* Use Cases Section with face images */}
