@@ -167,6 +167,10 @@ function ScrollTimelineItem({
   const scale = useTransform(scrollProgress, (p) => {
     const center = p * (total - 1)
     const dist = Math.abs(index - center)
+    // User requested "Expert AI" (last item) to be 2x bigger
+    if (index === total - 1) {
+      return Math.max(1.0, 2.5 - dist * 0.25)
+    }
     return Math.max(0.75, 1.2 - dist * 0.1)
   })
 
@@ -286,7 +290,29 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        {/* Header - Pinned inside the timeline section */}
+        <div className="max-w-7xl mx-auto px-6 mb-12 md:mb-20 w-full relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              The Arc
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
+              From Information to Presence:
+            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
+              The Evolution of Expertise
+            </h2>
+          </motion.div>
+        </div>
+
+        {/* Timeline Track */}
         <motion.div
           className="flex items-center gap-0 pl-[10vw]"
           style={{ x }}
@@ -358,51 +384,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-3xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              The Philosophy
-            </p>
-            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
-              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
-            </blockquote>
-            <p className="text-muted-foreground">
-              We handle the repetition. You show up for the breakthroughs.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Evolution Timeline - Scroll-Driven Dock Style */}
       <section className="bg-background">
-        {/* Header */}
-        <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-40">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              The Arc
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
-              From Information to Presence:
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              The Evolution of Expertise
-            </h2>
-          </motion.div>
-        </div>
+
 
         {/* Desktop: Scroll-driven horizontal timeline */}
         <div className="hidden lg:block">
@@ -459,62 +443,30 @@ export default function Home() {
           {/* Tagline removed */}
         </div>
       </section>
-      {/* Three Outcomes Section */}
+
+      {/* Philosophy Section (Moved) */}
       <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center"
           >
             <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              What We Enable
+              The Philosophy
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              What changes when your methods
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              reach further than your calendar.
-            </h2>
+            <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
+              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
+            </blockquote>
+            <p className="text-muted-foreground">
+              We handle the repetition. You show up for the breakthroughs.
+            </p>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Reach Without Limits",
-                description: "Two things used to be mutually exclusive: reaching more people and going deeper with each one. We dare to challenge that. Your system handles the repetition. You show up for the breakthrough moments."
-              },
-              {
-                title: "Scale Without Compromise",
-                description: "Your methodology becomes a living resource. Accessible always, specifically tailored, endlessly patient. Your knowledge compounds. Your calendar stays yours."
-              },
-              {
-                title: "Impact Without Dilution",
-                description: "Your methodology reaches thousands. And those who decide to work with you offline? They come prepared. Sessions start deeper. Your presence means more, not less."
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-colors"
-              >
-                <div className="w-10 h-0.5 bg-accent mb-6" />
-                <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
 
       {/* Use Cases Section with face images */}
       <section className="py-24 md:py-32 bg-background">
@@ -610,6 +562,63 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section >
+
+      {/* Three Outcomes Section (Moved) */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              What We Enable
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
+              What changes when your methods
+            </h2>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
+              reach further than your calendar.
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Reach Without Limits",
+                description: "Two things used to be mutually exclusive: reaching more people and going deeper with each one. We dare to challenge that. Your system handles the repetition. You show up for the breakthrough moments."
+              },
+              {
+                title: "Scale Without Compromise",
+                description: "Your methodology becomes a living resource. Accessible always, specifically tailored, endlessly patient. Your knowledge compounds. Your calendar stays yours."
+              },
+              {
+                title: "Impact Without Dilution",
+                description: "Your methodology reaches thousands. And those who decide to work with you offline? They come prepared. Sessions start deeper. Your presence means more, not less."
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-colors"
+              >
+                <div className="w-10 h-0.5 bg-accent mb-6" />
+                <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Fears/Objections - Interactive Accordion */}
       < section className="py-24 md:py-40 bg-background" >
