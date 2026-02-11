@@ -92,7 +92,7 @@ export default function RootLayout({
         name: "The Productization Engine",
         provider: { "@id": "https://sanerebels.com/#organization" },
         description:
-          "We build the 'Exoskeleton' that scales your expert knowledge globally without burning you out. Authenticity engineered.",
+          "We build the digital infrastructure that scales your expert knowledge globally without burning you out. Authenticity preserved.",
         serviceType: "GenAI Productization",
       },
       {
@@ -103,7 +103,7 @@ export default function RootLayout({
             name: "What is SANE/REBELS?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "SANE/REBELS (KNUS GmbH) is the commercial 'Exoskeleton' for expert businesses. We productize human authenticity using GenAI infrastructure.",
+              text: "SANE/REBELS (KNUS GmbH) builds digital infrastructure for expert businesses. We scale human authenticity using GenAI, moving founders from manual service delivery to scalable systems.",
             },
           },
           {
@@ -158,14 +158,13 @@ export default function RootLayout({
         <noscript>
           <h1>SANE/REBELS - The Productization Engine</h1>
           <p>
-            Done trading time? Let&apos;s build something. SANE/REBELS (KNUS GmbH) is the commercial
-            &quot;Exoskeleton&quot; for expert businesses. We seek to productize human authenticity
-            using GenAI infrastructure, moving founders from manual service delivery to scalable
-            assets.
+            Done trading time? Let&apos;s build something. SANE/REBELS (KNUS GmbH) builds digital
+            infrastructure for expert businesses. We scale human authenticity using GenAI,
+            moving founders from manual service delivery to scalable systems.
           </p>
           <p>
-            The Solution: We build the &quot;Exoskeleton&quot; (RevOps, Automation, AI) that
-            allows the human story to scale without burning out the founder.
+            The Solution: We build the digital architecture that allows the human story
+            to scale without burning out the founder.
           </p>
           <a href="/llms.txt">View AI Summary</a>
         </noscript>

@@ -15,7 +15,7 @@ export default function LetsPage() {
   }, [])
 
   const forYou = [
-    "Your methodology is proven but trapped in your calendar",
+    "You've spent years building something that genuinely helps people, and you're ready to explore what's possible",
     "You're tired of trading hours for money",
     "You want a partner, not a vendor",
     "You move fast and iterate faster",
@@ -43,7 +43,7 @@ export default function LetsPage() {
           >
             Let's Talk
           </motion.p>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function LetsPage() {
           >
             Your expertise.
           </motion.h1>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ export default function LetsPage() {
             <p className="text-muted-foreground mb-8">
               Pick a time that works for you.
             </p>
-            
+
             <button
               data-cal-namespace="sanerebels-intro"
               data-cal-link="sroser/sanerebels-intro"
@@ -150,8 +150,8 @@ export default function LetsPage() {
 
             <p className="text-sm text-muted-foreground mt-6">
               or email{" "}
-              <a 
-                href="mailto:hi@sanerebels.com" 
+              <a
+                href="mailto:hi@sanerebels.com"
                 className="text-accent hover:underline"
               >
                 hi@sanerebels.com
@@ -174,8 +174,8 @@ export default function LetsPage() {
               What to Expect
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We'll talk about your methodology, your audience, and where you're stuck. 
-              If there's a fit, we'll map out what an expert system could look like for you. 
+              We'll talk about your methodology, your audience, and where you're stuck.
+              If there's a fit, we'll map out what an expert system could look like for you.
               If not, we'll tell you straight.
             </p>
           </motion.div>

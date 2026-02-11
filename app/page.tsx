@@ -1,11 +1,11 @@
 "use client"
 // SANE/REBELS Homepage
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import dynamic from "next/dynamic"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart } from "lucide-react"
+import { motion, AnimatePresence, useScroll, useTransform, type MotionValue } from "framer-motion"
+import { ArrowRight, Check, MessageCircle, Headphones, Radio, BookOpen, Users, Heart, AlertTriangle, Plus, Minus } from "lucide-react"
 import { AnimatedNav, AnimatedFooter } from "@/components/animated-nav"
 
 const ShaderBackground = dynamic(() => import("@/components/shader-background").then(mod => mod.ShaderBackground), {
@@ -19,7 +19,7 @@ const useCases = [
     label: "Coaches",
     headline: "Be Present, Even When You're Not",
     subheadline: "And practitioners, healers, and therapists.",
-    description: "You're at capacity. Every client gets you, which is why they keep coming. But you can't help more people without losing what makes the work effective.",
+    description: "Your clients keep coming back because of you. There's a ceiling to how many rooms you can be in. If you're willing to explore what this new technology can do, we raise that ceiling. Together.",
     benefits: [
       "Scale your practice without diluting your methodology",
       "Support clients between sessions, authentically",
@@ -45,7 +45,7 @@ const useCases = [
     label: "Experts",
     headline: "Frameworks That Work Without You",
     subheadline: "And specialists, authors, and thought leaders.",
-    description: "You see patterns others miss. You've built frameworks that actually work. But explaining them takes too long, and nobody else can deliver them like you can.",
+    description: "You've spent years spotting patterns and understanding nuances others miss. We know your core can't be replaced. But everyone has that one component that can be brought to life digitally, without sacrificing authenticity. That's where we come in.",
     benefits: [
       "Engineer delivery systems for your intellectual property",
       "Monetize expertise without trading more hours",
@@ -90,18 +90,26 @@ const evolutionTimeline = [
     style: "neutral",
   },
   {
-    stage: "Interaction",
-    era: "Conversational AI",
-    year: "2024+",
-    outcome: "Answers, Personalization",
+    stage: "⚠ Overload",
+    era: "Social Media / Feeds",
+    year: "2007-2020",
+    outcome: "Addiction, Isolation, Noise",
+    icon: AlertTriangle,
+    style: "warning",
+  },
+  {
+    stage: "⚠ Commoditization",
+    era: "Generic AI / ChatGPT",
+    year: "2023+",
+    outcome: "Mass advice, No provenance",
     icon: MessageCircle,
-    style: "gold",
+    style: "warning",
   },
   {
     stage: "Embodiment",
-    era: "AI + Real Presence",
+    era: "Expert AI + Real Presence",
     year: "Today",
-    outcome: "Answers, Experience, Trust",
+    outcome: "Branded answers, Trust, Methods preserved",
     icon: Heart,
     style: "accent",
   },
@@ -114,20 +122,196 @@ const fears = [
   },
   {
     question: "Will this make me inauthentic?",
-    answer: "No. It makes your presence more powerful. Every interaction uses your words, your frameworks, your voice.",
+    answer: "The opposite. It makes you more you. Every output is trained on your actual thinking. Not a template. Not a generic chatbot. Your fingerprint on every response.",
   },
   {
     question: "What if it says something not-me?",
-    answer: "You have direct editing and control constraints. Nothing goes out that you haven't approved.",
+    answer: "That's a fair concern. We can't guarantee perfection. But we can show you what it does today, how close it gets, and you decide if it's good enough.",
   },
   {
-    question: "Will clients feel impersonal?",
-    answer: "The opposite. They arrive pre-educated, which increases intimacy and depth when you do show up.",
+    question: "How much of my time does this take?",
+    answer: "Upfront, a few deep sessions where we extract your thinking. After that, you stay involved as much or as little as you want. The system does the heavy lifting.",
+  },
+  {
+    question: "What if generic AI makes my work invisible?",
+    answer: "Generic AI gives generic answers. Your methodology exists because generic isn't enough. We build something that carries your name and your thinking. Branded, recognizable, unmistakably yours.",
+  },
+  {
+    question: "Is this therapy or medical advice?",
+    answer: "No. We don't build medical products. Our systems serve people who'd otherwise take an online course, read a book, or watch a lecture about your methodology. AI handles the guidance and structure. You stay focused on the work that actually requires your expertise.",
+  },
+  {
+    question: "Do I own my content?",
+    answer: "Yes, completely. Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.",
   },
 ]
 
+// --- Scroll Timeline Components ---
+// --- Scroll Timeline Components ---
+function ScrollTimelineItem({
+  item,
+  index,
+  scrollProgress,
+  total,
+}: {
+  item: typeof evolutionTimeline[number]
+  index: number
+  scrollProgress: MotionValue<number>
+  total: number
+}) {
+  const Icon = item.icon
+  const isWarning = item.style === "warning"
+  const isAccent = item.style === "accent"
+  const isAbove = index % 2 === 0
+
+  const scale = useTransform(scrollProgress, (p) => {
+    const center = p * (total - 1)
+    const dist = Math.abs(index - center)
+    return Math.max(0.75, 1.2 - dist * 0.1)
+  })
+
+  const itemOpacity = useTransform(scrollProgress, (p) => {
+    const center = p * (total - 1)
+    const dist = Math.abs(index - center)
+    return Math.max(0.35, 1 - dist * 0.12)
+  })
+
+  // Theme: Neutral/Accent only. Rose is ONLY for keywords.
+  const stemColor = isAccent ? "bg-accent" : "bg-border"
+  const dotColor = isAccent
+    ? "bg-accent shadow-[0_0_12px_rgba(168,85,247,0.4)]"
+    : "bg-muted-foreground/40"
+
+  const labelColor = isAccent ? "text-accent" : "text-foreground"
+  const subLabelColor = isAccent ? "text-accent/70" : "text-muted-foreground"
+
+  // Keyword highlighting logic for warning items
+  const renderOutcome = () => {
+    if (isWarning) {
+      const keywords = ["Addiction", "Isolation", "Noise", "Mass advice", "No provenance"]
+      let text = item.outcome
+      // We'll split by keywords to visually highlight them
+      // This is a simple regex approach
+      const pattern = new RegExp(`(${keywords.join("|")})`, "g")
+      const parts = text.split(pattern)
+
+      return (
+        <span>
+          {parts.map((part, i) =>
+            keywords.includes(part)
+              ? <span key={i} className="text-rose-500 font-medium">{part}</span>
+              : <span key={i}>{part}</span>
+          )}
+        </span>
+      )
+    }
+    return item.outcome
+  }
+
+  const label = (
+    <div className="text-center min-h-[85px] flex flex-col justify-center">
+      <div className="flex items-center justify-center gap-1.5 mb-1.5">
+        <Icon className={`w-4 h-4 ${subLabelColor}`} />
+        <p className={`text-sm font-medium ${labelColor}`}>
+          {item.era}
+        </p>
+      </div>
+      <p className={`text-xs font-mono mb-2 ${subLabelColor}`}>
+        {item.year}
+      </p>
+      <p className="text-[11px] text-muted-foreground leading-snug px-2">
+        {renderOutcome()}
+      </p>
+    </div>
+  )
+
+  return (
+    <motion.div
+      className="relative flex flex-col items-center flex-shrink-0"
+      style={{
+        scale,
+        opacity: itemOpacity,
+        width: "280px",
+      }}
+    >
+      {/* Label area - above or below */}
+      {isAbove ? (
+        <>
+          <div className="mb-4">{label}</div>
+          <div className={`w-0.5 h-10 rounded-full ${stemColor}`} />
+        </>
+      ) : (
+        <>
+          <div className="min-h-[85px]" />
+          <div className="h-10" />
+        </>
+      )}
+
+      {/* Node on the line */}
+      <div className="relative my-1">
+        {isAccent && (
+          <div className="absolute inset-[-4px] rounded-full bg-accent/20 animate-ping" style={{ animationDuration: "3s" }} />
+        )}
+        <div className={`w-3 h-3 rounded-full relative z-10 ${dotColor}`} />
+      </div>
+
+      {/* Below stem + label */}
+      {!isAbove ? (
+        <>
+          <div className={`w-0.5 h-10 rounded-full ${stemColor}`} />
+          <div className="mt-4">{label}</div>
+        </>
+      ) : (
+        <>
+          <div className="h-10" />
+          <div className="min-h-[85px]" />
+        </>
+      )}
+    </motion.div>
+  )
+}
+
+function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  })
+
+  // Start with some padding, end shifted enough to center last item
+  // 6 items * 280px = 1680px width
+  // To center last item (at ~1540px), we need to shift left by ~1200px depending on viewport.
+  // Using percentage for responsiveness: mostly shifting the whole track left.
+  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 1540px)"])
+
+  return (
+    <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+        <motion.div
+          className="flex items-center gap-0 pl-[10vw]"
+          style={{ x }}
+        >
+          {/* Horizontal line behind all items */}
+          <div className="absolute left-0 right-0 h-px bg-border" style={{ top: "50%" }} />
+
+          {items.map((item, i) => (
+            <ScrollTimelineItem
+              key={item.stage}
+              item={item}
+              index={i}
+              scrollProgress={scrollYProgress}
+              total={items.length}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const [activeUseCase, setActiveUseCase] = useState(0)
+  const [expandedFear, setExpandedFear] = useState<number | null>(0)
 
   return (
     <main className="relative min-h-screen w-full bg-background">
@@ -161,7 +345,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
-              The bottleneck is your time, not your thinking. We systematize one and free up the other so your energy goes to the 20% that transforms people.
+              Your methodology works. It just can't be in two rooms at once. We build the infrastructure that carries it further, so you can be fully present where it matters most.
             </p>
 
             <Link
@@ -188,25 +372,29 @@ export default function Home() {
               The Philosophy
             </p>
             <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
-              "As AI becomes abundant, human energy becomes premium. Information is no longer the bottleneck. Connection, curation, trust, and energy are."
+              "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
             </blockquote>
             <p className="text-muted-foreground">
-              We help you reclaim time for the work that only you can do.
+              We handle the repetition. You show up for the breakthroughs.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Evolution Timeline - TOP ALIGNED with arrow */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Evolution Timeline - Scroll-Driven Dock Style */}
+      <section className="bg-background">
+        {/* Header */}
+        <div className="max-w-7xl mx-auto px-6 pt-24 md:pt-40">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center"
           >
+            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
+              The Arc
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
               From Information to Presence:
             </h2>
@@ -214,197 +402,63 @@ export default function Home() {
               The Evolution of Expertise
             </h2>
           </motion.div>
+        </div>
 
-          {/* Timeline Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            {/* Horizontal line with arrow - positioned at card tops */}
-            <div className="absolute top-[54px] left-0 right-4 h-px bg-border hidden lg:block">
-              <div className="absolute right-0 w-[35%] h-full bg-gradient-to-r from-transparent via-[#d4a574]/50 to-accent/50" />
-              {/* Arrow at right end */}
-              <div className="absolute -right-1 top-1/2 -translate-y-1/2">
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-accent" />
-              </div>
-            </div>
+        {/* Desktop: Scroll-driven horizontal timeline */}
+        <div className="hidden lg:block">
+          <ScrollTimeline items={evolutionTimeline} />
+        </div>
 
-            {/* X-axis labels */}
-            <div className="hidden lg:flex justify-between mb-2 px-4 text-[10px] text-muted-foreground uppercase tracking-wider">
-              <span>Past</span>
-              <span>Present</span>
-            </div>
-
-            {/* Desktop: Horizontal cards */}
-            <div className="hidden lg:flex gap-3 items-start pt-4">
-              {evolutionTimeline.map((item, i) => {
-                const Icon = item.icon
-                const isGold = item.style === "gold"
-                const isAccent = item.style === "accent"
-                const baseHeight = 200
-                const increment = 25
-                const cardHeight = baseHeight + (i * increment)
-
-                return (
-                  <div
-                    key={item.stage}
-                    className="relative flex flex-col flex-1"
-                  >
-                    {/* Top dot - aligned to the line */}
-                    <div className="flex justify-center mb-3">
-                      <div className={`w-3 h-3 rounded-full border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
-                        }`} />
-                    </div>
-
-                    {/* Card */}
-                    <div
-                      className={`rounded-xl p-4 flex flex-col text-center ${isGold
-                        ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
-                        : isAccent
-                          ? "bg-accent text-accent-foreground"
-                          : "bg-card border border-border"
-                        }`}
-                      style={{ height: `${cardHeight}px` }}
-                    >
-                      <p className={`text-xs font-medium mb-3 ${isGold ? "text-[#2a2520]/70" :
-                        isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
-                        }`}>
-                        {item.stage}
-                      </p>
-
-                      <div className={`w-9 h-9 mx-auto rounded-full flex items-center justify-center mb-3 ${isGold ? "bg-[#2a2520]/10" :
-                        isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
-                        }`}>
-                        <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
-                          isAccent ? "text-accent-foreground" : "text-accent"
-                          }`} />
-                      </div>
-
-                      <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
-                        isAccent ? "text-accent-foreground" : "text-foreground"
-                        }`}>
-                        {item.era}
-                      </p>
-
-                      <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
-                        isAccent ? "bg-accent-foreground/20" : "bg-border"
-                        }`} />
-
-                      <p className={`text-xs mb-auto ${isGold ? "text-[#2a2520]/70" :
-                        isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
-                        }`}>
-                        {item.year}
-                      </p>
-
-                      <p className={`text-xs leading-relaxed mt-3 ${isGold ? "text-[#2a2520]/80" :
-                        isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
-                        }`}>
-                        {item.outcome}
-                      </p>
-                    </div>
+        {/* Mobile Timeline */}
+        <div className="lg:hidden relative px-6 py-16">
+          <div className="absolute left-10 top-0 bottom-0 w-px">
+            <div className="h-full bg-gradient-to-b from-transparent via-border to-accent/30" />
+          </div>
+          <div className="space-y-4">
+            {evolutionTimeline.map((item, i) => {
+              const Icon = item.icon
+              const isWarning = item.style === "warning"
+              const isAccent = item.style === "accent"
+              return (
+                <motion.div
+                  key={item.stage}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="relative pl-16"
+                >
+                  <div className={`absolute left-10 top-2 -translate-x-1/2 z-10 ${isWarning ? "w-3 h-3" : isAccent ? "w-4 h-4" : "w-2.5 h-2.5"}`}>
+                    <div className={`w-full h-full rounded-full ${isWarning ? "bg-rose-500" :
+                      isAccent ? "bg-accent" :
+                        "bg-muted-foreground/30 border border-border"
+                      }`} />
                   </div>
-                )
-              })}
-            </div>
+                  <div className="flex items-center gap-3">
+                    <Icon className={`w-4 h-4 flex-shrink-0 ${isWarning ? "text-rose-500" :
+                      isAccent ? "text-accent" :
+                        "text-muted-foreground"
+                      }`} />
+                    <p className={`text-sm font-medium ${isWarning ? "text-rose-700" :
+                      isAccent ? "text-accent" :
+                        "text-foreground"
+                      }`}>{item.era}</p>
+                    <span className={`text-xs font-mono ml-auto ${isWarning ? "text-rose-500" :
+                      isAccent ? "text-accent/60" :
+                        "text-muted-foreground"
+                      }`}>{item.year}</span>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
 
-            {/* Mobile: Vertical timeline with alternating cards */}
-            <div className="lg:hidden relative pt-4">
-              {/* Vertical line down center */}
-              <div className="absolute left-1/2 top-4 bottom-0 w-px bg-border -translate-x-1/2" />
-
-              <div className="space-y-6">
-                {evolutionTimeline.map((item, i) => {
-                  const Icon = item.icon
-                  const isGold = item.style === "gold"
-                  const isAccent = item.style === "accent"
-                  const isLeft = i % 2 === 0
-
-                  return (
-                    <div
-                      key={item.stage}
-                      className="relative"
-                    >
-                      {/* Dot on center line */}
-                      <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full -translate-x-1/2 z-10 border-2 ${isGold ? "bg-[#d4a574] border-[#c99a64]" :
-                        isAccent ? "bg-accent border-accent" : "bg-card border-border"
-                        }`} />
-
-                      {/* Card - alternating left/right */}
-                      <div className={`${isLeft ? 'pr-6 mr-auto' : 'pl-6 ml-auto'} w-[calc(50%-8px)]`}>
-                        <div
-                          className={`rounded-xl p-4 text-center ${isGold
-                            ? "bg-gradient-to-b from-[#d4a574] to-[#c99a64] text-[#2a2520]"
-                            : isAccent
-                              ? "bg-accent text-accent-foreground"
-                              : "bg-card border border-border"
-                            }`}
-                        >
-                          <p className={`text-xs font-medium mb-2 ${isGold ? "text-[#2a2520]/70" :
-                            isAccent ? "text-accent-foreground/70" : "text-accent font-bold"
-                            }`}>
-                            {item.stage}
-                          </p>
-
-                          <div className={`w-8 h-8 mx-auto rounded-full flex items-center justify-center mb-2 ${isGold ? "bg-[#2a2520]/10" :
-                            isAccent ? "bg-accent-foreground/10" : "bg-accent/10"
-                            }`}>
-                            <Icon className={`w-4 h-4 ${isGold ? "text-[#2a2520]" :
-                              isAccent ? "text-accent-foreground" : "text-accent"
-                              }`} />
-                          </div>
-
-                          <p className={`text-sm font-medium mb-1 ${isGold ? "text-[#2a2520]" :
-                            isAccent ? "text-accent-foreground" : "text-foreground"
-                            }`}>
-                            {item.era}
-                          </p>
-
-                          <div className={`w-6 h-px mx-auto my-2 ${isGold ? "bg-[#2a2520]/20" :
-                            isAccent ? "bg-accent-foreground/20" : "bg-border"
-                            }`} />
-
-                          <p className={`text-xs ${isGold ? "text-[#2a2520]/70" :
-                            isAccent ? "text-accent-foreground/70" : "text-muted-foreground"
-                            }`}>
-                            {item.year}
-                          </p>
-
-                          <p className={`text-xs leading-relaxed mt-2 ${isGold ? "text-[#2a2520]/80" :
-                            isAccent ? "text-accent-foreground/80" : "text-muted-foreground"
-                            }`}>
-                            {item.outcome}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Tagline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-16"
-          >
-            <p className="font-serif text-2xl md:text-3xl text-foreground">
-              When Knowledge is Abundant,
-            </p>
-            <p className="font-serif text-2xl md:text-3xl">
-              Presence Becomes <span className="text-accent italic">Premium.</span>
-            </p>
-          </motion.div>
+        {/* Tagline */}
+        <div className="max-w-7xl mx-auto px-6 pb-0 md:pb-0">
+          {/* Tagline removed */}
         </div>
       </section>
-
       {/* Three Outcomes Section */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-5xl mx-auto px-6">
@@ -419,47 +473,42 @@ export default function Home() {
               What We Enable
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              We work towards a world where
+              What changes when your methods
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              expertise scales without sacrifice.
+              reach further than your calendar.
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Capacity Without Burnout",
-                desc: "Work 30 hrs/week instead of 60, serve 10x more clients, same depth.",
-                detail: "Your system handles the repetition. You show up for the breakthrough moments.",
+                title: "Reach Without Limits",
+                description: "Two things used to be mutually exclusive: reaching more people and going deeper with each one. We dare to challenge that. Your system handles the repetition. You show up for the breakthrough moments."
               },
               {
-                title: "Monetization You Control",
-                desc: "Layer recurring revenue without trading more hours.",
-                detail: "Digital access tiers, premium 1:1, everything in between. Your methodology, your pricing.",
+                title: "Scale Without Compromise",
+                description: "Your methodology becomes a living resource. Accessible always, specifically tailored, endlessly patient. Your knowledge compounds. Your calendar stays yours."
               },
               {
                 title: "Impact Without Dilution",
-                desc: "Your digital mind increases depth. It does not replace you.",
-                detail: "Clients arrive pre-educated. Sessions go deeper. Your presence means more.",
-              },
-            ].map((outcome, i) => (
+                description: "Your methodology reaches thousands. And those who decide to work with you offline? They come prepared. Sessions start deeper. Your presence means more, not less."
+              }
+            ].map((item, i) => (
               <motion.div
-                key={outcome.title}
-                initial={{ opacity: 0, y: 30 }}
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-xl p-8"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-colors"
               >
-                <h3 className="font-serif text-xl text-foreground mb-3">
-                  {outcome.title}
+                <div className="w-10 h-0.5 bg-accent mb-6" />
+                <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
+                  {item.title}
                 </h3>
-                <p className="text-foreground font-medium mb-4">
-                  {outcome.desc}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {outcome.detail}
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.description}
                 </p>
               </motion.div>
             ))}
@@ -481,10 +530,10 @@ export default function Home() {
               Who We Work With
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              Built for people who
+              Built for people whose methods
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              actually know their stuff.
+              actually change lives.
             </h2>
           </motion.div>
 
@@ -560,11 +609,11 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
         </div>
-      </section>
+      </section >
 
-      {/* Fears/Objections Section */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* Fears/Objections - Interactive Accordion */}
+      < section className="py-24 md:py-40 bg-background" >
+        <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -573,171 +622,79 @@ export default function Home() {
             className="text-center mb-16"
           >
             <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Real Concerns, Real Answers
+              Honest Questions
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              The market is already moving.
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
+              You're wondering.
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              Better to lead than follow.
+              Good.
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {fears.map((fear, i) => (
-              <motion.div
-                key={fear.question}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card border border-border rounded-xl p-8"
-              >
-                <p className="font-serif text-lg text-foreground mb-4">
-                  "{fear.question}"
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  {fear.answer}
-                </p>
-              </motion.div>
-            ))}
+          <div className="space-y-0">
+            {fears.map((fear, i) => {
+              const isOpen = expandedFear === i
+              return (
+                <motion.div
+                  key={fear.question}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group"
+                >
+                  <button
+                    onClick={() => setExpandedFear(isOpen ? null : i)}
+                    className="w-full text-left py-6 flex items-start gap-4 border-t border-white/[0.06] transition-colors hover:border-white/[0.12] cursor-pointer"
+                  >
+                    <span className="text-xs font-mono text-muted-foreground/40 pt-1 w-6 flex-shrink-0">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="font-serif text-lg md:text-xl text-foreground flex-1 leading-snug">
+                      {fear.question}
+                    </span>
+                    <div className={`w-8 h-8 rounded-full border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen
+                      ? "border-accent/40 bg-accent/10"
+                      : "border-white/[0.08] group-hover:border-white/[0.15]"
+                      }`}>
+                      {isOpen
+                        ? <Minus className="w-3.5 h-3.5 text-accent" />
+                        : <Plus className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      }
+                    </div>
+                  </button>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-10 pb-8 pr-12">
+                          <div className="relative pl-5 border-l-2 border-accent/30">
+                            <p className="text-muted-foreground leading-relaxed">
+                              {fear.answer}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              )
+            })}
+            {/* Bottom border for last item */}
+            <div className="border-t border-white/[0.06]" />
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* Trust Section - with dotted lines to center */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Trust
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2">
-              Your methodology
-            </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-muted-foreground italic">
-              is Yours.
-            </h2>
-          </motion.div>
-
-          {/* Trust Grid - 2x2 with center element and dotted lines */}
-          <div className="relative grid md:grid-cols-3 gap-6 items-end">
-            {/* Dotted lines pointing to center - visible on md+ */}
-            <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
-              {/* Top-left to center */}
-              <line x1="33%" y1="25%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
-              {/* Bottom-left to center */}
-              <line x1="33%" y1="75%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
-              {/* Top-right to center */}
-              <line x1="67%" y1="25%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
-              {/* Bottom-right to center */}
-              <line x1="67%" y1="75%" x2="50%" y2="50%" stroke="currentColor" strokeDasharray="4 4" className="text-border" />
-            </svg>
-
-            {/* Left Column */}
-            <div className="space-y-6 relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="bg-card border border-border rounded-xl p-6"
-              >
-                <h3 className="font-serif text-lg text-foreground mb-3">Built to protect your IP</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Your frameworks maintain integrity over time. Your authenticity stays intact, trusted by your audience now and always.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-card border border-border rounded-xl p-6"
-              >
-                <h3 className="font-serif text-lg text-foreground mb-3">Privacy first, always</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Privacy-native from day one. Your conversations stay private and your audience stays protected. No exceptions.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Center Portrait with face */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden md:block relative z-10"
-            >
-              <div className="relative h-full min-h-[420px] rounded-xl overflow-hidden bg-gradient-to-b from-accent via-[#7c3aed] to-[#4c1d95]">
-                {/* Header text */}
-                <div className="absolute top-0 left-0 right-0 flex flex-col items-center text-white p-8 z-10">
-                  <p className="text-lg font-medium mb-1">Your Expert System</p>
-                  <p className="text-sm text-white/70">Protected</p>
-                </div>
-
-                {/* Face image - positioned at bottom */}
-                <Image
-                  src="/expert-system.jpg"
-                  alt="Expert"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
-                />
-
-                {/* Encryption visual at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                  <div className="font-mono text-[10px] text-white/40 leading-loose text-center break-all">
-                    C3V0B9FP2E4CL5C0DJ2EHNFT2LH0MM2C9YCE
-                    2I0C<span className="text-[#c084fc]">7</span>CB2I9CP4FP3CL0CE0CT<span className="text-[#c084fc]">2</span>CH2CL0CT0CT4
-                    CH9CG4CI0C0C2C7C<span className="text-[#c084fc]">B</span>0CN2CIC3P4V0ME2PFJD
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Column */}
-            <div className="space-y-6 relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="bg-card border border-border rounded-xl p-6"
-              >
-                <h3 className="font-serif text-lg text-foreground mb-3">Complete ownership</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Your methodology is your most valuable asset. Export anytime. No lock-in. We never use your content to train other models.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="bg-card border border-border rounded-xl p-6"
-              >
-                <h3 className="font-serif text-lg text-foreground mb-3">You're in control</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Your system speaks only your words. It never improvises without your consent. Edit, constrain, and approve everything.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-background">
+      < section className="py-24 md:py-32 bg-background" >
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -761,10 +718,10 @@ export default function Home() {
               </div>
 
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white mb-2">
-                Scale Your Expertise.
+                Your expertise deserves to outlive your calendar.
               </h2>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white/80 italic mb-10">
-                Stay Yourself.
+                Let's build the system.
               </h2>
 
               <Link
@@ -776,115 +733,11 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
-      {/* Process Section */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              Our Process
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-foreground">
-              How We Work
-            </h2>
-          </div>
 
-          <div className="relative">
-            {/* Desktop: Horizontal with top dots and line */}
-            <div className="hidden md:flex md:flex-nowrap gap-4 items-start">
-              {[
-                { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
-                { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
-                { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
-                { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
-              ].map((step, i, arr) => {
-                const baseHeight = 160
-                const increment = 20
-                const cardHeight = baseHeight + (i * increment)
-                const isLast = i === arr.length - 1
-
-                return (
-                  <motion.div
-                    key={step.num}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative flex-1"
-                  >
-                    {/* Dot with line */}
-                    <div className="flex items-center justify-center relative mb-3">
-                      <div className="w-3 h-3 rounded-full bg-accent z-10" />
-                      {!isLast && (
-                        <div className="absolute left-1/2 top-1/2 -translate-y-1/2 w-full h-px bg-border" />
-                      )}
-                      {isLast && (
-                        <div className="absolute left-[calc(50%+8px)] top-1/2 -translate-y-1/2">
-                          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-accent" />
-                        </div>
-                      )}
-                    </div>
-
-                    <div
-                      className="bg-card border border-border rounded-xl p-6"
-                      style={{ minHeight: `${cardHeight}px` }}
-                    >
-                      <p className="text-accent font-bold mb-2">{step.num}</p>
-                      <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                      <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                )
-              })}
-            </div>
-
-            {/* Mobile: Vertical timeline with alternating cards */}
-            <div className="md:hidden relative">
-              {/* Vertical line down center */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
-
-              <div className="space-y-8">
-                {[
-                  { num: "01", title: "Extract", timing: "Weeks 1-2", desc: "We uncover what makes your work actually work." },
-                  { num: "02", title: "Architect", timing: "Weeks 2-3", desc: "Your digital mind trained and configured." },
-                  { num: "03", title: "Deploy", timing: "Week 3-4", desc: "Live across your channels, or standalone new web-app." },
-                  { num: "04", title: "Amplify", timing: "Ongoing", desc: "Continuous learning, continuous improvement." },
-                ].map((step, i) => {
-                  const isLeft = i % 2 === 0
-
-                  return (
-                    <motion.div
-                      key={step.num}
-                      initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: i * 0.1 }}
-                      className="relative"
-                    >
-                      {/* Dot on center line */}
-                      <div className="absolute left-1/2 top-8 w-3 h-3 rounded-full bg-accent -translate-x-1/2 z-10" />
-
-                      {/* Card - alternating left/right */}
-                      <div className={`${isLeft ? 'pr-8' : 'pl-8 ml-auto'} w-[calc(50%-12px)]`}>
-                        <div className="bg-card border border-border rounded-xl p-6">
-                          <p className="text-accent font-bold mb-2">{step.num}</p>
-                          <h3 className="font-serif text-lg text-foreground mb-1">{step.title}</h3>
-                          <p className="text-xs text-accent/70 font-medium mb-3">{step.timing}</p>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <AnimatedFooter />
-    </main>
+    </main >
   )
 }
