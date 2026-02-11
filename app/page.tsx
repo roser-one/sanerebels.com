@@ -58,22 +58,48 @@ const useCases = [
 // Evolution of Expertise Timeline
 const evolutionTimeline = [
   {
-    stage: "Distribution",
-    era: "Oral → Print → Broadcast",
-    year: "Ancient – 1950s",
-    outcome: "Knowledge scaled. Presence didn't.",
+    stage: "Individuality",
+    era: "Verbal Communication",
+    year: "~100,000 BC",
+    outcome: "Sound, Local Reach",
     stat: null,
-    statSource: null,
-    icon: Radio,
+    icon: Users,
     style: "neutral",
   },
   {
     stage: "Access",
-    era: "Digital Content & Courses",
-    year: "2003 – 2015",
-    outcome: "Access exploded. Completion collapsed.",
-    stat: "96% avg. dropout · 12.6% median completion",
-    statSource: "MIT, 2019 / Jordan, 2015 — 221 MOOCs",
+    era: "Printing Press",
+    year: "1440",
+    outcome: "Books, Duplication",
+    stat: null,
+    icon: BookOpen,
+    style: "neutral",
+  },
+  {
+    stage: "Immediacy",
+    era: "Radio / Television",
+    year: "1920s",
+    outcome: "Mass Media, Audiences",
+    stat: null,
+    icon: Radio,
+    style: "neutral",
+  },
+  {
+    stage: "On-Demand",
+    era: "Podcast / Digital",
+    year: "2003+",
+    outcome: "Content, Platforms",
+    stat: "500M+ podcast listeners globally",
+    icon: Headphones,
+    style: "neutral",
+  },
+  {
+    stage: "Validation",
+    era: "MOOCs / Online Courses",
+    year: "2012+",
+    outcome: "Massive access, no transformation",
+    stat: "3% completion rate after 6 years · 52% never start",
+    statSource: "Reich & Ruipérez-Valiente, Science, 2019 — MIT/Harvard edX data, 2012–2018",
     icon: GraduationCap,
     style: "neutral",
   },
@@ -82,8 +108,8 @@ const evolutionTimeline = [
     era: "Social & Creator Economy",
     year: "2007 – 2020",
     outcome: "Experts told to build a brand. Became content machines.",
-    stat: "52% report burnout · 37% considering quitting",
-    statSource: "Billion Dollar Boy, 2025 — 2,000 respondents US/UK",
+    stat: "62% report burnout · Gets worse with tenure, not better",
+    statSource: "C4MH & Lupiani Insights, 2025 — 542 creators · Endorsed by Harvard T.H. Chan SPH",
     icon: AlertTriangle,
     style: "warning",
   },
@@ -92,8 +118,8 @@ const evolutionTimeline = [
     era: "Generic AI",
     year: "2023+",
     outcome: "Answers without authorship. Advice without accountability.",
-    stat: "~40% hallucination rate · 66% use AI, <46% trust it",
-    statSource: "JMIR, 2024 / Melbourne–KPMG, 2025 — 48K respondents",
+    stat: "Up to 40% hallucination rate · 66% use AI, fewer than half trust it",
+    statSource: "Chelli et al., JMIR, 2024 / Gillespie et al., Univ. of Melbourne & KPMG, 2025",
     icon: MessageCircle,
     style: "warning",
   },
@@ -102,8 +128,8 @@ const evolutionTimeline = [
     era: "More People Want You Than You Can Reach",
     year: "2024+",
     outcome: "Clients will pay more for you. There just aren't enough of you.",
-    stat: "80% of affluent clients pay 5× more for human guidance over AI",
-    statSource: "McKinsey, 2024 — affluent & HNW investor survey",
+    stat: "80% of affluent clients will pay 5× more for human guidance",
+    statSource: "McKinsey, Feb 2025 — Affluent & HNW Consumer Survey, n ≈ 7,000 US investors",
     icon: Users,
     style: "neutral",
   },
@@ -112,8 +138,8 @@ const evolutionTimeline = [
     era: "Expert AI + Real Presence",
     year: "Now",
     outcome: "Your methodology, carried further. Your presence, where it matters most.",
-    stat: "$1T+ in expert services · The bottleneck isn't demand. It's infrastructure.",
-    statSource: "Precedence Research, 2024 / ICF–PwC, 2025",
+    stat: "$1T+ in expert services · Demand is growing 3× faster than the people who deliver it",
+    statSource: "Precedence Research, 2025 / McKinsey, 2025",
     icon: Heart,
     style: "accent",
   },
@@ -300,13 +326,13 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
   })
 
   // Start with some padding, end shifted enough to center last item
-  // 6 items * 280px = 1680px width
-  // To center last item (at ~1540px), we need to shift left by ~1200px depending on viewport.
+  // 9 items * 280px = 2520px width
+  // To center last item (at ~2380px), we need to shift left by ~2380px depending on viewport.
   // Using percentage for responsiveness: mostly shifting the whole track left.
-  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 1540px)"])
+  const x = useTransform(scrollYProgress, [0.15, 0.9], ["calc(40vw - 140px)", "calc(40vw - 2380px)"])
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "350vh" }}>
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         {/* Header - Pinned inside the timeline section */}
         <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 w-full relative z-10">
