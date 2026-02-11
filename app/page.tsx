@@ -292,7 +292,7 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
     <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         {/* Header - Pinned inside the timeline section */}
-        <div className="max-w-7xl mx-auto px-6 mb-12 md:mb-20 w-full relative z-10">
+        <div className="max-w-7xl mx-auto px-6 mb-16 md:mb-24 w-full relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,7 +301,7 @@ function ScrollTimeline({ items }: { items: typeof evolutionTimeline }) {
             className="text-center"
           >
             <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              The Arc
+              WHY
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-2 italic">
               From Information to Presence:
@@ -455,7 +455,7 @@ export default function Home() {
             className="text-center"
           >
             <p className="text-sm font-bold text-accent mb-6 uppercase tracking-wider">
-              The Philosophy
+              Philosophy
             </p>
             <blockquote className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground leading-snug mb-8">
               "As answers become abundant, human presence becomes premium. Information is no longer the bottleneck. Connection, curation, and trust are."
